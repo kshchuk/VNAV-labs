@@ -73,7 +73,15 @@ class PlotsPublisherNode : public rclcpp::Node {
          *       a small wait time.
          */
 
-        // TODO: fill in here
+        if (!parent->tf_buffer_->canTransform(ref_frame,
+                                              dest_frame,
+                                              tf2::TimePointZero,
+                                              tf2::durationFromSec(0.05))) {
+          return;
+        }
+        transform = parent->tf_buffer_->lookupTransform(ref_frame,
+                                                        dest_frame,
+                                                        tf2::TimePointZero);
 
         // ~~~~~~~~~~~~~~~~~~~~~~~~  END OF EDIT SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~
         while (poses.size() >= buffer_size) poses.pop_front();
@@ -167,27 +175,55 @@ class PlotsPublisherNode : public rclcpp::Node {
   }
 
   void onPublish() {
+    geometry_msgs::msg::TransformStamped world_T_av1;
+    geometry_msgs::msg::TransformStamped world_T_av2;
+    try {
+      if (!tf_buffer_->canTransform("world",
+                                    "av1",
+                                    tf2::TimePointZero,
+                                    tf2::durationFromSec(0.05)) ||
+          !tf_buffer_->canTransform("world",
+                                    "av2",
+                                    tf2::TimePointZero,
+                                    tf2::durationFromSec(0.05))) {
+        return;
+      }
+
+      world_T_av1 = tf_buffer_->lookupTransform("world", "av1", tf2::TimePointZero);
+      world_T_av2 = tf_buffer_->lookupTransform("world", "av2", tf2::TimePointZero);
+    } catch (const tf2::TransformException& ex) {
+      RCLCPP_WARN_STREAM(get_logger(), "failed to get AV transforms for markers: " << ex.what());
+      return;
+    }
+
     visualization_msgs::msg::MarkerArray visuals;
     visuals.markers.resize(2);
     visualization_msgs::msg::Marker& av1(visuals.markers[0]);
     visualization_msgs::msg::Marker& av2(visuals.markers[1]);
-    av1.header.frame_id = "av1";
+    av1.header.frame_id = "world";
     av1.ns = "AVs";
     av1.id = 0;
     av1.header.stamp = now();
     av1.type = visualization_msgs::msg::Marker::MESH_RESOURCE;
     av1.mesh_resource = "package://two_drones_pkg/mesh/quadrotor.dae";
     av1.action = visualization_msgs::msg::Marker::ADD;
-    av1.pose.orientation.w = 1.0;
+    av1.pose.position.x = world_T_av1.transform.translation.x;
+    av1.pose.position.y = world_T_av1.transform.translation.y;
+    av1.pose.position.z = world_T_av1.transform.translation.z;
+    av1.pose.orientation = world_T_av1.transform.rotation;
     av1.scale.x = av1.scale.y = av1.scale.z = av1.color.a = 1.0;
     av1.color.r = .25;
     av1.color.g = .52;
     av1.color.b = 1;
     av1.lifetime = rclcpp::Duration::from_seconds(1.0);
     av2 = av1;
-    av2.header.frame_id = "av2";
+    av2.header.frame_id = "world";
     av2.ns = "AVs";
     av2.id = 1;
+    av2.pose.position.x = world_T_av2.transform.translation.x;
+    av2.pose.position.y = world_T_av2.transform.translation.y;
+    av2.pose.position.z = world_T_av2.transform.translation.z;
+    av2.pose.orientation = world_T_av2.transform.rotation;
     av2.color.r = .8;
     av2.color.g = .4;
     av2.color.b = .26;
