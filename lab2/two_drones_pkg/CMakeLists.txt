@@ -34,8 +34,6 @@ target_include_directories(plots_publisher_node PUBLIC
 install(TARGETS frames_publisher_node plots_publisher_node
   DESTINATION lib/${PROJECT_NAME})
 
-install(DIRECTORY mesh DESTINATION share/${PROJECT_NAME})
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
-install(DIRECTORY config DESTINATION share/${PROJECT_NAME})
 
 ament_package()
