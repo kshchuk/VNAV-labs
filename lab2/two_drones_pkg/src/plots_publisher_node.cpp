@@ -204,14 +204,14 @@ class PlotsPublisherNode : public rclcpp::Node {
     av1.ns = "AVs";
     av1.id = 0;
     av1.header.stamp = now();
-    av1.type = visualization_msgs::msg::Marker::MESH_RESOURCE;
-    av1.mesh_resource = "package://two_drones_pkg/mesh/quadrotor.dae";
+    av1.type = visualization_msgs::msg::Marker::SPHERE;
     av1.action = visualization_msgs::msg::Marker::ADD;
     av1.pose.position.x = world_T_av1.transform.translation.x;
     av1.pose.position.y = world_T_av1.transform.translation.y;
     av1.pose.position.z = world_T_av1.transform.translation.z;
     av1.pose.orientation = world_T_av1.transform.rotation;
-    av1.scale.x = av1.scale.y = av1.scale.z = av1.color.a = 1.0;
+    av1.scale.x = av1.scale.y = av1.scale.z = 0.15;
+    av1.color.a = 1.0;
     av1.color.r = .25;
     av1.color.g = .52;
     av1.color.b = 1;
@@ -226,7 +226,7 @@ class PlotsPublisherNode : public rclcpp::Node {
     av2.pose.orientation = world_T_av2.transform.rotation;
     av2.color.r = .8;
     av2.color.g = .4;
-    av2.color.b = .26;
+    av2.color.b = .26;  
 
     // Trails
     visuals.markers.push_back(av1trail.getMarker());
