@@ -11,7 +11,11 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        ('share/' + package_name + '/launch', ['launch/tesse_quadrotor_bridge.launch.yaml']),
+        ('share/' + package_name + '/launch', [
+            'launch/tesse_quadrotor_bridge.launch.yaml',
+            'launch/tesse_quadrotor_bridge.docker.launch.yaml',
+            'launch/tesse_quadrotor_bridge.utm.launch.yaml',
+        ]),
         ('share/' + package_name + '/config', glob('config/*')),
     ],
     install_requires=['setuptools'],
