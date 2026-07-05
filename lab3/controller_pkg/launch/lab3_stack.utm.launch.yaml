@@ -1,0 +1,6 @@
+# Lab 3 with TESSE in a UTM Linux VM: ROS stack in Docker on the Mac.
+launch:
+  - include:
+      file: $(find-pkg-share tesse_ros_bridge)/launch/tesse_quadrotor_bridge.utm.launch.yaml
+  - include:
+      file: $(find-pkg-share controller_pkg)/launch/traj_tracking.launch.py

@@ -1,0 +1,6 @@
+# Lab 3 on Docker Desktop: TESSE on host, ROS stack in container.
+launch:
+  - include:
+      file: $(find-pkg-share tesse_ros_bridge)/launch/tesse_quadrotor_bridge.docker.launch.yaml
+  - include:
+      file: $(find-pkg-share controller_pkg)/launch/traj_tracking.launch.py

@@ -1,0 +1,12 @@
+tesse_ros_bridge:
+  ros__parameters:
+    # Docker Desktop (macOS/Windows): TESSE runs on the host; bridge runs in the container.
+    sim_ip: host.docker.internal
+    self_ip: 0.0.0.0
+    use_broadcast: true
+
+quadrotor_control_interface:
+  ros__parameters:
+    sim_ip: host.docker.internal
+    self_ip: 0.0.0.0
+    use_broadcast: true

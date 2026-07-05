@@ -1,0 +1,6 @@
+# Lab 3: TESSE bridge + geometric controller. Start TESSE on the host first.
+launch:
+  - include:
+      file: $(find-pkg-share tesse_ros_bridge)/launch/tesse_quadrotor_bridge.launch.yaml
+  - include:
+      file: $(find-pkg-share controller_pkg)/launch/traj_tracking.launch.py

@@ -1,0 +1,12 @@
+# TESSE in a UTM Linux VM; ROS runs in Docker on the Mac.
+tesse_ros_bridge:
+  ros__parameters:
+    sim_ip: 192.168.64.4
+    self_ip: 0.0.0.0
+    use_broadcast: true
+
+quadrotor_control_interface:
+  ros__parameters:
+    sim_ip: 192.168.64.4
+    self_ip: 0.0.0.0
+    use_broadcast: true
