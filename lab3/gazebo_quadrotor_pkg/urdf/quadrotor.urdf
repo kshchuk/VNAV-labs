@@ -23,10 +23,47 @@
     </collision>
   </link>
 
+  <link name="third_person"/>
+
+  <joint name="third_person_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="third_person"/>
+    <!-- Behind and above the quadrotor, TESSE-style chase camera. -->
+    <origin xyz="-4.0 0.0 2.5" rpy="0 0.35 0"/>
+  </joint>
+
   <gazebo reference="base_link">
     <material>Gazebo/Grey</material>
     <mu1>0.1</mu1>
     <mu2>0.1</mu2>
+  </gazebo>
+
+  <gazebo reference="third_person">
+    <sensor name="third_person_camera" type="camera">
+      <update_rate>15</update_rate>
+      <camera name="third_person">
+        <horizontal_fov>1.047</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>200</far>
+        </clip>
+      </camera>
+      <always_on>true</always_on>
+      <visualize>false</visualize>
+      <plugin name="third_person_camera_plugin" filename="libgazebo_ros_camera.so">
+        <ros>
+          <namespace>third_person</namespace>
+          <remapping>~/image_raw:=rgb/image_raw</remapping>
+          <remapping>~/camera_info:=rgb/camera_info</remapping>
+        </ros>
+        <frame_name>third_person</frame_name>
+      </plugin>
+    </sensor>
   </gazebo>
 
   <gazebo>
@@ -50,6 +87,7 @@
         <namespace>/quadrotor</namespace>
         <remapping>wrench:=wrench</remapping>
       </ros>
+      <link_name>base_link</link_name>
       <body_name>base_link</body_name>
       <topic_name>wrench</topic_name>
       <frame_name>base_link</frame_name>

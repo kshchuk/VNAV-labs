@@ -61,4 +61,12 @@ def generate_launch_description():
             output='screen',
             parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}],
         ),
+
+        Node(
+            package='gazebo_quadrotor_pkg',
+            executable='lab3_viz_publisher',
+            name='lab3_viz_publisher',
+            output='screen',
+            parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}],
+        ),
     ])

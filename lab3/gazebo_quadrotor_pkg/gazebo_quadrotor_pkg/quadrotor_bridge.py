@@ -5,10 +5,11 @@ import math
 
 import numpy as np
 import rclpy
-from geometry_msgs.msg import Wrench
+from geometry_msgs.msg import TransformStamped, Wrench
 from mav_msgs.msg import Actuators
 from nav_msgs.msg import Odometry
 from rclpy.node import Node
+from tf2_ros import TransformBroadcaster
 
 # Match controller_node.cpp physical constants.
 CF = 1e-3
@@ -33,6 +34,7 @@ class QuadrotorBridge(Node):
         odom_topic = self.get_parameter('odom_topic').value
         wrench_topic = self.get_parameter('wrench_topic').value
 
+        self._tf_br = TransformBroadcaster(self)
         self._wrench_pub = self.create_publisher(Wrench, wrench_topic, 10)
         self._state_pub = self.create_publisher(Odometry, '/current_state', 10)
 
@@ -47,12 +49,21 @@ class QuadrotorBridge(Node):
     def _on_odom(self, msg: Odometry):
         self._state_pub.publish(msg)
 
+        tf = TransformStamped()
+        tf.header = msg.header
+        tf.header.frame_id = msg.header.frame_id or 'world'
+        tf.child_frame_id = 'base_link'
+        tf.transform.translation.x = msg.pose.pose.position.x
+        tf.transform.translation.y = msg.pose.pose.position.y
+        tf.transform.translation.z = msg.pose.pose.position.z
+        tf.transform.rotation = msg.pose.pose.orientation
+        self._tf_br.sendTransform(tf)
+
     def _on_cmd(self, msg: Actuators):
         if len(msg.angular_velocities) < 4:
             return
 
         speeds = np.array(msg.angular_velocities[:4], dtype=float)
-        # Thrust/torque map uses signed squared rotor speeds (controller eq. 1).
         signed_square = speeds * np.abs(speeds)
         wrench = F2W @ signed_square
 

@@ -68,10 +68,6 @@ install(TARGETS
 install(DIRECTORY
   launch
   config
-  #rviz
-  #worlds
-  #urdf
-  #meshes
   DESTINATION share/${PROJECT_NAME}
 )
 
