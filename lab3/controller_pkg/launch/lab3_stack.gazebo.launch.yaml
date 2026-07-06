@@ -1,4 +1,4 @@
-# Lab 3: Gazebo quadrotor + geometric controller (works on macOS/Linux via Docker).
+# Lab 3: Gazebo quadrotor + geometric controller + Foxglove visualization.
 launch:
   - set_parameter:
       name: use_sim_time
@@ -7,3 +7,13 @@ launch:
       file: $(find-pkg-share gazebo_quadrotor_pkg)/launch/gazebo_quadrotor.launch.py
   - include:
       file: $(find-pkg-share controller_pkg)/launch/traj_tracking.launch.py
+  - node:
+      pkg: foxglove_bridge
+      exec: foxglove_bridge
+      name: foxglove_bridge
+      output: screen
+      param:
+        - name: port
+          value: 8765
+        - name: send_buffer_limit
+          value: 10000000

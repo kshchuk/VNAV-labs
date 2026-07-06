@@ -14,6 +14,7 @@ setup(
         ('share/' + package_name + '/launch', glob('launch/*')),
         ('share/' + package_name + '/urdf', glob('urdf/*')),
         ('share/' + package_name + '/worlds', glob('worlds/*')),
+        ('share/' + package_name + '/config', glob('config/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -25,6 +26,7 @@ setup(
     entry_points={
         'console_scripts': [
             'quadrotor_bridge = gazebo_quadrotor_pkg.quadrotor_bridge:main',
+            'lab3_viz_publisher = gazebo_quadrotor_pkg.viz_publisher:main',
         ],
     },
 )
