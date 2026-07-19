@@ -39,7 +39,7 @@ class TrajPublisherNode : public rclcpp::Node
 
             // Quantities to fill in
             geometry_msgs::msg::TransformStamped desired_pose;
-            //desired_pose.header.stamp = ros::Time::now();
+            desired_pose.header.stamp = clock->now();
             desired_pose.header.frame_id = "world";
             desired_pose.child_frame_id = "av-desired";
 
@@ -61,7 +61,7 @@ class TrajPublisherNode : public rclcpp::Node
 
             tf2::Quaternion q;
             q.setRPY(0,0,PI/4);
-            //std::cout<<"Desired Orientation" << count << std::endl;
+            std::cout<<"Desired Orientation" << count << std::endl;
 
             desired_pose.transform.rotation.x = q.x();
             desired_pose.transform.rotation.y = q.y();

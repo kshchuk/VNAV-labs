@@ -70,7 +70,7 @@
     <plugin name="p3d" filename="libgazebo_ros_p3d.so">
       <ros>
         <namespace>/quadrotor</namespace>
-        <remapping>out:=ground_truth/odometry</remapping>
+        <remapping>odom:=ground_truth/odometry</remapping>
       </ros>
       <body_name>base_link</body_name>
       <frame_name>world</frame_name>
