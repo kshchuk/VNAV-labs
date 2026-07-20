@@ -58,9 +58,10 @@
       <plugin name="third_person_camera_plugin" filename="libgazebo_ros_camera.so">
         <ros>
           <namespace>third_person</namespace>
-          <remapping>~/image_raw:=rgb/image_raw</remapping>
-          <remapping>~/camera_info:=rgb/camera_info</remapping>
+          <remapping>image_raw:=rgb/image_raw</remapping>
+          <remapping>camera_info:=rgb/camera_info</remapping>
         </ros>
+        <camera_name>rgb</camera_name>
         <frame_name>third_person</frame_name>
       </plugin>
     </sensor>
@@ -85,12 +86,10 @@
     <plugin name="force" filename="libgazebo_ros_force.so">
       <ros>
         <namespace>/quadrotor</namespace>
-        <remapping>wrench:=wrench</remapping>
+        <remapping>gazebo_ros_force:=wrench</remapping>
       </ros>
       <link_name>base_link</link_name>
-      <body_name>base_link</body_name>
-      <topic_name>wrench</topic_name>
-      <frame_name>base_link</frame_name>
+      <force_frame>link</force_frame>
     </plugin>
   </gazebo>
 </robot>
