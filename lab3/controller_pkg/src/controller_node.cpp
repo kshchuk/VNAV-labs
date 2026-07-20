@@ -34,6 +34,7 @@
 //
 //  https://eigen.tuxfamily.org/dox/group__QuickRefPage.html
 
+#include <functional>
 #include <eigen3/Eigen/Dense>
 typedef Eigen::Matrix<double, 4, 4> Matrix4d;
 
@@ -55,6 +56,17 @@ class ControllerNode : public rclcpp::Node {
   //   3. a timer for your main control loop
   //
   // ~~~~ begin solution
+  
+  rclcpp::Subscription<trajectory_msgs::msg::MultiDOFJointTrajectoryPoint>::SharedPtr desired_state_sub_;
+  rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr current_state_sub_;
+
+  rclcpp::Publisher<mav_msgs::msg::Actuators>::SharedPtr motor_speed_pub_;
+
+  rclcpp::TimerBase::SharedPtr timer_;
+
+  // Flags to ensure we have data before executing control logic
+  bool received_desired_state_ = false;
+  bool received_current_state_ = false;
 
   // ~~~~ end solution
   // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -79,14 +91,12 @@ class ControllerNode : public rclcpp::Node {
   Eigen::Vector3d x; // current position of the UAV's c.o.m. in the world frame
   Eigen::Vector3d v; // current velocity of the UAV's c.o.m. in the world frame
   Eigen::Matrix3d R; // current orientation of the UAV
-  Eigen::Vector3d
-      omega; // current angular velocity of the UAV's c.o.m. in the *body* frame
+  Eigen::Vector3d omega; // current angular velocity of the UAV's c.o.m. in the *body* frame
 
   // Desired state
   Eigen::Vector3d xd; // desired position of the UAV's c.o.m. in the world frame
   Eigen::Vector3d vd; // desired velocity of the UAV's c.o.m. in the world frame
-  Eigen::Vector3d
-      ad;      // desired acceleration of the UAV's c.o.m. in the world frame
+  Eigen::Vector3d ad;      // desired acceleration of the UAV's c.o.m. in the world frame
   double yawd; // desired yaw angle
 
   int64_t hz; // frequency of the main control loop
@@ -125,6 +135,23 @@ public:
     //
     // ~~~~ begin solution
 
+    desired_state_sub_ = this->create_subscription<trajectory_msgs::msg::MultiDOFJointTrajectoryPoint>(
+      "desired_state", 10, [this](const trajectory_msgs::msg::MultiDOFJointTrajectoryPoint::SharedPtr msg)
+      { this->onDesiredState(*msg); }
+    );
+
+    current_state_sub_ = this->create_subscription<nav_msgs::msg::Odometry>(
+        "current_state", 10,
+        [this](const nav_msgs::msg::Odometry::SharedPtr msg) { this->onCurrentState(*msg); }
+    );
+
+    motor_speed_pub_ = this->create_publisher<mav_msgs::msg::Actuators>("motor_speed", 10);
+
+    auto interval = std::chrono::duration<double>(1.0 / static_cast<double>(hz));
+    timer_ = this->create_wall_timer(interval, [this]() { this->controlLoop(); }
+);
+    timer_->reset();
+
     // ~~~~ end solution
     // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
     //                                 end part 2
@@ -162,9 +189,24 @@ public:
     // Hint: use "v << vx, vy, vz;" to fill in a vector with Eigen.
     //
 
-    // this is here to surpress an "unused variable compiler warning"
-    // you can remove it when you start writing your answer
-    des_state == des_state;
+    if (des_state.transforms.empty() || des_state.velocities.empty() || des_state.accelerations.empty()) {
+      RCLCPP_WARN(this->get_logger(), "Incoming desired state contains empty fields!");
+      return;
+    }
+
+    xd << des_state.transforms[0].translation.x,
+      des_state.transforms[0].translation.y,
+      des_state.transforms[0].translation.z;
+
+    vd << des_state.velocities[0].linear.x,
+          des_state.velocities[0].linear.y,
+          des_state.velocities[0].linear.z;
+
+    ad << des_state.accelerations[0].linear.x,
+          des_state.accelerations[0].linear.y,
+          des_state.accelerations[0].linear.z;
+
+
 
     //
     // 3.2 Extract the yaw component from the quaternion in the incoming ROS
@@ -173,6 +215,12 @@ public:
     //  Hints:
     //    - look into the functions tf2::getYaw(...) and tf2::fromMsg
     //
+
+    tf2::Quaternion q_tf;
+    tf2::fromMsg(des_state.transforms[0].rotation, q_tf);
+    yawd = tf2::getYaw(q_tf);
+
+    received_desired_state_ = true;
 
     //
     // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -192,10 +240,39 @@ public:
     //          needs to be in the body frame!
     //
 
-    // this is here to surpress an "unused variable compiler warning"
-    // you can remove it when you start writing your answer
-    cur_state == cur_state;
+    x << cur_state.pose.pose.position.x,
+         cur_state.pose.pose.position.y,
+         cur_state.pose.pose.position.z;
 
+    // Get current orientation matrix R
+    Eigen::Quaterniond q_curr(
+        cur_state.pose.pose.orientation.w,
+        cur_state.pose.pose.orientation.x,
+        cur_state.pose.pose.orientation.y,
+        cur_state.pose.pose.orientation.z
+    );
+    R = q_curr.toRotationMatrix();
+
+    // Get velocity in the world frame.
+    // twist.twist.linear is in the child_frame_id (body frame), we transform it to the world frame.
+    Eigen::Vector3d v_body(
+        cur_state.twist.twist.linear.x,
+        cur_state.twist.twist.linear.y,
+        cur_state.twist.twist.linear.z
+    );
+    v << cur_state.twist.twist.linear.x,
+         cur_state.twist.twist.linear.y,
+         cur_state.twist.twist.linear.z;
+
+    // Convert angular velocity to the body frame (since twist.twist.angular is given in the world frame)
+    Eigen::Vector3d omega_world(
+        cur_state.twist.twist.angular.x,
+        cur_state.twist.twist.angular.y,
+        cur_state.twist.twist.angular.z
+    );
+    omega = R.transpose() * omega_world;
+
+    received_current_state_ = true;
     //
     // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
     //                                 end part 4
@@ -203,6 +280,10 @@ public:
   }
 
   void controlLoop() {
+    if (!received_desired_state_ || !received_current_state_) {
+      return;
+    }
+
     Eigen::Vector3d ex, ev, er, eomega;
 
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -212,6 +293,9 @@ public:
     // 5.1 Compute position and velocity errors. Objective: fill in ex, ev.
     //  Hint: [1], eq. (6), (7)
     //
+
+    ex = x - xd;
+    ev = v - vd;
 
     // 5.2 Compute the Rd matrix.
     //
@@ -230,6 +314,18 @@ public:
     //
     // Build b3d vector
 
+    Eigen::Vector3d F = - kx * ex - kv * ev + m * g * e3 + m * ad;
+
+    Eigen::Vector3d b3d = F.normalized();
+
+    Eigen::Vector3d b1d_c(cos(yawd), sin(yawd), 0.0);
+    Eigen::Vector3d b2d = b3d.cross(b1d_c).normalized();
+    Eigen::Vector3d b1d = b2d.cross(b3d);
+
+    Eigen::Matrix3d Rd;
+    Rd.col(0) = b1d;
+    Rd.col(1) = b2d;
+    Rd.col(2) = b3d;
     //
     // 5.3 Compute the orientation error (er) and the rotation-rate error
     // (eomega)
@@ -241,6 +337,11 @@ public:
     //          requires numerical differentiation of Rd and it has negligible
     //          effects on the closed-loop dynamics.
     //
+
+    Eigen::Matrix3d error_R_matrix = 0.5 * (Rd.transpose() * R - R.transpose() * Rd);
+    er = Vee(error_R_matrix);
+    eomega = omega;
+
 
     //
     // 5.4 Compute the desired wrench (force + torques) to control the UAV.
@@ -258,6 +359,9 @@ public:
     //      derivative as they are of the second order and have negligible
     //      effects on the closed-loop dynamics.
     //
+
+    double f = F.dot(R.col(2));
+    Eigen::Vector3d tau = - kr * er - komega * eomega + omega.cross(J * omega);
 
     // 5.5 Recover the rotor speeds from the wrench computed above
     //
@@ -284,12 +388,30 @@ public:
     //       in one direction!
     //
 
+    Eigen::Vector4d wrench(f, tau(0), tau(1), tau(2));
+    Eigen::Vector4d omega_sq = F2W.inverse() * wrench;
+
+    double w1 = signed_sqrt(omega_sq(0));
+    double w2 = signed_sqrt(omega_sq(1));
+    double w3 = signed_sqrt(omega_sq(2));
+    double w4 = signed_sqrt(omega_sq(3));
+
     //
     // 5.6 Populate and publish the control message
     //
     // Hint: do not forget that the propeller speeds are signed (maybe you want
     // to use signed_sqrt function).
     //
+
+    mav_msgs::msg::Actuators motor_speed_msg;
+    motor_speed_msg.header.stamp = this->now();
+    motor_speed_msg.angular_velocities.resize(4);
+    motor_speed_msg.angular_velocities[0] = w1;
+    motor_speed_msg.angular_velocities[1] = w2;
+    motor_speed_msg.angular_velocities[2] = w3;
+    motor_speed_msg.angular_velocities[3] = w4;
+
+    motor_speed_pub_->publish(motor_speed_msg);
 
     //
     // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -315,7 +437,7 @@ int main(int argc, char *argv[]) {
 //
 // Modify the gains kx, kv, kr, komega in controller_pkg/config/params.yaml
 // and re-run the controller.
-//
+
 // Can you get the drone to do stable flight?
 //
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
