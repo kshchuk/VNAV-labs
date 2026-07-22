@@ -1,7 +1,6 @@
 controller_node:
   ros__parameters:
-    # Circle R=5 m, z=2 m, timeScale=2.0 (Gazebo)
-    kx: 5.0
+    kx: 1.0
     kv: 8.0
-    kr: 11.0
-    komega: 2.8
+    kr: 5.0
+    komega: 1.0
