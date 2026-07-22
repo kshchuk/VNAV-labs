@@ -68,59 +68,31 @@ class TrajPublisherNode : public rclcpp::Node
             desired_pose.transform.rotation.z = q.z();
             desired_pose.transform.rotation.w = q.w();
 #else
-            // Circle — phase shifted so motion starts at (0, 0, 2); hover first to let the
-            // controller stabilize before tracking nonzero velocity/acceleration.
+            // Circle
             double R = 5.0;
             double timeScale = 2.0;
-            double hoverTime = 5.0;
-            double phase = -PI / 2.0;
-            double tc = (t > hoverTime) ? (t - hoverTime) : 0.0;
+            tf2::Vector3 trans = origin + tf2::Vector3(R*sin(t/timeScale), R*cos(t/timeScale), 2);
+            desired_pose.transform.translation.x = trans.x();
+            desired_pose.transform.translation.y = trans.y();
+            desired_pose.transform.translation.z = trans.z();
 
-            if (t < hoverTime) {
-              tf2::Vector3 trans = origin + tf2::Vector3(0, 0, 2);
-              desired_pose.transform.translation.x = trans.x();
-              desired_pose.transform.translation.y = trans.y();
-              desired_pose.transform.translation.z = trans.z();
+            tf2::Quaternion q;
+            q.setRPY(0,0,-t/timeScale);
+            desired_pose.transform.rotation.x = q.x();
+            desired_pose.transform.rotation.y = q.y();
+            desired_pose.transform.rotation.z = q.z();
+            desired_pose.transform.rotation.w = q.w();
+            velocity.linear.x = R*cos(t/timeScale)/timeScale;
+            velocity.linear.y = -R*sin(t/timeScale)/timeScale;
+            velocity.linear.z = 0;
 
-              tf2::Quaternion q;
-              q.setRPY(0, 0, PI / 2.0);
-              desired_pose.transform.rotation.x = q.x();
-              desired_pose.transform.rotation.y = q.y();
-              desired_pose.transform.rotation.z = q.z();
-              desired_pose.transform.rotation.w = q.w();
-            } else {
-              double rampTime = 2.0;
-              double ramp = (tc < rampTime) ? (tc / rampTime) : 1.0;
+            velocity.angular.x = 0.0;
+            velocity.angular.y = 0.0;
+            velocity.angular.z = -1.0/timeScale;
 
-              tf2::Vector3 trans = origin + tf2::Vector3(
-                  R * sin(tc / timeScale + phase),
-                  R * cos(tc / timeScale + phase),
-                  2);
-              desired_pose.transform.translation.x = trans.x();
-              desired_pose.transform.translation.y = trans.y();
-              desired_pose.transform.translation.z = trans.z();
-
-              tf2::Quaternion q;
-              q.setRPY(0, 0, PI / 2.0 - tc / timeScale);
-              desired_pose.transform.rotation.x = q.x();
-              desired_pose.transform.rotation.y = q.y();
-              desired_pose.transform.rotation.z = q.z();
-              desired_pose.transform.rotation.w = q.w();
-
-              velocity.linear.x = ramp * R * cos(tc / timeScale + phase) / timeScale;
-              velocity.linear.y = ramp * -R * sin(tc / timeScale + phase) / timeScale;
-              velocity.linear.z = 0;
-
-              velocity.angular.x = 0.0;
-              velocity.angular.y = 0.0;
-              velocity.angular.z = ramp * -1.0 / timeScale;
-
-              acceleration.linear.x =
-                  ramp * -R * sin(tc / timeScale + phase) / timeScale / timeScale;
-              acceleration.linear.y =
-                  ramp * -R * cos(tc / timeScale + phase) / timeScale / timeScale;
-              acceleration.linear.z = 0;
-            }
+            acceleration.linear.x = -R*sin(t/timeScale)/timeScale/timeScale;
+            acceleration.linear.y = -R*cos(t/timeScale)/timeScale/timeScale;
+            acceleration.linear.z = 0;
 #endif
 
             // Publish
