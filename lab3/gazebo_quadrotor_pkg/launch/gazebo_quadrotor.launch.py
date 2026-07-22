@@ -39,7 +39,7 @@ def generate_launch_description():
             arguments=[
                 '-entity', 'quadrotor',
                 '-topic', 'robot_description',
-                '-x', '0', '-y', '0', '-z', '0.5',
+                '-x', '0', '-y', '0', '-z', '2.0',
             ],
             output='screen',
         ),

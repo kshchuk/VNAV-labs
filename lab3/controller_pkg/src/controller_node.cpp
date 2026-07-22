@@ -98,6 +98,7 @@ class ControllerNode : public rclcpp::Node {
   Eigen::Vector3d vd; // desired velocity of the UAV's c.o.m. in the world frame
   Eigen::Vector3d ad;      // desired acceleration of the UAV's c.o.m. in the world frame
   double yawd; // desired yaw angle
+  Eigen::Vector3d omega_d; // desired angular velocity in the world frame
 
   int64_t hz; // frequency of the main control loop
 
@@ -148,8 +149,7 @@ public:
     motor_speed_pub_ = this->create_publisher<mav_msgs::msg::Actuators>("motor_speed", 10);
 
     auto interval = std::chrono::duration<double>(1.0 / static_cast<double>(hz));
-    timer_ = this->create_wall_timer(interval, [this]() { this->controlLoop(); }
-);
+    timer_ = this->create_wall_timer(interval, [this]() { this->controlLoop(); });
     timer_->reset();
 
     // ~~~~ end solution
@@ -206,8 +206,9 @@ public:
           des_state.accelerations[0].linear.y,
           des_state.accelerations[0].linear.z;
 
-
-
+    omega_d << des_state.velocities[0].angular.x,
+               des_state.velocities[0].angular.y,
+               des_state.velocities[0].angular.z;
     //
     // 3.2 Extract the yaw component from the quaternion in the incoming ROS
     //     message and store in the yawd class member variable
@@ -253,18 +254,12 @@ public:
     );
     R = q_curr.toRotationMatrix();
 
-    // Get velocity in the world frame.
-    // twist.twist.linear is in the child_frame_id (body frame), we transform it to the world frame.
-    Eigen::Vector3d v_body(
-        cur_state.twist.twist.linear.x,
-        cur_state.twist.twist.linear.y,
-        cur_state.twist.twist.linear.z
-    );
+    // Gazebo p3d publishes linear velocity in the world frame (WorldLinearVel).
     v << cur_state.twist.twist.linear.x,
          cur_state.twist.twist.linear.y,
          cur_state.twist.twist.linear.z;
 
-    // Convert angular velocity to the body frame (since twist.twist.angular is given in the world frame)
+    // Angular velocity is also in the world frame; convert to body frame for the controller.
     Eigen::Vector3d omega_world(
         cur_state.twist.twist.angular.x,
         cur_state.twist.twist.angular.y,
@@ -340,9 +335,7 @@ public:
 
     Eigen::Matrix3d error_R_matrix = 0.5 * (Rd.transpose() * R - R.transpose() * Rd);
     er = Vee(error_R_matrix);
-    eomega = omega;
-
-
+    eomega = omega - R.transpose() * omega_d;
     //
     // 5.4 Compute the desired wrench (force + torques) to control the UAV.
     //  Hints:
