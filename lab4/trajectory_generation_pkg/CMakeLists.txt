@@ -1,17 +1,14 @@
 cmake_minimum_required(VERSION 3.16)
-project(trajectory_generation)
+project(trajectory_generation LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra)
+endif()
 
-## Find catkin macros and libraries
-## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
-## is used, also find other catkin packages
-
+# C++26 — use clang-19 from Docker (run_lab_dev.sh sets CXX=clang++-19 for lab4)
+add_compile_options(-std=c++26)
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(eigen3_cmake_module REQUIRED)
@@ -20,9 +17,7 @@ find_package(mav_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(trajectory_msgs REQUIRED)
-find_package(mav_planning_msgs REQUIRED)
 find_package(mav_trajectory_generation REQUIRED)
-find_package(mav_visualization REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(NLopt REQUIRED)
 find_package(glog REQUIRED)
