@@ -4,7 +4,7 @@
 import math
 
 import rclpy
-from geometry_msgs.msg import Point
+from geometry_msgs.msg import Point, PoseArray
 from rclpy.node import Node
 from visualization_msgs.msg import Marker, MarkerArray
 
@@ -14,6 +14,11 @@ import tf2_ros
 class Lab3VizPublisher(Node):
     def __init__(self):
         super().__init__('lab3_viz_publisher')
+        self.declare_parameter('show_traj_vertices', False)
+        self.declare_parameter('show_reference_circle', True)
+        self._show_traj_vertices = self.get_parameter('show_traj_vertices').value
+        self._show_reference_circle = self.get_parameter('show_reference_circle').value
+
         self._pub = self.create_publisher(MarkerArray, '/visuals', 10)
         self._tf_buffer = tf2_ros.Buffer()
         self._tf_listener = tf2_ros.TransformListener(self._tf_buffer, self)
@@ -21,9 +26,16 @@ class Lab3VizPublisher(Node):
         self._trail_actual: list[Point] = []
         self._trail_desired: list[Point] = []
         self._trail_len = 300
+        self._traj_vertices: list[Point] = []
 
         self._static = self._build_static_markers()
+        if self._show_traj_vertices:
+            self.create_subscription(
+                PoseArray, '/desired_traj_vertices', self._on_traj_vertices, 10)
         self.create_timer(0.05, self._on_timer)
+
+    def _on_traj_vertices(self, msg: PoseArray):
+        self._traj_vertices = [p.position for p in msg.poses]
 
     def _circle_points(self, radius: float, z: float, n: int = 64) -> list[Point]:
         pts = []
@@ -40,21 +52,22 @@ class Lab3VizPublisher(Node):
         stamp = self.get_clock().now().to_msg()
         markers = []
 
-        # Reference circular trajectory (matches traj_publisher: R=5, z=2).
-        path = Marker()
-        path.header.frame_id = 'world'
-        path.header.stamp = stamp
-        path.ns = 'reference_path'
-        path.id = 0
-        path.type = Marker.LINE_STRIP
-        path.action = Marker.ADD
-        path.scale.x = 0.06
-        path.color.r = 0.2
-        path.color.g = 0.75
-        path.color.b = 0.35
-        path.color.a = 0.85
-        path.points = self._circle_points(5.0, 2.0)
-        markers.append(path)
+        if self._show_reference_circle:
+            # Reference circular trajectory (matches traj_publisher: R=5, z=2).
+            path = Marker()
+            path.header.frame_id = 'world'
+            path.header.stamp = stamp
+            path.ns = 'reference_path'
+            path.id = 0
+            path.type = Marker.LINE_STRIP
+            path.action = Marker.ADD
+            path.scale.x = 0.06
+            path.color.r = 0.2
+            path.color.g = 0.75
+            path.color.b = 0.35
+            path.color.a = 0.85
+            path.points = self._circle_points(5.0, 2.0)
+            markers.append(path)
 
         # Ground grid hint (10 m x 10 m).
         grid = Marker()
@@ -197,6 +210,41 @@ class Lab3VizPublisher(Node):
         if target is not None:
             target.color.a = 0.75
             out.markers.append(target)
+
+        if self._traj_vertices:
+            gate_path = Marker()
+            gate_path.header.frame_id = 'world'
+            gate_path.header.stamp = stamp
+            gate_path.ns = 'lab4_gates'
+            gate_path.id = 30
+            gate_path.type = Marker.LINE_STRIP
+            gate_path.action = Marker.ADD
+            gate_path.scale.x = 0.08
+            gate_path.color.r = 0.95
+            gate_path.color.g = 0.35
+            gate_path.color.b = 0.15
+            gate_path.color.a = 0.9
+            gate_path.points = list(self._traj_vertices)
+            out.markers.append(gate_path)
+
+            for idx, pos in enumerate(self._traj_vertices):
+                gate = Marker()
+                gate.header.frame_id = 'world'
+                gate.header.stamp = stamp
+                gate.ns = 'lab4_gates'
+                gate.id = 40 + idx
+                gate.type = Marker.CUBE
+                gate.action = Marker.ADD
+                gate.pose.position = pos
+                gate.pose.orientation.w = 1.0
+                gate.scale.x = 0.35
+                gate.scale.y = 0.05
+                gate.scale.z = 0.8
+                gate.color.r = 0.95
+                gate.color.g = 0.2
+                gate.color.b = 0.15
+                gate.color.a = 0.85
+                out.markers.append(gate)
 
         self._pub.publish(out)
 
