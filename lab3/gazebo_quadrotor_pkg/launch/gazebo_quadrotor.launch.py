@@ -20,6 +20,8 @@ def generate_launch_description():
         DeclareLaunchArgument('gui', default_value='true'),
         DeclareLaunchArgument('paused', default_value='false'),
         DeclareLaunchArgument('use_sim_time', default_value='true'),
+        DeclareLaunchArgument('show_traj_vertices', default_value='false'),
+        DeclareLaunchArgument('show_reference_circle', default_value='true'),
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([
@@ -67,6 +69,10 @@ def generate_launch_description():
             executable='lab3_viz_publisher',
             name='lab3_viz_publisher',
             output='screen',
-            parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}],
+            parameters=[{
+                'use_sim_time': LaunchConfiguration('use_sim_time'),
+                'show_traj_vertices': LaunchConfiguration('show_traj_vertices'),
+                'show_reference_circle': LaunchConfiguration('show_reference_circle'),
+            }],
         ),
     ])

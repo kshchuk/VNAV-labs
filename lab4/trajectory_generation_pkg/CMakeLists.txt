@@ -1,14 +1,13 @@
 cmake_minimum_required(VERSION 3.16)
 project(trajectory_generation LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 26)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra)
 endif()
-
-# C++26 — use clang-19 from Docker (run_lab_dev.sh sets CXX=clang++-19 for lab4)
-add_compile_options(-std=c++26)
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(eigen3_cmake_module REQUIRED)

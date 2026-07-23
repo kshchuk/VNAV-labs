@@ -1,14 +1,13 @@
 cmake_minimum_required(VERSION 3.16)
 project(planner_pkg LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 26)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra)
 endif()
-
-# C++26 — use clang-19 from Docker (run_lab_dev.sh sets CXX=clang++-19 for lab4)
-add_compile_options(-std=c++26)
 
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
@@ -28,7 +27,7 @@ ament_target_dependencies(traj_vertices_publisher geometry_msgs trajectory_msgs 
 add_executable(simple_traj_planner src/simple_traj_planner.cpp)
 ament_target_dependencies(simple_traj_planner geometry_msgs mav_msgs trajectory_msgs tf2_ros rclcpp std_msgs)
 
-install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
+install(DIRECTORY launch config DESTINATION share/${PROJECT_NAME})
 install(TARGETS traj_vertices_publisher simple_traj_planner
   DESTINATION lib/${PROJECT_NAME})
 
