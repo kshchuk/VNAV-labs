@@ -1,26 +1,25 @@
-cmake_minimum_required(VERSION 3.5)
-project(planner_pkg)
+cmake_minimum_required(VERSION 3.16)
+project(planner_pkg LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra)
 endif()
 
+# C++26 — use clang-19 from Docker (run_lab_dev.sh sets CXX=clang++-19 for lab4)
+add_compile_options(-std=c++26)
 
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(mav_msgs REQUIRED)
-#find_package(eigen_conversions REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(trajectory_msgs REQUIRED)
 find_package(Eigen3)
 
-#set(HEADER_FILES include/csv.h)
+set(HEADER_FILES include/csv.h)
 include_directories(include)
 
 add_executable(traj_vertices_publisher src/traj_vertices_publisher.cpp ${HEADER_FILES})
