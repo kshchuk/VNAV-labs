@@ -10,6 +10,7 @@
 
 #include <eigen3/Eigen/Dense>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
+#include <tf2_ros/transform_broadcaster.h>
 
 class WaypointFollower : public rclcpp::Node {
 
@@ -25,8 +26,10 @@ class WaypointFollower : public rclcpp::Node {
   rclcpp::TimerBase::SharedPtr desiredStateTimer;
 
   rclcpp::Time trajectoryStartTime;
+  bool trajectory_time_initialized_{false};
   mav_trajectory_generation::Trajectory trajectory;
   mav_trajectory_generation::Trajectory yaw_trajectory;
+  std::unique_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
 
   void onCurrentState(nav_msgs::msg::Odometry const &cur_state) {
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,7 +41,9 @@ class WaypointFollower : public rclcpp::Node {
     //  UAV
     // ~~~~ begin solution
 
-
+    x = Eigen::Vector3d(cur_state.pose.pose.position.x,
+                        cur_state.pose.pose.position.y,
+                        cur_state.pose.pose.position.z);
 
     // ~~~~ end solution
     // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -93,9 +98,56 @@ class WaypointFollower : public rclcpp::Node {
     // for access to SNAP
     using namespace mav_trajectory_generation::derivative_order;
     
-    const int D = 3; // dimension of each vertex in the trajectory
+    const int D = 3; // dimension of each vertex in the trajectory (x, y, z)
     mav_trajectory_generation::Vertex::Vector vertices;
     mav_trajectory_generation::Vertex::Vector yaw_vertices;
+
+    size_t num_waypoints = poseArray.poses.size();
+    vertices.reserve(num_waypoints);
+    yaw_vertices.reserve(num_waypoints);
+
+    double prev_yaw = 0.0;
+
+    for (size_t i = 0; i < num_waypoints; ++i) {
+      const auto &pose = poseArray.poses[i];
+
+      // Position constraint
+      Eigen::Vector3d position(pose.position.x, pose.position.y, pose.position.z);
+      mav_trajectory_generation::Vertex v(D);
+
+      if (i == 0 || i == num_waypoints - 1) {
+        v.makeStartOrEnd(position, SNAP);
+      } else {
+        v.addConstraint(POSITION, position);
+      }
+      vertices.push_back(v);
+
+      // Yaw constraint
+      tf2::Quaternion q(pose.orientation.x, pose.orientation.y,
+                        pose.orientation.z, pose.orientation.w);
+      tf2::Matrix3x3 m(q);
+      double roll, pitch, yaw;
+      m.getRPY(roll, pitch, yaw);
+
+      // Unroll yaw to prevent 2*pi phase jumps between waypoints
+      if (i == 0) {
+        prev_yaw = yaw;
+      } else {
+        double diff = yaw - prev_yaw;
+        while (diff > M_PI)  diff -= 2.0 * M_PI;
+        while (diff < -M_PI) diff += 2.0 * M_PI;
+        yaw = prev_yaw + diff;
+        prev_yaw = yaw;
+      }
+
+      mav_trajectory_generation::Vertex yaw_v(1);
+      if (i == 0 || i == num_waypoints - 1) {
+        yaw_v.makeStartOrEnd(yaw, SNAP);
+      } else {
+        yaw_v.addConstraint(ORIENTATION, yaw);
+      }
+      yaw_vertices.push_back(yaw_v);
+    }
 
     // ~~~~ end solution
     // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -133,11 +185,11 @@ class WaypointFollower : public rclcpp::Node {
     //        opt.getSegments(&segments); // Unnecessary?
     opt.getTrajectory(&trajectory);
     yaw_opt.getTrajectory(&yaw_trajectory);
-    trajectoryStartTime = now();
+    trajectory_time_initialized_ = false;
 
     RCLCPP_INFO(get_logger(),
-                "Generated optimizes trajectory from %zu waypoints",
-                vertices.size());
+                "Generated optimizes trajectory from %zu waypoints (duration %.2fs)",
+                vertices.size(), trajectory.getMaxTime());
   }
 
   void publishDesiredState() {
@@ -156,7 +208,76 @@ class WaypointFollower : public rclcpp::Node {
     //
     // ~~~~ begin solution
 
+    using namespace mav_trajectory_generation::derivative_order;
 
+    // Start the trajectory clock on the first publish after optimization, once
+    // Gazebo sim time (/clock) is advancing. Setting this in generateOptimizedTrajectory
+    // can pin sampling_time to 0 if waypoints arrive before sim starts.
+    if (!trajectory_time_initialized_) {
+      trajectoryStartTime = now();
+      trajectory_time_initialized_ = true;
+    }
+
+    double sampling_time = (now() - trajectoryStartTime).seconds();
+    if (sampling_time < 0.0) {
+      sampling_time = 0.0;
+    }
+    double max_time = trajectory.getMaxTime();
+
+    // Clamp sampling time to final time if trajectory is finished
+    if (sampling_time > max_time) {
+      sampling_time = max_time;
+    }
+
+    trajectory_msgs::msg::MultiDOFJointTrajectoryPoint next_point;
+    next_point.time_from_start = rclcpp::Duration::from_seconds(sampling_time);
+
+    // Evaluate position, velocity, and acceleration at current trajectory time
+    Eigen::Vector3d pos = trajectory.evaluate(sampling_time, POSITION);
+    Eigen::Vector3d vel = trajectory.evaluate(sampling_time, VELOCITY);
+    Eigen::Vector3d acc = trajectory.evaluate(sampling_time, ACCELERATION);
+
+    // Evaluate yaw, yaw rate, and yaw acceleration
+    double yaw      = yaw_trajectory.evaluate(sampling_time, POSITION)[0];
+    double yaw_dot  = yaw_trajectory.evaluate(sampling_time, VELOCITY)[0];
+    double yaw_ddot = yaw_trajectory.evaluate(sampling_time, ACCELERATION)[0];
+
+    // Build transform
+    geometry_msgs::msg::Transform transform;
+    transform.translation.x = pos.x();
+    transform.translation.y = pos.y();
+    transform.translation.z = pos.z();
+
+    tf2::Quaternion q;
+    q.setRPY(0.0, 0.0, yaw);
+    transform.rotation = tf2::toMsg(q);
+
+    // Build velocity (Twist)
+    geometry_msgs::msg::Twist velocity;
+    velocity.linear.x = vel.x();
+    velocity.linear.y = vel.y();
+    velocity.linear.z = vel.z();
+    velocity.angular.z = yaw_dot;
+
+    // Build acceleration (Twist)
+    geometry_msgs::msg::Twist acceleration;
+    acceleration.linear.x = acc.x();
+    acceleration.linear.y = acc.y();
+    acceleration.linear.z = acc.z();
+    acceleration.angular.z = yaw_ddot;
+
+    next_point.transforms.push_back(transform);
+    next_point.velocities.push_back(velocity);
+    next_point.accelerations.push_back(acceleration);
+
+    desiredStatePub->publish(next_point);
+
+    geometry_msgs::msg::TransformStamped desired_tf;
+    desired_tf.header.stamp = this->now();
+    desired_tf.header.frame_id = "world";
+    desired_tf.child_frame_id = "av-desired";
+    desired_tf.transform = transform;
+    tf_broadcaster_->sendTransform(desired_tf);
 
     // ~~~~ end solution
     // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -180,6 +301,8 @@ public:
     desiredStatePub = this->create_publisher<
         trajectory_msgs::msg::MultiDOFJointTrajectoryPoint>("/desired_state",
                                                             1);
+
+    tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 
     desiredStateTimer =
         create_timer(this, get_clock(), rclcpp::Duration::from_seconds(0.2),

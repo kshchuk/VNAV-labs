@@ -52,22 +52,43 @@
       "flipVertical": false,
       "rotation": 0
     },
-    "Plot!lab3track": {
+    "Plot!lab4track": {
       "paths": [
         {
           "value": "/current_state.pose.pose.position.x",
           "enabled": true,
-          "timestampMethod": "receiveTime"
+          "timestampMethod": "receiveTime",
+          "label": "actual x"
         },
         {
           "value": "/current_state.pose.pose.position.y",
           "enabled": true,
-          "timestampMethod": "receiveTime"
+          "timestampMethod": "receiveTime",
+          "label": "actual y"
         },
         {
           "value": "/current_state.pose.pose.position.z",
           "enabled": true,
-          "timestampMethod": "receiveTime"
+          "timestampMethod": "receiveTime",
+          "label": "actual z"
+        },
+        {
+          "value": "/desired_state.transforms[0].translation.x",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "desired x"
+        },
+        {
+          "value": "/desired_state.transforms[0].translation.y",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "desired y"
+        },
+        {
+          "value": "/desired_state.transforms[0].translation.z",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "desired z"
         }
       ],
       "showXAxisLabels": true,
@@ -89,7 +110,7 @@
     "first": "3D!lab3scene",
     "second": {
       "first": "Image!lab3cam",
-      "second": "Plot!lab3track",
+      "second": "Plot!lab4track",
       "direction": "column",
       "splitPercentage": 55
     },

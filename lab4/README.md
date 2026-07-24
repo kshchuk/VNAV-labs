@@ -18,9 +18,31 @@ bash ros2-docker/run_lab_dev.sh lab4
 |-------|---------|
 | **3D** | Gazebo scene, drone, desired target, **orange gate markers** + path from CSV |
 | **Image** | Chase camera `/third_person/rgb/image_raw` |
-| **Plot** | Position `x/y/z` from `/current_state` |
+| **Plot** | Actual (`/current_state`) and desired (`/desired_state`) position |
 
-**3D:** blue trail = actual drone, orange trail = desired, red cubes = race gates.
+**3D:** blue trail = actual drone, **orange sphere + trail** = moving desired target, **red/orange gate line** = static race course (does not move).
+
+### Troubleshooting: desired looks stationary
+
+1. **Confirm the optimized planner is running** (not Part 0 simple planner):
+   ```bash
+   ros2 node list | grep trajectory_generation
+   ```
+   You should see `/trajectory_generation_node`. If you see `/simple_traj_planner` instead, relaunch with the default optimized planner or `planner:=optimized`.
+
+2. **Rebuild after editing C++** — `run_lab_dev.sh` rebuilds on start, or run:
+   ```bash
+   bash ros2-docker/run_lab_dev.sh lab4 --build-only
+   bash ros2-docker/run_lab_dev.sh lab4
+   ```
+
+3. **Check `/desired_state` is moving** (first ~24 s of sim):
+   ```bash
+   ros2 topic echo /desired_state --field transforms
+   ```
+   `translation.x/y` should change over time. After the ~24 s lap completes, desired returns to gate 0 `(0, 0, 2)` and stays there.
+
+4. **Re-import the Foxglove layout** after updates — `VNAV-labs/lab4/config/lab4_foxglove.json` plots desired vs actual. The static red gate path in 3D is the course layout, not the desired pose.
 
 ## Architecture
 
@@ -42,12 +64,12 @@ Until Part 0 is done, the drone hovers but does not receive meaningful `/desired
 ## Launch options
 
 ```bash
-# Full stack — simple planner (default, Part 0)
+# Full stack — optimized planner (default, Part 1)
 bash ros2-docker/run_lab_dev.sh lab4
 
-# Polynomial optimizer (Parts 1.x)
+# Simple planner (Part 0 only — holds first gate)
 bash ros2-docker/run_lab_dev.sh lab4 -- \
-  ros2 launch planner_pkg lab4_stack.gazebo.launch.py planner:=optimized
+  ros2 launch planner_pkg lab4_stack.gazebo.launch.py planner:=simple
 
 # CSV publisher only (no Gazebo)
 bash ros2-docker/run_lab_dev.sh lab4 -- \
