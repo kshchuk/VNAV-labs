@@ -16,7 +16,7 @@ bash ros2-docker/run_lab_dev.sh lab4
 
 | Panel | Content |
 |-------|---------|
-| **3D** | Gazebo scene, drone, desired target, **orange gate markers** + path from CSV |
+| **3D** | Gazebo campus (`lab4.world`), drone, desired target, **12 gates**, semi-transparent walls |
 | **Image** | Chase camera `/third_person/rgb/image_raw` |
 | **Plot** | Actual (`/current_state`) and desired (`/desired_state`) position |
 
@@ -78,11 +78,29 @@ bash ros2-docker/run_lab_dev.sh lab4 -- \
 
 ## Waypoint data
 
-1. `VNAV_LAB4_DATA` environment variable
-2. `~/vnav/tesse/lab4/lab4_Data` (Unity build from [lab4.zip](https://vnav.mit.edu/material/lab4.zip))
-3. Bundled sample: `VNAV-labs/lab4/data/` — square course at **z = 2 m** in Gazebo
+The bundled course matches the **MIT Unity lab4** indoor/outdoor campus from [lab4.zip](https://vnav.mit.edu/material/lab4.zip):
 
-CSV format: **no header**; names like `red_square_drone_door [0]` (Unity export convention).
+- **12 gates** through buildings (not the old 5×5 m square)
+- **Collision geometry** in `lab4.world` (walls, colliders, doors, roofs)
+- Drone spawns at Unity `QuadUAV` pose: **(0.4, 8.0, 2.0)** in Gazebo `world`
+
+Data resolution order:
+
+1. `VNAV_LAB4_DATA` environment variable
+2. `~/vnav/tesse/lab4/lab4_Data` (Unity build from lab4.zip)
+3. Bundled sample: `VNAV-labs/lab4/data/`
+
+CSV format: **no header**; gate rows named `red_square_drone_door (N)` (Unity export convention).
+
+### Regenerate Gazebo world from CSV
+
+After editing the Unity CSV, regenerate collision geometry:
+
+```bash
+python3 VNAV-labs/lab4/scripts/generate_lab4_world.py
+```
+
+This writes `VNAV-labs/lab3/gazebo_quadrotor_pkg/worlds/lab4.world`.
 
 ## Dependencies (Docker)
 

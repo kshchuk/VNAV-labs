@@ -38,9 +38,13 @@ def generate_launch_description():
             ),
             launch_arguments={
                 "gui": gui,
+                "world": os.path.join(gazebo_share, "worlds", "lab4.world"),
                 "use_sim_time": "true",
                 "show_traj_vertices": "true",
                 "show_reference_circle": "false",
+                "spawn_x": "0.4",
+                "spawn_y": "8.0",
+                "spawn_z": "2.0",
             }.items(),
         ),
 
