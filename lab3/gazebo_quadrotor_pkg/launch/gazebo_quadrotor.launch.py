@@ -22,6 +22,9 @@ def generate_launch_description():
         DeclareLaunchArgument('use_sim_time', default_value='true'),
         DeclareLaunchArgument('show_traj_vertices', default_value='false'),
         DeclareLaunchArgument('show_reference_circle', default_value='true'),
+        DeclareLaunchArgument('spawn_x', default_value='0'),
+        DeclareLaunchArgument('spawn_y', default_value='0'),
+        DeclareLaunchArgument('spawn_z', default_value='2.0'),
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([
@@ -41,7 +44,9 @@ def generate_launch_description():
             arguments=[
                 '-entity', 'quadrotor',
                 '-topic', 'robot_description',
-                '-x', '0', '-y', '0', '-z', '2.0',
+                '-x', LaunchConfiguration('spawn_x'),
+                '-y', LaunchConfiguration('spawn_y'),
+                '-z', LaunchConfiguration('spawn_z'),
             ],
             output='screen',
         ),

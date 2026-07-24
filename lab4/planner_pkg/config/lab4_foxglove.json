@@ -3,9 +3,9 @@
     "3D!lab3scene": {
       "cameraState": {
         "perspective": true,
-        "distance": 22,
+        "distance": 45,
         "phi": 55,
-        "targetOffset": [0, 0, 2],
+        "targetOffset": [0.4, 8, 2],
         "thetaOffset": 40,
         "fovy": 45,
         "near": 0.5,
