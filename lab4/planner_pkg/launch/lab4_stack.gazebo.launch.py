@@ -28,7 +28,7 @@ def generate_launch_description():
         DeclareLaunchArgument("gui", default_value="true"),
         DeclareLaunchArgument(
             "planner",
-            default_value="simple",
+            default_value="optimized",
             description="simple (Part 0) or optimized (polynomial trajectory)",
         ),
 
