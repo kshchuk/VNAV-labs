@@ -30,15 +30,18 @@ Implement deliverables in `src/feature_tracker.cpp` and the tracker classes unde
 
 ### Video / rosbag
 
-1. Download bags from [MIT VNAV lab data (Dropbox)](https://www.dropbox.com/sh/5xkr1kpygubs6fa/AABZgm2cDuDB1cnSwR7yzZuza?dl=0) — recommended:
-   - `30fps_424x240_2018-10-01-18-35-06`
-   - `vnav-lab5-smooth-trajectory`
-
-2. Extract into `VNAV-labs/lab5/bags/` (or set `VNAV_LAB5_BAGS`).
+Download and convert the MIT Dropbox bags (ROS 1 `.bag` → ROS 2 rosbag2 for Humble):
 
 ```bash
-bash ros2-docker/download_lab5_bags.sh   # prints Dropbox link + instructions
+bash ros2-docker/download_lab5_bags.sh
 ```
+
+This fetches two recommended bags (~2.2 GB extracted):
+
+- `30fps_424x240_2018-10-01-18-35-06`
+- `vnav-lab5-smooth-trajectory`
+
+Use `--all` for every bag in the Dropbox folder (~6.7 GB zip, cached under `materials/`). Set `VNAV_LAB5_BAGS` to override the destination directory.
 
 3. Launch:
 
