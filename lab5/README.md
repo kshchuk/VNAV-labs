@@ -43,7 +43,7 @@ This fetches two recommended bags (~2.2 GB extracted):
 
 Use `--all` for every bag in the Dropbox folder (~6.7 GB zip, cached under `materials/`). Set `VNAV_LAB5_BAGS` to override the destination directory.
 
-3. Launch:
+Launch:
 
 ```bash
 bash ros2-docker/run_lab_dev.sh lab5 -- \
