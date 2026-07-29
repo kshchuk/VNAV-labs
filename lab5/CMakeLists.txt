@@ -31,6 +31,7 @@ add_library(feature_trackers src/feature_tracker.cpp
                              src/lk_feature_tracker.cpp)
 
 ament_target_dependencies(feature_trackers OpenCV)
+target_link_libraries(feature_trackers glog::glog)
 target_include_directories(feature_trackers PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
