@@ -20,6 +20,9 @@ find_package(cv_bridge REQUIRED)
 find_package(glog REQUIRED)
 find_package(OpenCV 4.0.0 REQUIRED)
 
+# Global include so CLion/compile_commands.json always see project headers.
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+
 add_library(feature_trackers src/feature_tracker.cpp
                              src/sift_feature_tracker.cpp
                              src/akaze_feature_tracker.cpp
