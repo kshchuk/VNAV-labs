@@ -25,13 +25,7 @@ void SiftFeatureTracker::detectKeypoints(const cv::Mat& img,
   CHECK_NOTNULL(keypoints);
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
-  //
-  //     Hint: look at the header file for this class in the include folder.
-  //     There is a private member of the class that you can use directly for
-  //     this function, and you should only need one function call.
-  //
+  detector->detect(img, *keypoints);
   // ~~~~ end solution
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
@@ -49,13 +43,7 @@ void SiftFeatureTracker::describeKeypoints(const cv::Mat& img,
   CHECK_NOTNULL(descriptors);
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
-  //
-  //     Hint: look at the header file for this class in the include folder.
-  //     There is a private member of the class that you can use directly for
-  //     this function, and you should only need one function call.
-  //
+  detector->compute(img, *keypoints, *descriptors);
   // ~~~~ end solution
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
@@ -88,10 +76,7 @@ void SiftFeatureTracker::matchDescriptors(const cv::Mat& descriptors_1,
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   //
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
-  //     Hint: you should be able to do it using one function call on `matcher`
-  //
+  matcher.knnMatch(descriptors_1, descriptors_2, *matches, 2);
   // ~~~~ end solution
 
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,14 +84,14 @@ void SiftFeatureTracker::matchDescriptors(const cv::Mat& descriptors_1,
   //   the handout). Make use of the DMatch structure.
 
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
-  //     Hint: you need to write a for loop that iterate through all the matches
-  //     obtained from the previous step, and perform a check on it to see
-  //     whether it can go into the good_matches vector.
-  //     Hint 2: make sure to consider the situation where matches[i] is fewer
-  //     than 2.
-  //
+  CHECK_NOTNULL(good_matches);
+  good_matches->clear();
+  for (const auto& match : *matches) {
+    if (match.size() >= 2 &&
+        match[0].distance < 0.8f * match[1].distance) {
+      good_matches->push_back(match[0]);
+    }
+  }
   // ~~~~ end solution
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
