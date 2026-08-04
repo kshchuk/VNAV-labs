@@ -64,7 +64,6 @@ public:
     if (descriptor_ == "SIFT") { // default: SIFT
       LOG(INFO) << "Using SIFT";
       feature_tracker.reset(new SiftFeatureTracker());
-      // (TODO) Implement the functions in SiftFeatureTracker
     } else if (descriptor_ == "ORB") {
       LOG(INFO) << "Using ORB";
       feature_tracker.reset(new OrbFeatureTracker());

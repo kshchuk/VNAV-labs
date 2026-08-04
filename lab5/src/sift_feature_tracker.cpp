@@ -16,7 +16,7 @@ SiftFeatureTracker::SiftFeatureTracker() : FeatureTracker(), detector(SIFT::crea
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 // Complete the `detectKeypoints` and `describeKeypoints`
 
-/** TODO: this function detects keypoints in an image.
+/** Detects keypoints in an image.
     @param[in] img Image input where to detect keypoints.
     @param[out] keypoints List of keypoints detected on the given image.
 */
@@ -30,7 +30,7 @@ void SiftFeatureTracker::detectKeypoints(const cv::Mat& img,
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
 
-/** TODO: this function describes keypoints in an image.
+/** Describes keypoints in an image.
     @param[in] img Image used to detect the keypoints.
     @param[in, out] keypoints List of keypoints detected on the image. Depending
     on the detector used, some keypoints might be added or removed.
@@ -95,3 +95,4 @@ void SiftFeatureTracker::matchDescriptors(const cv::Mat& descriptors_1,
   // ~~~~ end solution
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
+
