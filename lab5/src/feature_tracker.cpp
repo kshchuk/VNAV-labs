@@ -120,7 +120,7 @@ void FeatureTracker::trackFeatures(
   //
   // ~~~~ begin solution
   Mat img_good_matches;
-  drawMatches(img_1,
+  cv::drawMatches(img_1,
               keypoints_1,
               img_2,
               keypoints_2,
@@ -171,7 +171,7 @@ void FeatureTracker::trackFeatures(
   // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
   // ~
   //
-  unsigned int num_inliers = 0;  // TODO: FILL IN HERE -- compute number of inliers
+  unsigned int num_inliers = 0;
   //
   // For this part, you will need to:
   //   1. Draw the inlier (green) and outlier (red) matches in a similar way
@@ -180,8 +180,45 @@ void FeatureTracker::trackFeatures(
   //   inliers. See the handout for more details
   //
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
+  if (!good_matches.empty() && inlier_mask.size() == good_matches.size()) {
+    std::vector<DMatch> outlier_matches, inlier_matches;
+    for (size_t i = 0; i < good_matches.size(); ++i) {
+      if (inlier_mask[i]) {
+        inlier_matches.push_back(good_matches[i]);
+      } else {
+        outlier_matches.push_back(good_matches[i]);
+      }
+    }
+    num_inliers = static_cast<unsigned int>(inlier_matches.size());
+
+    Mat img_inliers_outliers;
+    cv::drawMatches(img_1,
+                keypoints_1,
+                img_2,
+                keypoints_2,
+                outlier_matches,
+                img_inliers_outliers,
+                Scalar(0, 0, 255),
+                Scalar(0, 0, 255),
+                std::vector<char>(),
+                DrawMatchesFlags::NOT_DRAW_SINGLE_POINTS);
+    cv::drawMatches(img_1,
+                keypoints_1,
+                img_2,
+                keypoints_2,
+                inlier_matches,
+                img_inliers_outliers,
+                Scalar(0, 255, 0),
+                Scalar(0, 255, 0),
+                std::vector<char>(),
+                DrawMatchesFlags::NOT_DRAW_SINGLE_POINTS | DrawMatchesFlags::DRAW_OVER_OUTIMG);
+    if (show_images) {
+      imshow("tracked_features", img_inliers_outliers);
+    }
+    if (save_images) {
+      imwrite("inliers_outliers.png", img_inliers_outliers);
+    }
+  }
   // ~~~~ end solution
   //
   //   2. Calculate the statistics to fill the table in the handout.
@@ -206,7 +243,10 @@ void FeatureTracker::trackFeatures(
       new_num_samples;
   avg_inlier_ratio_ =
       (avg_inlier_ratio_ * old_num_samples +
-       (static_cast<double>(num_inliers) / static_cast<double>(good_matches.size()))) /
+       (good_matches.empty()
+            ? 0.0
+            : static_cast<double>(num_inliers) /
+                  static_cast<double>(good_matches.size()))) /
       new_num_samples;
   ++num_samples_;
   // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
