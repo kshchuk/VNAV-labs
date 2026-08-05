@@ -59,9 +59,8 @@ void FeatureTracker::trackFeatures(
   //   SiftFeatureTracker)
   //
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
-  //
+  detectKeypoints(img_1, &keypoints_1);
+  detectKeypoints(img_2, &keypoints_2);
   // ~~~~ end solution
   //
   //   2. Display detected keypoints on both images, and save them for the
@@ -70,9 +69,19 @@ void FeatureTracker::trackFeatures(
   //   Mind that using waitKey(0) will block ROS from dying.
   //
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
-  //
+  Mat img_kp_1, img_kp_2;
+  drawKeypoints(img_1, keypoints_1, img_kp_1);
+  drawKeypoints(img_2, keypoints_2, img_kp_2);
+  if (show_images) {
+    namedWindow("keypoints_1", WINDOW_NORMAL);
+    namedWindow("keypoints_2", WINDOW_NORMAL);
+    imshow("keypoints_1", img_kp_1);
+    imshow("keypoints_2", img_kp_2);
+  }
+  if (save_images) {
+    imwrite("keypoints_1.png", img_kp_1);
+    imwrite("keypoints_2.png", img_kp_2);
+  }
   // ~~~~ end solution
   //
   //   3. Compute descriptors by filling in the skeleton function
@@ -80,9 +89,9 @@ void FeatureTracker::trackFeatures(
   //   SiftFeatureTracker)
   //
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
-  //
+  Mat descriptors_1, descriptors_2;
+  describeKeypoints(img_1, &keypoints_1, &descriptors_1);
+  describeKeypoints(img_2, &keypoints_2, &descriptors_2);
   // ~~~~ end solution
   //
   // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
