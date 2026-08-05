@@ -112,18 +112,31 @@ void FeatureTracker::trackFeatures(
   //   SiftFeatureTracker), and call them here.
   //
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
-  //
+  matchDescriptors(descriptors_1, descriptors_2, &matches, &good_matches);
   // ~~~~ end solution
   //
   //   2. Plot the matches using the opencv function 'drawMatches'. Save the
   //   image for deliverable.
   //
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
-  //
+  Mat img_good_matches;
+  drawMatches(img_1,
+              keypoints_1,
+              img_2,
+              keypoints_2,
+              good_matches,
+              img_good_matches,
+              Scalar::all(-1),
+              Scalar::all(-1),
+              std::vector<char>(),
+              DrawMatchesFlags::NOT_DRAW_SINGLE_POINTS);
+  if (show_images) {
+    namedWindow("tracked_features", WINDOW_NORMAL);
+    imshow("tracked_features", img_good_matches);
+  }
+  if (save_images) {
+    imwrite("good_matches.png", img_good_matches);
+  }
   // ~~~~ end solution
   //
   //   3. Use the function 'inlierMaskComputation' to get the inliers amongst
@@ -135,10 +148,17 @@ void FeatureTracker::trackFeatures(
   //
   std::pair<std::vector<cv::KeyPoint>, std::vector<cv::KeyPoint>> match_kp_1_kp_2;
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
-  // Build aligned keypoints for matches
-  //
+  std::vector<KeyPoint> matched_kp_1, matched_kp_2;
+  for (const auto& match : good_matches) {
+    matched_kp_1.push_back(keypoints_1[match.queryIdx]);
+    matched_kp_2.push_back(keypoints_2[match.trainIdx]);
+  }
+  match_kp_1_kp_2 = {matched_kp_1, matched_kp_2};
+
+  std::vector<uchar> inlier_mask;
+  if (!matched_kp_1.empty()) {
+    inlierMaskComputation(matched_kp_1, matched_kp_2, &inlier_mask);
+  }
   // ~~~~ end solution
   //
   // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
