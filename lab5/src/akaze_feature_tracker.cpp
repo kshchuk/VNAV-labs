@@ -44,9 +44,7 @@ void AkazeFeatureTracker::detectKeypoints(const cv::Mat& img,
   CHECK_NOTNULL(keypoints);
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
-  //
+  detector->detect(img, *keypoints);
   // ~~~~ end solution
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
@@ -58,9 +56,7 @@ void AkazeFeatureTracker::describeKeypoints(const cv::Mat& img,
   CHECK_NOTNULL(descriptors);
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
-  //
+  detector->compute(img, *keypoints, *descriptors);
   // ~~~~ end solution
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
@@ -72,8 +68,6 @@ void AkazeFeatureTracker::matchDescriptors(
     std::vector<cv::DMatch>* good_matches) const {
   CHECK_NOTNULL(matches);
 
-  std::vector<std::vector<DMatch>> backward_matches;
-
   // Here we initialize a FlannBasedMatcher for you
   FlannBasedMatcher matcher(new flann::LshIndexParams(20, 10, 2));
 
@@ -82,9 +76,16 @@ void AkazeFeatureTracker::matchDescriptors(
   // tracker.
   //
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
-  //
+  matcher.knnMatch(descriptors_1, descriptors_2, *matches, 2);
+
+  CHECK_NOTNULL(good_matches);
+  good_matches->clear();
+  for (const auto& match : *matches) {
+    if (match.size() >= 2 &&
+        match[0].distance < 0.8f * match[1].distance) {
+      good_matches->push_back(match[0]);
+    }
+  }
   // ~~~~ end solution
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }

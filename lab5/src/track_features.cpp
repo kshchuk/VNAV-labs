@@ -67,15 +67,12 @@ public:
     } else if (descriptor_ == "ORB") {
       LOG(INFO) << "Using ORB";
       feature_tracker.reset(new OrbFeatureTracker());
-      // (TODO) Implement the functions in OrbFeatureTracker
     } else if (descriptor_ == "AKAZE") {
       LOG(INFO) << "Using AKAZE";
       feature_tracker.reset(new AkazeFeatureTracker());
-      // (TODO) Implement the functions in AKAZEFeatureTracker
     } else if (descriptor_ == "BRISK") {
       LOG(INFO) << "Using BRISK";
       feature_tracker.reset(new BriskFeatureTracker());
-      // (TODO) Implement the functions in BRISKFeatureTracker
     } else if (descriptor_ == "LK") {
       lk_tracker.reset(new LKFeatureTracker());
       // (TODO) Implement the functions in LKFeatureTracker

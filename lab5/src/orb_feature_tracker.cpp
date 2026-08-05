@@ -27,6 +27,7 @@
 #include <glog/logging.h>
 
 #include <opencv2/calib3d.hpp>
+#include <opencv2/features2d.hpp>
 #include <opencv2/highgui.hpp>
 #include <vector>
 
@@ -39,9 +40,7 @@ void OrbFeatureTracker::detectKeypoints(const cv::Mat& img,
                                         std::vector<KeyPoint>* keypoints) const {
   CHECK_NOTNULL(keypoints);
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
-  //
+  detector->detect(img, *keypoints);
   // ~~~~ end solution
 }
 
@@ -51,9 +50,7 @@ void OrbFeatureTracker::describeKeypoints(const cv::Mat& img,
   CHECK_NOTNULL(keypoints);
   CHECK_NOTNULL(descriptors);
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
-  //
+  detector->compute(img, *keypoints, *descriptors);
   // ~~~~ end solution
 }
 
@@ -63,8 +60,16 @@ void OrbFeatureTracker::matchDescriptors(const cv::Mat& descriptors_1,
                                          std::vector<cv::DMatch>* good_matches) const {
   CHECK_NOTNULL(matches);
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
-  //
+  BFMatcher matcher(NORM_HAMMING);
+  matcher.knnMatch(descriptors_1, descriptors_2, *matches, 2);
+
+  CHECK_NOTNULL(good_matches);
+  good_matches->clear();
+  for (const auto& match : *matches) {
+    if (match.size() >= 2 &&
+        match[0].distance < 0.8f * match[1].distance) {
+      good_matches->push_back(match[0]);
+    }
+  }
   // ~~~~ end solution
 }
