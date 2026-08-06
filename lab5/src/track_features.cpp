@@ -74,8 +74,8 @@ public:
       LOG(INFO) << "Using BRISK";
       feature_tracker.reset(new BriskFeatureTracker());
     } else if (descriptor_ == "LK") {
-      lk_tracker.reset(new LKFeatureTracker());
-      // (TODO) Implement the functions in LKFeatureTracker
+      LOG(INFO) << "Using LK (Harris + Lucas-Kanade)";
+      lk_tracker.reset(new LKFeatureTracker(show_images_));
     } else {
       LOG(ERROR) << "Unknown descriptor type" << descriptor_;
       return;
@@ -94,7 +94,9 @@ public:
       cv::waitKey(0);
     } else if (mode_ == 1) {
       // VIDEO
-      cv::namedWindow("view", cv::WINDOW_NORMAL);
+      if (show_images_ && descriptor_ != "LK") {
+        cv::namedWindow("view", cv::WINDOW_NORMAL);
+      }
       image_transport::ImageTransport it(shared_from_this());
 
       if (descriptor_ == "LK") {
@@ -124,14 +126,15 @@ public:
     try {
       // Convert ROS msg type to OpenCV image type.
       cv::Mat image = cv_bridge::toCvShare(msg, "bgr8")->image;
-      // Visualize the image.
-      cv::imshow("view", image);
       static cv::Mat prev_image = image;
       feature_tracker->trackFeatures(image, prev_image, nullptr, save_images_,
                                      show_images_);
 
       prev_image = image;
-      cv::waitKey(10);
+      if (show_images_) {
+        cv::imshow("view", image);
+        cv::waitKey(10);
+      }
     } catch (cv_bridge::Exception &e) {
       RCLCPP_ERROR_STREAM(get_logger(), "Could not convert from"
                                             << msg->encoding.c_str()
@@ -150,7 +153,9 @@ public:
       cv::Mat image = cv_bridge::toCvShare(msg, "bgr8")->image;
       // Visualize the image.
       lk_tracker->trackFeatures(image);
-      cv::waitKey(1);
+      if (show_images_) {
+        cv::waitKey(10);
+      }
     } catch (cv_bridge::Exception &e) {
       RCLCPP_ERROR_STREAM(get_logger(), "Could not convert from"
                                             << msg->encoding.c_str()

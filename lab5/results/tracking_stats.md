@@ -27,6 +27,9 @@ Launch: `two_frames_tracking.launch.yaml descriptor:=SIFT show_images:=true save
 | AKAZE      | 148.7 | 148.7 | 148.7 | 126.9 | 125.4 | 98.8% | 1310 |
 | ORB        | 320.6 | 320.6 | 320.6 | 234.0 | 229.9 | 97.9% | 1538 |
 | BRISK      | 360.4 | 360.3 | 360.4 | 235.7 | 230.2 | 97.4% | 1513 |
+| Harris+LK  | 58.5 | 58.0 | 58.0 | N/A | 57.9 | 99.9% | 1571 |
+
+> **Harris+LK** (Deliverable 7): `goodFeaturesToTrack` (Harris) + `calcOpticalFlowPyrLK`. No descriptor matching step — "good matches" is N/A; `status` from LK indicates tracked points.
 
 ### Rankings (video, same bag)
 
@@ -35,7 +38,7 @@ Launch: `two_frames_tracking.launch.yaml descriptor:=SIFT show_images:=true save
 | Most keypoints per frame | **SIFT** (~384) |
 | Most good matches | **BRISK** (~236) |
 | Most inliers | **BRISK** (~230) |
-| Highest inlier ratio | **AKAZE** (98.8%) |
+| Highest inlier ratio | **Harris+LK** (99.9%) |
 
 On consecutive video frames (small baseline), all descriptors perform much better than on the static `box` / `box_in_scene` pair, where viewpoint and scale change are large.
 
@@ -109,4 +112,15 @@ Avg. Number of good matches: 235.703
 Avg. Number of Inliers: 230.237
 Avg. Inliers ratio: 0.973729
 Num. of samples: 1513
+```
+
+### Video — Harris+LK (1571 samples)
+```
+Avg. Keypoints 1 Size: 58.5334
+Avg. Keypoints 2 Size: 58.0216
+Avg. Number of matches: 58.0216
+Avg. Number of good matches: NA
+Avg. Number of Inliers: 57.9427
+Avg. Inliers ratio: 0.998691
+Num. of samples: 1571
 ```

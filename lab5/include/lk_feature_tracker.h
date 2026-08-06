@@ -9,7 +9,7 @@
 
 class LKFeatureTracker {
 public:
-  LKFeatureTracker();
+  explicit LKFeatureTracker(bool show_images = true);
   ~LKFeatureTracker();
   void trackFeatures(const cv::Mat &frame);
 
@@ -24,6 +24,7 @@ private:
             std::vector<cv::Point2f> &curr);
 
   static constexpr const char *window_name_ = "LK";
+  bool show_images_ = true;
   cv::Mat prev_frame_;
   std::vector<cv::Point2f> prev_corners_;
 

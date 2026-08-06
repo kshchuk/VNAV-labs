@@ -16,8 +16,10 @@ using namespace cv;
 /**
   LK feature tracker Constructor.
 */
-LKFeatureTracker::LKFeatureTracker() {
-  cv::namedWindow(window_name_, cv::WINDOW_NORMAL);
+LKFeatureTracker::LKFeatureTracker(bool show_images) : show_images_(show_images) {
+  if (show_images_) {
+    cv::namedWindow(window_name_, cv::WINDOW_NORMAL);
+  }
 }
 
 void LKFeatureTracker::printStats() const {
@@ -32,7 +34,9 @@ void LKFeatureTracker::printStats() const {
 
 LKFeatureTracker::~LKFeatureTracker() {
   printStats();
-  cv::destroyWindow(window_name_);
+  if (show_images_) {
+    cv::destroyWindow(window_name_);
+  }
 }
 
 /** TODO This is the main tracking function. It takes in the current frame and
@@ -44,28 +48,109 @@ void LKFeatureTracker::trackFeatures(const cv::Mat& frame) {
   //  DELIVERABLE 7 | Feature Tracking: Lucas-Kanade Tracker
   // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
   //
-  // For this part, you will need to:
-  //
-  //   1. Using OpenCV’s documentation and the C++ API for the LK tracker, track
-  //   features for the video sequences we provided you by using the Harris
-  //   corner detector. Show the feature tracks at a given frame
-  //   extracted when using the Harris corners (consider using the 'show'
-  //   function below)
-  //
-  //   Hint 1: take a look at cv::goodFeaturesToTrack and
-  //   cv::calcOpticalFlowPyrLK
-  //
-  //   2. Add an extra entry in the table you made previously for the Harris +
-  //   LK tracker
-  //
-  //   Note: LKFeatureTracker does not inherit from the base tracker like other
-  //   feature trackers, so you need to also implement the statistics gathering
-  //   code right here.
-  //
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
-  //
+  static constexpr int max_corners = 500;
+  static constexpr double quality_level = 0.01;
+  static constexpr double min_distance = 10.0;
+  static constexpr int block_size = 3;
+  static constexpr double harris_k = 0.04;
+
+  Mat gray;
+  cvtColor(frame, gray, COLOR_BGR2GRAY);
+
+  if (prev_frame_.empty()) {
+    prev_frame_ = gray.clone();
+    goodFeaturesToTrack(gray,
+                        prev_corners_,
+                        max_corners,
+                        quality_level,
+                        min_distance,
+                        Mat(),
+                        block_size,
+                        true,
+                        harris_k);
+    show(frame, prev_corners_, prev_corners_);
+    return;
+  }
+
+  std::vector<Point2f> curr_corners;
+  std::vector<uchar> status;
+  std::vector<float> err;
+  const TermCriteria criteria(TermCriteria::COUNT | TermCriteria::EPS, 30, 0.01);
+  calcOpticalFlowPyrLK(prev_frame_,
+                       gray,
+                       prev_corners_,
+                       curr_corners,
+                       status,
+                       err,
+                       Size(21, 21),
+                       3,
+                       criteria);
+
+  std::vector<Point2f> good_prev;
+  std::vector<Point2f> good_curr;
+  good_prev.reserve(status.size());
+  good_curr.reserve(status.size());
+  for (size_t i = 0; i < status.size(); ++i) {
+    if (status[i]) {
+      good_prev.push_back(prev_corners_[i]);
+      good_curr.push_back(curr_corners[i]);
+    }
+  }
+
+  unsigned int num_inliers = 0;
+  if (good_prev.size() >= 8) {
+    std::vector<uchar> inlier_mask;
+    if (inlierMaskComputation(good_prev, good_curr, &inlier_mask)) {
+      for (const uchar inlier : inlier_mask) {
+        if (inlier) {
+          ++num_inliers;
+        }
+      }
+    }
+  }
+
+  const double new_num_samples = static_cast<double>(num_samples_) + 1.0;
+  const double old_num_samples = static_cast<double>(num_samples_);
+  avg_num_keypoints_img1_ =
+      static_cast<float>((avg_num_keypoints_img1_ * old_num_samples +
+                          static_cast<double>(prev_corners_.size())) /
+                         new_num_samples);
+  avg_num_keypoints_img2_ =
+      static_cast<float>((avg_num_keypoints_img2_ * old_num_samples +
+                          static_cast<double>(good_curr.size())) /
+                         new_num_samples);
+  avg_num_matches_ = static_cast<float>(
+      (avg_num_matches_ * old_num_samples + static_cast<double>(good_prev.size())) /
+      new_num_samples);
+  avg_num_inliers_ =
+      static_cast<float>((avg_num_inliers_ * old_num_samples +
+                          static_cast<double>(num_inliers)) /
+                         new_num_samples);
+  avg_inlier_ratio_ = static_cast<float>(
+      (avg_inlier_ratio_ * old_num_samples +
+       (good_prev.empty()
+            ? 0.0
+            : static_cast<double>(num_inliers) /
+                  static_cast<double>(good_prev.size()))) /
+      new_num_samples);
+  ++num_samples_;
+
+  show(frame, good_prev, good_curr);
+
+  prev_frame_ = gray.clone();
+  prev_corners_ = good_curr;
+  if (prev_corners_.size() < 50) {
+    goodFeaturesToTrack(gray,
+                        prev_corners_,
+                        max_corners,
+                        quality_level,
+                        min_distance,
+                        Mat(),
+                        block_size,
+                        true,
+                        harris_k);
+  }
   // ~~~~ end solution
   // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
   //                             end deliverable 7
@@ -106,12 +191,18 @@ void LKFeatureTracker::show(const cv::Mat& frame,
                             std::vector<cv::Point2f>& curr) {
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   // ~~~~ begin solution
-  //
-  //     **** TODO: FILL IN HERE ***
-  //
-  //     Hint: look at cv::line and cv::cirle functions.
-  //     Hint 2: use imshow to display the image
-  //
+  if (!show_images_) {
+    return;
+  }
+
+  Mat display = frame.clone();
+  for (size_t i = 0; i < prev.size() && i < curr.size(); ++i) {
+    if (prev[i] != curr[i]) {
+      line(display, prev[i], curr[i], Scalar(0, 255, 0), 2, LINE_AA);
+    }
+    circle(display, curr[i], 4, Scalar(0, 0, 255), -1, LINE_AA);
+  }
+  imshow(window_name_, display);
   // ~~~~ end solution
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
