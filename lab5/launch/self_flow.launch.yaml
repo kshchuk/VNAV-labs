@@ -1,4 +1,8 @@
 launch:
+    - arg:
+        name: "show_images"
+        default: "true"
+
     - node:
         pkg: usb_cam
         exec: usb_cam_node
@@ -7,6 +11,9 @@ launch:
         pkg: lab_5
         exec: self_flow
         name: self_flow
+        param:
+        - name: show_images
+          value: $(var show_images)
         remap:
             - from: "/images_topic"
               to: "/webcam/image_raw"
