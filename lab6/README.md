@@ -1,54 +1,76 @@
-# Installation
+# Lab 6 — Pose Estimation (ROS 2)
 
-1. Add new packages to your catkin workspace using wstool:
-```
-cd {VNAV_HOME}/vnav_ws/src/
-cp -r {VNAV_HOME}/Labs/Lab_6 ./
-wstool merge {VNAV_HOME}/vnav_ws/src/Lab_6/install/lab_6.rosinstall -y
-wstool update -j8
-```
+Robust pose estimation from RGB-D correspondences using OpenGV (5-point, 8-point, 2-point with known rotation, Arun 3D-3D).
 
-> **Note** this might take 5min, opengv is large.
+Depends on **Lab 5** feature trackers (`lab_5` package).
 
-4. Build lab_6:
-```
-catkin build lab_6
+## Quick start (Docker)
+
+```bash
+bash ros2-docker/run_lab_dev.sh lab6
 ```
 
-Remember to source your workspace:
-```
-source {VNAV_HOME}/vnav_ws/devel/setup.bash
+Build only (also builds `lab_5`):
+
+```bash
+bash ros2-docker/run_lab_dev.sh lab6 --build-only
 ```
 
-# Usage
+Implement the deliverables in `src/pose_estimation.cpp` before estimates appear in RViz2.
 
-1. To run the pose estimation on the given rosbag, we will use:
-```
-roslaunch lab_6 video_tracking.launch
-```
-> **Note** Not so fast, first you have to implement the functions inside the source code, follow the handout at this point.
+## Rosbag
 
-<!-- # How to Use Lab 5 provided solution for Lab 6!
-We have provided you with a solution example for lab_5.
-It is stored in the Lab_5_solution.
-To use this solution you will have to do the following:
-```
-cd {VNAV_HOME}/vnav_ws/src/Labs/Lab_5
-touch CATKIN_IGNORE 
+Download and convert the office dataset (ROS 1 `.bag` → ROS 2 rosbag2):
+
+```bash
+bash ros2-docker/download_lab6_bags.sh
 ```
 
-This command basically tells catkin build system to ignore Lab_5 project.
-This same CATKIN_IGNORE is in the Lab_5_solution, so that you do not have conflicts with your current Lab_5.
-Nevertheless, you should now remove it to use our solution instead!
-```
-cd {VNAV_HOME}/vnav_ws/src/Labs/Lab_5_solution
-rm CATKIN_IGNORE
-```
-Now, make sure you clean lab_5 project in catkin, otherwise catkin gets confused by this new folder change.
-```
-catkin clean lab_5
-catkin build lab_5
+If the cached MIT Dropbox zip only contains Lab 5 bags, the script prints manual download steps. You can also set a direct URL:
+
+```bash
+VNAV_LAB6_BAG_URL='https://.../vnav-lab6-office.bag' bash ros2-docker/download_lab6_bags.sh
 ```
 
-> Also note that, **if you do not use the provided solution for lab_5, you will need to modify track_features function of FeatureTracker 
-> to return the keypoint correspondences**. -->
+## Launch
+
+Default (office bag + RViz2):
+
+```bash
+ros2 launch lab_6 video_tracking.launch.yaml dataset:=vnav-lab6-office
+```
+
+Select pose estimator (`pose_estimator` parameter):
+
+| Value | Algorithm |
+| --- | --- |
+| `0` | Nister 5-point (2D-2D) |
+| `1` | Longuet-Higgins 8-point (2D-2D) |
+| `2` | OpenGV 2-point (known rotation) |
+| `3` | Arun 3D-3D |
+
+Example:
+
+```bash
+ros2 launch lab_6 video_tracking.launch.yaml pose_estimator:=0 use_ransac:=true show_images:=false
+```
+
+## macOS GUI
+
+RViz2 and optional OpenCV windows need **XQuartz** + `DISPLAY=:0`. Without XQuartz, macOS defaults to `show_images:=false`; set `VNAV_LAB6_SHOW_IMAGES=1` after configuring X11.
+
+See [ros2-docker/README.md](../../ros2-docker/README.md#x11-lab-5-opencv-windows-etc).
+
+## Key files
+
+| File | Purpose |
+|------|---------|
+| `src/pose_estimation.cpp` | ROS node + pose estimation deliverables |
+| `include/lab6_utils.h` | Camera model, pose conversion helpers |
+| `launch/video_tracking.launch.yaml` | Bag playback + RViz2 |
+| `config/default.rviz` | RViz layout |
+
+## Dependencies
+
+- **OpenGV** — pre-built in the Docker image (`ros2-docker/Dockerfile`)
+- **lab_5** — SIFT/AKAZE/ORB/BRISK trackers from Lab 5
