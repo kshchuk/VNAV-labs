@@ -1,20 +1,25 @@
 <?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>lab_7</name>
   <version>0.0.0</version>
-  <description>The lab_7 package. Contains software to learn about SLAM.</description>
+  <description>GTSAM factor-graph exercises (Lab 7).</description>
 
   <maintainer email="yunchang@mit.edu">Yun Chang</maintainer>
-
   <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <depend>rclcpp</depend>
-  <depend>gtsam</depend>
   <depend>std_msgs</depend>
   <depend>geometry_msgs</depend>
   <depend>visualization_msgs</depend>
+  <depend>libgoogle-glog-dev</depend>
+  <depend>rviz2</depend>
+
+  <!-- Prefer ros-humble-gtsam; libgtsam-dev is the fallback in Docker. -->
+  <build_depend>gtsam</build_depend>
+  <exec_depend>gtsam</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>

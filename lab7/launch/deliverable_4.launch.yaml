@@ -10,4 +10,4 @@ launch:
         pkg: rviz2
         exec: rviz2
         name: rviz2
-        args: "-d $(find-pkg-share lab_7)/rviz/deliverable_4.rviz"
+        args: "-d $(find-pkg-share lab_7)/rviz/lab7.rviz"
