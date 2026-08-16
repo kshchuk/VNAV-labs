@@ -1,7 +1,46 @@
 launch:
 
+    - arg:
+        name: "device"
+        default: "cpu"
+    - arg:
+        name: "yolo_model"
+        default: "yolov8n.pt"
+    - arg:
+        name: "input_topic"
+        default: "/image_raw"
+
+    # Webcam feed for YOLO. On macOS Docker, /dev/video0 may be unavailable —
+    # remount/remap or set input_topic to another image source.
+    - node:
+        pkg: usb_cam
+        exec: usb_cam_node_exe
+        name: usb_cam
+        output: screen
+        param:
+            - name: video_device
+              value: "/dev/video0"
+            - name: image_width
+              value: 640
+            - name: image_height
+              value: 480
+            - name: pixel_format
+              value: "yuyv"
+            - name: camera_frame_id
+              value: "camera"
+        remap:
+            - from: "image_raw"
+              to: "/image_raw"
+
     - include:
         file: "$(find-pkg-share ultralytics_ros)/launch/tracker.launch.xml"
+        arg:
+            - name: input_topic
+              value: $(var input_topic)
+            - name: yolo_model
+              value: $(var yolo_model)
+            - name: device
+              value: $(var device)
 
     - node:
         pkg: lab_8
