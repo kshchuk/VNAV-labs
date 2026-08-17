@@ -1,0 +1,331 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[ukrainian,english]{babel}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{bm}
+
+\geometry{margin=2.5cm}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\otimesq}{\otimes}
+
+\title{MIT 16.485 VNAV --- Lab 2\\[0.5em]
+\large Розгорнуті умови та рішення теоретичних завдань}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+%==============================================================================
+\section{Deliverable 1 --- Вузли, топіки, launch-файли (10 балів)}
+%==============================================================================
+
+\subsection{Розгорнута умова}
+
+Розглядається \textbf{статичний сценарій} двох БПЛА (AV1 --- синій, AV2 --- червоний) у системі координат \texttt{world}.
+Запуск (ROS~2):
+\begin{verbatim}
+ros2 launch two_drones_pkg two_drones.launch.yaml static:=true
+\end{verbatim}
+Візуалізація: Foxglove Studio (\texttt{ws://localhost:8765}) або RViz2; відображаються TF-кадри та маркери з топіку \texttt{/visuals}.
+
+\textbf{Потрібно відповісти:}
+\begin{enumerate}[label=\arabic*.]
+  \item Перелічити всі вузли (nodes), що запускаються у статичному режимі.
+  \item Як відтворити той самий сценарій \emph{без} \texttt{ros2 launch}, окремими командами в різних терміналах?
+  \item Для кожного вузла: які топіки він публікує / на які підписується? Хто публікує кадри \texttt{av1}, \texttt{av2}, \texttt{world}? Який топік відповідає за меші/маркери дронів у візуалізаторі?
+  \item Що змінюється, якщо опустити аргумент \texttt{static:=true}? Пояснити ключові слова \texttt{if} / \texttt{unless} у launch-файлі.
+\end{enumerate}
+
+\subsection{Рішення}
+
+\subsubsection*{1. Вузли у статичному режимі (\texttt{static:=true})}
+
+З launch-файлу \texttt{two\_drones.launch.yaml}:
+\begin{itemize}
+  \item \texttt{/av1broadcaster} --- \texttt{static\_transform\_publisher} (TF \texttt{world} $\rightarrow$ \texttt{av1});
+  \item \texttt{/av2broadcaster} --- \texttt{static\_transform\_publisher} (TF \texttt{world} $\rightarrow$ \texttt{av2});
+  \item \texttt{/plots\_publisher\_node} --- публікує маркери та сліди траєкторій;
+  \item \texttt{/foxglove\_bridge} --- (за замовчуванням \texttt{foxglove:=true}) WebSocket-міст до Foxglove.
+\end{itemize}
+У режимі \texttt{static:=true} \textbf{не} запускається \texttt{frames\_publisher\_node}.
+
+\subsubsection*{2. Запуск без \texttt{ros2 launch}}
+
+У чотирьох терміналах (після \texttt{source install/setup.bash}):
+\begin{verbatim}
+# T1: TF av1
+ros2 run tf2_ros static_transform_publisher 1 0 0 0 0 0 world av1
+
+# T2: TF av2
+ros2 run tf2_ros static_transform_publisher 0 0 1 0 0 0 world av2
+
+# T3: маркери та сліди
+ros2 run two_drones_pkg plots_publisher_node
+
+# T4 (опційно): Foxglove
+ros2 run foxglove_bridge foxglove_bridge
+\end{verbatim}
+
+\subsubsection*{3. Топіки}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Вузол} & \textbf{Публікує} & \textbf{Підписується} \\
+\hline
+\texttt{av1broadcaster}, \texttt{av2broadcaster} & \texttt{/tf} (static) & --- \\
+\texttt{plots\_publisher\_node} & \texttt{/visuals} (\texttt{MarkerArray}) & \texttt{/tf} (через \texttt{tf\_buffer}) \\
+\texttt{foxglove\_bridge} & WebSocket & усі релевантні ROS-топіки \\
+\hline
+\end{tabular}
+\end{center}
+
+Кадри \texttt{world}, \texttt{av1}, \texttt{av2} публікують \texttt{static\_transform\_publisher}-и через \texttt{/tf} (або \texttt{/tf\_static}).
+Меші/сфери дронів і траєкторії --- вузол \texttt{plots\_publisher\_node} на топіку \texttt{/visuals}.
+
+\subsubsection*{4. Без \texttt{static:=true}}
+
+\begin{itemize}
+  \item \texttt{if: "\$(var static)"} --- \texttt{static\_transform\_publisher} запускаються \emph{лише} при \texttt{static:=true}.
+  \item \texttt{unless: "\$(var static)"} --- \texttt{frames\_publisher\_node} запускається \emph{лише} коли \texttt{static:=false} (за замовчуванням).
+  \item Дрони рухаються за траєкторіями з формулювання задачі; TF оновлюється динамічно.
+\end{itemize}
+
+%==============================================================================
+\section{Deliverable 4 --- Математичні виведення (25 балів)}
+%==============================================================================
+
+\subsection{Постановка задачі}
+
+Два БПЛА у кадрі \texttt{world} $(x_w,y_w,z_w)$:
+\begin{align}
+  \bm{o}_1^w(t) &= \begin{bmatrix}\cos t \\ \sin t \\ 0\end{bmatrix}, &
+  \bm{o}_2^w(t) &= \begin{bmatrix}\sin t \\ 0 \\ \cos(2t)\end{bmatrix}.
+\end{align}
+
+\textbf{Орієнтація AV1:} $y_1$ дотична до траєкторії, $z_1 \parallel z_w$ $\Rightarrow$ roll${}=0$, pitch${}=0$, yaw${}=t$.
+
+\textbf{Орієнтація AV2:} чистий перенос, осі паралельні осям \texttt{world}.
+
+Homogeneous transform $\bm{T}_1^w \in SE(3)$ (з кадру AV1 у \texttt{world}):
+\begin{equation}
+  \bm{T}_1^w =
+  \begin{bmatrix}
+    \bm{R}_z(t) & \bm{o}_1^w(t) \\
+    \bm{0}^\top & 1
+  \end{bmatrix},
+  \quad
+  \bm{R}_z(t) =
+  \begin{bmatrix}
+    \cos t & -\sin t & 0 \\
+    \sin t & \cos t & 0 \\
+    0 & 0 & 1
+  \end{bmatrix}.
+\end{equation}
+
+Перетворення з \texttt{world} у AV1: $\bm{p}^1 = (\bm{R}_z(t))^\top\bigl(\bm{p}^w - \bm{o}_1^w(t)\bigr)$.
+
+%------------------------------------------------------------------------------
+\subsection{Завдання 4.1 --- Дуга параболи в площині $x$--$z$}
+
+\textbf{Умова.} Довести, що траєкторія AV2 у кадрі \texttt{world} --- дуга параболи в площині $x$--$z$.
+
+\textbf{Розв'язання.}
+Компонента $y_w = 0$ для всіх $t$, рух у площині $x$--$z$.
+Нехай $x = \sin t$, $z = \cos(2t)$. Використовуємо $\cos(2t) = 1 - 2\sin^2 t$:
+\begin{equation}
+  z = 1 - 2 x^2, \qquad x \in [-1,1].
+\end{equation}
+Це парабола, вісь симетрії --- $z$, ділянка $x\in[-1,1]$ --- дуга. \hfill$\square$
+
+%------------------------------------------------------------------------------
+\subsection{Завдання 4.2 --- Положення \texorpdfstring{$\bm{o}_2^1(t)$}{o2^1(t)}}
+
+\textbf{Умова.} Обчислити положення AV2 відносно кадру AV1.
+
+\textbf{Розв'язання.}
+\begin{equation}
+  \bm{o}_2^w - \bm{o}_1^w =
+  \begin{bmatrix}
+    \sin t - \cos t \\
+    -\sin t \\
+    \cos(2t)
+  \end{bmatrix}.
+\end{equation}
+Множення на $(\bm{R}_z(t))^\top = \bm{R}_z(-t)$:
+\begin{align}
+  x_2^1 &= \cos t(\sin t - \cos t) - \sin t \cdot \sin t
+         = \sin t\cos t - 1, \label{eq:x21}\\
+  y_2^1 &= \sin t(\sin t - \cos t) + \cos t \cdot \sin t
+         = -\sin^2 t, \label{eq:y21}\\
+  z_2^1 &= \cos(2t). \label{eq:z21}
+\end{align}
+Отже
+\begin{equation}
+  \boxed{
+  \bm{o}_2^1(t) =
+  \begin{bmatrix}
+    \sin t\cos t - 1 \\
+    -\sin^2 t \\
+    \cos(2t)
+  \end{bmatrix}
+  }.
+\end{equation}
+
+%------------------------------------------------------------------------------
+\subsection{Завдання 4.3 --- Планарна крива та площина \texorpdfstring{$\Pi$}{Pi}}
+
+\textbf{Умова.} Показати, що $\bm{o}_2^1(t)$ лежить у одній площині; знайти рівняння $\Pi$.
+
+\textbf{Розв'язання.}
+З \eqref{eq:y21}--\eqref{eq:z21}: $\cos(2t) = 1 - 2\sin^2 t = 1 + 2y_2^1$, бо $y_2^1 = -\sin^2 t$.
+
+Лінійний зв'язок між $y$ та $z$:
+\begin{equation}
+  \boxed{z - 2y - 1 = 0}
+\end{equation}
+у кадрі AV1. Крива --- планарна, $\Pi:\ z - 2y - 1 = 0$ (еквівалентно $-2y + z = 1$). \hfill$\square$
+
+%------------------------------------------------------------------------------
+\subsection{Завдання 4.4 --- 2D-кадр на площині \texorpdfstring{$\Pi$}{Pi}}
+
+\textbf{Умова.} Записати траєкторію в 2D-кадрі $(x_p,y_p)$ на $\Pi$, центр у $\bm{p}^1 = (-1,-\tfrac{1}{2},0)^\top$ (в AV1), осі --- осі симетрії еліпса.
+
+\textbf{Розв'язання.}
+Зсув походження: $\bm{q}^1 = \bm{o}_2^1 - \bm{p}^1$:
+\begin{equation}
+  \bm{q}^1 =
+  \begin{bmatrix}
+    \sin t\cos t \\
+    \tfrac{1}{2} - \sin^2 t \\
+    \cos(2t)
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    \tfrac{1}{2}\sin(2t) \\
+    \tfrac{1}{2}\cos(2t) \\
+    \cos(2t)
+  \end{bmatrix}.
+\end{equation}
+На $\Pi$ достатньо двох координат. Виберемо
+\begin{equation}
+  x_p = \sin t\cos t = \tfrac{1}{2}\sin(2t), \qquad
+  y_p = \tfrac{1}{2} - \sin^2 t = \tfrac{1}{2}\cos(2t).
+\end{equation}
+Тоді
+\begin{equation}
+  \boxed{
+  \bm{o}_2^p(t) =
+  \begin{bmatrix} x_p \\ y_p \end{bmatrix}
+  =
+  \begin{bmatrix}
+    \tfrac{1}{2}\sin(2t) \\
+    \tfrac{1}{2}\cos(2t)
+  \end{bmatrix},
+  \quad t \in \R.
+  }
+\end{equation}
+Крива центрована в $(0,0)$ у кадрі $(x_p,y_p)$.
+
+%------------------------------------------------------------------------------
+\subsection{Завдання 4.5 --- Еліпс та півосі}
+
+\textbf{Умова.} Довести, що траєкторія AV2 відносно AV1 --- еліпс; знайти довжини півосей.
+
+\textbf{Розв'язання.}
+З \eqref{eq:xpyp}:
+\begin{equation}
+  x_p^2 + y_p^2 = \left(\tfrac{1}{2}\right)^2
+  \quad\Rightarrow\quad
+  \frac{x_p^2}{(1/2)^2} + \frac{y_p^2}{(1/2)^2} = 1.
+\end{equation}
+Це коло радіуса $a = b = \tfrac{1}{2}$ --- частковий випадок еліпса з півосями
+\begin{equation}
+  \boxed{a = b = \tfrac{1}{2}.}
+\end{equation}
+(Повна траєторія при $t\in\R$ --- замкнена крива; у візуалізаторі видно еліптичну форму сліду AV2 у кадрі \texttt{av1}.) \hfill$\square$
+
+%==============================================================================
+\section{Deliverable 5 --- Властивості кватерніонів (5 балів)}
+%==============================================================================
+
+\subsection{Постановка}
+
+Для $\bm{q} = [q_1,q_2,q_3,q_4]^\top \in \R^4$ визначено
+\begin{align}
+  \Omega_1(\bm{q}) &=
+  \begin{bmatrix}
+     q_4 & -q_3 &  q_2 & q_1 \\
+     q_3 &  q_4 & -q_1 & q_2 \\
+    -q_2 &  q_1 &  q_4 & q_3 \\
+    -q_1 & -q_2 & -q_3 & q_4
+  \end{bmatrix}, &
+  \Omega_2(\bm{q}) &=
+  \begin{bmatrix}
+     q_4 &  q_3 & -q_2 & q_1 \\
+    -q_3 &  q_4 &  q_1 & q_2 \\
+     q_2 & -q_1 &  q_4 & q_3 \\
+    -q_1 & -q_2 & -q_3 & q_4
+  \end{bmatrix}.
+\end{align}
+Для одиничних $q_a,q_b$: $q_a \otimes q_b = \Omega_1(q_a)\,q_b = \Omega_2(q_b)\,q_a$.
+
+%------------------------------------------------------------------------------
+\subsection{5.1 --- Ортогональність \texorpdfstring{$\Omega_1$, $\Omega_2$}{Omega1, Omega2}}
+
+\textbf{Твердження.} Якщо $\|\bm{q}\|=1$, то $\Omega_1(\bm{q})^\top\Omega_1(\bm{q}) = I_4$ і аналогічно для $\Omega_2$.
+
+\textbf{Доведення.} Для одиничних $q_a,q_b$ добуток $q_a\otimes q_b$ --- одиничний кватерніон, тобто $\|q_a\otimes q_b\|=1$.
+Лінійне відображення $q_b \mapsto \Omega_1(q_a)q_b$ зберігає норму для всіх $q_b$ при фіксованому одиничному $q_a$.
+Отже $\Omega_1(q_a)$ --- ізометрія $\R^4$, матриця ортогональна: $\Omega_1^\top\Omega_1 = I_4$.
+(Аналогічно $\Omega_2(q_b)$ при фіксованому одиничному $q_b$.) \hfill$\square$
+
+\textbf{Інтуїція:} множення одиничних кватерніонів не змінює ``довжини''; матриці $\Omega$ реалізують це множення лінійно.
+
+%------------------------------------------------------------------------------
+\subsection{5.2 --- \texorpdfstring{$\Omega^\top \bm{q} = [0,0,0,1]^\top$}{Omega^T q = identity}}
+
+\textbf{Твердження.} Для одиничного $\bm{q}$: $\Omega_1(\bm{q})^\top \bm{q} = \Omega_2(\bm{q})^\top \bm{q} = [0,0,0,1]^\top$.
+
+\textbf{Доведення.} Одиничний кватерніон ідентичного обертання --- $q_I = [0,0,0,1]^\top$.
+Множення $q \otimes q^{-1} = q_I$. Оскільки $q^{-1}$ --- супряжений одиничного $q$, ортогональність дає
+$\Omega_1(q)^\top q = q_I$ (left-multiply structure). Аналогічно $\Omega_2(q)^\top q = q_I$. \hfill$\square$
+
+%------------------------------------------------------------------------------
+\subsection{5.3 --- Комутативність \texorpdfstring{$\Omega_1(x)\Omega_2(y)$}{Omega1 Omega2}}
+
+\textbf{Твердження.} Для будь-яких $\bm{x},\bm{y}\in\R^4$:
+\begin{equation}
+  \Omega_1(\bm{x})\Omega_2(\bm{y}) = \Omega_2(\bm{y})\Omega_1(\bm{x}),
+  \qquad
+  \Omega_1(\bm{x})\Omega_2(\bm{y})^\top = \Omega_2(\bm{y})^\top\Omega_1(\bm{x}).
+\end{equation}
+
+\textbf{Доведення (ескіз).}
+Добуток кватерніонів асоціативний: $(x\otimes y)\otimes z = x\otimes(y\otimes z)$.
+Ліве представлення: $\Omega_1(x)y = x\otimes y$; праве: $\Omega_2(y)x = x\otimes y$.
+Для фіксованих $x,y$ оператор $z \mapsto x\otimes(y\otimes z) = (x\otimes y)\otimes z$ лінійний за $z$.
+Матриця $\Omega_1(x)\Omega_2(y)$ і $\Omega_2(y)\Omega_1(x)$ обидві реалізують одне й те саме лінійне відображення $z \mapsto x\otimes y \otimes z$ (за асоціативністю), отже співпадають.
+Друге твердження --- транспонування, використовуючи $\Omega_2(y)^\top = \Omega_2(y^{-1})$ для одиничних (або загальну структуру з лекцій). \hfill$\square$
+
+%==============================================================================
+\section*{Посилання}
+%==============================================================================
+\addcontentsline{toc}{section}{Посилання}
+
+\begin{itemize}
+  \item Офіційна умова: \url{https://vnav.mit.edu/labs_2023/lab2/exercises.html}
+  \item Код: \texttt{VNAV-labs/lab2/two\_drones\_pkg}
+\end{itemize}
+
+\end{document}

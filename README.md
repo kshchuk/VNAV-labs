@@ -9,6 +9,22 @@ ROS bags necessary for labs can be found [here](https://github.com/MIT-SPARK/VNA
 
 Please post on the Github issues page if you encounter bugs and/or have questions.
 
+## Labs in this fork
+
+Run from the parent [`navigation`](https://github.com/kshchuk/navigation) repo with `bash ros2-docker/run_lab_dev.sh labN`.
+
+| Lab | Topic | README |
+| --- | --- | --- |
+| 1 | C++ `RandomVector` | [lab1/README.md](lab1/README.md) |
+| 2 | Two drones, TF, Foxglove | [lab2/README.md](lab2/README.md) |
+| 3 | Geometric quadrotor controller + Gazebo | [lab3/README.md](lab3/README.md) |
+| 4 | Polynomial trajectory planning | [lab4/README.md](lab4/README.md) |
+| 5 | Feature tracking | [lab5/README.md](lab5/README.md) |
+| 6 | Pose estimation | [lab6/README.md](lab6/README.md) |
+| 7 | GTSAM factor graphs | [lab7/README.md](lab7/README.md) |
+| 8 | YOLO detection | [lab8/README.md](lab8/README.md) |
+| 9 | ORB-SLAM3 and Kimera-VIO | [lab9/README.md](lab9/README.md) |
+
 # Licenses
 For licenses of the external packages, please refer to their specific repos.
 
