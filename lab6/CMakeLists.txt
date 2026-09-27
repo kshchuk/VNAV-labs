@@ -21,6 +21,8 @@ find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_eigen REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
+# Ubuntu 22.04 gflags only exports gflags::gflags when the namespace is requested.
+set(GFLAGS_USE_TARGET_NAMESPACE ON)
 find_package(glog REQUIRED)
 find_package(gflags REQUIRED)
 find_package(lab_5 REQUIRED)

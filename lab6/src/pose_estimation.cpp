@@ -13,7 +13,11 @@
 #include <tf2_ros/transform_broadcaster.h>
 
 #include <Eigen/Eigen>
+#include <array>
+#include <cmath>
+#include <filesystem>
 #include <fstream>
+#include <iomanip>
 #include <functional>
 #include <geometry_msgs/msg/detail/transform__struct.hpp>
 #include <geometry_msgs/msg/detail/vector3__struct.hpp>
@@ -115,6 +119,36 @@ class PoseEstimator : public rclcpp::Node {
   geometry_msgs::msg::Pose pose_camera_body;
   tf2::Transform transform_camera_body;
 
+  // RPE log (one CSV per estimator) and timestamp of the current RGB frame.
+  std::ofstream rpe_log_;
+  double current_stamp_ = 0.0;
+
+  // Поріг OpenGV для 2D-2D: сума (1 - cos α) у двох кадрах при похибці px пікселів
+  double bearingThreshold(double px) const {
+    const double f = camera_params_.K.at<double>(0, 0);
+    return 2.0 * (1.0 - std::cos(std::atan(px / f)));
+  }
+
+  template <typename Problem>
+  bool runRansac(const std::shared_ptr<Problem>& problem, double threshold,
+                 int max_iterations, opengv::transformation_t& T) {
+    opengv::sac::Ransac<Problem> ransac;
+    ransac.sac_model_ = problem;
+    ransac.threshold_ = threshold;
+    ransac.max_iterations_ = max_iterations;
+    ransac.probability_ = 0.99;
+    if (!ransac.computeModel()) {
+      RCLCPP_WARN(get_logger(), "RANSAC failed to find a model");
+      return false;
+    }
+    // Нелінійне уточнення за всіма inliers (опціонально, але помітно покращує точність)
+    problem->optimizeModelCoefficients(ransac.inliers_, ransac.model_coefficients_, T);
+    RCLCPP_INFO(get_logger(), "RANSAC: %zu inliers / %zu, %d iterations",
+                ransac.inliers_.size(), problem->getIndices()->size(),
+                ransac.iterations_);
+    return true;
+  }
+
   PoseEstimator() : Node("pose_estimator") {
     declare_parameter<bool>("use_ransac");
     declare_parameter<bool>("scale_translation");
@@ -129,6 +163,24 @@ class PoseEstimator : public rclcpp::Node {
       exit(1);
     }
     get_parameter("show_images", show_images_);
+
+    // CSV with relative pose errors: <rpe_log_dir>/rpe_<method>[_noransac].csv
+    declare_parameter<std::string>("rpe_log_dir", "/workspace/VNAV-labs/lab6/results");
+    const std::string log_dir = get_parameter("rpe_log_dir").as_string();
+    static const std::array<const char*, 4> kNames{"5pt", "8pt", "2pt", "arun"};
+    if (pose_estimator_ >= 0 && pose_estimator_ < static_cast<int>(kNames.size())) {
+      std::error_code ec;
+      std::filesystem::create_directories(log_dir, ec);
+      const std::string file = log_dir + "/rpe_" + kNames[pose_estimator_] +
+                               (use_ransac_ ? "" : "_noransac") + ".csv";
+      rpe_log_.open(file);
+      if (rpe_log_.is_open()) {
+        rpe_log_ << "stamp,trans_err,rot_err_chordal,rot_err_deg,gt_trans_norm\n";
+        RCLCPP_INFO(get_logger(), "Logging RPE to %s", file.c_str());
+      } else {
+        RCLCPP_WARN(get_logger(), "Could not open RPE log %s", file.c_str());
+      }
+    }
 
     // populate camera intrinsics and distortion
     camera_params_.K = cv::Mat::zeros(3, 3, CV_64F);
@@ -331,7 +383,37 @@ class PoseEstimator : public rclcpp::Node {
 
     // ************************ begin solution ************************
     // There might be a useful conversion function in lab6_utils.h...
+    const Eigen::Isometry3d est = tf2TransformToIsometry(est_relative_pose);
+    const Eigen::Isometry3d gt = tf2TransformToIsometry(gt_relative_pose);
 
+    // Rotation: chordal distance (Eigen's matrix norm() is the Frobenius norm),
+    // and the equivalent angle: ||R_gt - R_est||_F = 2*sqrt(2)*sin(theta/2).
+    const double rot_err = (gt.rotation() - est.rotation()).norm();
+    const double rot_err_deg =
+        2.0 * std::asin(std::min(1.0, rot_err / (2.0 * std::sqrt(2.0)))) * 180.0 / M_PI;
+
+    // Translation: 2D-2D methods only recover the direction, so compare unit vectors.
+    Eigen::Vector3d t_gt = gt.translation();
+    Eigen::Vector3d t_est = est.translation();
+    const double gt_norm = t_gt.norm();
+    if (pose_estimator_ < 3) {
+      if (gt_norm < 1e-6 || t_est.norm() < 1e-6) {
+        RCLCPP_WARN(get_logger(), "Translation too small to normalize, skipping RPE");
+        return;
+      }
+      t_gt.normalize();
+      t_est.normalize();
+    }
+    const double trans_err = (t_gt - t_est).norm();
+
+    RCLCPP_INFO(get_logger(), "RPE: trans %.4f | rot %.5f (%.3f deg)", trans_err,
+                rot_err, rot_err_deg);
+    if (rpe_log_.is_open()) {
+      rpe_log_ << std::fixed << std::setprecision(6) << current_stamp_ << ","
+               << trans_err << "," << rot_err << "," << rot_err_deg << "," << gt_norm
+               << "\n";
+      rpe_log_.flush();
+    }
     // ************************ end solution *****************************
   }
 
@@ -378,6 +460,17 @@ class PoseEstimator : public rclcpp::Node {
     static cv::Mat prev_bgr = bgr.clone();
     static cv::Mat prev_depth = depth.clone();
 
+    current_stamp_ = rclcpp::Time(rgb_msg->header.stamp).seconds();
+
+    // Skip until we have a previous frame with ground truth (the first callback
+    // would compare an image with itself, i.e. zero baseline).
+    if (prev_pose_.header.frame_id.empty()) {
+      prev_bgr = bgr.clone();
+      prev_depth = depth.clone();
+      prev_pose_ = curr_pose_;
+      return;
+    }
+
     // Track features returns the 2D-2D matches between images
     // in pixels (pixel coords in image 1 -> pixel coords in image 2).
     std::pair<std::vector<cv::KeyPoint>, std::vector<cv::KeyPoint>> matched_kp_1_kp_2;
@@ -397,6 +490,7 @@ class PoseEstimator : public rclcpp::Node {
 
     //  TODO: DELIVERABLE 3 | Calibrate Keypoints
     // ************************* begin solution  ***********************
+    calibrateKeypoints(pts1, pts2, bearing_vector_1, bearing_vector_2);
     // ************************* end solution  *************************
 
     // We create the central relative adapter, have a look at OpenGV's
@@ -427,7 +521,13 @@ class PoseEstimator : public rclcpp::Node {
             // inliers, rotation, and translation
 
             // ************************* begin solution  *************************
-            //
+            opengv::essentials_t Es = opengv::relative_pose::fivept_nister(adapter_mono);
+            cv::Mat R, t;
+            // OpenGV: f1^T E f2 = 0; OpenCV recoverPose expects x2^T E x1 = 0.
+            // Passing (pts2, pts1) makes recoverPose return R12, t12 (frame 2 in frame 1).
+            extractPose(Es, pts2, pts1, camera_params_, R, t);
+            relative_pose_estimate = cv2Pose(R, t);
+
             // ************************* end solution  *************************
           } else {
             // (TODO) With RANSAC
@@ -435,6 +535,12 @@ class PoseEstimator : public rclcpp::Node {
             // ``relative_pose_estimate``
 
             // ************************* begin solution  *************************
+            auto problem = std::make_shared<RansacProblem>(
+                adapter_mono, RansacProblem::NISTER);
+            opengv::transformation_t T;
+            if (runRansac(problem, bearingThreshold(1.0), 500, T)) {
+              relative_pose_estimate = eigen2Pose(T);
+            }
 
             // ************************ end solution ************************
           }
@@ -461,6 +567,11 @@ class PoseEstimator : public rclcpp::Node {
 
             // ************************ begin solution ************************
 
+            opengv::essentials_t Es{opengv::relative_pose::eightpt(adapter_mono)};
+            cv::Mat R, t;
+            extractPose(Es, pts2, pts1, camera_params_, R, t);
+            relative_pose_estimate = cv2Pose(R, t);
+
             // ************************ end solution ************************
           } else {
             // (TODO) With RANSAC
@@ -468,6 +579,13 @@ class PoseEstimator : public rclcpp::Node {
             // ``relative_pose_estimate``
 
             // *********************** begin solution ***********************
+
+            auto problem = std::make_shared<RansacProblem>(
+              adapter_mono, RansacProblem::EIGHTPT);
+            opengv::transformation_t T;
+            if (runRansac(problem, bearingThreshold(1.0), 2000, T)) {
+              relative_pose_estimate = eigen2Pose(T);
+            }
 
             // *********************** end solution ***********************
           }
@@ -501,10 +619,39 @@ class PoseEstimator : public rclcpp::Node {
             // Without RANSAC (OPTIONAL)
             // ************************* begin solution *************************
 
+            Eigen::Matrix3d M = Eigen::Matrix3d::Zero();
+            for (size_t i = 0; i < bearing_vector_1.size(); ++i) {
+              const Eigen::Vector3d n = bearing_vector_1[i].cross(rotation *
+              bearing_vector_2[i]);
+              M += n * n.transpose();
+            }
+            Eigen::SelfAdjointEigenSolver<Eigen::Matrix3d> es(M);
+            Eigen::Vector3d t = es.eigenvectors().col(0); // найменше власне число
+            // знак — за більшістю точок з додатними глибинами
+            int votes = 0;
+            for (size_t i = 0; i < bearing_vector_1.size(); ++i) {
+              Eigen::Matrix<double, 3, 2> A;
+              A << bearing_vector_1[i],
+              -(rotation * bearing_vector_2[i]);
+              const Eigen::Vector2d lambda = A.colPivHouseholderQr().solve(t);
+              votes += (lambda.x() > 0 && lambda.y() > 0) ? 1 : -1;
+            }
+            if (votes < 0) t = -t;
+            opengv::transformation_t T;
+            T.block<3, 3>(0, 0) = rotation;
+            T.col(3) = t;
+            relative_pose_estimate = eigen2Pose(T);
+
             // ************************* end solution *************************
           } else {
             // (TODO) With RANSAC
             // ************************* begin solution *************************
+
+            auto problem = std::make_shared<RansacProblemGivenRot>(adapter_mono);
+            opengv::transformation_t T;
+            if (runRansac(problem, bearingThreshold(1.0), 200, T)) {
+              relative_pose_estimate = eigen2Pose(T);
+            }
 
             // ************************* end solution *************************
           }
@@ -522,6 +669,8 @@ class PoseEstimator : public rclcpp::Node {
 
         // Scale the bearing vectors to point clouds, by querying the depth values
         // of each keypoint
+        // OpenGV PointCloud 3D-3D Adapter
+        opengv::points_t cloud_1, cloud_2;
         for (int i = 0; i < N; i++) {
           // Use the pixel locations of the keypoints to query depth in the depth
           // image
@@ -530,20 +679,15 @@ class PoseEstimator : public rclcpp::Node {
           double d2 =
               double(depth.at<float>(std::floor(pts2[i].y), std::floor(pts2[i].x)));
 
-          // Normalize the bearing vectors such that the last entry is 1
-          bearing_vector_1[i] /= bearing_vector_1[i](2, 0);
-          bearing_vector_2[i] /= bearing_vector_2[i](2, 0);
+          // Drop keypoints without a valid depth (NaN, inf or zero)
+          if (!std::isfinite(d1) || !std::isfinite(d2) || d1 <= 0.0 || d2 <= 0.0) {
+            continue;
+          }
 
-          // Scale the bearing vectors so that the last entry is equal to depth
-          bearing_vector_1[i] *= d1;
-          bearing_vector_2[i] *= d2;
-        }
-
-        // OpenGV PointCloud 3D-3D Adapter
-        opengv::points_t cloud_1, cloud_2;
-        for (auto i = 0ul; i < bearing_vector_1.size(); i++) {
-          cloud_1.push_back(bearing_vector_1[i]);
-          cloud_2.push_back(bearing_vector_2[i]);
+          // Normalize the bearing vectors such that the last entry is 1, then
+          // scale them so that the last entry is equal to depth
+          cloud_1.push_back(bearing_vector_1[i] / bearing_vector_1[i](2, 0) * d1);
+          cloud_2.push_back(bearing_vector_2[i] / bearing_vector_2[i](2, 0) * d2);
         }
 
         Adapter3D adapter_3d(cloud_1, cloud_2);
@@ -553,12 +697,18 @@ class PoseEstimator : public rclcpp::Node {
           if (!use_ransac_) {
             // Without RANSAC (Optional)
             // ************************ begin solution  ************************
-
+            const opengv::transformation_t T = opengv::point_cloud::threept_arun(adapter_3d);
+            relative_pose_estimate = eigen2Pose(T);
             // ************************ end solution **********************
           } else {
             // (TODO) With RANSAC
             // *********************** begin solution ***********************
-
+            auto problem = std::make_shared<RansacProblem3D>(adapter_3d);
+            opengv::transformation_t T;
+            // Threshold: Euclidean distance (meters) between p1 and R * p2 + t
+            if (runRansac(problem, 0.05, 300, T)) {
+              relative_pose_estimate = eigen2Pose(T);
+            }
             // *********************** end solution ***********************
           }
         } else {
@@ -601,6 +751,10 @@ class PoseEstimator : public rclcpp::Node {
     // pose
 
     // *********************** begin solution ***********************
+
+    pose_estimation.header.frame_id = "world";
+    pose_estimation.header.stamp = rgb_msg->header.stamp;
+    pub_pose_estimation_->publish(pose_estimation);
 
     // *********************** end solution ***********************
 
