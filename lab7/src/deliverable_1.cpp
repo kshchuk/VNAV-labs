@@ -114,8 +114,9 @@ int main(int argc, char** argv) {
   // TODO: Add the above odometry measurement and noise as between factors
   // between nodes 1, 2 and nodes 2, 3
   // Create odometry (Between) factors between consecutive poses
-  // Start of 1a.
-
+  // Start of 1a
+  graph.add(BetweenFactor<Pose2>(1, 2, odometry, odometryNoise));
+  graph.add(BetweenFactor<Pose2>(2, 3, odometry, odometryNoise));
   // End of 1a.
 
   // 1b. Add "GPS-like" measurements
@@ -126,7 +127,9 @@ int main(int argc, char** argv) {
   // TODO: Add "GPS" like measurement to nodes 1, 2, and 3 with UnaryFactor
   // (0, 0) for node 1, (2, 0) for node 2, (4, 0) for node 3
   // Start of 1b.
-
+    graph.add(UnaryFactor(1, 0.0, 0.0, unaryNoise));
+    graph.add(UnaryFactor(2, 2.0, 0.0, unaryNoise));
+    graph.add(UnaryFactor(3, 4.0, 0.0, unaryNoise));
   // End of 1b.
 
   // 1c. Create the data structure to hold the initialEstimate estimate to
@@ -137,7 +140,9 @@ int main(int argc, char** argv) {
   // before and after optimization)
   Values initial;
   // Start of 1c.
-
+    initial.insert(1, Pose2(0.5, 0.0, 0.2));
+    initial.insert(2, Pose2(2.3, 0.1,-0.2));
+    initial.insert(3, Pose2(4.1, 0.1, 0.1));
   // End of 1c.
 
   // print and report the initial results.

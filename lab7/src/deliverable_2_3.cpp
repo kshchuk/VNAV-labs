@@ -293,7 +293,9 @@ class MocapPose3Node : public rclcpp::Node {
     // Create BetweenFactor(s) between consecutive poses using the odometry
     // measurements.
     // Start of 2a
-
+      for (size_t i = 0; i < measurements.size(); ++i) {
+          graph.add(BetweenFactor<Pose3>(i + 1, i + 2, measurements[i], odometryNoise));
+      }
     // End 2a.
 
     // 2b.
@@ -306,7 +308,7 @@ class MocapPose3Node : public rclcpp::Node {
       // TODO: Add a prior factor on the node with key 1
       // to constrain it to initial_pose
       // Start of 2b.
-
+      graph.add(PriorFactor<Pose3>(1, initial_pose, initialNoise));
       // End 2b.
     }
 
@@ -317,10 +319,17 @@ class MocapPose3Node : public rclcpp::Node {
       // have. You are given mocap_std_dev (defined above)
       // Start of 3b.
 
+        const noiseModel::Diagonal::shared_ptr mocapNoise =
+noiseModel::Diagonal::Sigmas(Vector3::Constant(mocap_std_dev));
+
       //  TODO: add the MoCap factors
       // Note that there is no prior factor needed at first pose, since MoCap
       // provides the global positions (and rotations given more than 1 MoCap
       // measurement).
+
+        for (const auto& [key, position] : mocap_measurements) {
+            graph.add(MoCapPosition3Factor(key, position, mocapNoise));
+        }
 
       // End 3b.
     }

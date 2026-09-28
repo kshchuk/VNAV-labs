@@ -22,7 +22,7 @@ class MoCapPosition3Factor : public NoiseModelFactor1<Pose3> {
   MoCapPosition3Factor(gtsam::Key poseKey,
                        const gtsam::Point3& m,
                        const gtsam::SharedNoiseModel& model)
-      : NoiseModelFactor1<Pose3>(model, poseclKey), m_(m) {}
+      : NoiseModelFactor1<Pose3>(model, poseKey), m_(m) {}
 
   // Error function.
   // @param p 3D pose.
@@ -33,7 +33,12 @@ class MoCapPosition3Factor : public NoiseModelFactor1<Pose3> {
     // TODO:
     // Return error vector and jacobian if requested (aka H !=
     // boost::none).
-    return gtsam::Vector();
+    gtsam::Matrix36 J;
+    J << gtsam::Matrix3::Zero(), p.rotation().matrix();
+    if (H) {
+      *H = J;
+    }
+    return p.translation() - m_;
     // End 3a.
   }
 

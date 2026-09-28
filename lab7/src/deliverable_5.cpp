@@ -63,6 +63,7 @@ int main(int argc, char* argv[]) {
 
   // TODO: Print your graph.
   // Insert code below:
+    NonlinearFactorGraph graph;
 
   // Create the data structure to hold the initial estimate to the
   // solution Intentionally initialize the variables off from the ground truth.
@@ -82,6 +83,28 @@ int main(int argc, char* argv[]) {
 
   // TODO: Print your final result, the initial and final error.
   // Insert code below:
+
+    for (const Rot3& R_i : measurements) {
+        graph.add(FrobeniusNormFactor(1, R_i, noise));
+    }
+    graph.print("Factor graph:\n");
+
+  initial.print("Initial estimate:\n");
+    LevenbergMarquardtParams params;
+    params.setVerbosity("ERROR");
+    const Values result = LevenbergMarquardtOptimizer(graph, initial, params).optimize();
+    result.print("Final result:\n");
+    std::cout << "initial error = " << graph.error(initial) << std::endl;
+    std::cout << "final error = " << graph.error(result) << std::endl;
+    // Closed form for comparison: projection of the mean onto SO(3).
+    Matrix3 M = Matrix3::Zero();
+    for (const Rot3& R_i : measurements) M += R_i.matrix();
+    Eigen::JacobiSVD<Matrix3> svd(M, Eigen::ComputeFullU | Eigen::ComputeFullV);
+    Matrix3 S = Matrix3::Identity();
+    S(2, 2) = (svd.matrixU() * svd.matrixV().transpose()).determinant();
+    const Rot3 closed_form(svd.matrixU() * S * svd.matrixV().transpose());
+    std::cout << "angle(GTSAM, closed form) = "
+    << result.at<Rot3>(1).between(closed_form).axisAngle().second << " rad\n";
 
   return 0;
 }

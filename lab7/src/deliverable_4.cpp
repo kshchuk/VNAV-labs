@@ -95,6 +95,11 @@ class SfmNode : public rclcpp::Node {
     // is.
     // Insert code below:
 
+      noiseModel::Diagonal::shared_ptr poseNoise =
+            noiseModel::Diagonal::Sigmas((Vector(6) << Vector3::Constant(0.3),
+            Vector3::Constant(0.1)).finished());
+      graph.add(PriorFactor<Pose3>(Symbol('x', 0), camera_poses[0], poseNoise));
+
     // Simulated measurements from each camera pose.
     // A vector of pairs, where for each pair in the vector, the first component
     // is the index of the camera which took the measurement, the second
@@ -107,6 +112,14 @@ class SfmNode : public rclcpp::Node {
     // Use the character 'l' to symbolize landmarks, and 'x' to symbolize poses.
     // Insert code below:
 
+      for (const auto& [cam_idx, kpt] : measurements) {
+          graph.add(GenericProjectionFactor<Pose3, Point3, Cal3_S2>(
+          kpt.kpt_coords_, measurementNoise, Symbol('x'
+          , cam_idx),
+          Symbol('l'
+          , kpt.lmk_idx_), K));
+      }
+
     // TODO: Because the structure-from-motion problem has a scale ambiguity,
     // the problem is still under-constrained Here we add a prior on the
     // position of the first landmark. This fixes the scale by indicating the
@@ -114,8 +127,12 @@ class SfmNode : public rclcpp::Node {
     // landmark positions are interpreted using this scale.
     // Insert code below:
 
+      noiseModel::Isotropic::shared_ptr pointNoise = noiseModel::Isotropic::Sigma(3, 0.1);
+      graph.add(PriorFactor<Point3>(Symbol('l'
+      , 0), landmarks[0], pointNoise));
+
     // Print the graph to debug.
-    // graph.print("Graph");
+    graph.print("Graph");
 
     // Create the data structure to hold the initial estimate to the solution
     // Intentionally initialize the variables off from the ground truth
