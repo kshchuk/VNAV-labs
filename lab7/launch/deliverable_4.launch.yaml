@@ -1,5 +1,14 @@
 launch:
 
+    # RViz2 cannot create an OpenGL window through XQuartz on macOS; there use
+    # rviz:=false foxglove:=true and open https://app.foxglove.dev (ws://localhost:8765).
+    - arg:
+        name: rviz
+        default: "true"
+    - arg:
+        name: foxglove
+        default: "false"
+
     - node:
         pkg: lab_7
         exec: deliverable_4
@@ -7,7 +16,14 @@ launch:
         output: screen
 
     - node:
+        if: "$(var rviz)"
         pkg: rviz2
         exec: rviz2
         name: rviz2
-        args: "-d $(find-pkg-share lab_7)/rviz/lab7.rviz"
+        args: "-d $(find-pkg-share lab_7)/rviz/deliverable_4.rviz"
+
+    - node:
+        if: "$(var foxglove)"
+        pkg: foxglove_bridge
+        exec: foxglove_bridge
+        name: foxglove_bridge

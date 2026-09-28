@@ -59,7 +59,7 @@
     - оптимізація на многовидах $"SO"(3)$ / $"SE"(3)$: експонента, ретракція, якобіани в GTSAM;
     - індивідуальні Deliverables 1–2: зважені НМК, хордальне усереднення поз, доведення ML для Langevin + Gauss, кроки GN/LM з явними якобіанами;
     - командні Deliverables 1–5: перевірений код для GTSAM 4.2 (Docker-образ курсу) і реальні результати прогонів;
-    - пастки: порядок координат у `Pose3`, калібрувальна свобода (gauge), переплутані конфіги RViz.
+    - пастки: порядок координат у `Pose3`, калібрувальна свобода (gauge), RViz2 на macOS (Foxglove замість нього).
   ]
   #v(1fr)
   #text(size: 9pt, fill: luma(110))[Оригінальне завдання: #link("https://vnav.mit.edu/labs/lab7/exercises.html")[vnav.mit.edu/labs/lab7/exercises.html] · GTSAM primer: #link("https://gtsam.org/tutorials/intro.html")[gtsam.org/tutorials/intro.html]]
@@ -334,6 +334,7 @@ colcon build --symlink-install --packages-select lab_7 && source install/setup.b
 ros2 run lab_7 deliverable_1
 ros2 launch lab_7 deliverable_2_3.launch.yaml max_solver_iterations:=3 use_mocap:=false
 ros2 launch lab_7 deliverable_4.launch.yaml
+# macOS: додайте до launch-команд  rviz:=false foxglove:=true
 ros2 run lab_7 deliverable_5
 ```
 
@@ -341,9 +342,21 @@ ros2 run lab_7 deliverable_5
 
 #warn[У поточній версії `include/deliverable_2_3.h` у репозиторії конструктор передає в базовий клас `poseclKey` — такої змінної немає, тож `lab_7` не збереться, доки там не буде `poseKey` (як у коді нижче).]
 
-#warn[*RViz-конфіги переплутані.* `rviz/deliverable_2_3.rviz` насправді містить топіки Deliverable 4 (`/landmarks_*`, `/poses_*`), а `rviz/lab7.rviz` — топіки Deliverable 2/3 (`/gt_trajectory`, `/optimal_trajectory`, …). Обидва launch-файли відкривають `lab7.rviz`, тож для Deliverable 4 запускайте RViz окремо: `rviz2 -d $(ros2 pkg prefix lab_7)/share/lab_7/rviz/deliverable_2_3.rviz` (або виправте `args` у `deliverable_4.launch.yaml`).]
+*Візуалізація на macOS — Foxglove замість RViz2.* RViz2 (Ogre 1.12) не може створити OpenGL-вікно через XQuartz ні з програмним рендерингом, ні з непрямим GLX (`OpenGL 1.5 is not supported` → `Unable to create the rendering window`). Тому обидва launch-файли мають аргументи `rviz:=true|false` і `foxglove:=true|false`, а `run_lab_dev.sh lab7` на Mac публікує порт 8765 і за замовчуванням запускає `rviz:=false foxglove:=true`.
++ Відкрийте #link("https://app.foxglove.dev")[app.foxglove.dev] → *Open connection* → *Foxglove WebSocket* → `ws://localhost:8765`.
++ Імпортуйте готовий layout: *Layouts → Import from file* → `VNAV-labs/lab7/config/lab7_foxglove.json` (3D-панель, кадр `world`, лінії траєкторій D2/D3 і точки/камери D4 уже ввімкнені). Або додайте панель *3D* вручну й увімкніть топіки з таблиці нижче.
++ Скриншот — кнопкою в панелі або `Cmd+Shift+4`.
 
-*macOS:* RViz2 потребує XQuartz і `DISPLAY=:0` (див. `ros2-docker/README.md`). Без GUI вузли все одно працюють і друкують результати в консоль.
+На Linux RViz2 працює як звичайно (`rviz:=true`, за замовчуванням). Для Deliverable 4 launch відкриває `rviz/deliverable_4.rviz` (у стенсилі конфіги D2/3 і D4 були переплутані — виправлено).
+
+#table(
+  columns: (auto, 1fr),
+  inset: 5pt, stroke: 0.4pt + luma(200),
+  fill: (_, y) => if y == 0 { luma(235) },
+  [*Deliverable*], [*Топіки для панелі 3D*],
+  [D2/D3], [`/gt_trajectory(_lines)` — еталон, `/trajectory(_lines)` — зашумлена, `/initial_trajectory(_lines)` — початкова, `/optimal_trajectory(_lines)` — оптимізована, `/robot_pose`],
+  [D4], [`/landmarks_gt`, `/landmarks_init`, `/landmarks_optimal`, `/poses_gt`, `/poses_init`, `/poses_optimal`],
+)
 
 // ═════════════════════════════════════════════════════════════════════
 = Командний Deliverable 1 — вступ до GTSAM
@@ -605,7 +618,7 @@ l2 covariance: diag ≈ (0.111, 0.104, 0.566)
 - Похибка падає до машинного нуля: спостереження згенеровані *без шуму*, тож еталон — точний розв'язок, і LM його знаходить (5 ітерацій).
 - Маргінальні коваріації точок кажуть, наскільки кожну точку "визначено" графом. У $l_2$ дисперсія по $z$ помітно більша ($0.57$) — ймовірно тому, що всі камери лежать у площині $z = 0$ і вертикальну координату точок визначено гірше.
 
-*RViz* (див. пастку про конфіги в розділі 5): зелені — еталон, червоні — початкове наближення (точки зсунуті на $(-0.25, 0.2, 0.15)$, камери повернуті Родріґом $(-0.1, 0.2, 0.25)$), сині — після оптимізації, мають лягти на зелені.
+*RViz / Foxglove* (розділ 5): зелені — еталон, червоні — початкове наближення (точки зсунуті на $(-0.25, 0.2, 0.15)$, камери повернуті Родріґом $(-0.1, 0.2, 0.25)$), сині — після оптимізації, мають лягти на зелені.
 
 // ═════════════════════════════════════════════════════════════════════
 = Командний Deliverable 5 (опційний) — усереднення $"SO"(3)$
@@ -711,9 +724,10 @@ angle(GTSAM, closed form) = 8.8e-13 rad
 *Корисні команди для збору виводу:*
 ```bash
 ros2 run lab_7 deliverable_1 > deliverable_1.txt
+# (macOS: додайте rviz:=false foxglove:=true і дивіться в Foxglove)
 ros2 launch lab_7 deliverable_2_3.launch.yaml max_solver_iterations:=1 use_mocap:=false
 ros2 launch lab_7 deliverable_2_3.launch.yaml max_solver_iterations:=6 use_mocap:=true
-ros2 run lab_7 deliverable_4 2>&1 | tee deliverable_4.txt   # Ctrl+C після "final error"
+ros2 launch lab_7 deliverable_4.launch.yaml 2>&1 | tee deliverable_4.txt   # Ctrl+C після "final error"
 ros2 run lab_7 deliverable_5 > deliverable_5.txt
 ```
 
