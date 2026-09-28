@@ -1027,10 +1027,10 @@ $ (R^*, bold(t)^*) = op("arg min", limits: #true)_(R in "SO"(3), bold(t) in RR^3
 
 
 *Крок 1: трансляція.* Похідна за $bold(t)$: $-2 sum_i (bold(p)_(1,i) - R bold(p)_(2,i) - bold(t)) = 0$, тому
-$ bold(t)^* = bar(bold(p))_1 - R bar(bold(p))_2, quad bar(bold(p))_k = 1/N sum_i bold(p)_(k,i). $
-Тобто оптимальна трансляція суміщає центроїди. Тут $bar(bold(p))_1, bar(bold(p))_2$ — центроїди (середні точки) хмар 1 і 2.
+$ bold(t)^* = overline(bold(p))_1 - R overline(bold(p))_2, quad overline(bold(p))_k = 1/N sum_i bold(p)_(k,i). $
+Тобто оптимальна трансляція суміщає центроїди. Тут $overline(bold(p))_1, overline(bold(p))_2$ — центроїди (середні точки) хмар 1 і 2.
 
-*Крок 2: обертання.* Підставимо $bold(t)^*$ і позначимо центровані точки $bold(a)_i = bold(p)_(1,i) - bar(bold(p))_1$, $bold(b)_i = bold(p)_(2,i) - bar(bold(p))_2$:
+*Крок 2: обертання.* Підставимо $bold(t)^*$ і позначимо центровані точки $bold(a)_i = bold(p)_(1,i) - overline(bold(p))_1$, $bold(b)_i = bold(p)_(2,i) - overline(bold(p))_2$:
 $ sum_i norm(bold(a)_i - R bold(b)_i)^2 = sum_i (norm(bold(a)_i)^2 + norm(bold(b)_i)^2) - 2 sum_i bold(a)_i^top R bold(b)_i. $
 (Використано $norm(R bold(b))= norm(bold(b))$.) Перша сума від $R$ не залежить, тож треба *максимізувати*
 $ sum_i bold(a)_i^top R bold(b)_i = op("tr")(R sum_i bold(b)_i bold(a)_i^top) = op("tr")(R H), quad H = sum_i bold(b)_i bold(a)_i^top in RR^(3 times 3). $
@@ -1358,7 +1358,7 @@ summary({**METHODS_2D, "arun": "Arun 3-point"})
 
 #gl(
   ([$R^*, bold(t)^*$], [оптимальні обертання і трансляція], [8.2]),
-  ([$bar(bold(p))_1, bar(bold(p))_2$], [центроїди хмар], [8.2]),
+  ([$overline(bold(p))_1, overline(bold(p))_2$], [центроїди хмар], [8.2]),
   ([$bold(a)_i, bold(b)_i$], [центровані точки хмар 1 і 2], [8.2]),
   ([$H$], [матриця крос-коваріації $sum_i bold(b)_i bold(a)_i^top$], [8.2]),
   ([$S$, $s_k$], [діагональ сингулярних чисел $H$], [8.2]),
