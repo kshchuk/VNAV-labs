@@ -1,0 +1,19 @@
+[INFO] [launch]: All log files can be found below /root/.ros/log/2026-08-10-21-00-46-671363-docker-desktop-234
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [self_flow-1]: process started with pid [236]
+[INFO] [ros2-2]: process started with pid [238]
+[ros2-2] stdin is not a terminal device. Keyboard handling disabled.[INFO] [1786395647.323422677] [rosbag2_storage]: Opened database '/workspace/install/lab_5/share/lab_5/bags/30fps_424x240_2018-10-01-18-35-06/30fps_424x240_2018-10-01-18-35-06.db3' for READ_ONLY.
+[ros2-2] [INFO] [1786395647.325603093] [rosbag2_player]: Set rate to 1
+[ros2-2] [INFO] [1786395647.336037010] [rosbag2_player]: Adding keyboard callbacks.
+[ros2-2] [INFO] [1786395647.336265427] [rosbag2_player]: Press SPACE for Pause/Resume
+[ros2-2] [INFO] [1786395647.336287052] [rosbag2_player]: Press CURSOR_RIGHT for Play Next Message
+[ros2-2] [INFO] [1786395647.336298885] [rosbag2_player]: Press CURSOR_UP for Increase Rate 10%
+[ros2-2] [INFO] [1786395647.336316260] [rosbag2_player]: Press CURSOR_DOWN for Decrease Rate 10%
+[ros2-2] [INFO] [1786395647.338312302] [rosbag2_storage]: Opened database '/workspace/install/lab_5/share/lab_5/bags/30fps_424x240_2018-10-01-18-35-06/30fps_424x240_2018-10-01-18-35-06.db3' for READ_ONLY.
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [ros2-2]: sending signal 'SIGINT' to process[ros2-2]
+[INFO] [self_flow-1]: sending signal 'SIGINT' to process[self_flow-1]
+[ros2-2] [INFO] [1786395699.539126339] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[self_flow-1] [INFO] [1786395699.540063298] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [ros2-2]: process has finished cleanly [pid 238]
+[INFO] [self_flow-1]: process has finished cleanly [pid 236]

@@ -22,7 +22,7 @@ class MoCapPosition3Factor : public NoiseModelFactor1<Pose3> {
   MoCapPosition3Factor(gtsam::Key poseKey,
                        const gtsam::Point3& m,
                        const gtsam::SharedNoiseModel& model)
-      : NoiseModelFactor1<Pose3>(model, poseKey), m_(m) {}
+      : NoiseModelFactor1<Pose3>(model, poseclKey), m_(m) {}
 
   // Error function.
   // @param p 3D pose.

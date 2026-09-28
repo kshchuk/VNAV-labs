@@ -1,0 +1,2884 @@
+[INFO] [1790553303.948962673] [pose_estimator]: Logging RPE to /workspace/VNAV-labs/lab6/results/rpe_arun.csv
+Matched 497 keypoints
+[INFO] [1790553318.708653972] [pose_estimator]: RANSAC: 374 inliers / 497, 9 iterations
+[INFO] [1790553318.724024764] [pose_estimator]: RPE: trans 0.0027 | rot 0.00051 (0.020 deg)
+Matched 193 keypoints
+[INFO] [1790553319.527666166] [pose_estimator]: RANSAC: 54 inliers / 193, 208 iterations
+[INFO] [1790553319.535634333] [pose_estimator]: RPE: trans 0.0108 | rot 0.00151 (0.061 deg)
+Matched 202 keypoints
+[INFO] [1790553319.861692625] [pose_estimator]: RANSAC: 93 inliers / 202, 45 iterations
+[INFO] [1790553319.862546042] [pose_estimator]: RPE: trans 0.0116 | rot 0.00090 (0.037 deg)
+Matched 272 keypoints
+[INFO] [1790553320.232310917] [pose_estimator]: RANSAC: 162 inliers / 272, 20 iterations
+[INFO] [1790553320.241467250] [pose_estimator]: RPE: trans 0.0027 | rot 0.00033 (0.013 deg)
+Matched 271 keypoints
+[INFO] [1790553320.714016834] [pose_estimator]: RANSAC: 172 inliers / 271, 16 iterations
+[INFO] [1790553320.738140917] [pose_estimator]: RPE: trans 0.0039 | rot 0.00048 (0.019 deg)
+Matched 282 keypoints
+[INFO] [1790553321.195848542] [pose_estimator]: RANSAC: 187 inliers / 282, 14 iterations
+[INFO] [1790553321.201577917] [pose_estimator]: RPE: trans 0.0019 | rot 0.00023 (0.009 deg)
+Matched 331 keypoints
+[INFO] [1790553321.525772542] [pose_estimator]: RANSAC: 214 inliers / 331, 24 iterations
+[INFO] [1790553321.539230584] [pose_estimator]: RPE: trans 0.0046 | rot 0.00092 (0.037 deg)
+Matched 311 keypoints
+[INFO] [1790553323.672927002] [pose_estimator]: RANSAC: 190 inliers / 311, 18 iterations
+[INFO] [1790553323.673231543] [pose_estimator]: RPE: trans 0.0053 | rot 0.00053 (0.022 deg)
+Matched 86 keypoints
+[INFO] [1790553324.200883419] [pose_estimator]: RANSAC: 21 inliers / 86, 301 iterations
+[INFO] [1790553324.203128377] [pose_estimator]: RPE: trans 0.0198 | rot 0.00533 (0.216 deg)
+Matched 167 keypoints
+[INFO] [1790553324.881031377] [pose_estimator]: RANSAC: 107 inliers / 167, 16 iterations
+[INFO] [1790553324.896445502] [pose_estimator]: RPE: trans 0.0043 | rot 0.00090 (0.037 deg)
+Matched 135 keypoints
+[INFO] [1790553325.633339919] [pose_estimator]: RANSAC: 57 inliers / 135, 59 iterations
+[INFO] [1790553325.636077919] [pose_estimator]: RPE: trans 0.0081 | rot 0.00191 (0.077 deg)
+Matched 159 keypoints
+[INFO] [1790553326.267903253] [pose_estimator]: RANSAC: 108 inliers / 159, 13 iterations
+[INFO] [1790553326.269439670] [pose_estimator]: RPE: trans 0.0046 | rot 0.00220 (0.089 deg)
+Matched 171 keypoints
+[INFO] [1790553326.430698836] [pose_estimator]: RANSAC: 110 inliers / 171, 15 iterations
+[INFO] [1790553326.431921628] [pose_estimator]: RPE: trans 0.0056 | rot 0.00099 (0.040 deg)
+Matched 241 keypoints
+[INFO] [1790553326.947242253] [pose_estimator]: RANSAC: 167 inliers / 241, 12 iterations
+[INFO] [1790553326.948813878] [pose_estimator]: RPE: trans 0.0093 | rot 0.00145 (0.059 deg)
+Matched 187 keypoints
+[INFO] [1790553327.193609420] [pose_estimator]: RANSAC: 125 inliers / 187, 13 iterations
+[INFO] [1790553327.193957587] [pose_estimator]: RPE: trans 0.0048 | rot 0.00205 (0.083 deg)
+Matched 239 keypoints
+[INFO] [1790553327.497291212] [pose_estimator]: RANSAC: 195 inliers / 239, 6 iterations
+[INFO] [1790553327.497993212] [pose_estimator]: RPE: trans 0.0030 | rot 0.00066 (0.027 deg)
+Matched 315 keypoints
+[INFO] [1790553327.665851879] [pose_estimator]: RANSAC: 250 inliers / 315, 7 iterations
+[INFO] [1790553327.668011795] [pose_estimator]: RPE: trans 0.0020 | rot 0.00029 (0.012 deg)
+Matched 329 keypoints
+[INFO] [1790553327.820768379] [pose_estimator]: RANSAC: 268 inliers / 329, 6 iterations
+[INFO] [1790553327.822814754] [pose_estimator]: RPE: trans 0.0009 | rot 0.00040 (0.016 deg)
+Matched 364 keypoints
+[INFO] [1790553328.081164129] [pose_estimator]: RANSAC: 303 inliers / 364, 6 iterations
+[INFO] [1790553328.085408087] [pose_estimator]: RPE: trans 0.0009 | rot 0.00024 (0.010 deg)
+Matched 325 keypoints
+[INFO] [1790553328.295635379] [pose_estimator]: RANSAC: 259 inliers / 325, 7 iterations
+[INFO] [1790553328.300946671] [pose_estimator]: RPE: trans 0.0032 | rot 0.00063 (0.026 deg)
+Matched 353 keypoints
+[INFO] [1790553328.548146587] [pose_estimator]: RANSAC: 277 inliers / 353, 7 iterations
+[INFO] [1790553328.548655046] [pose_estimator]: RPE: trans 0.0018 | rot 0.00078 (0.032 deg)
+Matched 401 keypoints
+[INFO] [1790553328.693821921] [pose_estimator]: RANSAC: 337 inliers / 401, 9 iterations
+[INFO] [1790553328.694366754] [pose_estimator]: RPE: trans 0.0015 | rot 0.00077 (0.031 deg)
+Matched 395 keypoints
+[INFO] [1790553328.837179296] [pose_estimator]: RANSAC: 351 inliers / 395, 4 iterations
+[INFO] [1790553328.838738088] [pose_estimator]: RPE: trans 0.0015 | rot 0.00017 (0.007 deg)
+Matched 399 keypoints
+[INFO] [1790553329.065387463] [pose_estimator]: RANSAC: 330 inliers / 399, 6 iterations
+[INFO] [1790553329.070063296] [pose_estimator]: RPE: trans 0.0037 | rot 0.00081 (0.033 deg)
+Matched 348 keypoints
+[INFO] [1790553329.223675004] [pose_estimator]: RANSAC: 303 inliers / 348, 5 iterations
+[INFO] [1790553329.230148588] [pose_estimator]: RPE: trans 0.0029 | rot 0.00081 (0.033 deg)
+Matched 398 keypoints
+[INFO] [1790553329.459888963] [pose_estimator]: RANSAC: 329 inliers / 398, 6 iterations
+[INFO] [1790553329.461330255] [pose_estimator]: RPE: trans 0.0014 | rot 0.00025 (0.010 deg)
+Matched 332 keypoints
+[INFO] [1790553329.630725005] [pose_estimator]: RANSAC: 273 inliers / 332, 6 iterations
+[INFO] [1790553329.630895880] [pose_estimator]: RPE: trans 0.0017 | rot 0.00058 (0.023 deg)
+Matched 348 keypoints
+[INFO] [1790553329.784018546] [pose_estimator]: RANSAC: 304 inliers / 348, 5 iterations
+[INFO] [1790553329.784187255] [pose_estimator]: RPE: trans 0.0014 | rot 0.00033 (0.013 deg)
+Matched 382 keypoints
+[INFO] [1790553329.918642796] [pose_estimator]: RANSAC: 343 inliers / 382, 4 iterations
+[INFO] [1790553329.920864963] [pose_estimator]: RPE: trans 0.0004 | rot 0.00029 (0.012 deg)
+Matched 353 keypoints
+[INFO] [1790553330.131759713] [pose_estimator]: RANSAC: 291 inliers / 353, 6 iterations
+[INFO] [1790553330.131915505] [pose_estimator]: RPE: trans 0.0030 | rot 0.00096 (0.039 deg)
+Matched 346 keypoints
+[INFO] [1790553330.264094755] [pose_estimator]: RANSAC: 278 inliers / 346, 7 iterations
+[INFO] [1790553330.264261880] [pose_estimator]: RPE: trans 0.0026 | rot 0.00077 (0.031 deg)
+Matched 310 keypoints
+[INFO] [1790553330.423036213] [pose_estimator]: RANSAC: 257 inliers / 310, 6 iterations
+[INFO] [1790553330.426853047] [pose_estimator]: RPE: trans 0.0013 | rot 0.00018 (0.007 deg)
+Matched 339 keypoints
+[INFO] [1790553330.586243797] [pose_estimator]: RANSAC: 282 inliers / 339, 7 iterations
+[INFO] [1790553330.588158630] [pose_estimator]: RPE: trans 0.0030 | rot 0.00054 (0.022 deg)
+Matched 373 keypoints
+[INFO] [1790553330.746240922] [pose_estimator]: RANSAC: 317 inliers / 373, 5 iterations
+[INFO] [1790553330.746402630] [pose_estimator]: RPE: trans 0.0035 | rot 0.00100 (0.040 deg)
+Matched 348 keypoints
+[INFO] [1790553331.023385755] [pose_estimator]: RANSAC: 292 inliers / 348, 6 iterations
+[INFO] [1790553331.023574172] [pose_estimator]: RPE: trans 0.0020 | rot 0.00056 (0.023 deg)
+Matched 362 keypoints
+[INFO] [1790553331.267820839] [pose_estimator]: RANSAC: 299 inliers / 362, 6 iterations
+[INFO] [1790553331.287052255] [pose_estimator]: RPE: trans 0.0012 | rot 0.00015 (0.006 deg)
+Matched 305 keypoints
+[INFO] [1790553331.484188422] [pose_estimator]: RANSAC: 252 inliers / 305, 6 iterations
+[INFO] [1790553331.491158172] [pose_estimator]: RPE: trans 0.0027 | rot 0.00057 (0.023 deg)
+Matched 353 keypoints
+[INFO] [1790553331.662635131] [pose_estimator]: RANSAC: 320 inliers / 353, 4 iterations
+[INFO] [1790553331.665707214] [pose_estimator]: RPE: trans 0.0019 | rot 0.00054 (0.022 deg)
+Matched 277 keypoints
+[INFO] [1790553331.908433256] [pose_estimator]: RANSAC: 215 inliers / 277, 8 iterations
+[INFO] [1790553331.908623422] [pose_estimator]: RPE: trans 0.0017 | rot 0.00017 (0.007 deg)
+Matched 307 keypoints
+[INFO] [1790553332.107196089] [pose_estimator]: RANSAC: 264 inliers / 307, 5 iterations
+[INFO] [1790553332.108251006] [pose_estimator]: RPE: trans 0.0019 | rot 0.00062 (0.025 deg)
+Matched 307 keypoints
+[INFO] [1790553332.905280840] [pose_estimator]: RANSAC: 248 inliers / 307, 7 iterations
+[INFO] [1790553332.905445381] [pose_estimator]: RPE: trans 0.0017 | rot 0.00057 (0.023 deg)
+Matched 243 keypoints
+[INFO] [1790553333.052371715] [pose_estimator]: RANSAC: 182 inliers / 243, 9 iterations
+[INFO] [1790553333.052522006] [pose_estimator]: RPE: trans 0.0009 | rot 0.00019 (0.008 deg)
+Matched 350 keypoints
+[INFO] [1790553333.383196173] [pose_estimator]: RANSAC: 307 inliers / 350, 5 iterations
+[INFO] [1790553333.383357006] [pose_estimator]: RPE: trans 0.0011 | rot 0.00029 (0.012 deg)
+Matched 325 keypoints
+[INFO] [1790553333.565891298] [pose_estimator]: RANSAC: 264 inliers / 325, 6 iterations
+[INFO] [1790553333.566059298] [pose_estimator]: RPE: trans 0.0030 | rot 0.00031 (0.012 deg)
+Matched 358 keypoints
+[INFO] [1790553334.083528382] [pose_estimator]: RANSAC: 293 inliers / 358, 6 iterations
+[INFO] [1790553334.083704173] [pose_estimator]: RPE: trans 0.0009 | rot 0.00067 (0.027 deg)
+Matched 252 keypoints
+[INFO] [1790553334.387272799] [pose_estimator]: RANSAC: 174 inliers / 252, 12 iterations
+[INFO] [1790553334.390224715] [pose_estimator]: RPE: trans 0.0051 | rot 0.00111 (0.045 deg)
+Matched 241 keypoints
+[INFO] [1790553334.525026882] [pose_estimator]: RANSAC: 183 inliers / 241, 8 iterations
+[INFO] [1790553334.525200049] [pose_estimator]: RPE: trans 0.0059 | rot 0.00074 (0.030 deg)
+Matched 296 keypoints
+[INFO] [1790553334.704218424] [pose_estimator]: RANSAC: 238 inliers / 296, 7 iterations
+[INFO] [1790553334.705558090] [pose_estimator]: RPE: trans 0.0006 | rot 0.00088 (0.036 deg)
+Matched 274 keypoints
+[INFO] [1790553334.867630465] [pose_estimator]: RANSAC: 213 inliers / 274, 8 iterations
+[INFO] [1790553334.870403340] [pose_estimator]: RPE: trans 0.0015 | rot 0.00053 (0.022 deg)
+Matched 285 keypoints
+[INFO] [1790553335.546842507] [pose_estimator]: RANSAC: 234 inliers / 285, 6 iterations
+[INFO] [1790553335.546988882] [pose_estimator]: RPE: trans 0.0004 | rot 0.00018 (0.007 deg)
+Matched 273 keypoints
+[INFO] [1790553335.749159591] [pose_estimator]: RANSAC: 213 inliers / 273, 8 iterations
+[INFO] [1790553335.749577383] [pose_estimator]: RPE: trans 0.0052 | rot 0.00073 (0.030 deg)
+Matched 363 keypoints
+[INFO] [1790553335.932333633] [pose_estimator]: RANSAC: 293 inliers / 363, 7 iterations
+[INFO] [1790553335.932503633] [pose_estimator]: RPE: trans 0.0020 | rot 0.00054 (0.022 deg)
+Matched 322 keypoints
+[INFO] [1790553336.146782341] [pose_estimator]: RANSAC: 263 inliers / 322, 6 iterations
+[INFO] [1790553336.146937299] [pose_estimator]: RPE: trans 0.0020 | rot 0.00036 (0.015 deg)
+Matched 367 keypoints
+[INFO] [1790553336.620436300] [pose_estimator]: RANSAC: 298 inliers / 367, 7 iterations
+[INFO] [1790553336.620916966] [pose_estimator]: RPE: trans 0.0019 | rot 0.00041 (0.016 deg)
+Matched 330 keypoints
+[INFO] [1790553337.038648508] [pose_estimator]: RANSAC: 254 inliers / 330, 8 iterations
+[INFO] [1790553337.038830050] [pose_estimator]: RPE: trans 0.0012 | rot 0.00063 (0.026 deg)
+Matched 357 keypoints
+[INFO] [1790553337.982322509] [pose_estimator]: RANSAC: 271 inliers / 357, 9 iterations
+[INFO] [1790553337.984386467] [pose_estimator]: RPE: trans 0.0020 | rot 0.00025 (0.010 deg)
+Matched 245 keypoints
+[INFO] [1790553338.705179967] [pose_estimator]: RANSAC: 168 inliers / 245, 12 iterations
+[INFO] [1790553338.719497134] [pose_estimator]: RPE: trans 0.0037 | rot 0.00056 (0.022 deg)
+Matched 251 keypoints
+[INFO] [1790553339.593799301] [pose_estimator]: RANSAC: 173 inliers / 251, 12 iterations
+[INFO] [1790553339.594187509] [pose_estimator]: RPE: trans 0.0022 | rot 0.00061 (0.025 deg)
+Matched 207 keypoints
+[INFO] [1790553340.103710551] [pose_estimator]: RANSAC: 135 inliers / 207, 15 iterations
+[INFO] [1790553340.103895593] [pose_estimator]: RPE: trans 0.0032 | rot 0.00099 (0.040 deg)
+Matched 185 keypoints
+[INFO] [1790553340.263777843] [pose_estimator]: RANSAC: 124 inliers / 185, 13 iterations
+[INFO] [1790553340.268890885] [pose_estimator]: RPE: trans 0.0010 | rot 0.00121 (0.049 deg)
+Matched 280 keypoints
+[INFO] [1790553340.409589176] [pose_estimator]: RANSAC: 201 inliers / 280, 10 iterations
+[INFO] [1790553340.425302885] [pose_estimator]: RPE: trans 0.0022 | rot 0.00044 (0.018 deg)
+Matched 281 keypoints
+[INFO] [1790553340.658788802] [pose_estimator]: RANSAC: 196 inliers / 281, 12 iterations
+[INFO] [1790553340.674107385] [pose_estimator]: RPE: trans 0.0022 | rot 0.00106 (0.043 deg)
+Matched 244 keypoints
+[INFO] [1790553341.202092177] [pose_estimator]: RANSAC: 181 inliers / 244, 10 iterations
+[INFO] [1790553341.202849385] [pose_estimator]: RPE: trans 0.0042 | rot 0.00108 (0.044 deg)
+Matched 216 keypoints
+[INFO] [1790553341.327412094] [pose_estimator]: RANSAC: 143 inliers / 216, 14 iterations
+[INFO] [1790553341.327618635] [pose_estimator]: RPE: trans 0.0040 | rot 0.00098 (0.040 deg)
+Matched 256 keypoints
+[INFO] [1790553341.712858885] [pose_estimator]: RANSAC: 207 inliers / 256, 7 iterations
+[INFO] [1790553341.717700052] [pose_estimator]: RPE: trans 0.0039 | rot 0.00110 (0.045 deg)
+Matched 258 keypoints
+[INFO] [1790553341.854337219] [pose_estimator]: RANSAC: 204 inliers / 258, 7 iterations
+[INFO] [1790553341.854521552] [pose_estimator]: RPE: trans 0.0025 | rot 0.00046 (0.019 deg)
+Matched 310 keypoints
+[INFO] [1790553342.181936761] [pose_estimator]: RANSAC: 255 inliers / 310, 6 iterations
+[INFO] [1790553342.182091011] [pose_estimator]: RPE: trans 0.0030 | rot 0.00089 (0.036 deg)
+Matched 299 keypoints
+[INFO] [1790553342.922258386] [pose_estimator]: RANSAC: 234 inliers / 299, 10 iterations
+[INFO] [1790553342.922436678] [pose_estimator]: RPE: trans 0.0030 | rot 0.00031 (0.013 deg)
+Matched 281 keypoints
+[INFO] [1790553343.048322844] [pose_estimator]: RANSAC: 222 inliers / 281, 7 iterations
+[INFO] [1790553343.048607594] [pose_estimator]: RPE: trans 0.0011 | rot 0.00078 (0.032 deg)
+Matched 378 keypoints
+[INFO] [1790553343.183211344] [pose_estimator]: RANSAC: 317 inliers / 378, 6 iterations
+[INFO] [1790553343.183382886] [pose_estimator]: RPE: trans 0.0019 | rot 0.00049 (0.020 deg)
+Matched 383 keypoints
+[INFO] [1790553343.371189261] [pose_estimator]: RANSAC: 309 inliers / 383, 7 iterations
+[INFO] [1790553343.371512761] [pose_estimator]: RPE: trans 0.0018 | rot 0.00035 (0.014 deg)
+Matched 354 keypoints
+[INFO] [1790553343.500958261] [pose_estimator]: RANSAC: 276 inliers / 354, 8 iterations
+[INFO] [1790553343.501147803] [pose_estimator]: RPE: trans 0.0009 | rot 0.00031 (0.012 deg)
+Matched 391 keypoints
+[INFO] [1790553343.626506136] [pose_estimator]: RANSAC: 319 inliers / 391, 6 iterations
+[INFO] [1790553343.626696303] [pose_estimator]: RPE: trans 0.0026 | rot 0.00061 (0.025 deg)
+Matched 374 keypoints
+[INFO] [1790553344.066211345] [pose_estimator]: RANSAC: 306 inliers / 374, 6 iterations
+[INFO] [1790553344.074426053] [pose_estimator]: RPE: trans 0.0014 | rot 0.00005 (0.002 deg)
+Matched 293 keypoints
+[INFO] [1790553344.228885345] [pose_estimator]: RANSAC: 232 inliers / 293, 7 iterations
+[INFO] [1790553344.230696428] [pose_estimator]: RPE: trans 0.0020 | rot 0.00025 (0.010 deg)
+Matched 348 keypoints
+[INFO] [1790553344.485444970] [pose_estimator]: RANSAC: 302 inliers / 348, 5 iterations
+[INFO] [1790553344.505807387] [pose_estimator]: RPE: trans 0.0021 | rot 0.00062 (0.025 deg)
+Matched 285 keypoints
+[INFO] [1790553344.673278387] [pose_estimator]: RANSAC: 198 inliers / 285, 12 iterations
+[INFO] [1790553344.683490137] [pose_estimator]: RPE: trans 0.0059 | rot 0.00256 (0.104 deg)
+Matched 314 keypoints
+[INFO] [1790553344.869724429] [pose_estimator]: RANSAC: 255 inliers / 314, 7 iterations
+[INFO] [1790553344.887121595] [pose_estimator]: RPE: trans 0.0016 | rot 0.00045 (0.018 deg)
+Matched 310 keypoints
+[INFO] [1790553345.269692345] [pose_estimator]: RANSAC: 245 inliers / 310, 7 iterations
+[INFO] [1790553345.293908637] [pose_estimator]: RPE: trans 0.0052 | rot 0.00128 (0.052 deg)
+Matched 300 keypoints
+[INFO] [1790553345.447197637] [pose_estimator]: RANSAC: 222 inliers / 300, 9 iterations
+[INFO] [1790553345.463651887] [pose_estimator]: RPE: trans 0.0046 | rot 0.00157 (0.064 deg)
+Matched 311 keypoints
+[INFO] [1790553346.356217971] [pose_estimator]: RANSAC: 261 inliers / 311, 6 iterations
+[INFO] [1790553346.356452304] [pose_estimator]: RPE: trans 0.0020 | rot 0.00067 (0.027 deg)
+Matched 269 keypoints
+[INFO] [1790553346.496330679] [pose_estimator]: RANSAC: 175 inliers / 269, 15 iterations
+[INFO] [1790553346.496484804] [pose_estimator]: RPE: trans 0.0045 | rot 0.00162 (0.065 deg)
+Matched 331 keypoints
+[INFO] [1790553346.635234971] [pose_estimator]: RANSAC: 276 inliers / 331, 6 iterations
+[INFO] [1790553346.635580596] [pose_estimator]: RPE: trans 0.0024 | rot 0.00028 (0.011 deg)
+Matched 345 keypoints
+[INFO] [1790553346.821371013] [pose_estimator]: RANSAC: 268 inliers / 345, 8 iterations
+[INFO] [1790553346.821527971] [pose_estimator]: RPE: trans 0.0009 | rot 0.00011 (0.004 deg)
+Matched 330 keypoints
+[INFO] [1790553346.955665346] [pose_estimator]: RANSAC: 260 inliers / 330, 7 iterations
+[INFO] [1790553346.955820596] [pose_estimator]: RPE: trans 0.0010 | rot 0.00034 (0.014 deg)
+Matched 342 keypoints
+[INFO] [1790553347.314568846] [pose_estimator]: RANSAC: 282 inliers / 342, 6 iterations
+[INFO] [1790553347.314740596] [pose_estimator]: RPE: trans 0.0025 | rot 0.00122 (0.050 deg)
+Matched 307 keypoints
+[INFO] [1790553347.466086055] [pose_estimator]: RANSAC: 234 inliers / 307, 8 iterations
+[INFO] [1790553347.466218638] [pose_estimator]: RPE: trans 0.0022 | rot 0.00084 (0.034 deg)
+Matched 369 keypoints
+[INFO] [1790553347.593524930] [pose_estimator]: RANSAC: 303 inliers / 369, 6 iterations
+[INFO] [1790553347.593714597] [pose_estimator]: RPE: trans 0.0007 | rot 0.00034 (0.014 deg)
+Matched 382 keypoints
+[INFO] [1790553347.717480722] [pose_estimator]: RANSAC: 314 inliers / 382, 6 iterations
+[INFO] [1790553347.717677180] [pose_estimator]: RPE: trans 0.0019 | rot 0.00063 (0.026 deg)
+Matched 332 keypoints
+[INFO] [1790553347.931949805] [pose_estimator]: RANSAC: 261 inliers / 332, 7 iterations
+[INFO] [1790553347.932118305] [pose_estimator]: RPE: trans 0.0018 | rot 0.00038 (0.015 deg)
+Matched 339 keypoints
+[INFO] [1790553348.056068222] [pose_estimator]: RANSAC: 266 inliers / 339, 7 iterations
+[INFO] [1790553348.056241638] [pose_estimator]: RPE: trans 0.0018 | rot 0.00036 (0.015 deg)
+Matched 294 keypoints
+[INFO] [1790553348.180920055] [pose_estimator]: RANSAC: 237 inliers / 294, 7 iterations
+[INFO] [1790553348.181096930] [pose_estimator]: RPE: trans 0.0013 | rot 0.00046 (0.019 deg)
+Matched 298 keypoints
+[INFO] [1790553348.438102514] [pose_estimator]: RANSAC: 221 inliers / 298, 9 iterations
+[INFO] [1790553348.438865805] [pose_estimator]: RPE: trans 0.0020 | rot 0.00070 (0.028 deg)
+Matched 237 keypoints
+[INFO] [1790553349.113484250] [pose_estimator]: RANSAC: 171 inliers / 237, 11 iterations
+[INFO] [1790553349.141647291] [pose_estimator]: RPE: trans 0.0016 | rot 0.00070 (0.028 deg)
+Matched 213 keypoints
+[INFO] [1790553349.307739083] [pose_estimator]: RANSAC: 144 inliers / 213, 13 iterations
+[INFO] [1790553349.312800375] [pose_estimator]: RPE: trans 0.0019 | rot 0.00095 (0.038 deg)
+Matched 269 keypoints
+[INFO] [1790553349.638305875] [pose_estimator]: RANSAC: 207 inliers / 269, 8 iterations
+[INFO] [1790553349.645166458] [pose_estimator]: RPE: trans 0.0021 | rot 0.00103 (0.042 deg)
+Matched 205 keypoints
+[INFO] [1790553349.942342458] [pose_estimator]: RANSAC: 148 inliers / 205, 10 iterations
+[INFO] [1790553349.946858208] [pose_estimator]: RPE: trans 0.0023 | rot 0.00078 (0.032 deg)
+Matched 195 keypoints
+[INFO] [1790553350.091087417] [pose_estimator]: RANSAC: 136 inliers / 195, 12 iterations
+[INFO] [1790553350.091245125] [pose_estimator]: RPE: trans 0.0017 | rot 0.00029 (0.012 deg)
+Matched 295 keypoints
+[INFO] [1790553350.226846500] [pose_estimator]: RANSAC: 241 inliers / 295, 10 iterations
+[INFO] [1790553350.251279458] [pose_estimator]: RPE: trans 0.0023 | rot 0.00089 (0.036 deg)
+Matched 231 keypoints
+[INFO] [1790553350.386673375] [pose_estimator]: RANSAC: 170 inliers / 231, 10 iterations
+[INFO] [1790553350.386858334] [pose_estimator]: RPE: trans 0.0020 | rot 0.00105 (0.042 deg)
+Matched 252 keypoints
+[INFO] [1790553350.787318459] [pose_estimator]: RANSAC: 219 inliers / 252, 5 iterations
+[INFO] [1790553350.787479292] [pose_estimator]: RPE: trans 0.0015 | rot 0.00068 (0.028 deg)
+Matched 219 keypoints
+[INFO] [1790553350.911920917] [pose_estimator]: RANSAC: 158 inliers / 219, 10 iterations
+[INFO] [1790553350.912094625] [pose_estimator]: RPE: trans 0.0014 | rot 0.00085 (0.034 deg)
+Matched 255 keypoints
+[INFO] [1790553351.036405042] [pose_estimator]: RANSAC: 219 inliers / 255, 6 iterations
+[INFO] [1790553351.036581459] [pose_estimator]: RPE: trans 0.0010 | rot 0.00086 (0.035 deg)
+Matched 300 keypoints
+[INFO] [1790553351.180963959] [pose_estimator]: RANSAC: 259 inliers / 300, 5 iterations
+[INFO] [1790553351.181123251] [pose_estimator]: RPE: trans 0.0007 | rot 0.00049 (0.020 deg)
+Matched 276 keypoints
+[INFO] [1790553351.300474917] [pose_estimator]: RANSAC: 231 inliers / 276, 6 iterations
+[INFO] [1790553351.300630542] [pose_estimator]: RPE: trans 0.0009 | rot 0.00118 (0.048 deg)
+Matched 276 keypoints
+[INFO] [1790553351.432531292] [pose_estimator]: RANSAC: 235 inliers / 276, 5 iterations
+[INFO] [1790553351.435666584] [pose_estimator]: RPE: trans 0.0016 | rot 0.00044 (0.018 deg)
+Matched 302 keypoints
+[INFO] [1790553352.144120709] [pose_estimator]: RANSAC: 255 inliers / 302, 6 iterations
+[INFO] [1790553352.144306459] [pose_estimator]: RPE: trans 0.0023 | rot 0.00151 (0.061 deg)
+Matched 196 keypoints
+[INFO] [1790553352.370346584] [pose_estimator]: RANSAC: 148 inliers / 196, 9 iterations
+[INFO] [1790553352.371283584] [pose_estimator]: RPE: trans 0.0005 | rot 0.00051 (0.021 deg)
+Matched 250 keypoints
+[INFO] [1790553352.539152126] [pose_estimator]: RANSAC: 199 inliers / 250, 7 iterations
+[INFO] [1790553352.539327210] [pose_estimator]: RPE: trans 0.0020 | rot 0.00102 (0.041 deg)
+Matched 249 keypoints
+[INFO] [1790553352.658732960] [pose_estimator]: RANSAC: 202 inliers / 249, 7 iterations
+[INFO] [1790553352.658896668] [pose_estimator]: RPE: trans 0.0029 | rot 0.00078 (0.032 deg)
+Matched 271 keypoints
+[INFO] [1790553352.874891418] [pose_estimator]: RANSAC: 194 inliers / 271, 11 iterations
+[INFO] [1790553352.905217418] [pose_estimator]: RPE: trans 0.0034 | rot 0.00125 (0.051 deg)
+Matched 237 keypoints
+[INFO] [1790553353.055550960] [pose_estimator]: RANSAC: 186 inliers / 237, 7 iterations
+[INFO] [1790553353.059199960] [pose_estimator]: RPE: trans 0.0021 | rot 0.00149 (0.060 deg)
+Matched 234 keypoints
+[INFO] [1790553353.189737918] [pose_estimator]: RANSAC: 179 inliers / 234, 8 iterations
+[INFO] [1790553353.189954210] [pose_estimator]: RPE: trans 0.0018 | rot 0.00104 (0.042 deg)
+Matched 240 keypoints
+[INFO] [1790553353.718013793] [pose_estimator]: RANSAC: 190 inliers / 240, 7 iterations
+[INFO] [1790553353.718187960] [pose_estimator]: RPE: trans 0.0015 | rot 0.00104 (0.042 deg)
+Matched 123 keypoints
+[INFO] [1790553353.863505502] [pose_estimator]: RANSAC: 80 inliers / 123, 15 iterations
+[INFO] [1790553353.863696460] [pose_estimator]: RPE: trans 0.0032 | rot 0.00117 (0.047 deg)
+Matched 201 keypoints
+[INFO] [1790553353.998319085] [pose_estimator]: RANSAC: 161 inliers / 201, 7 iterations
+[INFO] [1790553353.998531919] [pose_estimator]: RPE: trans 0.0013 | rot 0.00117 (0.048 deg)
+Matched 218 keypoints
+[INFO] [1790553354.490438044] [pose_estimator]: RANSAC: 171 inliers / 218, 7 iterations
+[INFO] [1790553354.490591877] [pose_estimator]: RPE: trans 0.0053 | rot 0.00018 (0.007 deg)
+Matched 152 keypoints
+[INFO] [1790553354.649261169] [pose_estimator]: RANSAC: 103 inliers / 152, 13 iterations
+[INFO] [1790553354.649413169] [pose_estimator]: RPE: trans 0.0063 | rot 0.00155 (0.063 deg)
+Matched 259 keypoints
+[INFO] [1790553354.778407502] [pose_estimator]: RANSAC: 198 inliers / 259, 8 iterations
+[INFO] [1790553354.778548877] [pose_estimator]: RPE: trans 0.0024 | rot 0.00094 (0.038 deg)
+Matched 311 keypoints
+[INFO] [1790553354.926661877] [pose_estimator]: RANSAC: 265 inliers / 311, 5 iterations
+[INFO] [1790553354.926813169] [pose_estimator]: RPE: trans 0.0024 | rot 0.00122 (0.050 deg)
+Matched 298 keypoints
+[INFO] [1790553355.181580753] [pose_estimator]: RANSAC: 221 inliers / 298, 9 iterations
+[INFO] [1790553355.181805419] [pose_estimator]: RPE: trans 0.0033 | rot 0.00051 (0.020 deg)
+Matched 255 keypoints
+[INFO] [1790553355.470740378] [pose_estimator]: RANSAC: 185 inliers / 255, 10 iterations
+[INFO] [1790553355.470882003] [pose_estimator]: RPE: trans 0.0153 | rot 0.00479 (0.194 deg)
+Matched 227 keypoints
+[INFO] [1790553355.636507461] [pose_estimator]: RANSAC: 151 inliers / 227, 14 iterations
+[INFO] [1790553355.636775544] [pose_estimator]: RPE: trans 0.0042 | rot 0.00116 (0.047 deg)
+Matched 291 keypoints
+[INFO] [1790553355.865866836] [pose_estimator]: RANSAC: 226 inliers / 291, 8 iterations
+[INFO] [1790553355.868427378] [pose_estimator]: RPE: trans 0.0077 | rot 0.00239 (0.097 deg)
+Matched 224 keypoints
+[INFO] [1790553356.312902753] [pose_estimator]: RANSAC: 151 inliers / 224, 13 iterations
+[INFO] [1790553356.313076420] [pose_estimator]: RPE: trans 0.0041 | rot 0.00131 (0.053 deg)
+Matched 150 keypoints
+[INFO] [1790553356.484586461] [pose_estimator]: RANSAC: 111 inliers / 150, 9 iterations
+[INFO] [1790553356.484839670] [pose_estimator]: RPE: trans 0.0084 | rot 0.00251 (0.102 deg)
+Matched 233 keypoints
+[INFO] [1790553356.625228462] [pose_estimator]: RANSAC: 179 inliers / 233, 8 iterations
+[INFO] [1790553356.625414128] [pose_estimator]: RPE: trans 0.0053 | rot 0.00183 (0.074 deg)
+Matched 260 keypoints
+[INFO] [1790553356.749271587] [pose_estimator]: RANSAC: 207 inliers / 260, 7 iterations
+[INFO] [1790553356.749443628] [pose_estimator]: RPE: trans 0.0065 | rot 0.00226 (0.091 deg)
+Matched 246 keypoints
+[INFO] [1790553356.885918420] [pose_estimator]: RANSAC: 191 inliers / 246, 9 iterations
+[INFO] [1790553356.886112503] [pose_estimator]: RPE: trans 0.0018 | rot 0.00080 (0.033 deg)
+Matched 261 keypoints
+[INFO] [1790553357.218793253] [pose_estimator]: RANSAC: 209 inliers / 261, 7 iterations
+[INFO] [1790553357.218956920] [pose_estimator]: RPE: trans 0.0060 | rot 0.00204 (0.083 deg)
+Matched 207 keypoints
+[INFO] [1790553357.343767837] [pose_estimator]: RANSAC: 137 inliers / 207, 14 iterations
+[INFO] [1790553357.343926254] [pose_estimator]: RPE: trans 0.0017 | rot 0.00061 (0.025 deg)
+Matched 278 keypoints
+[INFO] [1790553357.485366795] [pose_estimator]: RANSAC: 225 inliers / 278, 7 iterations
+[INFO] [1790553357.485567045] [pose_estimator]: RPE: trans 0.0038 | rot 0.00150 (0.061 deg)
+Matched 248 keypoints
+[INFO] [1790553357.626405420] [pose_estimator]: RANSAC: 205 inliers / 248, 6 iterations
+[INFO] [1790553357.626566254] [pose_estimator]: RPE: trans 0.0027 | rot 0.00064 (0.026 deg)
+Matched 270 keypoints
+[INFO] [1790553357.749538795] [pose_estimator]: RANSAC: 242 inliers / 270, 4 iterations
+[INFO] [1790553357.749714920] [pose_estimator]: RPE: trans 0.0024 | rot 0.00053 (0.022 deg)
+Matched 244 keypoints
+[INFO] [1790553357.887388629] [pose_estimator]: RANSAC: 183 inliers / 244, 9 iterations
+[INFO] [1790553357.887537295] [pose_estimator]: RPE: trans 0.0062 | rot 0.00196 (0.079 deg)
+Matched 246 keypoints
+[INFO] [1790553358.017127546] [pose_estimator]: RANSAC: 205 inliers / 246, 6 iterations
+[INFO] [1790553358.017310004] [pose_estimator]: RPE: trans 0.0083 | rot 0.00248 (0.101 deg)
+Matched 236 keypoints
+[INFO] [1790553358.154434296] [pose_estimator]: RANSAC: 182 inliers / 236, 11 iterations
+[INFO] [1790553358.154573671] [pose_estimator]: RPE: trans 0.0058 | rot 0.00185 (0.075 deg)
+Matched 221 keypoints
+[INFO] [1790553358.276721421] [pose_estimator]: RANSAC: 168 inliers / 221, 8 iterations
+[INFO] [1790553358.278695379] [pose_estimator]: RPE: trans 0.0045 | rot 0.00172 (0.070 deg)
+Matched 280 keypoints
+[INFO] [1790553358.403504379] [pose_estimator]: RANSAC: 246 inliers / 280, 5 iterations
+[INFO] [1790553358.403661087] [pose_estimator]: RPE: trans 0.0131 | rot 0.00373 (0.151 deg)
+Matched 240 keypoints
+[INFO] [1790553358.640803254] [pose_estimator]: RANSAC: 179 inliers / 240, 9 iterations
+[INFO] [1790553358.640938587] [pose_estimator]: RPE: trans 0.0175 | rot 0.00635 (0.257 deg)
+Matched 256 keypoints
+[INFO] [1790553358.763727963] [pose_estimator]: RANSAC: 200 inliers / 256, 8 iterations
+[INFO] [1790553358.763881004] [pose_estimator]: RPE: trans 0.0048 | rot 0.00194 (0.079 deg)
+Matched 319 keypoints
+[INFO] [1790553358.887585296] [pose_estimator]: RANSAC: 233 inliers / 319, 11 iterations
+[INFO] [1790553358.887787421] [pose_estimator]: RPE: trans 0.0063 | rot 0.00182 (0.074 deg)
+Matched 326 keypoints
+[INFO] [1790553359.041248588] [pose_estimator]: RANSAC: 261 inliers / 326, 7 iterations
+[INFO] [1790553359.041384629] [pose_estimator]: RPE: trans 0.0046 | rot 0.00192 (0.078 deg)
+Matched 315 keypoints
+[INFO] [1790553359.259580963] [pose_estimator]: RANSAC: 245 inliers / 315, 8 iterations
+[INFO] [1790553359.259708213] [pose_estimator]: RPE: trans 0.0066 | rot 0.00283 (0.114 deg)
+Matched 295 keypoints
+[INFO] [1790553359.387622963] [pose_estimator]: RANSAC: 204 inliers / 295, 12 iterations
+[INFO] [1790553359.387768171] [pose_estimator]: RPE: trans 0.0033 | rot 0.00130 (0.052 deg)
+Matched 321 keypoints
+[INFO] [1790553359.688807671] [pose_estimator]: RANSAC: 235 inliers / 321, 10 iterations
+[INFO] [1790553359.688985505] [pose_estimator]: RPE: trans 0.0014 | rot 0.00086 (0.035 deg)
+Matched 291 keypoints
+[INFO] [1790553359.817566671] [pose_estimator]: RANSAC: 205 inliers / 291, 12 iterations
+[INFO] [1790553359.818040088] [pose_estimator]: RPE: trans 0.0053 | rot 0.00203 (0.082 deg)
+Matched 278 keypoints
+[INFO] [1790553359.992915255] [pose_estimator]: RANSAC: 214 inliers / 278, 9 iterations
+[INFO] [1790553359.997243796] [pose_estimator]: RPE: trans 0.0076 | rot 0.00290 (0.118 deg)
+Matched 294 keypoints
+[INFO] [1790553360.157411880] [pose_estimator]: RANSAC: 215 inliers / 294, 10 iterations
+[INFO] [1790553360.157583672] [pose_estimator]: RPE: trans 0.0016 | rot 0.00131 (0.053 deg)
+Matched 356 keypoints
+[INFO] [1790553360.432983880] [pose_estimator]: RANSAC: 310 inliers / 356, 6 iterations
+[INFO] [1790553360.433638797] [pose_estimator]: RPE: trans 0.0009 | rot 0.00061 (0.025 deg)
+Matched 305 keypoints
+[INFO] [1790553360.561793088] [pose_estimator]: RANSAC: 217 inliers / 305, 11 iterations
+[INFO] [1790553360.561941172] [pose_estimator]: RPE: trans 0.0037 | rot 0.00101 (0.041 deg)
+Matched 319 keypoints
+[INFO] [1790553360.689860172] [pose_estimator]: RANSAC: 252 inliers / 319, 7 iterations
+[INFO] [1790553360.690027797] [pose_estimator]: RPE: trans 0.0065 | rot 0.00252 (0.102 deg)
+Matched 321 keypoints
+[INFO] [1790553360.826059630] [pose_estimator]: RANSAC: 231 inliers / 321, 10 iterations
+[INFO] [1790553360.827321964] [pose_estimator]: RPE: trans 0.0067 | rot 0.00281 (0.114 deg)
+Matched 372 keypoints
+[INFO] [1790553360.965847839] [pose_estimator]: RANSAC: 303 inliers / 372, 6 iterations
+[INFO] [1790553360.966004255] [pose_estimator]: RPE: trans 0.0012 | rot 0.00070 (0.028 deg)
+Matched 336 keypoints
+[INFO] [1790553361.093212047] [pose_estimator]: RANSAC: 264 inliers / 336, 7 iterations
+[INFO] [1790553361.093386297] [pose_estimator]: RPE: trans 0.0022 | rot 0.00140 (0.057 deg)
+Matched 327 keypoints
+[INFO] [1790553361.244578839] [pose_estimator]: RANSAC: 270 inliers / 327, 6 iterations
+[INFO] [1790553361.248639672] [pose_estimator]: RPE: trans 0.0013 | rot 0.00045 (0.018 deg)
+Matched 331 keypoints
+[INFO] [1790553361.415967505] [pose_estimator]: RANSAC: 249 inliers / 331, 9 iterations
+[INFO] [1790553361.416119089] [pose_estimator]: RPE: trans 0.0018 | rot 0.00117 (0.047 deg)
+Matched 362 keypoints
+[INFO] [1790553361.850796881] [pose_estimator]: RANSAC: 279 inliers / 362, 8 iterations
+[INFO] [1790553361.851123506] [pose_estimator]: RPE: trans 0.0032 | rot 0.00104 (0.042 deg)
+Matched 240 keypoints
+[INFO] [1790553361.995233381] [pose_estimator]: RANSAC: 145 inliers / 240, 19 iterations
+[INFO] [1790553361.995415922] [pose_estimator]: RPE: trans 0.0035 | rot 0.00164 (0.066 deg)
+Matched 360 keypoints
+[INFO] [1790553362.273070673] [pose_estimator]: RANSAC: 281 inliers / 360, 8 iterations
+[INFO] [1790553362.273199756] [pose_estimator]: RPE: trans 0.0015 | rot 0.00100 (0.040 deg)
+Matched 283 keypoints
+[INFO] [1790553362.448421881] [pose_estimator]: RANSAC: 176 inliers / 283, 17 iterations
+[INFO] [1790553362.448578256] [pose_estimator]: RPE: trans 0.0016 | rot 0.00073 (0.030 deg)
+Matched 334 keypoints
+[INFO] [1790553362.700788381] [pose_estimator]: RANSAC: 267 inliers / 334, 7 iterations
+[INFO] [1790553362.701025089] [pose_estimator]: RPE: trans 0.0014 | rot 0.00075 (0.030 deg)
+Matched 329 keypoints
+[INFO] [1790553363.381059048] [pose_estimator]: RANSAC: 240 inliers / 329, 11 iterations
+[INFO] [1790553363.381205215] [pose_estimator]: RPE: trans 0.0044 | rot 0.00189 (0.077 deg)
+Matched 270 keypoints
+[INFO] [1790553363.551818340] [pose_estimator]: RANSAC: 164 inliers / 270, 19 iterations
+[INFO] [1790553363.551973673] [pose_estimator]: RPE: trans 0.0015 | rot 0.00086 (0.035 deg)
+Matched 393 keypoints
+[INFO] [1790553364.285205590] [pose_estimator]: RANSAC: 312 inliers / 393, 7 iterations
+[INFO] [1790553364.285605257] [pose_estimator]: RPE: trans 0.0029 | rot 0.00084 (0.034 deg)
+Matched 342 keypoints
+[INFO] [1790553364.569187465] [pose_estimator]: RANSAC: 226 inliers / 342, 15 iterations
+[INFO] [1790553364.569361174] [pose_estimator]: RPE: trans 0.0027 | rot 0.00092 (0.037 deg)
+Matched 414 keypoints
+[INFO] [1790553364.794970674] [pose_estimator]: RANSAC: 336 inliers / 414, 7 iterations
+[INFO] [1790553364.807339924] [pose_estimator]: RPE: trans 0.0041 | rot 0.00105 (0.042 deg)
+Matched 392 keypoints
+[INFO] [1790553365.407097882] [pose_estimator]: RANSAC: 322 inliers / 392, 6 iterations
+[INFO] [1790553365.425852174] [pose_estimator]: RPE: trans 0.0025 | rot 0.00062 (0.025 deg)
+Matched 318 keypoints
+[INFO] [1790553366.353783425] [pose_estimator]: RANSAC: 235 inliers / 318, 9 iterations
+[INFO] [1790553366.357341758] [pose_estimator]: RPE: trans 0.0038 | rot 0.00100 (0.041 deg)
+Matched 235 keypoints
+[INFO] [1790553366.583134425] [pose_estimator]: RANSAC: 145 inliers / 235, 22 iterations
+[INFO] [1790553366.584487550] [pose_estimator]: RPE: trans 0.0020 | rot 0.00159 (0.065 deg)
+Matched 364 keypoints
+[INFO] [1790553366.961829883] [pose_estimator]: RANSAC: 256 inliers / 364, 11 iterations
+[INFO] [1790553366.962954550] [pose_estimator]: RPE: trans 0.0060 | rot 0.00130 (0.052 deg)
+Matched 291 keypoints
+[INFO] [1790553367.591086175] [pose_estimator]: RANSAC: 182 inliers / 291, 17 iterations
+[INFO] [1790553367.591249133] [pose_estimator]: RPE: trans 0.0053 | rot 0.00103 (0.042 deg)
+Matched 268 keypoints
+[INFO] [1790553368.117915967] [pose_estimator]: RANSAC: 167 inliers / 268, 17 iterations
+[INFO] [1790553368.118120592] [pose_estimator]: RPE: trans 0.0019 | rot 0.00098 (0.040 deg)
+Matched 229 keypoints
+[INFO] [1790553368.864949176] [pose_estimator]: RANSAC: 154 inliers / 229, 13 iterations
+[INFO] [1790553368.865290967] [pose_estimator]: RPE: trans 0.0033 | rot 0.00091 (0.037 deg)
+Matched 224 keypoints
+[INFO] [1790553369.105869051] [pose_estimator]: RANSAC: 143 inliers / 224, 16 iterations
+[INFO] [1790553369.115563759] [pose_estimator]: RPE: trans 0.0023 | rot 0.00118 (0.048 deg)
+Matched 313 keypoints
+[INFO] [1790553369.364998343] [pose_estimator]: RANSAC: 225 inliers / 313, 10 iterations
+[INFO] [1790553369.387022593] [pose_estimator]: RPE: trans 0.0076 | rot 0.00032 (0.013 deg)
+Matched 288 keypoints
+[INFO] [1790553369.557294509] [pose_estimator]: RANSAC: 205 inliers / 288, 11 iterations
+[INFO] [1790553369.565831093] [pose_estimator]: RPE: trans 0.0029 | rot 0.00090 (0.036 deg)
+Matched 299 keypoints
+[INFO] [1790553369.830990259] [pose_estimator]: RANSAC: 214 inliers / 299, 11 iterations
+[INFO] [1790553369.844782509] [pose_estimator]: RPE: trans 0.0026 | rot 0.00035 (0.014 deg)
+Matched 281 keypoints
+[INFO] [1790553370.042670260] [pose_estimator]: RANSAC: 197 inliers / 281, 11 iterations
+[INFO] [1790553370.072762510] [pose_estimator]: RPE: trans 0.0009 | rot 0.00048 (0.019 deg)
+Matched 255 keypoints
+[INFO] [1790553371.468672969] [pose_estimator]: RANSAC: 173 inliers / 255, 13 iterations
+[INFO] [1790553371.474137427] [pose_estimator]: RPE: trans 0.0025 | rot 0.00054 (0.022 deg)
+Matched 145 keypoints
+[INFO] [1790553371.681023010] [pose_estimator]: RANSAC: 67 inliers / 145, 45 iterations
+[INFO] [1790553371.691031135] [pose_estimator]: RPE: trans 0.0053 | rot 0.00210 (0.085 deg)
+Matched 218 keypoints
+[INFO] [1790553371.996557552] [pose_estimator]: RANSAC: 124 inliers / 218, 23 iterations
+[INFO] [1790553372.000326511] [pose_estimator]: RPE: trans 0.0055 | rot 0.00045 (0.018 deg)
+Matched 230 keypoints
+[INFO] [1790553372.287706386] [pose_estimator]: RANSAC: 142 inliers / 230, 18 iterations
+[INFO] [1790553372.295591052] [pose_estimator]: RPE: trans 0.0077 | rot 0.00087 (0.035 deg)
+Matched 214 keypoints
+[INFO] [1790553372.433880677] [pose_estimator]: RANSAC: 122 inliers / 214, 23 iterations
+[INFO] [1790553373.229843803] [pose_estimator]: RPE: trans 0.0081 | rot 0.00145 (0.059 deg)
+Matched 147 keypoints
+[INFO] [1790553373.421374636] [pose_estimator]: RANSAC: 71 inliers / 147, 39 iterations
+[INFO] [1790553373.440293595] [pose_estimator]: RPE: trans 0.0052 | rot 0.00156 (0.063 deg)
+Matched 194 keypoints
+[INFO] [1790553373.778431345] [pose_estimator]: RANSAC: 139 inliers / 194, 11 iterations
+[INFO] [1790553373.793644136] [pose_estimator]: RPE: trans 0.0028 | rot 0.00111 (0.045 deg)
+Matched 187 keypoints
+[INFO] [1790553373.949189095] [pose_estimator]: RANSAC: 117 inliers / 187, 19 iterations
+[INFO] [1790553373.959148845] [pose_estimator]: RPE: trans 0.0049 | rot 0.00064 (0.026 deg)
+Matched 204 keypoints
+[INFO] [1790553374.188757637] [pose_estimator]: RANSAC: 147 inliers / 204, 10 iterations
+[INFO] [1790553374.197696137] [pose_estimator]: RPE: trans 0.0103 | rot 0.00137 (0.056 deg)
+Matched 183 keypoints
+[INFO] [1790553374.382872512] [pose_estimator]: RANSAC: 120 inliers / 183, 14 iterations
+[INFO] [1790553374.393418637] [pose_estimator]: RPE: trans 0.0031 | rot 0.00096 (0.039 deg)
+Matched 191 keypoints
+[INFO] [1790553374.548561762] [pose_estimator]: RANSAC: 151 inliers / 191, 7 iterations
+[INFO] [1790553374.559613345] [pose_estimator]: RPE: trans 0.0088 | rot 0.00119 (0.048 deg)
+Matched 172 keypoints
+[INFO] [1790553374.738347428] [pose_estimator]: RANSAC: 125 inliers / 172, 10 iterations
+[INFO] [1790553374.748443429] [pose_estimator]: RPE: trans 0.0032 | rot 0.00081 (0.033 deg)
+Matched 169 keypoints
+[INFO] [1790553375.768075929] [pose_estimator]: RANSAC: 116 inliers / 169, 12 iterations
+[INFO] [1790553375.769206054] [pose_estimator]: RPE: trans 0.0049 | rot 0.00067 (0.027 deg)
+Matched 123 keypoints
+[INFO] [1790553375.919808929] [pose_estimator]: RANSAC: 77 inliers / 123, 17 iterations
+[INFO] [1790553375.923353054] [pose_estimator]: RPE: trans 0.0038 | rot 0.00081 (0.033 deg)
+Matched 133 keypoints
+[INFO] [1790553376.480954763] [pose_estimator]: RANSAC: 88 inliers / 133, 14 iterations
+[INFO] [1790553376.486491096] [pose_estimator]: RPE: trans 0.0025 | rot 0.00117 (0.047 deg)
+Matched 99 keypoints
+[INFO] [1790553376.634479346] [pose_estimator]: RANSAC: 55 inliers / 99, 25 iterations
+[INFO] [1790553376.636181388] [pose_estimator]: RPE: trans 0.0018 | rot 0.00106 (0.043 deg)
+Matched 168 keypoints
+[INFO] [1790553376.760324054] [pose_estimator]: RANSAC: 110 inliers / 168, 14 iterations
+[INFO] [1790553376.763014304] [pose_estimator]: RPE: trans 0.0082 | rot 0.00100 (0.040 deg)
+Matched 160 keypoints
+[INFO] [1790553376.898129555] [pose_estimator]: RANSAC: 105 inliers / 160, 14 iterations
+[INFO] [1790553376.901129596] [pose_estimator]: RPE: trans 0.0105 | rot 0.00090 (0.037 deg)
+Matched 161 keypoints
+[INFO] [1790553377.038906846] [pose_estimator]: RANSAC: 107 inliers / 161, 14 iterations
+[INFO] [1790553377.039386555] [pose_estimator]: RPE: trans 0.0088 | rot 0.00077 (0.031 deg)
+Matched 162 keypoints
+[INFO] [1790553377.324126055] [pose_estimator]: RANSAC: 117 inliers / 162, 12 iterations
+[INFO] [1790553377.324266305] [pose_estimator]: RPE: trans 0.0047 | rot 0.00073 (0.030 deg)
+Matched 152 keypoints
+[INFO] [1790553377.983147222] [pose_estimator]: RANSAC: 89 inliers / 152, 21 iterations
+[INFO] [1790553377.988650472] [pose_estimator]: RPE: trans 0.0071 | rot 0.00094 (0.038 deg)
+Matched 127 keypoints
+[INFO] [1790553378.595877097] [pose_estimator]: RANSAC: 52 inliers / 127, 65 iterations
+[INFO] [1790553378.596055055] [pose_estimator]: RPE: trans 0.0119 | rot 0.00180 (0.073 deg)
+Matched 110 keypoints
+[INFO] [1790553378.987820000] [pose_estimator]: RANSAC: 36 inliers / 110, 130 iterations
+[INFO] [1790553378.987977916] [pose_estimator]: RPE: trans 0.0123 | rot 0.00219 (0.089 deg)
+Matched 145 keypoints
+[INFO] [1790553379.121406708] [pose_estimator]: RANSAC: 60 inliers / 145, 63 iterations
+[INFO] [1790553379.121583958] [pose_estimator]: RPE: trans 0.0183 | rot 0.00198 (0.080 deg)
+Matched 178 keypoints
+[INFO] [1790553379.282314625] [pose_estimator]: RANSAC: 118 inliers / 178, 14 iterations
+[INFO] [1790553379.283517541] [pose_estimator]: RPE: trans 0.0105 | rot 0.00104 (0.042 deg)
+Matched 196 keypoints
+[INFO] [1790553379.458572500] [pose_estimator]: RANSAC: 136 inliers / 196, 12 iterations
+[INFO] [1790553379.458733125] [pose_estimator]: RPE: trans 0.0087 | rot 0.00081 (0.033 deg)
+Matched 182 keypoints
+[INFO] [1790553379.790249458] [pose_estimator]: RANSAC: 122 inliers / 182, 13 iterations
+[INFO] [1790553379.805284083] [pose_estimator]: RPE: trans 0.0035 | rot 0.00044 (0.018 deg)
+Matched 156 keypoints
+[INFO] [1790553380.014124458] [pose_estimator]: RANSAC: 66 inliers / 156, 59 iterations
+[INFO] [1790553380.034225500] [pose_estimator]: RPE: trans 0.0149 | rot 0.00053 (0.021 deg)
+Matched 191 keypoints
+[INFO] [1790553380.193512667] [pose_estimator]: RANSAC: 101 inliers / 191, 29 iterations
+[INFO] [1790553380.193968125] [pose_estimator]: RPE: trans 0.0119 | rot 0.00125 (0.051 deg)
+Matched 182 keypoints
+[INFO] [1790553381.603169709] [pose_estimator]: RANSAC: 93 inliers / 182, 33 iterations
+[INFO] [1790553381.607542626] [pose_estimator]: RPE: trans 0.0069 | rot 0.00148 (0.060 deg)
+Matched 94 keypoints
+[INFO] [1790553381.767765334] [pose_estimator]: RANSAC: 33 inliers / 94, 105 iterations
+[INFO] [1790553381.768247751] [pose_estimator]: RPE: trans 0.0177 | rot 0.00345 (0.140 deg)
+Matched 143 keypoints
+[INFO] [1790553381.905719876] [pose_estimator]: RANSAC: 67 inliers / 143, 43 iterations
+[INFO] [1790553381.905889251] [pose_estimator]: RPE: trans 0.0100 | rot 0.00196 (0.080 deg)
+Matched 187 keypoints
+[INFO] [1790553382.060690543] [pose_estimator]: RANSAC: 105 inliers / 187, 24 iterations
+[INFO] [1790553382.073034293] [pose_estimator]: RPE: trans 0.0058 | rot 0.00068 (0.028 deg)
+Matched 146 keypoints
+[INFO] [1790553382.198051834] [pose_estimator]: RANSAC: 65 inliers / 146, 50 iterations
+[INFO] [1790553382.198214418] [pose_estimator]: RPE: trans 0.0099 | rot 0.00236 (0.096 deg)
+Matched 108 keypoints
+[INFO] [1790553382.780580501] [pose_estimator]: RANSAC: 53 inliers / 108, 37 iterations
+[INFO] [1790553382.780756626] [pose_estimator]: RPE: trans 0.0047 | rot 0.00063 (0.026 deg)
+Matched 105 keypoints
+[INFO] [1790553382.912564876] [pose_estimator]: RANSAC: 50 inliers / 105, 41 iterations
+[INFO] [1790553382.912725460] [pose_estimator]: RPE: trans 0.0082 | rot 0.00224 (0.091 deg)
+Matched 156 keypoints
+[INFO] [1790553383.028659793] [pose_estimator]: RANSAC: 98 inliers / 156, 17 iterations
+[INFO] [1790553383.028810668] [pose_estimator]: RPE: trans 0.0025 | rot 0.00045 (0.018 deg)
+Matched 163 keypoints
+[INFO] [1790553383.148603418] [pose_estimator]: RANSAC: 96 inliers / 163, 21 iterations
+[INFO] [1790553383.148758460] [pose_estimator]: RPE: trans 0.0015 | rot 0.00049 (0.020 deg)
+Matched 151 keypoints
+[INFO] [1790553383.279561377] [pose_estimator]: RANSAC: 91 inliers / 151, 19 iterations
+[INFO] [1790553383.282319377] [pose_estimator]: RPE: trans 0.0055 | rot 0.00155 (0.063 deg)
+Matched 169 keypoints
+[INFO] [1790553383.685207877] [pose_estimator]: RANSAC: 113 inliers / 169, 13 iterations
+[INFO] [1790553383.685373710] [pose_estimator]: RPE: trans 0.0023 | rot 0.00065 (0.026 deg)
+Matched 125 keypoints
+[INFO] [1790553383.893159544] [pose_estimator]: RANSAC: 71 inliers / 125, 23 iterations
+[INFO] [1790553383.893320377] [pose_estimator]: RPE: trans 0.0041 | rot 0.00227 (0.092 deg)
+Matched 148 keypoints
+[INFO] [1790553384.294946377] [pose_estimator]: RANSAC: 96 inliers / 148, 15 iterations
+[INFO] [1790553384.295107627] [pose_estimator]: RPE: trans 0.0017 | rot 0.00077 (0.031 deg)
+Matched 114 keypoints
+[INFO] [1790553384.810852919] [pose_estimator]: RANSAC: 77 inliers / 114, 13 iterations
+[INFO] [1790553384.811005502] [pose_estimator]: RPE: trans 0.0057 | rot 0.00131 (0.053 deg)
+Matched 121 keypoints
+[INFO] [1790553384.933186961] [pose_estimator]: RANSAC: 71 inliers / 121, 21 iterations
+[INFO] [1790553384.933421377] [pose_estimator]: RPE: trans 0.0025 | rot 0.00060 (0.024 deg)
+Matched 122 keypoints
+[INFO] [1790553385.048861211] [pose_estimator]: RANSAC: 94 inliers / 122, 8 iterations
+[INFO] [1790553385.049031002] [pose_estimator]: RPE: trans 0.0014 | rot 0.00057 (0.023 deg)
+Matched 109 keypoints
+[INFO] [1790553385.241454794] [pose_estimator]: RANSAC: 78 inliers / 109, 11 iterations
+[INFO] [1790553385.241592711] [pose_estimator]: RPE: trans 0.0079 | rot 0.00205 (0.083 deg)
+Matched 114 keypoints
+[INFO] [1790553385.353119794] [pose_estimator]: RANSAC: 79 inliers / 114, 12 iterations
+[INFO] [1790553385.353263211] [pose_estimator]: RPE: trans 0.0097 | rot 0.00327 (0.132 deg)
+Matched 94 keypoints
+[INFO] [1790553385.467971461] [pose_estimator]: RANSAC: 73 inliers / 94, 8 iterations
+[INFO] [1790553385.469536711] [pose_estimator]: RPE: trans 0.0024 | rot 0.00085 (0.035 deg)
+Matched 130 keypoints
+[INFO] [1790553385.585150544] [pose_estimator]: RANSAC: 109 inliers / 130, 6 iterations
+[INFO] [1790553385.585315711] [pose_estimator]: RPE: trans 0.0031 | rot 0.00068 (0.028 deg)
+Matched 126 keypoints
+[INFO] [1790553385.700279794] [pose_estimator]: RANSAC: 94 inliers / 126, 9 iterations
+[INFO] [1790553385.700409086] [pose_estimator]: RPE: trans 0.0015 | rot 0.00038 (0.016 deg)
+Matched 128 keypoints
+[INFO] [1790553385.835276003] [pose_estimator]: RANSAC: 92 inliers / 128, 10 iterations
+[INFO] [1790553385.835423669] [pose_estimator]: RPE: trans 0.0022 | rot 0.00046 (0.019 deg)
+Matched 163 keypoints
+[INFO] [1790553386.843961128] [pose_estimator]: RANSAC: 121 inliers / 163, 9 iterations
+[INFO] [1790553386.844125503] [pose_estimator]: RPE: trans 0.0008 | rot 0.00052 (0.021 deg)
+Matched 116 keypoints
+[INFO] [1790553387.003372337] [pose_estimator]: RANSAC: 75 inliers / 116, 15 iterations
+[INFO] [1790553387.003532545] [pose_estimator]: RPE: trans 0.0060 | rot 0.00114 (0.046 deg)
+Matched 238 keypoints
+[INFO] [1790553387.155680045] [pose_estimator]: RANSAC: 154 inliers / 238, 15 iterations
+[INFO] [1790553387.155854462] [pose_estimator]: RPE: trans 0.0049 | rot 0.00103 (0.042 deg)
+Matched 275 keypoints
+[INFO] [1790553387.531442295] [pose_estimator]: RANSAC: 184 inliers / 275, 13 iterations
+[INFO] [1790553387.554973045] [pose_estimator]: RPE: trans 0.0034 | rot 0.00070 (0.028 deg)
+Matched 219 keypoints
+[INFO] [1790553387.766935295] [pose_estimator]: RANSAC: 115 inliers / 219, 30 iterations
+[INFO] [1790553387.792587212] [pose_estimator]: RPE: trans 0.0067 | rot 0.00160 (0.065 deg)
+Matched 244 keypoints
+[INFO] [1790553388.291594879] [pose_estimator]: RANSAC: 130 inliers / 244, 29 iterations
+[INFO] [1790553388.315026587] [pose_estimator]: RPE: trans 0.0080 | rot 0.00149 (0.060 deg)
+Matched 256 keypoints
+[INFO] [1790553388.759801504] [pose_estimator]: RANSAC: 135 inliers / 256, 30 iterations
+[INFO] [1790553388.792471088] [pose_estimator]: RPE: trans 0.0034 | rot 0.00080 (0.032 deg)
+Matched 239 keypoints
+[INFO] [1790553388.990678879] [pose_estimator]: RANSAC: 123 inliers / 239, 32 iterations
+[INFO] [1790553388.993267921] [pose_estimator]: RPE: trans 0.0087 | rot 0.00138 (0.056 deg)
+Matched 313 keypoints
+[INFO] [1790553389.383304130] [pose_estimator]: RANSAC: 192 inliers / 313, 18 iterations
+[INFO] [1790553389.386228671] [pose_estimator]: RPE: trans 0.0056 | rot 0.00112 (0.045 deg)
+Matched 278 keypoints
+[INFO] [1790553389.531179171] [pose_estimator]: RANSAC: 162 inliers / 278, 21 iterations
+[INFO] [1790553389.532986505] [pose_estimator]: RPE: trans 0.0084 | rot 0.00195 (0.079 deg)
+Matched 307 keypoints
+[INFO] [1790553389.779546213] [pose_estimator]: RANSAC: 217 inliers / 307, 11 iterations
+[INFO] [1790553389.780050005] [pose_estimator]: RPE: trans 0.0064 | rot 0.00121 (0.049 deg)
+Matched 288 keypoints
+[INFO] [1790553389.917694838] [pose_estimator]: RANSAC: 185 inliers / 288, 15 iterations
+[INFO] [1790553389.917866630] [pose_estimator]: RPE: trans 0.0034 | rot 0.00085 (0.035 deg)
+Matched 300 keypoints
+[INFO] [1790553390.307640380] [pose_estimator]: RANSAC: 239 inliers / 300, 7 iterations
+[INFO] [1790553390.307866713] [pose_estimator]: RPE: trans 0.0093 | rot 0.00136 (0.055 deg)
+Matched 275 keypoints
+[INFO] [1790553390.655413755] [pose_estimator]: RANSAC: 174 inliers / 275, 16 iterations
+[INFO] [1790553390.656237588] [pose_estimator]: RPE: trans 0.0089 | rot 0.00058 (0.024 deg)
+Matched 292 keypoints
+[INFO] [1790553390.783467797] [pose_estimator]: RANSAC: 211 inliers / 292, 10 iterations
+[INFO] [1790553390.783634922] [pose_estimator]: RPE: trans 0.0049 | rot 0.00029 (0.012 deg)
+Matched 302 keypoints
+[INFO] [1790553390.917328880] [pose_estimator]: RANSAC: 227 inliers / 302, 9 iterations
+[INFO] [1790553390.917508339] [pose_estimator]: RPE: trans 0.0045 | rot 0.00081 (0.033 deg)
+Matched 322 keypoints
+[INFO] [1790553391.045018380] [pose_estimator]: RANSAC: 262 inliers / 322, 6 iterations
+[INFO] [1790553391.045256130] [pose_estimator]: RPE: trans 0.0044 | rot 0.00055 (0.022 deg)
+Matched 299 keypoints
+[INFO] [1790553391.199766089] [pose_estimator]: RANSAC: 218 inliers / 299, 10 iterations
+[INFO] [1790553391.199944214] [pose_estimator]: RPE: trans 0.0036 | rot 0.00065 (0.026 deg)
+Matched 280 keypoints
+[INFO] [1790553391.339768255] [pose_estimator]: RANSAC: 214 inliers / 280, 8 iterations
+[INFO] [1790553391.339928505] [pose_estimator]: RPE: trans 0.0088 | rot 0.00056 (0.023 deg)
+Matched 299 keypoints
+[INFO] [1790553391.705448922] [pose_estimator]: RANSAC: 220 inliers / 299, 10 iterations
+[INFO] [1790553391.705604006] [pose_estimator]: RPE: trans 0.0041 | rot 0.00064 (0.026 deg)
+Matched 289 keypoints
+[INFO] [1790553391.831162422] [pose_estimator]: RANSAC: 171 inliers / 289, 20 iterations
+[INFO] [1790553391.831320631] [pose_estimator]: RPE: trans 0.0027 | rot 0.00058 (0.024 deg)
+Matched 324 keypoints
+[INFO] [1790553391.961795381] [pose_estimator]: RANSAC: 253 inliers / 324, 8 iterations
+[INFO] [1790553391.971081381] [pose_estimator]: RPE: trans 0.0056 | rot 0.00054 (0.022 deg)
+Matched 358 keypoints
+[INFO] [1790553392.105339381] [pose_estimator]: RANSAC: 243 inliers / 358, 13 iterations
+[INFO] [1790553392.105503297] [pose_estimator]: RPE: trans 0.0076 | rot 0.00085 (0.034 deg)
+Matched 323 keypoints
+[INFO] [1790553392.242129756] [pose_estimator]: RANSAC: 210 inliers / 323, 15 iterations
+[INFO] [1790553392.242285089] [pose_estimator]: RPE: trans 0.0081 | rot 0.00101 (0.041 deg)
+Matched 331 keypoints
+[INFO] [1790553392.482800131] [pose_estimator]: RANSAC: 268 inliers / 331, 7 iterations
+[INFO] [1790553392.482950589] [pose_estimator]: RPE: trans 0.0071 | rot 0.00021 (0.008 deg)
+Matched 306 keypoints
+[INFO] [1790553392.695344173] [pose_estimator]: RANSAC: 195 inliers / 306, 16 iterations
+[INFO] [1790553392.695482756] [pose_estimator]: RPE: trans 0.0039 | rot 0.00068 (0.028 deg)
+Matched 341 keypoints
+[INFO] [1790553392.841436756] [pose_estimator]: RANSAC: 202 inliers / 341, 20 iterations
+[INFO] [1790553392.841619423] [pose_estimator]: RPE: trans 0.0034 | rot 0.00066 (0.027 deg)
+Matched 368 keypoints
+[INFO] [1790553392.993833090] [pose_estimator]: RANSAC: 232 inliers / 368, 16 iterations
+[INFO] [1790553392.993999340] [pose_estimator]: RPE: trans 0.0115 | rot 0.00022 (0.009 deg)
+Matched 361 keypoints
+[INFO] [1790553393.124559256] [pose_estimator]: RANSAC: 182 inliers / 361, 34 iterations
+[INFO] [1790553393.124740631] [pose_estimator]: RPE: trans 0.0058 | rot 0.00092 (0.037 deg)
+Matched 333 keypoints
+[INFO] [1790553393.259333756] [pose_estimator]: RANSAC: 183 inliers / 333, 26 iterations
+[INFO] [1790553393.259503381] [pose_estimator]: RPE: trans 0.0049 | rot 0.00044 (0.018 deg)
+Matched 332 keypoints
+[INFO] [1790553393.403026256] [pose_estimator]: RANSAC: 208 inliers / 332, 17 iterations
+[INFO] [1790553393.403192006] [pose_estimator]: RPE: trans 0.0044 | rot 0.00045 (0.018 deg)
+Matched 370 keypoints
+[INFO] [1790553393.629537423] [pose_estimator]: RANSAC: 232 inliers / 370, 17 iterations
+[INFO] [1790553393.630121298] [pose_estimator]: RPE: trans 0.0029 | rot 0.00060 (0.024 deg)
+Matched 437 keypoints
+[INFO] [1790553393.772148048] [pose_estimator]: RANSAC: 256 inliers / 437, 21 iterations
+[INFO] [1790553393.772309215] [pose_estimator]: RPE: trans 0.0026 | rot 0.00014 (0.006 deg)
+Matched 384 keypoints
+[INFO] [1790553393.902225673] [pose_estimator]: RANSAC: 234 inliers / 384, 18 iterations
+[INFO] [1790553393.902405757] [pose_estimator]: RPE: trans 0.0020 | rot 0.00045 (0.018 deg)
+Matched 421 keypoints
+[INFO] [1790553394.071528632] [pose_estimator]: RANSAC: 272 inliers / 421, 15 iterations
+[INFO] [1790553394.071739048] [pose_estimator]: RPE: trans 0.0135 | rot 0.00051 (0.021 deg)
+Matched 402 keypoints
+[INFO] [1790553394.210174548] [pose_estimator]: RANSAC: 247 inliers / 402, 18 iterations
+[INFO] [1790553394.210319965] [pose_estimator]: RPE: trans 0.0027 | rot 0.00029 (0.012 deg)
+Matched 403 keypoints
+[INFO] [1790553394.347094382] [pose_estimator]: RANSAC: 277 inliers / 403, 12 iterations
+[INFO] [1790553394.347272340] [pose_estimator]: RPE: trans 0.0175 | rot 0.00061 (0.025 deg)
+Matched 393 keypoints
+[INFO] [1790553394.477609715] [pose_estimator]: RANSAC: 221 inliers / 393, 24 iterations
+[INFO] [1790553394.477759924] [pose_estimator]: RPE: trans 0.0052 | rot 0.00057 (0.023 deg)
+Matched 393 keypoints
+[INFO] [1790553394.813865924] [pose_estimator]: RANSAC: 247 inliers / 393, 17 iterations
+[INFO] [1790553394.814037924] [pose_estimator]: RPE: trans 0.0024 | rot 0.00030 (0.012 deg)
+Matched 382 keypoints
+[INFO] [1790553394.948442049] [pose_estimator]: RANSAC: 220 inliers / 382, 22 iterations
+[INFO] [1790553394.951168674] [pose_estimator]: RPE: trans 0.0045 | rot 0.00071 (0.029 deg)
+Matched 392 keypoints
+[INFO] [1790553395.122499424] [pose_estimator]: RANSAC: 248 inliers / 392, 16 iterations
+[INFO] [1790553395.122675549] [pose_estimator]: RPE: trans 0.0032 | rot 0.00054 (0.022 deg)
+Matched 402 keypoints
+[INFO] [1790553395.487729799] [pose_estimator]: RANSAC: 233 inliers / 402, 22 iterations
+[INFO] [1790553395.487906632] [pose_estimator]: RPE: trans 0.0030 | rot 0.00047 (0.019 deg)
+Matched 352 keypoints
+[INFO] [1790553395.830852049] [pose_estimator]: RANSAC: 191 inliers / 352, 27 iterations
+[INFO] [1790553395.830998758] [pose_estimator]: RPE: trans 0.0035 | rot 0.00097 (0.039 deg)
+Matched 338 keypoints
+[INFO] [1790553396.058388091] [pose_estimator]: RANSAC: 193 inliers / 338, 23 iterations
+[INFO] [1790553396.058548383] [pose_estimator]: RPE: trans 0.0059 | rot 0.00073 (0.030 deg)
+Matched 344 keypoints
+[INFO] [1790553396.433086633] [pose_estimator]: RANSAC: 198 inliers / 344, 22 iterations
+[INFO] [1790553396.433271550] [pose_estimator]: RPE: trans 0.0057 | rot 0.00123 (0.050 deg)
+Matched 337 keypoints
+[INFO] [1790553396.563853091] [pose_estimator]: RANSAC: 200 inliers / 337, 20 iterations
+[INFO] [1790553396.564019133] [pose_estimator]: RPE: trans 0.0084 | rot 0.00094 (0.038 deg)
+Matched 360 keypoints
+[INFO] [1790553396.695596591] [pose_estimator]: RANSAC: 210 inliers / 360, 21 iterations
+[INFO] [1790553396.697512466] [pose_estimator]: RPE: trans 0.0023 | rot 0.00046 (0.018 deg)
+Matched 385 keypoints
+[INFO] [1790553396.831969008] [pose_estimator]: RANSAC: 229 inliers / 385, 20 iterations
+[INFO] [1790553396.832141091] [pose_estimator]: RPE: trans 0.0034 | rot 0.00108 (0.044 deg)
+Matched 387 keypoints
+[INFO] [1790553397.136400258] [pose_estimator]: RANSAC: 224 inliers / 387, 22 iterations
+[INFO] [1790553397.138615675] [pose_estimator]: RPE: trans 0.0104 | rot 0.00159 (0.064 deg)
+Matched 342 keypoints
+[INFO] [1790553397.280069758] [pose_estimator]: RANSAC: 199 inliers / 342, 24 iterations
+[INFO] [1790553397.280240633] [pose_estimator]: RPE: trans 0.0061 | rot 0.00127 (0.051 deg)
+Matched 359 keypoints
+[INFO] [1790553397.410976425] [pose_estimator]: RANSAC: 239 inliers / 359, 14 iterations
+[INFO] [1790553397.411130800] [pose_estimator]: RPE: trans 0.0021 | rot 0.00024 (0.010 deg)
+Matched 368 keypoints
+[INFO] [1790553397.555914883] [pose_estimator]: RANSAC: 227 inliers / 368, 18 iterations
+[INFO] [1790553397.557044258] [pose_estimator]: RPE: trans 0.0058 | rot 0.00083 (0.034 deg)
+Matched 353 keypoints
+[INFO] [1790553397.709404300] [pose_estimator]: RANSAC: 217 inliers / 353, 18 iterations
+[INFO] [1790553397.709556508] [pose_estimator]: RPE: trans 0.0039 | rot 0.00065 (0.026 deg)
+Matched 316 keypoints
+[INFO] [1790553397.851380300] [pose_estimator]: RANSAC: 202 inliers / 316, 16 iterations
+[INFO] [1790553397.851524425] [pose_estimator]: RPE: trans 0.0093 | rot 0.00161 (0.065 deg)
+Matched 306 keypoints
+[INFO] [1790553397.999599300] [pose_estimator]: RANSAC: 199 inliers / 306, 15 iterations
+[INFO] [1790553397.999906217] [pose_estimator]: RPE: trans 0.0046 | rot 0.00097 (0.039 deg)
+Matched 303 keypoints
+[INFO] [1790553398.132885509] [pose_estimator]: RANSAC: 232 inliers / 303, 8 iterations
+[INFO] [1790553398.133020300] [pose_estimator]: RPE: trans 0.0033 | rot 0.00082 (0.033 deg)
+Matched 305 keypoints
+[INFO] [1790553398.258947759] [pose_estimator]: RANSAC: 219 inliers / 305, 10 iterations
+[INFO] [1790553398.259093759] [pose_estimator]: RPE: trans 0.0052 | rot 0.00082 (0.033 deg)
+Matched 297 keypoints
+[INFO] [1790553398.524425259] [pose_estimator]: RANSAC: 221 inliers / 297, 9 iterations
+[INFO] [1790553398.524606259] [pose_estimator]: RPE: trans 0.0045 | rot 0.00119 (0.048 deg)
+Matched 310 keypoints
+[INFO] [1790553398.662980342] [pose_estimator]: RANSAC: 197 inliers / 310, 16 iterations
+[INFO] [1790553398.663130884] [pose_estimator]: RPE: trans 0.0020 | rot 0.00051 (0.021 deg)
+Matched 286 keypoints
+[INFO] [1790553398.803578926] [pose_estimator]: RANSAC: 224 inliers / 286, 8 iterations
+[INFO] [1790553398.803753384] [pose_estimator]: RPE: trans 0.0031 | rot 0.00075 (0.030 deg)
+Matched 303 keypoints
+[INFO] [1790553398.943702676] [pose_estimator]: RANSAC: 229 inliers / 303, 9 iterations
+[INFO] [1790553398.943872551] [pose_estimator]: RPE: trans 0.0027 | rot 0.00019 (0.008 deg)
+Matched 318 keypoints
+[INFO] [1790553399.072781801] [pose_estimator]: RANSAC: 247 inliers / 318, 8 iterations
+[INFO] [1790553399.072956467] [pose_estimator]: RPE: trans 0.0098 | rot 0.00158 (0.064 deg)
+Matched 282 keypoints
+[INFO] [1790553399.198295426] [pose_estimator]: RANSAC: 198 inliers / 282, 11 iterations
+[INFO] [1790553399.198456384] [pose_estimator]: RPE: trans 0.0063 | rot 0.00135 (0.055 deg)
+Matched 268 keypoints
+[INFO] [1790553399.336116301] [pose_estimator]: RANSAC: 206 inliers / 268, 8 iterations
+[INFO] [1790553399.336707926] [pose_estimator]: RPE: trans 0.0028 | rot 0.00077 (0.031 deg)
+Matched 274 keypoints
+[INFO] [1790553399.463155051] [pose_estimator]: RANSAC: 216 inliers / 274, 7 iterations
+[INFO] [1790553399.463324468] [pose_estimator]: RPE: trans 0.0014 | rot 0.00075 (0.030 deg)
+Matched 213 keypoints
+[INFO] [1790553399.587317468] [pose_estimator]: RANSAC: 158 inliers / 213, 9 iterations
+[INFO] [1790553399.587486634] [pose_estimator]: RPE: trans 0.0049 | rot 0.00128 (0.052 deg)
+Matched 280 keypoints
+[INFO] [1790553399.723965343] [pose_estimator]: RANSAC: 231 inliers / 280, 6 iterations
+[INFO] [1790553399.724129051] [pose_estimator]: RPE: trans 0.0042 | rot 0.00056 (0.023 deg)
+Matched 269 keypoints
+[INFO] [1790553399.873884385] [pose_estimator]: RANSAC: 213 inliers / 269, 7 iterations
+[INFO] [1790553399.874043676] [pose_estimator]: RPE: trans 0.0041 | rot 0.00124 (0.050 deg)
+Matched 230 keypoints
+[INFO] [1790553400.059359260] [pose_estimator]: RANSAC: 184 inliers / 230, 7 iterations
+[INFO] [1790553400.059545468] [pose_estimator]: RPE: trans 0.0022 | rot 0.00074 (0.030 deg)
+Matched 245 keypoints
+[INFO] [1790553400.208896801] [pose_estimator]: RANSAC: 179 inliers / 245, 10 iterations
+[INFO] [1790553400.209051676] [pose_estimator]: RPE: trans 0.0022 | rot 0.00093 (0.037 deg)
+Matched 245 keypoints
+[INFO] [1790553400.336343426] [pose_estimator]: RANSAC: 188 inliers / 245, 8 iterations
+[INFO] [1790553400.336521926] [pose_estimator]: RPE: trans 0.0041 | rot 0.00077 (0.031 deg)
+Matched 234 keypoints
+[INFO] [1790553400.480613135] [pose_estimator]: RANSAC: 175 inliers / 234, 9 iterations
+[INFO] [1790553400.480794801] [pose_estimator]: RPE: trans 0.0025 | rot 0.00059 (0.024 deg)
+Matched 243 keypoints
+[INFO] [1790553400.635732135] [pose_estimator]: RANSAC: 192 inliers / 243, 7 iterations
+[INFO] [1790553400.636971552] [pose_estimator]: RPE: trans 0.0057 | rot 0.00134 (0.054 deg)
+Matched 248 keypoints
+[INFO] [1790553400.968369302] [pose_estimator]: RANSAC: 200 inliers / 248, 7 iterations
+[INFO] [1790553400.968518093] [pose_estimator]: RPE: trans 0.0021 | rot 0.00053 (0.022 deg)
+Matched 219 keypoints
+[INFO] [1790553401.368601969] [pose_estimator]: RANSAC: 166 inliers / 219, 9 iterations
+[INFO] [1790553401.368755427] [pose_estimator]: RPE: trans 0.0047 | rot 0.00155 (0.063 deg)
+Matched 231 keypoints
+[INFO] [1790553401.538145177] [pose_estimator]: RANSAC: 163 inliers / 231, 11 iterations
+[INFO] [1790553401.542514427] [pose_estimator]: RPE: trans 0.0014 | rot 0.00078 (0.032 deg)
+Matched 332 keypoints
+[INFO] [1790553402.692246469] [pose_estimator]: RANSAC: 230 inliers / 332, 12 iterations
+[INFO] [1790553402.707733261] [pose_estimator]: RPE: trans 0.0044 | rot 0.00109 (0.044 deg)
+Matched 175 keypoints
+[INFO] [1790553402.882409053] [pose_estimator]: RANSAC: 95 inliers / 175, 27 iterations
+[INFO] [1790553402.883582219] [pose_estimator]: RPE: trans 0.0038 | rot 0.00128 (0.052 deg)
+Matched 342 keypoints
+[INFO] [1790553403.212265261] [pose_estimator]: RANSAC: 220 inliers / 342, 15 iterations
+[INFO] [1790553403.236863636] [pose_estimator]: RPE: trans 0.0021 | rot 0.00076 (0.031 deg)
+Matched 273 keypoints
+[INFO] [1790553403.646662595] [pose_estimator]: RANSAC: 167 inliers / 273, 18 iterations
+[INFO] [1790553403.646841761] [pose_estimator]: RPE: trans 0.0021 | rot 0.00077 (0.031 deg)
+Matched 247 keypoints
+[INFO] [1790553403.934337511] [pose_estimator]: RANSAC: 153 inliers / 247, 17 iterations
+[INFO] [1790553403.934482095] [pose_estimator]: RPE: trans 0.0066 | rot 0.00057 (0.023 deg)
+Matched 294 keypoints
+[INFO] [1790553404.416001012] [pose_estimator]: RANSAC: 196 inliers / 294, 14 iterations
+[INFO] [1790553404.416155970] [pose_estimator]: RPE: trans 0.0035 | rot 0.00077 (0.031 deg)
+Matched 304 keypoints
+[INFO] [1790553404.833143929] [pose_estimator]: RANSAC: 178 inliers / 304, 26 iterations
+[INFO] [1790553404.833296595] [pose_estimator]: RPE: trans 0.0052 | rot 0.00069 (0.028 deg)
+Matched 282 keypoints
+[INFO] [1790553405.044252595] [pose_estimator]: RANSAC: 186 inliers / 282, 14 iterations
+[INFO] [1790553405.044409845] [pose_estimator]: RPE: trans 0.0093 | rot 0.00229 (0.093 deg)
+Matched 320 keypoints
+[INFO] [1790553405.205797929] [pose_estimator]: RANSAC: 199 inliers / 320, 17 iterations
+[INFO] [1790553405.205944595] [pose_estimator]: RPE: trans 0.0084 | rot 0.00120 (0.049 deg)
+Matched 355 keypoints
+[INFO] [1790553405.341987804] [pose_estimator]: RANSAC: 254 inliers / 355, 11 iterations
+[INFO] [1790553405.342159887] [pose_estimator]: RPE: trans 0.0028 | rot 0.00062 (0.025 deg)
+Matched 365 keypoints
+[INFO] [1790553405.752858846] [pose_estimator]: RANSAC: 263 inliers / 365, 10 iterations
+[INFO] [1790553405.753002887] [pose_estimator]: RPE: trans 0.0028 | rot 0.00066 (0.027 deg)
+Matched 323 keypoints
+[INFO] [1790553405.883544637] [pose_estimator]: RANSAC: 221 inliers / 323, 12 iterations
+[INFO] [1790553405.883726137] [pose_estimator]: RPE: trans 0.0102 | rot 0.00108 (0.044 deg)
+Matched 356 keypoints
+[INFO] [1790553406.170371929] [pose_estimator]: RANSAC: 257 inliers / 356, 10 iterations
+[INFO] [1790553406.170650513] [pose_estimator]: RPE: trans 0.0028 | rot 0.00055 (0.022 deg)
+Matched 336 keypoints
+[INFO] [1790553406.303538888] [pose_estimator]: RANSAC: 240 inliers / 336, 11 iterations
+[INFO] [1790553406.303695888] [pose_estimator]: RPE: trans 0.0068 | rot 0.00157 (0.064 deg)
+Matched 344 keypoints
+[INFO] [1790553406.869856430] [pose_estimator]: RANSAC: 253 inliers / 344, 10 iterations
+[INFO] [1790553406.870062763] [pose_estimator]: RPE: trans 0.0054 | rot 0.00130 (0.053 deg)
+Matched 312 keypoints
+[INFO] [1790553407.230006596] [pose_estimator]: RANSAC: 214 inliers / 312, 12 iterations
+[INFO] [1790553407.230170805] [pose_estimator]: RPE: trans 0.0066 | rot 0.00097 (0.039 deg)
+Matched 338 keypoints
+[INFO] [1790553407.367828638] [pose_estimator]: RANSAC: 238 inliers / 338, 11 iterations
+[INFO] [1790553407.367979263] [pose_estimator]: RPE: trans 0.0051 | rot 0.00077 (0.031 deg)
+Matched 395 keypoints
+[INFO] [1790553407.504959971] [pose_estimator]: RANSAC: 310 inliers / 395, 7 iterations
+[INFO] [1790553407.505187221] [pose_estimator]: RPE: trans 0.0037 | rot 0.00075 (0.030 deg)
+Matched 398 keypoints
+[INFO] [1790553407.981174972] [pose_estimator]: RANSAC: 310 inliers / 398, 8 iterations
+[INFO] [1790553407.981333680] [pose_estimator]: RPE: trans 0.0076 | rot 0.00052 (0.021 deg)
+Matched 311 keypoints
+[INFO] [1790553408.112462222] [pose_estimator]: RANSAC: 209 inliers / 311, 13 iterations
+[INFO] [1790553408.112654722] [pose_estimator]: RPE: trans 0.0046 | rot 0.00058 (0.023 deg)
+Matched 430 keypoints
+[INFO] [1790553409.387890125] [pose_estimator]: RANSAC: 334 inliers / 430, 8 iterations
+[INFO] [1790553409.400963166] [pose_estimator]: RPE: trans 0.0026 | rot 0.00046 (0.019 deg)
+Matched 214 keypoints
+[INFO] [1790553409.577486291] [pose_estimator]: RANSAC: 91 inliers / 214, 58 iterations
+[INFO] [1790553409.590778833] [pose_estimator]: RPE: trans 0.0058 | rot 0.00181 (0.073 deg)
+Matched 317 keypoints
+[INFO] [1790553409.757369333] [pose_estimator]: RANSAC: 231 inliers / 317, 10 iterations
+[INFO] [1790553409.758857833] [pose_estimator]: RPE: trans 0.0044 | rot 0.00035 (0.014 deg)
+Matched 311 keypoints
+[INFO] [1790553410.236578333] [pose_estimator]: RANSAC: 239 inliers / 311, 8 iterations
+[INFO] [1790553410.236751792] [pose_estimator]: RPE: trans 0.0034 | rot 0.00103 (0.042 deg)
+Matched 262 keypoints
+[INFO] [1790553410.514526292] [pose_estimator]: RANSAC: 173 inliers / 262, 14 iterations
+[INFO] [1790553410.515335834] [pose_estimator]: RPE: trans 0.0070 | rot 0.00129 (0.052 deg)
+Matched 324 keypoints
+[INFO] [1790553410.643591542] [pose_estimator]: RANSAC: 224 inliers / 324, 12 iterations
+[INFO] [1790553410.643763584] [pose_estimator]: RPE: trans 0.0047 | rot 0.00145 (0.059 deg)
+Matched 344 keypoints
+[INFO] [1790553411.142492959] [pose_estimator]: RANSAC: 251 inliers / 344, 10 iterations
+[INFO] [1790553411.142676959] [pose_estimator]: RPE: trans 0.0028 | rot 0.00109 (0.044 deg)
+Matched 296 keypoints
+[INFO] [1790553411.588077626] [pose_estimator]: RANSAC: 198 inliers / 296, 13 iterations
+[INFO] [1790553411.588222751] [pose_estimator]: RPE: trans 0.0015 | rot 0.00056 (0.023 deg)
+Matched 296 keypoints
+[INFO] [1790553411.717910001] [pose_estimator]: RANSAC: 202 inliers / 296, 13 iterations
+[INFO] [1790553411.718135418] [pose_estimator]: RPE: trans 0.0032 | rot 0.00072 (0.029 deg)
+Matched 279 keypoints
+[INFO] [1790553411.861941126] [pose_estimator]: RANSAC: 226 inliers / 279, 7 iterations
+[INFO] [1790553411.864536001] [pose_estimator]: RPE: trans 0.0036 | rot 0.00131 (0.053 deg)
+Matched 280 keypoints
+[INFO] [1790553412.054070001] [pose_estimator]: RANSAC: 218 inliers / 280, 8 iterations
+[INFO] [1790553412.054384668] [pose_estimator]: RPE: trans 0.0019 | rot 0.00080 (0.033 deg)
+Matched 261 keypoints
+[INFO] [1790553412.248669918] [pose_estimator]: RANSAC: 200 inliers / 261, 8 iterations
+[INFO] [1790553412.251281751] [pose_estimator]: RPE: trans 0.0035 | rot 0.00094 (0.038 deg)
+Matched 237 keypoints
+[INFO] [1790553412.451389543] [pose_estimator]: RANSAC: 174 inliers / 237, 10 iterations
+[INFO] [1790553412.451637418] [pose_estimator]: RPE: trans 0.0025 | rot 0.00090 (0.036 deg)
+Matched 257 keypoints
+[INFO] [1790553412.823035626] [pose_estimator]: RANSAC: 190 inliers / 257, 9 iterations
+[INFO] [1790553413.197277377] [pose_estimator]: RPE: trans 0.0008 | rot 0.00041 (0.017 deg)
+Matched 184 keypoints
+[INFO] [1790553413.357791127] [pose_estimator]: RANSAC: 106 inliers / 184, 22 iterations
+[INFO] [1790553413.357954710] [pose_estimator]: RPE: trans 0.0051 | rot 0.00190 (0.077 deg)
+Matched 240 keypoints
+[INFO] [1790553413.478801668] [pose_estimator]: RANSAC: 178 inliers / 240, 9 iterations
+[INFO] [1790553413.478984377] [pose_estimator]: RPE: trans 0.0034 | rot 0.00063 (0.026 deg)
+Matched 231 keypoints
+[INFO] [1790553413.608919502] [pose_estimator]: RANSAC: 161 inliers / 231, 12 iterations
+[INFO] [1790553413.609080418] [pose_estimator]: RPE: trans 0.0034 | rot 0.00107 (0.043 deg)
+Matched 210 keypoints
+[INFO] [1790553413.932554669] [pose_estimator]: RANSAC: 143 inliers / 210, 13 iterations
+[INFO] [1790553413.933711085] [pose_estimator]: RPE: trans 0.0048 | rot 0.00114 (0.046 deg)
+Matched 189 keypoints
+[INFO] [1790553414.145158460] [pose_estimator]: RANSAC: 128 inliers / 189, 13 iterations
+[INFO] [1790553414.145296544] [pose_estimator]: RPE: trans 0.0070 | rot 0.00122 (0.049 deg)
+Matched 195 keypoints
+[INFO] [1790553414.314353044] [pose_estimator]: RANSAC: 141 inliers / 195, 10 iterations
+[INFO] [1790553414.375520085] [pose_estimator]: RPE: trans 0.0032 | rot 0.00111 (0.045 deg)
+Matched 193 keypoints
+[INFO] [1790553414.502215044] [pose_estimator]: RANSAC: 141 inliers / 193, 10 iterations
+[INFO] [1790553414.502393086] [pose_estimator]: RPE: trans 0.0030 | rot 0.00095 (0.039 deg)
+Matched 203 keypoints
+[INFO] [1790553414.648110669] [pose_estimator]: RANSAC: 150 inliers / 203, 9 iterations
+[INFO] [1790553414.648250919] [pose_estimator]: RPE: trans 0.0013 | rot 0.00127 (0.051 deg)
+Matched 227 keypoints
+[INFO] [1790553414.764526669] [pose_estimator]: RANSAC: 179 inliers / 227, 8 iterations
+[INFO] [1790553414.866404544] [pose_estimator]: RPE: trans 0.0073 | rot 0.00115 (0.046 deg)
+Matched 209 keypoints
+[INFO] [1790553414.997569252] [pose_estimator]: RANSAC: 156 inliers / 209, 9 iterations
+[INFO] [1790553414.997716252] [pose_estimator]: RPE: trans 0.0025 | rot 0.00059 (0.024 deg)
+Matched 198 keypoints
+[INFO] [1790553415.116312961] [pose_estimator]: RANSAC: 138 inliers / 198, 12 iterations
+[INFO] [1790553415.116461961] [pose_estimator]: RPE: trans 0.0033 | rot 0.00085 (0.034 deg)
+Matched 229 keypoints
+[INFO] [1790553415.254228336] [pose_estimator]: RANSAC: 177 inliers / 229, 8 iterations
+[INFO] [1790553415.254430086] [pose_estimator]: RPE: trans 0.0059 | rot 0.00132 (0.053 deg)
+Matched 203 keypoints
+[INFO] [1790553415.384499794] [pose_estimator]: RANSAC: 136 inliers / 203, 13 iterations
+[INFO] [1790553415.388280961] [pose_estimator]: RPE: trans 0.0021 | rot 0.00049 (0.020 deg)
+Matched 220 keypoints
+[INFO] [1790553415.514024211] [pose_estimator]: RANSAC: 156 inliers / 220, 11 iterations
+[INFO] [1790553415.514158753] [pose_estimator]: RPE: trans 0.0092 | rot 0.00162 (0.066 deg)
+Matched 190 keypoints
+[INFO] [1790553415.636587294] [pose_estimator]: RANSAC: 137 inliers / 190, 10 iterations
+[INFO] [1790553415.636729544] [pose_estimator]: RPE: trans 0.0045 | rot 0.00129 (0.052 deg)
+Matched 219 keypoints
+[INFO] [1790553415.764922419] [pose_estimator]: RANSAC: 160 inliers / 219, 10 iterations
+[INFO] [1790553415.765071044] [pose_estimator]: RPE: trans 0.0037 | rot 0.00079 (0.032 deg)
+Matched 226 keypoints
+[INFO] [1790553415.889336670] [pose_estimator]: RANSAC: 172 inliers / 226, 8 iterations
+[INFO] [1790553415.892341253] [pose_estimator]: RPE: trans 0.0025 | rot 0.00026 (0.010 deg)
+Matched 219 keypoints
+[INFO] [1790553416.019531878] [pose_estimator]: RANSAC: 155 inliers / 219, 11 iterations
+[INFO] [1790553416.019659961] [pose_estimator]: RPE: trans 0.0017 | rot 0.00092 (0.037 deg)
+Matched 216 keypoints
+[INFO] [1790553416.152297378] [pose_estimator]: RANSAC: 178 inliers / 216, 6 iterations
+[INFO] [1790553416.152436253] [pose_estimator]: RPE: trans 0.0016 | rot 0.00018 (0.007 deg)
+Matched 198 keypoints
+[INFO] [1790553416.274200128] [pose_estimator]: RANSAC: 168 inliers / 198, 5 iterations
+[INFO] [1790553416.276691670] [pose_estimator]: RPE: trans 0.0028 | rot 0.00040 (0.016 deg)
+Matched 200 keypoints
+[INFO] [1790553416.403944378] [pose_estimator]: RANSAC: 147 inliers / 200, 10 iterations
+[INFO] [1790553416.404103836] [pose_estimator]: RPE: trans 0.0034 | rot 0.00082 (0.033 deg)
+Matched 183 keypoints
+[INFO] [1790553416.532280170] [pose_estimator]: RANSAC: 147 inliers / 183, 7 iterations
+[INFO] [1790553416.532430420] [pose_estimator]: RPE: trans 0.0009 | rot 0.00055 (0.022 deg)
+Matched 192 keypoints
+[INFO] [1790553416.648944503] [pose_estimator]: RANSAC: 148 inliers / 192, 8 iterations
+[INFO] [1790553416.649079670] [pose_estimator]: RPE: trans 0.0069 | rot 0.00148 (0.060 deg)
+Matched 183 keypoints
+[INFO] [1790553416.789829087] [pose_estimator]: RANSAC: 142 inliers / 183, 8 iterations
+[INFO] [1790553416.799623420] [pose_estimator]: RPE: trans 0.0020 | rot 0.00062 (0.025 deg)
+Matched 192 keypoints
+[INFO] [1790553416.993972420] [pose_estimator]: RANSAC: 149 inliers / 192, 9 iterations
+[INFO] [1790553416.994141295] [pose_estimator]: RPE: trans 0.0073 | rot 0.00217 (0.088 deg)
+Matched 219 keypoints
+[INFO] [1790553417.109433212] [pose_estimator]: RANSAC: 147 inliers / 219, 13 iterations
+[INFO] [1790553417.109600878] [pose_estimator]: RPE: trans 0.0051 | rot 0.00157 (0.064 deg)
+Matched 202 keypoints
+[INFO] [1790553417.248007337] [pose_estimator]: RANSAC: 154 inliers / 202, 8 iterations
+[INFO] [1790553417.248169503] [pose_estimator]: RPE: trans 0.0012 | rot 0.00057 (0.023 deg)
+Matched 214 keypoints
+[INFO] [1790553417.366966337] [pose_estimator]: RANSAC: 169 inliers / 214, 7 iterations
+[INFO] [1790553417.745629879] [pose_estimator]: RPE: trans 0.0038 | rot 0.00106 (0.043 deg)
+Matched 130 keypoints
+[INFO] [1790553417.887160629] [pose_estimator]: RANSAC: 69 inliers / 130, 29 iterations
+[INFO] [1790553417.887323670] [pose_estimator]: RPE: trans 0.0041 | rot 0.00089 (0.036 deg)
+Matched 172 keypoints
+[INFO] [1790553418.230722129] [pose_estimator]: RANSAC: 127 inliers / 172, 9 iterations
+[INFO] [1790553418.420198421] [pose_estimator]: RPE: trans 0.0024 | rot 0.00054 (0.022 deg)
+Matched 119 keypoints
+[INFO] [1790553418.548125004] [pose_estimator]: RANSAC: 68 inliers / 119, 23 iterations
+[INFO] [1790553418.549076879] [pose_estimator]: RPE: trans 0.0052 | rot 0.00185 (0.075 deg)
+Matched 168 keypoints
+[INFO] [1790553418.797928004] [pose_estimator]: RANSAC: 121 inliers / 168, 11 iterations
+[INFO] [1790553420.610779297] [pose_estimator]: RPE: trans 0.0021 | rot 0.00147 (0.059 deg)
+Matched 53 keypoints
+[INFO] [1790553420.800059547] [pose_estimator]: RANSAC: 19 inliers / 53, 98 iterations
+[INFO] [1790553420.801504047] [pose_estimator]: RPE: trans 0.0107 | rot 0.00126 (0.051 deg)
+Matched 151 keypoints
+[INFO] [1790553421.761295506] [pose_estimator]: RANSAC: 102 inliers / 151, 13 iterations
+[INFO] [1790553421.768444714] [pose_estimator]: RPE: trans 0.0035 | rot 0.00079 (0.032 deg)
+Matched 115 keypoints
+[INFO] [1790553421.978448047] [pose_estimator]: RANSAC: 68 inliers / 115, 20 iterations
+[INFO] [1790553421.980979297] [pose_estimator]: RPE: trans 0.0088 | rot 0.00196 (0.079 deg)
+Matched 146 keypoints
+[INFO] [1790553422.138354172] [pose_estimator]: RANSAC: 103 inliers / 146, 11 iterations
+[INFO] [1790553422.165831756] [pose_estimator]: RPE: trans 0.0078 | rot 0.00129 (0.052 deg)
+Matched 134 keypoints
+[INFO] [1790553424.218909007] [pose_estimator]: RANSAC: 96 inliers / 134, 11 iterations
+[INFO] [1790553424.296399382] [pose_estimator]: RPE: trans 0.0028 | rot 0.00108 (0.044 deg)
+Matched 76 keypoints
+[INFO] [1790553424.921025840] [pose_estimator]: RANSAC: 30 inliers / 76, 73 iterations
+[INFO] [1790553424.927181549] [pose_estimator]: RPE: trans 0.0029 | rot 0.00274 (0.111 deg)
+Matched 164 keypoints
+[INFO] [1790553425.097367299] [pose_estimator]: RANSAC: 109 inliers / 164, 14 iterations
+[INFO] [1790553425.120492174] [pose_estimator]: RPE: trans 0.0038 | rot 0.00126 (0.051 deg)
+Matched 193 keypoints
+[INFO] [1790553425.377983132] [pose_estimator]: RANSAC: 154 inliers / 193, 7 iterations
+[INFO] [1790553425.394554049] [pose_estimator]: RPE: trans 0.0050 | rot 0.00165 (0.067 deg)
+Matched 163 keypoints
+[INFO] [1790553426.362208966] [pose_estimator]: RANSAC: 114 inliers / 163, 12 iterations
+[INFO] [1790553426.364602675] [pose_estimator]: RPE: trans 0.0061 | rot 0.00202 (0.082 deg)
+Matched 124 keypoints
+[INFO] [1790553426.530795716] [pose_estimator]: RANSAC: 76 inliers / 124, 18 iterations
+[INFO] [1790553426.553265800] [pose_estimator]: RPE: trans 0.0048 | rot 0.00114 (0.046 deg)
+Matched 258 keypoints
+[INFO] [1790553426.798065133] [pose_estimator]: RANSAC: 197 inliers / 258, 8 iterations
+[INFO] [1790553426.809867133] [pose_estimator]: RPE: trans 0.0021 | rot 0.00027 (0.011 deg)
+Matched 231 keypoints
+[INFO] [1790553428.374568509] [pose_estimator]: RANSAC: 161 inliers / 231, 12 iterations
+[INFO] [1790553428.397164884] [pose_estimator]: RPE: trans 0.0017 | rot 0.00070 (0.028 deg)
+Matched 143 keypoints
+[INFO] [1790553429.758123384] [pose_estimator]: RANSAC: 45 inliers / 143, 146 iterations
+[INFO] [1790553429.761246968] [pose_estimator]: RPE: trans 0.0168 | rot 0.00253 (0.102 deg)
+Matched 320 keypoints
+[INFO] [1790553429.943581260] [pose_estimator]: RANSAC: 198 inliers / 320, 18 iterations
+[INFO] [1790553429.944426010] [pose_estimator]: RPE: trans 0.0018 | rot 0.00115 (0.047 deg)
+Matched 442 keypoints
+[INFO] [1790553431.736311844] [pose_estimator]: RANSAC: 349 inliers / 442, 7 iterations
+[INFO] [1790553431.772530094] [pose_estimator]: RPE: trans 0.0023 | rot 0.00022 (0.009 deg)
+Matched 355 keypoints
+[INFO] [1790553431.987685469] [pose_estimator]: RANSAC: 258 inliers / 355, 10 iterations
+[INFO] [1790553432.002086469] [pose_estimator]: RPE: trans 0.0006 | rot 0.00054 (0.022 deg)
+Matched 401 keypoints
+[INFO] [1790553434.576373095] [pose_estimator]: RANSAC: 290 inliers / 401, 10 iterations
+[INFO] [1790553434.579986470] [pose_estimator]: RPE: trans 0.0010 | rot 0.00042 (0.017 deg)
+Matched 82 keypoints
+[INFO] [1790553434.721077512] [pose_estimator]: RANSAC: 12 inliers / 82, 301 iterations
+[INFO] [1790553434.723365137] [pose_estimator]: RPE: trans 0.0296 | rot 0.01298 (0.526 deg)
+Matched 232 keypoints
+[INFO] [1790553434.869190054] [pose_estimator]: RANSAC: 131 inliers / 232, 24 iterations
+[INFO] [1790553434.870640387] [pose_estimator]: RPE: trans 0.0033 | rot 0.00051 (0.020 deg)
+Matched 231 keypoints
+[INFO] [1790553435.009286804] [pose_estimator]: RANSAC: 129 inliers / 231, 25 iterations
+[INFO] [1790553435.010569637] [pose_estimator]: RPE: trans 0.0041 | rot 0.00092 (0.037 deg)
+Matched 245 keypoints
+[INFO] [1790553435.172635054] [pose_estimator]: RANSAC: 160 inliers / 245, 15 iterations
+[INFO] [1790553435.173975304] [pose_estimator]: RPE: trans 0.0019 | rot 0.00075 (0.031 deg)
+Matched 247 keypoints
+[INFO] [1790553435.326923262] [pose_estimator]: RANSAC: 146 inliers / 247, 20 iterations
+[INFO] [1790553435.330452095] [pose_estimator]: RPE: trans 0.0030 | rot 0.00038 (0.016 deg)
+Matched 237 keypoints
+[INFO] [1790553435.485275137] [pose_estimator]: RANSAC: 141 inliers / 237, 20 iterations
+[INFO] [1790553435.485819971] [pose_estimator]: RPE: trans 0.0052 | rot 0.00084 (0.034 deg)
+Matched 244 keypoints
+[INFO] [1790553435.631242971] [pose_estimator]: RANSAC: 145 inliers / 244, 24 iterations
+[INFO] [1790553435.631982221] [pose_estimator]: RPE: trans 0.0042 | rot 0.00013 (0.005 deg)
+Matched 238 keypoints
+[INFO] [1790553435.779828971] [pose_estimator]: RANSAC: 134 inliers / 238, 24 iterations
+[INFO] [1790553435.783209721] [pose_estimator]: RPE: trans 0.0025 | rot 0.00032 (0.013 deg)
+Matched 198 keypoints
+[INFO] [1790553435.928281137] [pose_estimator]: RANSAC: 109 inliers / 198, 26 iterations
+[INFO] [1790553435.929169721] [pose_estimator]: RPE: trans 0.0024 | rot 0.00157 (0.064 deg)
+Matched 251 keypoints
+[INFO] [1790553436.064139387] [pose_estimator]: RANSAC: 163 inliers / 251, 15 iterations
+[INFO] [1790553436.064667387] [pose_estimator]: RPE: trans 0.0058 | rot 0.00084 (0.034 deg)
+Matched 264 keypoints
+[INFO] [1790553436.202499013] [pose_estimator]: RANSAC: 185 inliers / 264, 11 iterations
+[INFO] [1790553436.203629013] [pose_estimator]: RPE: trans 0.0062 | rot 0.00109 (0.044 deg)
+Matched 256 keypoints
+[INFO] [1790553436.688925679] [pose_estimator]: RANSAC: 150 inliers / 256, 21 iterations
+[INFO] [1790553436.689175513] [pose_estimator]: RPE: trans 0.0020 | rot 0.00069 (0.028 deg)
+Matched 189 keypoints
+[INFO] [1790553437.139869263] [pose_estimator]: RANSAC: 96 inliers / 189, 33 iterations
+[INFO] [1790553437.147370388] [pose_estimator]: RPE: trans 0.0059 | rot 0.00149 (0.060 deg)
+Matched 147 keypoints
+[INFO] [1790553437.435580055] [pose_estimator]: RANSAC: 66 inliers / 147, 49 iterations
+[INFO] [1790553437.435866846] [pose_estimator]: RPE: trans 0.0037 | rot 0.00169 (0.069 deg)
+Matched 221 keypoints
+[INFO] [1790553437.560762763] [pose_estimator]: RANSAC: 136 inliers / 221, 18 iterations
+[INFO] [1790553437.560970680] [pose_estimator]: RPE: trans 0.0035 | rot 0.00062 (0.025 deg)
+Matched 242 keypoints
+[INFO] [1790553437.686236597] [pose_estimator]: RANSAC: 146 inliers / 242, 30 iterations
+[INFO] [1790553437.686533513] [pose_estimator]: RPE: trans 0.0070 | rot 0.00074 (0.030 deg)
+Matched 271 keypoints
+[INFO] [1790553437.817376430] [pose_estimator]: RANSAC: 165 inliers / 271, 19 iterations
+[INFO] [1790553437.817520847] [pose_estimator]: RPE: trans 0.0007 | rot 0.00031 (0.012 deg)
+Matched 238 keypoints
+[INFO] [1790553437.951373847] [pose_estimator]: RANSAC: 145 inliers / 238, 18 iterations
+[INFO] [1790553437.951539180] [pose_estimator]: RPE: trans 0.0011 | rot 0.00101 (0.041 deg)
+Matched 202 keypoints
+[INFO] [1790553438.083992180] [pose_estimator]: RANSAC: 125 inliers / 202, 18 iterations
+[INFO] [1790553438.084207138] [pose_estimator]: RPE: trans 0.0048 | rot 0.00073 (0.030 deg)
+Matched 236 keypoints
+[INFO] [1790553438.263048680] [pose_estimator]: RANSAC: 137 inliers / 236, 22 iterations
+[INFO] [1790553438.263218722] [pose_estimator]: RPE: trans 0.0040 | rot 0.00080 (0.033 deg)
+Matched 193 keypoints
+[INFO] [1790553438.389570014] [pose_estimator]: RANSAC: 107 inliers / 193, 25 iterations
+[INFO] [1790553438.392278180] [pose_estimator]: RPE: trans 0.0067 | rot 0.00232 (0.094 deg)
+Matched 248 keypoints
+[INFO] [1790553438.695463514] [pose_estimator]: RANSAC: 153 inliers / 248, 18 iterations
+[INFO] [1790553438.695627305] [pose_estimator]: RPE: trans 0.0011 | rot 0.00094 (0.038 deg)
+Matched 198 keypoints
+[INFO] [1790553438.819056597] [pose_estimator]: RANSAC: 100 inliers / 198, 34 iterations
+[INFO] [1790553438.819229514] [pose_estimator]: RPE: trans 0.0119 | rot 0.00597 (0.242 deg)
+Matched 210 keypoints
+[INFO] [1790553438.941970625] [pose_estimator]: RANSAC: 131 inliers / 210, 17 iterations
+[INFO] [1790553438.942139708] [pose_estimator]: RPE: trans 0.0037 | rot 0.00075 (0.030 deg)
+Matched 229 keypoints
+[INFO] [1790553439.154714833] [pose_estimator]: RANSAC: 117 inliers / 229, 33 iterations
+[INFO] [1790553439.154866750] [pose_estimator]: RPE: trans 0.0093 | rot 0.00261 (0.106 deg)
+Matched 189 keypoints
+[INFO] [1790553439.290113083] [pose_estimator]: RANSAC: 99 inliers / 189, 30 iterations
+[INFO] [1790553439.290263250] [pose_estimator]: RPE: trans 0.0061 | rot 0.00027 (0.011 deg)
+Matched 238 keypoints
+[INFO] [1790553439.656163958] [pose_estimator]: RANSAC: 155 inliers / 238, 15 iterations
+[INFO] [1790553439.661690458] [pose_estimator]: RPE: trans 0.0090 | rot 0.00142 (0.057 deg)
+Matched 168 keypoints
+[INFO] [1790553440.206544250] [pose_estimator]: RANSAC: 81 inliers / 168, 39 iterations
+[INFO] [1790553440.210592375] [pose_estimator]: RPE: trans 0.0025 | rot 0.00187 (0.076 deg)
+Matched 178 keypoints
+[INFO] [1790553440.337143084] [pose_estimator]: RANSAC: 82 inliers / 178, 48 iterations
+[INFO] [1790553440.337301209] [pose_estimator]: RPE: trans 0.0049 | rot 0.00108 (0.044 deg)
+Matched 348 keypoints
+[INFO] [1790553440.474499709] [pose_estimator]: RANSAC: 258 inliers / 348, 9 iterations
+[INFO] [1790553440.477883417] [pose_estimator]: RPE: trans 0.0056 | rot 0.00136 (0.055 deg)
+Matched 293 keypoints
+[INFO] [1790553440.617942959] [pose_estimator]: RANSAC: 163 inliers / 293, 25 iterations
+[INFO] [1790553440.619683125] [pose_estimator]: RPE: trans 0.0027 | rot 0.00101 (0.041 deg)
+Matched 348 keypoints
+[INFO] [1790553440.770505667] [pose_estimator]: RANSAC: 242 inliers / 348, 12 iterations
+[INFO] [1790553440.773079125] [pose_estimator]: RPE: trans 0.0043 | rot 0.00058 (0.024 deg)
+Matched 318 keypoints
+[INFO] [1790553441.225298584] [pose_estimator]: RANSAC: 179 inliers / 318, 24 iterations
+[INFO] [1790553441.228324126] [pose_estimator]: RPE: trans 0.0046 | rot 0.00131 (0.053 deg)
+Matched 208 keypoints
+[INFO] [1790553441.360460751] [pose_estimator]: RANSAC: 119 inliers / 208, 23 iterations
+[INFO] [1790553441.363647292] [pose_estimator]: RPE: trans 0.0031 | rot 0.00118 (0.048 deg)
+Matched 321 keypoints
+[INFO] [1790553441.497321584] [pose_estimator]: RANSAC: 216 inliers / 321, 13 iterations
+[INFO] [1790553441.497494001] [pose_estimator]: RPE: trans 0.0029 | rot 0.00037 (0.015 deg)
+Matched 338 keypoints
+[INFO] [1790553441.891829876] [pose_estimator]: RANSAC: 228 inliers / 338, 13 iterations
+[INFO] [1790553441.893317876] [pose_estimator]: RPE: trans 0.0093 | rot 0.00101 (0.041 deg)
+Matched 276 keypoints
+[INFO] [1790553442.028965459] [pose_estimator]: RANSAC: 183 inliers / 276, 14 iterations
+[INFO] [1790553442.029191334] [pose_estimator]: RPE: trans 0.0034 | rot 0.00206 (0.083 deg)
+Matched 330 keypoints
+[INFO] [1790553442.479897043] [pose_estimator]: RANSAC: 242 inliers / 330, 10 iterations
+[INFO] [1790553442.523281126] [pose_estimator]: RPE: trans 0.0056 | rot 0.00159 (0.065 deg)
+Matched 338 keypoints
+[INFO] [1790553443.167485543] [pose_estimator]: RANSAC: 237 inliers / 338, 11 iterations
+[INFO] [1790553443.168926460] [pose_estimator]: RPE: trans 0.0034 | rot 0.00076 (0.031 deg)
+Matched 358 keypoints
+[INFO] [1790553443.714647335] [pose_estimator]: RANSAC: 231 inliers / 358, 15 iterations
+[INFO] [1790553443.724143085] [pose_estimator]: RPE: trans 0.0053 | rot 0.00095 (0.038 deg)
+Matched 403 keypoints
+[INFO] [1790553444.701266044] [pose_estimator]: RANSAC: 274 inliers / 403, 13 iterations
+[INFO] [1790553444.701741086] [pose_estimator]: RPE: trans 0.0034 | rot 0.00075 (0.030 deg)
+Matched 264 keypoints
+[INFO] [1790553444.844391919] [pose_estimator]: RANSAC: 156 inliers / 264, 20 iterations
+[INFO] [1790553444.846165919] [pose_estimator]: RPE: trans 0.0036 | rot 0.00177 (0.072 deg)
+Matched 500 keypoints
+[INFO] [1790553445.067099419] [pose_estimator]: RANSAC: 392 inliers / 499, 7 iterations
+[INFO] [1790553445.067254294] [pose_estimator]: RPE: trans 0.0012 | rot 0.00040 (0.016 deg)
+Matched 519 keypoints
+[INFO] [1790553445.447185669] [pose_estimator]: RANSAC: 408 inliers / 519, 7 iterations
+[INFO] [1790553445.447338919] [pose_estimator]: RPE: trans 0.0018 | rot 0.00047 (0.019 deg)
+Matched 469 keypoints
+[INFO] [1790553445.690774044] [pose_estimator]: RANSAC: 343 inliers / 469, 10 iterations
+[INFO] [1790553445.690964086] [pose_estimator]: RPE: trans 0.0013 | rot 0.00057 (0.023 deg)
+Matched 473 keypoints
+[INFO] [1790553446.189104420] [pose_estimator]: RANSAC: 371 inliers / 473, 7 iterations
+[INFO] [1790553446.190133378] [pose_estimator]: RPE: trans 0.0036 | rot 0.00079 (0.032 deg)
+Matched 376 keypoints
+[INFO] [1790553446.336369128] [pose_estimator]: RANSAC: 265 inliers / 376, 11 iterations
+[INFO] [1790553446.336548961] [pose_estimator]: RPE: trans 0.0011 | rot 0.00036 (0.015 deg)
+Matched 505 keypoints
+[INFO] [1790553446.476017128] [pose_estimator]: RANSAC: 403 inliers / 504, 7 iterations
+[INFO] [1790553446.476183628] [pose_estimator]: RPE: trans 0.0013 | rot 0.00052 (0.021 deg)
+Matched 504 keypoints
+[INFO] [1790553446.636680337] [pose_estimator]: RANSAC: 419 inliers / 503, 6 iterations
+[INFO] [1790553446.637085295] [pose_estimator]: RPE: trans 0.0009 | rot 0.00027 (0.011 deg)
+Matched 512 keypoints
+[INFO] [1790553446.775385545] [pose_estimator]: RANSAC: 406 inliers / 512, 7 iterations
+[INFO] [1790553446.775564920] [pose_estimator]: RPE: trans 0.0055 | rot 0.00152 (0.062 deg)
+Matched 503 keypoints
+[INFO] [1790553446.917056587] [pose_estimator]: RANSAC: 390 inliers / 503, 8 iterations
+[INFO] [1790553446.917183837] [pose_estimator]: RPE: trans 0.0013 | rot 0.00062 (0.025 deg)
+Matched 472 keypoints
+[INFO] [1790553447.053196420] [pose_estimator]: RANSAC: 365 inliers / 471, 8 iterations
+[INFO] [1790553447.053513878] [pose_estimator]: RPE: trans 0.0015 | rot 0.00085 (0.034 deg)
+Matched 433 keypoints
+[INFO] [1790553447.185746253] [pose_estimator]: RANSAC: 320 inliers / 430, 9 iterations
+[INFO] [1790553447.185919753] [pose_estimator]: RPE: trans 0.0029 | rot 0.00043 (0.017 deg)
+Matched 394 keypoints
+[INFO] [1790553447.364995004] [pose_estimator]: RANSAC: 291 inliers / 392, 9 iterations
+[INFO] [1790553447.365154170] [pose_estimator]: RPE: trans 0.0035 | rot 0.00031 (0.013 deg)
+Matched 366 keypoints
+[INFO] [1790553447.497951920] [pose_estimator]: RANSAC: 268 inliers / 362, 12 iterations
+[INFO] [1790553447.501572837] [pose_estimator]: RPE: trans 0.0014 | rot 0.00022 (0.009 deg)
+Matched 408 keypoints
+[INFO] [1790553447.659608420] [pose_estimator]: RANSAC: 329 inliers / 405, 7 iterations
+[INFO] [1790553447.659780962] [pose_estimator]: RPE: trans 0.0030 | rot 0.00101 (0.041 deg)
+Matched 414 keypoints
+[INFO] [1790553447.840471795] [pose_estimator]: RANSAC: 301 inliers / 414, 10 iterations
+[INFO] [1790553447.840632962] [pose_estimator]: RPE: trans 0.0011 | rot 0.00051 (0.021 deg)
+Matched 396 keypoints
+[INFO] [1790553447.973028629] [pose_estimator]: RANSAC: 310 inliers / 396, 8 iterations
+[INFO] [1790553447.973195379] [pose_estimator]: RPE: trans 0.0040 | rot 0.00112 (0.045 deg)
+Matched 360 keypoints
+[INFO] [1790553448.103393837] [pose_estimator]: RANSAC: 276 inliers / 360, 8 iterations
+[INFO] [1790553448.103586129] [pose_estimator]: RPE: trans 0.0007 | rot 0.00055 (0.022 deg)
+Matched 396 keypoints
+[INFO] [1790553448.231900046] [pose_estimator]: RANSAC: 326 inliers / 395, 6 iterations
+[INFO] [1790553448.232077296] [pose_estimator]: RPE: trans 0.0019 | rot 0.00053 (0.022 deg)
+Matched 358 keypoints
+[INFO] [1790553448.377932671] [pose_estimator]: RANSAC: 269 inliers / 357, 9 iterations
+[INFO] [1790553448.378060462] [pose_estimator]: RPE: trans 0.0015 | rot 0.00058 (0.023 deg)
+Matched 344 keypoints
+[INFO] [1790553448.502735629] [pose_estimator]: RANSAC: 261 inliers / 344, 9 iterations
+[INFO] [1790553448.502903796] [pose_estimator]: RPE: trans 0.0054 | rot 0.00107 (0.043 deg)
+Matched 344 keypoints
+[INFO] [1790553448.627970546] [pose_estimator]: RANSAC: 266 inliers / 344, 8 iterations
+[INFO] [1790553448.628135296] [pose_estimator]: RPE: trans 0.0022 | rot 0.00067 (0.027 deg)
+Matched 321 keypoints
+[INFO] [1790553448.769520421] [pose_estimator]: RANSAC: 256 inliers / 321, 7 iterations
+[INFO] [1790553448.769675838] [pose_estimator]: RPE: trans 0.0033 | rot 0.00026 (0.010 deg)
+Matched 337 keypoints
+[INFO] [1790553448.920138129] [pose_estimator]: RANSAC: 254 inliers / 337, 9 iterations
+[INFO] [1790553448.920302504] [pose_estimator]: RPE: trans 0.0051 | rot 0.00088 (0.036 deg)
+Matched 338 keypoints
+[INFO] [1790553449.057903129] [pose_estimator]: RANSAC: 260 inliers / 338, 8 iterations
+[INFO] [1790553449.058055379] [pose_estimator]: RPE: trans 0.0043 | rot 0.00086 (0.035 deg)
+Matched 357 keypoints
+[INFO] [1790553449.199468921] [pose_estimator]: RANSAC: 292 inliers / 356, 6 iterations
+[INFO] [1790553449.199654171] [pose_estimator]: RPE: trans 0.0042 | rot 0.00078 (0.031 deg)
+Matched 381 keypoints
+[INFO] [1790553449.349926296] [pose_estimator]: RANSAC: 301 inliers / 381, 7 iterations
+[INFO] [1790553449.350059421] [pose_estimator]: RPE: trans 0.0021 | rot 0.00056 (0.023 deg)
+Matched 352 keypoints
+[INFO] [1790553449.687458588] [pose_estimator]: RANSAC: 240 inliers / 352, 13 iterations
+[INFO] [1790553449.688303421] [pose_estimator]: RPE: trans 0.0056 | rot 0.00105 (0.042 deg)
+Matched 317 keypoints
+[INFO] [1790553449.840312588] [pose_estimator]: RANSAC: 226 inliers / 316, 11 iterations
+[INFO] [1790553449.840471630] [pose_estimator]: RPE: trans 0.0025 | rot 0.00061 (0.025 deg)
+Matched 358 keypoints
+[INFO] [1790553449.999223255] [pose_estimator]: RANSAC: 275 inliers / 356, 8 iterations
+[INFO] [1790553449.999362755] [pose_estimator]: RPE: trans 0.0037 | rot 0.00043 (0.017 deg)
+Matched 328 keypoints
+[INFO] [1790553450.140758047] [pose_estimator]: RANSAC: 231 inliers / 327, 11 iterations
+[INFO] [1790553450.141885463] [pose_estimator]: RPE: trans 0.0042 | rot 0.00160 (0.065 deg)
+Matched 384 keypoints
+[INFO] [1790553450.279144630] [pose_estimator]: RANSAC: 319 inliers / 383, 6 iterations
+[INFO] [1790553450.279293963] [pose_estimator]: RPE: trans 0.0016 | rot 0.00063 (0.026 deg)
+Matched 337 keypoints
+[INFO] [1790553450.406894213] [pose_estimator]: RANSAC: 275 inliers / 337, 7 iterations
+[INFO] [1790553450.407023797] [pose_estimator]: RPE: trans 0.0017 | rot 0.00042 (0.017 deg)
+Matched 387 keypoints
+[INFO] [1790553450.536251755] [pose_estimator]: RANSAC: 321 inliers / 387, 6 iterations
+[INFO] [1790553450.536445213] [pose_estimator]: RPE: trans 0.0028 | rot 0.00091 (0.037 deg)
+Matched 356 keypoints
+[INFO] [1790553450.696349380] [pose_estimator]: RANSAC: 287 inliers / 356, 7 iterations
+[INFO] [1790553450.696509422] [pose_estimator]: RPE: trans 0.0038 | rot 0.00101 (0.041 deg)
+Matched 327 keypoints
+[INFO] [1790553450.823586339] [pose_estimator]: RANSAC: 244 inliers / 325, 12 iterations
+[INFO] [1790553450.823755005] [pose_estimator]: RPE: trans 0.0022 | rot 0.00036 (0.014 deg)
+Matched 418 keypoints
+[INFO] [1790553450.968564464] [pose_estimator]: RANSAC: 356 inliers / 417, 6 iterations
+[INFO] [1790553450.968749255] [pose_estimator]: RPE: trans 0.0025 | rot 0.00060 (0.024 deg)
+Matched 391 keypoints
+[INFO] [1790553451.132416547] [pose_estimator]: RANSAC: 322 inliers / 391, 6 iterations
+[INFO] [1790553451.132577130] [pose_estimator]: RPE: trans 0.0013 | rot 0.00062 (0.025 deg)
+Matched 359 keypoints
+[INFO] [1790553451.268951672] [pose_estimator]: RANSAC: 281 inliers / 359, 8 iterations
+[INFO] [1790553451.269104297] [pose_estimator]: RPE: trans 0.0030 | rot 0.00065 (0.026 deg)
+Matched 482 keypoints
+[INFO] [1790553451.409920589] [pose_estimator]: RANSAC: 396 inliers / 482, 6 iterations
+[INFO] [1790553451.410078797] [pose_estimator]: RPE: trans 0.0017 | rot 0.00014 (0.006 deg)
+Matched 433 keypoints
+[INFO] [1790553451.550591881] [pose_estimator]: RANSAC: 348 inliers / 432, 7 iterations
+[INFO] [1790553451.550766881] [pose_estimator]: RPE: trans 0.0049 | rot 0.00063 (0.026 deg)
+Matched 357 keypoints
+[INFO] [1790553451.693413422] [pose_estimator]: RANSAC: 264 inliers / 356, 9 iterations
+[INFO] [1790553451.693591089] [pose_estimator]: RPE: trans 0.0056 | rot 0.00082 (0.033 deg)
+Matched 403 keypoints
+[INFO] [1790553451.821209256] [pose_estimator]: RANSAC: 310 inliers / 402, 8 iterations
+[INFO] [1790553451.821372756] [pose_estimator]: RPE: trans 0.0022 | rot 0.00077 (0.031 deg)
+Matched 464 keypoints
+[INFO] [1790553451.964016964] [pose_estimator]: RANSAC: 388 inliers / 464, 6 iterations
+[INFO] [1790553451.964170506] [pose_estimator]: RPE: trans 0.0028 | rot 0.00019 (0.008 deg)
+Matched 375 keypoints
+[INFO] [1790553452.128162214] [pose_estimator]: RANSAC: 280 inliers / 374, 9 iterations
+[INFO] [1790553452.128325256] [pose_estimator]: RPE: trans 0.0028 | rot 0.00068 (0.028 deg)
+Matched 335 keypoints
+[INFO] [1790553452.257799881] [pose_estimator]: RANSAC: 251 inliers / 335, 9 iterations
+[INFO] [1790553452.257954839] [pose_estimator]: RPE: trans 0.0018 | rot 0.00080 (0.032 deg)
+Matched 339 keypoints
+[INFO] [1790553452.448925881] [pose_estimator]: RANSAC: 289 inliers / 339, 5 iterations
+[INFO] [1790553452.449070298] [pose_estimator]: RPE: trans 0.0026 | rot 0.00046 (0.019 deg)
+Matched 287 keypoints
+[INFO] [1790553453.049962340] [pose_estimator]: RANSAC: 201 inliers / 287, 11 iterations
+[INFO] [1790553453.050121340] [pose_estimator]: RPE: trans 0.0047 | rot 0.00097 (0.039 deg)
+Matched 227 keypoints
+[INFO] [1790553453.211519006] [pose_estimator]: RANSAC: 141 inliers / 227, 17 iterations
+[INFO] [1790553453.213599465] [pose_estimator]: RPE: trans 0.0065 | rot 0.00173 (0.070 deg)
+Matched 351 keypoints
+[INFO] [1790553453.544069798] [pose_estimator]: RANSAC: 274 inliers / 350, 8 iterations
+[INFO] [1790553453.561400548] [pose_estimator]: RPE: trans 0.0027 | rot 0.00104 (0.042 deg)
+Matched 281 keypoints
+[INFO] [1790553453.725794757] [pose_estimator]: RANSAC: 198 inliers / 279, 11 iterations
+[INFO] [1790553453.735128090] [pose_estimator]: RPE: trans 0.0022 | rot 0.00060 (0.024 deg)
+Matched 376 keypoints
+[INFO] [1790553453.915651798] [pose_estimator]: RANSAC: 263 inliers / 373, 11 iterations
+[INFO] [1790553453.920696215] [pose_estimator]: RPE: trans 0.0024 | rot 0.00047 (0.019 deg)
+Matched 323 keypoints
+[INFO] [1790553454.199324548] [pose_estimator]: RANSAC: 226 inliers / 322, 11 iterations
+[INFO] [1790553454.219112382] [pose_estimator]: RPE: trans 0.0051 | rot 0.00117 (0.047 deg)
+Matched 284 keypoints
+[INFO] [1790553454.436931132] [pose_estimator]: RANSAC: 185 inliers / 283, 15 iterations
+[INFO] [1790553454.454577840] [pose_estimator]: RPE: trans 0.0026 | rot 0.00077 (0.031 deg)
+Matched 281 keypoints
+[INFO] [1790553454.870481257] [pose_estimator]: RANSAC: 190 inliers / 280, 13 iterations
+[INFO] [1790553454.876311465] [pose_estimator]: RPE: trans 0.0017 | rot 0.00062 (0.025 deg)
+Matched 262 keypoints
+[INFO] [1790553455.195822966] [pose_estimator]: RANSAC: 162 inliers / 260, 17 iterations
+[INFO] [1790553455.197117924] [pose_estimator]: RPE: trans 0.0025 | rot 0.00097 (0.039 deg)
+Matched 295 keypoints
+[INFO] [1790553455.469938507] [pose_estimator]: RANSAC: 227 inliers / 294, 8 iterations
+[INFO] [1790553455.473676382] [pose_estimator]: RPE: trans 0.0034 | rot 0.00107 (0.043 deg)
+Matched 314 keypoints
+[INFO] [1790553455.663399257] [pose_estimator]: RANSAC: 237 inliers / 314, 9 iterations
+[INFO] [1790553455.664681341] [pose_estimator]: RPE: trans 0.0027 | rot 0.00096 (0.039 deg)
+Matched 341 keypoints
+[INFO] [1790553455.911300049] [pose_estimator]: RANSAC: 259 inliers / 341, 8 iterations
+[INFO] [1790553455.924467008] [pose_estimator]: RPE: trans 0.0012 | rot 0.00051 (0.021 deg)
+Matched 309 keypoints
+[INFO] [1790553456.091712924] [pose_estimator]: RANSAC: 225 inliers / 309, 10 iterations
+[INFO] [1790553456.093656966] [pose_estimator]: RPE: trans 0.0033 | rot 0.00087 (0.035 deg)
+Matched 293 keypoints
+[INFO] [1790553456.646516383] [pose_estimator]: RANSAC: 202 inliers / 292, 12 iterations
+[INFO] [1790553456.646679216] [pose_estimator]: RPE: trans 0.0022 | rot 0.00132 (0.053 deg)
+Matched 270 keypoints
+[INFO] [1790553456.799989591] [pose_estimator]: RANSAC: 194 inliers / 268, 10 iterations
+[INFO] [1790553456.800634383] [pose_estimator]: RPE: trans 0.0030 | rot 0.00101 (0.041 deg)
+Matched 418 keypoints
+[INFO] [1790553456.928901966] [pose_estimator]: RANSAC: 324 inliers / 417, 8 iterations
+[INFO] [1790553456.929058508] [pose_estimator]: RPE: trans 0.0034 | rot 0.00094 (0.038 deg)
+Matched 478 keypoints
+[INFO] [1790553457.058741300] [pose_estimator]: RANSAC: 385 inliers / 476, 7 iterations
+[INFO] [1790553457.058911591] [pose_estimator]: RPE: trans 0.0013 | rot 0.00034 (0.014 deg)
+Matched 415 keypoints
+[INFO] [1790553457.184349133] [pose_estimator]: RANSAC: 299 inliers / 410, 10 iterations
+[INFO] [1790553457.184524467] [pose_estimator]: RPE: trans 0.0026 | rot 0.00043 (0.017 deg)
+Matched 449 keypoints
+[INFO] [1790553457.310940550] [pose_estimator]: RANSAC: 349 inliers / 447, 8 iterations
+[INFO] [1790553457.311110258] [pose_estimator]: RPE: trans 0.0093 | rot 0.00174 (0.070 deg)
+Matched 480 keypoints
+[INFO] [1790553457.670511675] [pose_estimator]: RANSAC: 343 inliers / 479, 11 iterations
+[INFO] [1790553457.673097133] [pose_estimator]: RPE: trans 0.0014 | rot 0.00029 (0.012 deg)
+Matched 449 keypoints
+[INFO] [1790553457.810457175] [pose_estimator]: RANSAC: 336 inliers / 449, 9 iterations
+[INFO] [1790553457.810626800] [pose_estimator]: RPE: trans 0.0037 | rot 0.00113 (0.046 deg)
+Matched 459 keypoints
+[INFO] [1790553457.954599800] [pose_estimator]: RANSAC: 348 inliers / 457, 12 iterations
+[INFO] [1790553457.954736134] [pose_estimator]: RPE: trans 0.0016 | rot 0.00046 (0.019 deg)
+Matched 463 keypoints
+[INFO] [1790553458.094443050] [pose_estimator]: RANSAC: 363 inliers / 463, 8 iterations
+[INFO] [1790553458.094975134] [pose_estimator]: RPE: trans 0.0018 | rot 0.00047 (0.019 deg)
+Matched 488 keypoints
+[INFO] [1790553458.222928342] [pose_estimator]: RANSAC: 348 inliers / 488, 11 iterations
+[INFO] [1790553458.223093509] [pose_estimator]: RPE: trans 0.0028 | rot 0.00136 (0.055 deg)
+Matched 500 keypoints
+[INFO] [1790553458.357049509] [pose_estimator]: RANSAC: 402 inliers / 499, 7 iterations
+[INFO] [1790553458.357189425] [pose_estimator]: RPE: trans 0.0019 | rot 0.00029 (0.012 deg)
+Matched 458 keypoints
+[INFO] [1790553458.687376509] [pose_estimator]: RANSAC: 358 inliers / 457, 8 iterations
+[INFO] [1790553458.687547801] [pose_estimator]: RPE: trans 0.0048 | rot 0.00106 (0.043 deg)
+Matched 463 keypoints
+[INFO] [1790553458.814812801] [pose_estimator]: RANSAC: 347 inliers / 463, 10 iterations
+[INFO] [1790553458.814984551] [pose_estimator]: RPE: trans 0.0016 | rot 0.00067 (0.027 deg)
+Matched 421 keypoints
+[INFO] [1790553458.941631967] [pose_estimator]: RANSAC: 303 inliers / 419, 10 iterations
+[INFO] [1790553458.941798551] [pose_estimator]: RPE: trans 0.0054 | rot 0.00138 (0.056 deg)
+Matched 549 keypoints
+[INFO] [1790553459.070854634] [pose_estimator]: RANSAC: 470 inliers / 545, 5 iterations
+[INFO] [1790553459.071126301] [pose_estimator]: RPE: trans 0.0027 | rot 0.00069 (0.028 deg)
+Matched 476 keypoints
+[INFO] [1790553459.198773343] [pose_estimator]: RANSAC: 385 inliers / 473, 6 iterations
+[INFO] [1790553459.198949134] [pose_estimator]: RPE: trans 0.0028 | rot 0.00131 (0.053 deg)
+Matched 419 keypoints
+[INFO] [1790553459.325312593] [pose_estimator]: RANSAC: 321 inliers / 416, 8 iterations
+[INFO] [1790553459.325461843] [pose_estimator]: RPE: trans 0.0026 | rot 0.00074 (0.030 deg)
+Matched 485 keypoints
+[INFO] [1790553459.682146968] [pose_estimator]: RANSAC: 376 inliers / 481, 8 iterations
+[INFO] [1790553459.707000093] [pose_estimator]: RPE: trans 0.0023 | rot 0.00048 (0.019 deg)
+Matched 412 keypoints
+[INFO] [1790553460.066989218] [pose_estimator]: RANSAC: 307 inliers / 409, 9 iterations
+[INFO] [1790553460.087215510] [pose_estimator]: RPE: trans 0.0006 | rot 0.00034 (0.014 deg)
+Matched 498 keypoints
+[INFO] [1790553460.984024427] [pose_estimator]: RANSAC: 407 inliers / 497, 6 iterations
+[INFO] [1790553460.984543635] [pose_estimator]: RPE: trans 0.0022 | rot 0.00060 (0.024 deg)
+Matched 228 keypoints
+[INFO] [1790553461.181319343] [pose_estimator]: RANSAC: 134 inliers / 228, 21 iterations
+[INFO] [1790553461.181476260] [pose_estimator]: RPE: trans 0.0033 | rot 0.00078 (0.031 deg)
+Matched 352 keypoints
+[INFO] [1790553461.491718927] [pose_estimator]: RANSAC: 234 inliers / 351, 14 iterations
+[INFO] [1790553461.491849760] [pose_estimator]: RPE: trans 0.0008 | rot 0.00025 (0.010 deg)
+Matched 346 keypoints
+[INFO] [1790553461.668648427] [pose_estimator]: RANSAC: 244 inliers / 345, 11 iterations
+[INFO] [1790553461.668840427] [pose_estimator]: RPE: trans 0.0032 | rot 0.00059 (0.024 deg)
+Matched 337 keypoints
+[INFO] [1790553462.010621261] [pose_estimator]: RANSAC: 254 inliers / 336, 9 iterations
+[INFO] [1790553462.010793677] [pose_estimator]: RPE: trans 0.0016 | rot 0.00076 (0.031 deg)
+Matched 279 keypoints
+[INFO] [1790553462.142899594] [pose_estimator]: RANSAC: 181 inliers / 276, 14 iterations
+[INFO] [1790553462.143067886] [pose_estimator]: RPE: trans 0.0023 | rot 0.00075 (0.030 deg)
+Matched 344 keypoints
+[INFO] [1790553462.342565927] [pose_estimator]: RANSAC: 258 inliers / 342, 9 iterations
+[INFO] [1790553462.342721386] [pose_estimator]: RPE: trans 0.0030 | rot 0.00060 (0.024 deg)
+Matched 287 keypoints
+[INFO] [1790553462.889951261] [pose_estimator]: RANSAC: 201 inliers / 287, 13 iterations
+[INFO] [1790553462.890108678] [pose_estimator]: RPE: trans 0.0023 | rot 0.00045 (0.018 deg)
+Matched 176 keypoints
+[INFO] [1790553463.167973261] [pose_estimator]: RANSAC: 119 inliers / 176, 13 iterations
+[INFO] [1790553463.171006303] [pose_estimator]: RPE: trans 0.0014 | rot 0.00054 (0.022 deg)
+Matched 271 keypoints
+[INFO] [1790553463.313030344] [pose_estimator]: RANSAC: 184 inliers / 271, 13 iterations
+[INFO] [1790553463.313199969] [pose_estimator]: RPE: trans 0.0049 | rot 0.00122 (0.049 deg)
+Matched 322 keypoints
+[INFO] [1790553463.468702595] [pose_estimator]: RANSAC: 253 inliers / 322, 7 iterations
+[INFO] [1790553463.468889053] [pose_estimator]: RPE: trans 0.0034 | rot 0.00072 (0.029 deg)
+Matched 313 keypoints
+[INFO] [1790553464.074849262] [pose_estimator]: RANSAC: 240 inliers / 312, 8 iterations
+[INFO] [1790553464.075003970] [pose_estimator]: RPE: trans 0.0025 | rot 0.00111 (0.045 deg)
+Matched 204 keypoints
+[INFO] [1790553464.200681178] [pose_estimator]: RANSAC: 137 inliers / 204, 13 iterations
+[INFO] [1790553464.200838803] [pose_estimator]: RPE: trans 0.0020 | rot 0.00104 (0.042 deg)
+Matched 276 keypoints
+[INFO] [1790553464.336396803] [pose_estimator]: RANSAC: 223 inliers / 276, 7 iterations
+[INFO] [1790553464.336563678] [pose_estimator]: RPE: trans 0.0039 | rot 0.00043 (0.017 deg)
+Matched 378 keypoints
+[INFO] [1790553464.463603303] [pose_estimator]: RANSAC: 338 inliers / 377, 4 iterations
+[INFO] [1790553464.474047178] [pose_estimator]: RPE: trans 0.0027 | rot 0.00067 (0.027 deg)
+Matched 320 keypoints
+[INFO] [1790553464.644770178] [pose_estimator]: RANSAC: 271 inliers / 318, 6 iterations
+[INFO] [1790553464.644951053] [pose_estimator]: RPE: trans 0.0037 | rot 0.00112 (0.045 deg)
+Matched 380 keypoints
+[INFO] [1790553464.771467554] [pose_estimator]: RANSAC: 297 inliers / 377, 7 iterations
+[INFO] [1790553464.771612179] [pose_estimator]: RPE: trans 0.0020 | rot 0.00042 (0.017 deg)
+Matched 335 keypoints
+[INFO] [1790553464.901129762] [pose_estimator]: RANSAC: 276 inliers / 332, 6 iterations
+[INFO] [1790553464.901278512] [pose_estimator]: RPE: trans 0.0023 | rot 0.00036 (0.015 deg)
+Matched 347 keypoints
+[INFO] [1790553465.024803762] [pose_estimator]: RANSAC: 289 inliers / 344, 6 iterations
+[INFO] [1790553465.024943637] [pose_estimator]: RPE: trans 0.0010 | rot 0.00023 (0.009 deg)
+Matched 413 keypoints
+[INFO] [1790553465.151202554] [pose_estimator]: RANSAC: 337 inliers / 410, 6 iterations
+[INFO] [1790553465.151345095] [pose_estimator]: RPE: trans 0.0006 | rot 0.00028 (0.011 deg)
+Matched 360 keypoints
+[INFO] [1790553465.281063637] [pose_estimator]: RANSAC: 301 inliers / 359, 6 iterations
+[INFO] [1790553465.281985845] [pose_estimator]: RPE: trans 0.0018 | rot 0.00045 (0.018 deg)
+Matched 411 keypoints
+[INFO] [1790553465.411588720] [pose_estimator]: RANSAC: 356 inliers / 408, 5 iterations
+[INFO] [1790553465.411735345] [pose_estimator]: RPE: trans 0.0025 | rot 0.00047 (0.019 deg)
+Matched 351 keypoints
+[INFO] [1790553465.536323096] [pose_estimator]: RANSAC: 300 inliers / 348, 5 iterations
+[INFO] [1790553465.536478554] [pose_estimator]: RPE: trans 0.0037 | rot 0.00036 (0.014 deg)
+Matched 382 keypoints
+[INFO] [1790553465.658422929] [pose_estimator]: RANSAC: 342 inliers / 380, 4 iterations
+[INFO] [1790553465.658584054] [pose_estimator]: RPE: trans 0.0014 | rot 0.00044 (0.018 deg)
+Matched 417 keypoints
+[INFO] [1790553465.789694887] [pose_estimator]: RANSAC: 358 inliers / 415, 5 iterations
+[INFO] [1790553465.789854346] [pose_estimator]: RPE: trans 0.0029 | rot 0.00064 (0.026 deg)
+Matched 429 keypoints
+[INFO] [1790553465.915615512] [pose_estimator]: RANSAC: 390 inliers / 428, 4 iterations
+[INFO] [1790553465.915763137] [pose_estimator]: RPE: trans 0.0018 | rot 0.00036 (0.015 deg)
+Matched 366 keypoints
+[INFO] [1790553466.041440304] [pose_estimator]: RANSAC: 282 inliers / 365, 8 iterations
+[INFO] [1790553466.041607679] [pose_estimator]: RPE: trans 0.0026 | rot 0.00033 (0.013 deg)
+Matched 393 keypoints
+[INFO] [1790553466.171760388] [pose_estimator]: RANSAC: 323 inliers / 391, 6 iterations
+[INFO] [1790553466.171923679] [pose_estimator]: RPE: trans 0.0029 | rot 0.00064 (0.026 deg)
+Matched 337 keypoints
+[INFO] [1790553466.295298763] [pose_estimator]: RANSAC: 261 inliers / 334, 8 iterations
+[INFO] [1790553466.295453846] [pose_estimator]: RPE: trans 0.0036 | rot 0.00051 (0.021 deg)
+Matched 348 keypoints
+[INFO] [1790553466.421075054] [pose_estimator]: RANSAC: 284 inliers / 346, 6 iterations
+[INFO] [1790553466.421231429] [pose_estimator]: RPE: trans 0.0024 | rot 0.00077 (0.031 deg)
+Matched 360 keypoints
+[INFO] [1790553466.550160179] [pose_estimator]: RANSAC: 311 inliers / 358, 5 iterations
+[INFO] [1790553466.550346679] [pose_estimator]: RPE: trans 0.0034 | rot 0.00060 (0.024 deg)
+Matched 355 keypoints
+[INFO] [1790553466.698908263] [pose_estimator]: RANSAC: 284 inliers / 355, 7 iterations
+[INFO] [1790553466.699060304] [pose_estimator]: RPE: trans 0.0013 | rot 0.00073 (0.029 deg)
+Matched 329 keypoints
+[INFO] [1790553466.832761263] [pose_estimator]: RANSAC: 255 inliers / 329, 8 iterations
+[INFO] [1790553466.832903263] [pose_estimator]: RPE: trans 0.0028 | rot 0.00018 (0.007 deg)
+Matched 350 keypoints
+[INFO] [1790553466.977279055] [pose_estimator]: RANSAC: 280 inliers / 350, 7 iterations
+[INFO] [1790553466.977451305] [pose_estimator]: RPE: trans 0.0044 | rot 0.00049 (0.020 deg)
+Matched 376 keypoints
+[INFO] [1790553467.123745555] [pose_estimator]: RANSAC: 301 inliers / 376, 7 iterations
+[INFO] [1790553467.123915055] [pose_estimator]: RPE: trans 0.0018 | rot 0.00063 (0.025 deg)
+Matched 337 keypoints
+[INFO] [1790553467.245044471] [pose_estimator]: RANSAC: 278 inliers / 337, 6 iterations
+[INFO] [1790553467.245180888] [pose_estimator]: RPE: trans 0.0024 | rot 0.00056 (0.023 deg)
+Matched 377 keypoints
+[INFO] [1790553467.367467596] [pose_estimator]: RANSAC: 347 inliers / 376, 3 iterations
+[INFO] [1790553467.367608846] [pose_estimator]: RPE: trans 0.0028 | rot 0.00092 (0.037 deg)
+Matched 337 keypoints
+[INFO] [1790553467.502494305] [pose_estimator]: RANSAC: 278 inliers / 337, 6 iterations
+[INFO] [1790553467.504133596] [pose_estimator]: RPE: trans 0.0024 | rot 0.00043 (0.018 deg)
+Matched 313 keypoints
+[INFO] [1790553467.631431180] [pose_estimator]: RANSAC: 242 inliers / 313, 8 iterations
+[INFO] [1790553467.631606013] [pose_estimator]: RPE: trans 0.0030 | rot 0.00080 (0.032 deg)
+Matched 401 keypoints
+[INFO] [1790553467.785639972] [pose_estimator]: RANSAC: 342 inliers / 399, 5 iterations
+[INFO] [1790553467.785809805] [pose_estimator]: RPE: trans 0.0013 | rot 0.00021 (0.008 deg)
+Matched 384 keypoints
+[INFO] [1790553467.968212638] [pose_estimator]: RANSAC: 305 inliers / 383, 7 iterations
+[INFO] [1790553467.969830097] [pose_estimator]: RPE: trans 0.0050 | rot 0.00071 (0.029 deg)
+Matched 309 keypoints
+[INFO] [1790553468.620508389] [pose_estimator]: RANSAC: 230 inliers / 306, 9 iterations
+[INFO] [1790553468.620680722] [pose_estimator]: RPE: trans 0.0045 | rot 0.00074 (0.030 deg)
+Matched 168 keypoints
+[INFO] [1790553468.754818097] [pose_estimator]: RANSAC: 92 inliers / 166, 25 iterations
+[INFO] [1790553468.754959097] [pose_estimator]: RPE: trans 0.0047 | rot 0.00139 (0.056 deg)
+Matched 275 keypoints
+[INFO] [1790553468.915831541] [pose_estimator]: RANSAC: 206 inliers / 274, 9 iterations
+[INFO] [1790553468.915973250] [pose_estimator]: RPE: trans 0.0022 | rot 0.00088 (0.036 deg)
+Matched 307 keypoints
+[INFO] [1790553469.048837041] [pose_estimator]: RANSAC: 226 inliers / 307, 10 iterations
+[INFO] [1790553469.048998666] [pose_estimator]: RPE: trans 0.0017 | rot 0.00057 (0.023 deg)
+Matched 292 keypoints
+[INFO] [1790553469.177413000] [pose_estimator]: RANSAC: 234 inliers / 292, 7 iterations
+[INFO] [1790553469.177569000] [pose_estimator]: RPE: trans 0.0012 | rot 0.00066 (0.027 deg)
+Matched 320 keypoints
+[INFO] [1790553469.301103666] [pose_estimator]: RANSAC: 265 inliers / 317, 6 iterations
+[INFO] [1790553469.301289250] [pose_estimator]: RPE: trans 0.0013 | rot 0.00058 (0.024 deg)
+Matched 281 keypoints
+[INFO] [1790553469.424056291] [pose_estimator]: RANSAC: 221 inliers / 279, 7 iterations
+[INFO] [1790553469.424208208] [pose_estimator]: RPE: trans 0.0015 | rot 0.00058 (0.024 deg)
+Matched 356 keypoints
+[INFO] [1790553469.592431708] [pose_estimator]: RANSAC: 278 inliers / 353, 7 iterations
+[INFO] [1790553469.592579375] [pose_estimator]: RPE: trans 0.0016 | rot 0.00051 (0.021 deg)
+Matched 287 keypoints
+[INFO] [1790553469.730719917] [pose_estimator]: RANSAC: 227 inliers / 286, 7 iterations
+[INFO] [1790553469.732908792] [pose_estimator]: RPE: trans 0.0049 | rot 0.00129 (0.052 deg)
+Matched 313 keypoints
+[INFO] [1790553469.927493542] [pose_estimator]: RANSAC: 241 inliers / 312, 8 iterations
+[INFO] [1790553469.927664792] [pose_estimator]: RPE: trans 0.0042 | rot 0.00120 (0.049 deg)
+Matched 258 keypoints
+[INFO] [1790553470.054893000] [pose_estimator]: RANSAC: 170 inliers / 256, 14 iterations
+[INFO] [1790553470.055053458] [pose_estimator]: RPE: trans 0.0021 | rot 0.00075 (0.031 deg)
+Matched 278 keypoints
+[INFO] [1790553470.190815333] [pose_estimator]: RANSAC: 216 inliers / 278, 8 iterations
+[INFO] [1790553470.190980792] [pose_estimator]: RPE: trans 0.0029 | rot 0.00076 (0.031 deg)
+Matched 354 keypoints
+[INFO] [1790553470.319905875] [pose_estimator]: RANSAC: 303 inliers / 353, 5 iterations
+[INFO] [1790553470.320042875] [pose_estimator]: RPE: trans 0.0009 | rot 0.00045 (0.018 deg)
+Matched 371 keypoints
+[INFO] [1790553470.457823834] [pose_estimator]: RANSAC: 309 inliers / 370, 6 iterations
+[INFO] [1790553470.458008084] [pose_estimator]: RPE: trans 0.0015 | rot 0.00028 (0.011 deg)
+Matched 313 keypoints
+[INFO] [1790553470.599298917] [pose_estimator]: RANSAC: 234 inliers / 311, 10 iterations
+[INFO] [1790553470.599433084] [pose_estimator]: RPE: trans 0.0015 | rot 0.00041 (0.017 deg)
+Matched 332 keypoints
+[INFO] [1790553470.799994792] [pose_estimator]: RANSAC: 262 inliers / 332, 7 iterations
+[INFO] [1790553470.800162709] [pose_estimator]: RPE: trans 0.0022 | rot 0.00038 (0.015 deg)
+Matched 338 keypoints
+[INFO] [1790553470.928514459] [pose_estimator]: RANSAC: 273 inliers / 338, 8 iterations
+[INFO] [1790553470.928664459] [pose_estimator]: RPE: trans 0.0008 | rot 0.00058 (0.023 deg)
+Matched 297 keypoints
+[INFO] [1790553471.066423292] [pose_estimator]: RANSAC: 220 inliers / 297, 9 iterations
+[INFO] [1790553471.066601376] [pose_estimator]: RPE: trans 0.0025 | rot 0.00052 (0.021 deg)
+Matched 324 keypoints
+[INFO] [1790553471.217202042] [pose_estimator]: RANSAC: 218 inliers / 324, 13 iterations
+[INFO] [1790553471.217383584] [pose_estimator]: RPE: trans 0.0023 | rot 0.00175 (0.071 deg)
+Matched 294 keypoints
+[INFO] [1790553471.355844001] [pose_estimator]: RANSAC: 225 inliers / 294, 8 iterations
+[INFO] [1790553471.355998709] [pose_estimator]: RPE: trans 0.0005 | rot 0.00049 (0.020 deg)
+Matched 340 keypoints
+[INFO] [1790553471.724862709] [pose_estimator]: RANSAC: 262 inliers / 340, 8 iterations
+[INFO] [1790553471.725043334] [pose_estimator]: RPE: trans 0.0031 | rot 0.00088 (0.036 deg)
+Matched 250 keypoints
+[INFO] [1790553471.881239959] [pose_estimator]: RANSAC: 183 inliers / 250, 10 iterations
+[INFO] [1790553471.881384543] [pose_estimator]: RPE: trans 0.0020 | rot 0.00060 (0.024 deg)
+Matched 336 keypoints
+[INFO] [1790553472.038984459] [pose_estimator]: RANSAC: 246 inliers / 333, 9 iterations
+[INFO] [1790553472.039141043] [pose_estimator]: RPE: trans 0.0015 | rot 0.00040 (0.016 deg)
+Matched 292 keypoints
+[INFO] [1790553472.256099793] [pose_estimator]: RANSAC: 231 inliers / 291, 7 iterations
+[INFO] [1790553472.256242626] [pose_estimator]: RPE: trans 0.0017 | rot 0.00034 (0.014 deg)
+Matched 324 keypoints
+[INFO] [1790553472.402004376] [pose_estimator]: RANSAC: 243 inliers / 322, 9 iterations
+[INFO] [1790553472.402165210] [pose_estimator]: RPE: trans 0.0020 | rot 0.00069 (0.028 deg)
+Matched 397 keypoints
+[INFO] [1790553472.542113085] [pose_estimator]: RANSAC: 332 inliers / 396, 9 iterations
+[INFO] [1790553472.542271960] [pose_estimator]: RPE: trans 0.0015 | rot 0.00060 (0.024 deg)
+Matched 314 keypoints
+[INFO] [1790553472.739648876] [pose_estimator]: RANSAC: 241 inliers / 314, 9 iterations
+[INFO] [1790553472.739881460] [pose_estimator]: RPE: trans 0.0020 | rot 0.00054 (0.022 deg)
+Matched 331 keypoints
+[INFO] [1790553473.102747085] [pose_estimator]: RANSAC: 258 inliers / 331, 12 iterations
+[INFO] [1790553473.102934418] [pose_estimator]: RPE: trans 0.0023 | rot 0.00096 (0.039 deg)
+Matched 305 keypoints
+[INFO] [1790553473.243941002] [pose_estimator]: RANSAC: 225 inliers / 304, 9 iterations
+[INFO] [1790553473.244132335] [pose_estimator]: RPE: trans 0.0027 | rot 0.00206 (0.084 deg)
+Matched 444 keypoints
+[INFO] [1790553473.459580960] [pose_estimator]: RANSAC: 359 inliers / 444, 7 iterations
+[INFO] [1790553473.459724585] [pose_estimator]: RPE: trans 0.0027 | rot 0.00058 (0.024 deg)
+Matched 422 keypoints
+[INFO] [1790553473.598414168] [pose_estimator]: RANSAC: 320 inliers / 421, 8 iterations
+[INFO] [1790553473.598624210] [pose_estimator]: RPE: trans 0.0028 | rot 0.00031 (0.013 deg)
+Matched 429 keypoints
+[INFO] [1790553473.778654252] [pose_estimator]: RANSAC: 333 inliers / 427, 8 iterations
+[INFO] [1790553473.778920793] [pose_estimator]: RPE: trans 0.0043 | rot 0.00047 (0.019 deg)
+Matched 437 keypoints
+[INFO] [1790553473.928942669] [pose_estimator]: RANSAC: 332 inliers / 435, 8 iterations
+[INFO] [1790553473.929209544] [pose_estimator]: RPE: trans 0.0024 | rot 0.00043 (0.017 deg)
+Matched 430 keypoints
+[INFO] [1790553474.093758127] [pose_estimator]: RANSAC: 345 inliers / 430, 7 iterations
+[INFO] [1790553474.098112127] [pose_estimator]: RPE: trans 0.0010 | rot 0.00110 (0.045 deg)
+Matched 412 keypoints
+[INFO] [1790553474.625109252] [pose_estimator]: RANSAC: 307 inliers / 411, 9 iterations
+[INFO] [1790553474.628870961] [pose_estimator]: RPE: trans 0.0018 | rot 0.00087 (0.035 deg)
+Matched 361 keypoints
+[INFO] [1790553474.949799252] [pose_estimator]: RANSAC: 257 inliers / 361, 11 iterations
+[INFO] [1790553474.950224169] [pose_estimator]: RPE: trans 0.0023 | rot 0.00061 (0.025 deg)
+Matched 404 keypoints
+[INFO] [1790553475.146959752] [pose_estimator]: RANSAC: 311 inliers / 404, 8 iterations
+[INFO] [1790553475.147112086] [pose_estimator]: RPE: trans 0.0026 | rot 0.00075 (0.031 deg)
+Matched 449 keypoints
+[INFO] [1790553475.287962086] [pose_estimator]: RANSAC: 352 inliers / 449, 8 iterations
+[INFO] [1790553475.288179169] [pose_estimator]: RPE: trans 0.0016 | rot 0.00043 (0.017 deg)
+Matched 434 keypoints
+[INFO] [1790553475.419109628] [pose_estimator]: RANSAC: 339 inliers / 434, 10 iterations
+[INFO] [1790553475.420878711] [pose_estimator]: RPE: trans 0.0013 | rot 0.00048 (0.019 deg)
+Matched 450 keypoints
+[INFO] [1790553475.851552628] [pose_estimator]: RANSAC: 358 inliers / 450, 7 iterations
+[INFO] [1790553475.851786211] [pose_estimator]: RPE: trans 0.0022 | rot 0.00036 (0.014 deg)
+Matched 358 keypoints
+[INFO] [1790553476.215331003] [pose_estimator]: RANSAC: 265 inliers / 357, 9 iterations
+[INFO] [1790553476.215482503] [pose_estimator]: RPE: trans 0.0027 | rot 0.00055 (0.022 deg)
+Matched 395 keypoints
+[INFO] [1790553476.340869795] [pose_estimator]: RANSAC: 325 inliers / 394, 6 iterations
+[INFO] [1790553476.341023503] [pose_estimator]: RPE: trans 0.0020 | rot 0.00061 (0.025 deg)
+Matched 451 keypoints
+[INFO] [1790553476.496901045] [pose_estimator]: RANSAC: 379 inliers / 451, 6 iterations
+[INFO] [1790553476.497049170] [pose_estimator]: RPE: trans 0.0014 | rot 0.00037 (0.015 deg)
+Matched 445 keypoints
+[INFO] [1790553476.627439712] [pose_estimator]: RANSAC: 368 inliers / 444, 6 iterations
+[INFO] [1790553476.627572420] [pose_estimator]: RPE: trans 0.0041 | rot 0.00017 (0.007 deg)
+Matched 457 keypoints
+[INFO] [1790553476.786428420] [pose_estimator]: RANSAC: 388 inliers / 456, 5 iterations
+[INFO] [1790553476.786572503] [pose_estimator]: RPE: trans 0.0012 | rot 0.00008 (0.003 deg)
+Matched 468 keypoints
+[INFO] [1790553476.915551295] [pose_estimator]: RANSAC: 374 inliers / 467, 8 iterations
+[INFO] [1790553476.915724253] [pose_estimator]: RPE: trans 0.0019 | rot 0.00032 (0.013 deg)
+Matched 488 keypoints
+[INFO] [1790553477.043458587] [pose_estimator]: RANSAC: 417 inliers / 487, 5 iterations
+[INFO] [1790553477.043651212] [pose_estimator]: RPE: trans 0.0020 | rot 0.00046 (0.019 deg)
+Matched 455 keypoints
+[INFO] [1790553477.172449295] [pose_estimator]: RANSAC: 368 inliers / 455, 7 iterations
+[INFO] [1790553477.172627295] [pose_estimator]: RPE: trans 0.0005 | rot 0.00050 (0.020 deg)
+Matched 419 keypoints
+[INFO] [1790553477.298554962] [pose_estimator]: RANSAC: 337 inliers / 417, 7 iterations
+[INFO] [1790553477.298707879] [pose_estimator]: RPE: trans 0.0016 | rot 0.00049 (0.020 deg)
+Matched 439 keypoints
+[INFO] [1790553477.425053629] [pose_estimator]: RANSAC: 346 inliers / 436, 7 iterations
+[INFO] [1790553477.425219754] [pose_estimator]: RPE: trans 0.0019 | rot 0.00043 (0.018 deg)
+Matched 423 keypoints
+[INFO] [1790553477.550426712] [pose_estimator]: RANSAC: 358 inliers / 423, 5 iterations
+[INFO] [1790553477.550609170] [pose_estimator]: RPE: trans 0.0033 | rot 0.00011 (0.005 deg)
+Matched 394 keypoints
+[INFO] [1790553477.680209670] [pose_estimator]: RANSAC: 303 inliers / 392, 8 iterations
+[INFO] [1790553477.680378629] [pose_estimator]: RPE: trans 0.0033 | rot 0.00074 (0.030 deg)
+Matched 448 keypoints
+[INFO] [1790553477.941514337] [pose_estimator]: RANSAC: 362 inliers / 446, 7 iterations
+[INFO] [1790553477.941670587] [pose_estimator]: RPE: trans 0.0028 | rot 0.00052 (0.021 deg)
+Matched 374 keypoints
+[INFO] [1790553478.077852629] [pose_estimator]: RANSAC: 294 inliers / 372, 7 iterations
+[INFO] [1790553478.077978587] [pose_estimator]: RPE: trans 0.0018 | rot 0.00031 (0.013 deg)
+Matched 449 keypoints
+[INFO] [1790553478.244462837] [pose_estimator]: RANSAC: 379 inliers / 449, 6 iterations
+[INFO] [1790553478.244623504] [pose_estimator]: RPE: trans 0.0010 | rot 0.00040 (0.016 deg)
+Matched 422 keypoints
+[INFO] [1790553478.508852421] [pose_estimator]: RANSAC: 351 inliers / 422, 6 iterations
+[INFO] [1790553478.509487754] [pose_estimator]: RPE: trans 0.0026 | rot 0.00055 (0.022 deg)
+Matched 379 keypoints
+[INFO] [1790553478.923283463] [pose_estimator]: RANSAC: 300 inliers / 378, 7 iterations
+[INFO] [1790553478.924485796] [pose_estimator]: RPE: trans 0.0011 | rot 0.00025 (0.010 deg)
+Matched 363 keypoints
+[INFO] [1790553479.173985838] [pose_estimator]: RANSAC: 259 inliers / 361, 10 iterations
+[INFO] [1790553479.174137379] [pose_estimator]: RPE: trans 0.0014 | rot 0.00038 (0.015 deg)
+Matched 378 keypoints
+[INFO] [1790553479.561666588] [pose_estimator]: RANSAC: 284 inliers / 378, 9 iterations
+[INFO] [1790553479.561841588] [pose_estimator]: RPE: trans 0.0033 | rot 0.00108 (0.044 deg)
+Matched 345 keypoints
+[INFO] [1790553479.744964796] [pose_estimator]: RANSAC: 263 inliers / 345, 8 iterations
+[INFO] [1790553479.745115338] [pose_estimator]: RPE: trans 0.0015 | rot 0.00095 (0.039 deg)
+Matched 439 keypoints
+[INFO] [1790553479.872983505] [pose_estimator]: RANSAC: 350 inliers / 439, 7 iterations
+[INFO] [1790553479.873160255] [pose_estimator]: RPE: trans 0.0027 | rot 0.00045 (0.018 deg)
+Matched 421 keypoints
+[INFO] [1790553480.063965296] [pose_estimator]: RANSAC: 351 inliers / 420, 6 iterations
+[INFO] [1790553480.064116921] [pose_estimator]: RPE: trans 0.0017 | rot 0.00081 (0.033 deg)
+Matched 401 keypoints
+[INFO] [1790553480.188152422] [pose_estimator]: RANSAC: 312 inliers / 401, 8 iterations
+[INFO] [1790553480.188324588] [pose_estimator]: RPE: trans 0.0017 | rot 0.00028 (0.012 deg)
+Matched 444 keypoints
+[INFO] [1790553480.324545338] [pose_estimator]: RANSAC: 386 inliers / 444, 5 iterations
+[INFO] [1790553480.324691880] [pose_estimator]: RPE: trans 0.0013 | rot 0.00034 (0.014 deg)
+Matched 425 keypoints
+[INFO] [1790553480.519582547] [pose_estimator]: RANSAC: 368 inliers / 421, 5 iterations
+[INFO] [1790553480.519757422] [pose_estimator]: RPE: trans 0.0017 | rot 0.00061 (0.025 deg)
+Matched 348 keypoints
+[INFO] [1790553480.656395672] [pose_estimator]: RANSAC: 283 inliers / 347, 6 iterations
+[INFO] [1790553480.660843588] [pose_estimator]: RPE: trans 0.0024 | rot 0.00046 (0.019 deg)
+Matched 467 keypoints
+[INFO] [1790553480.822574505] [pose_estimator]: RANSAC: 396 inliers / 466, 5 iterations
+[INFO] [1790553480.834984047] [pose_estimator]: RPE: trans 0.0018 | rot 0.00034 (0.014 deg)
+Matched 411 keypoints
+[INFO] [1790553481.238688630] [pose_estimator]: RANSAC: 334 inliers / 411, 6 iterations
+[INFO] [1790553481.253439380] [pose_estimator]: RPE: trans 0.0018 | rot 0.00071 (0.029 deg)
+Matched 327 keypoints
+[INFO] [1790553482.358787423] [pose_estimator]: RANSAC: 223 inliers / 327, 13 iterations
+[INFO] [1790553482.370412298] [pose_estimator]: RPE: trans 0.0022 | rot 0.00081 (0.033 deg)
+Matched 292 keypoints
+[INFO] [1790553482.729899256] [pose_estimator]: RANSAC: 178 inliers / 291, 18 iterations
+[INFO] [1790553482.731906631] [pose_estimator]: RPE: trans 0.0043 | rot 0.00152 (0.061 deg)
+Matched 352 keypoints
+[INFO] [1790553483.028091631] [pose_estimator]: RANSAC: 257 inliers / 351, 10 iterations
+[INFO] [1790553483.051364381] [pose_estimator]: RPE: trans 0.0020 | rot 0.00133 (0.054 deg)
+Matched 352 keypoints
+[INFO] [1790553483.191033840] [pose_estimator]: RANSAC: 276 inliers / 352, 7 iterations
+[INFO] [1790553483.194149590] [pose_estimator]: RPE: trans 0.0019 | rot 0.00079 (0.032 deg)
+Matched 418 keypoints
+[INFO] [1790553483.331385090] [pose_estimator]: RANSAC: 344 inliers / 417, 6 iterations
+[INFO] [1790553483.331565590] [pose_estimator]: RPE: trans 0.0008 | rot 0.00026 (0.010 deg)
+Matched 425 keypoints
+[INFO] [1790553483.474448923] [pose_estimator]: RANSAC: 353 inliers / 423, 6 iterations
+[INFO] [1790553483.474631798] [pose_estimator]: RPE: trans 0.0023 | rot 0.00056 (0.023 deg)
+Matched 410 keypoints
+[INFO] [1790553483.792617173] [pose_estimator]: RANSAC: 319 inliers / 409, 8 iterations
+[INFO] [1790553483.792768007] [pose_estimator]: RPE: trans 0.0020 | rot 0.00054 (0.022 deg)
+Matched 335 keypoints
+[INFO] [1790553484.023642382] [pose_estimator]: RANSAC: 250 inliers / 335, 9 iterations
+[INFO] [1790553484.023824257] [pose_estimator]: RPE: trans 0.0014 | rot 0.00044 (0.018 deg)
+Matched 317 keypoints
+[INFO] [1790553484.180230798] [pose_estimator]: RANSAC: 230 inliers / 314, 11 iterations
+[INFO] [1790553484.180397340] [pose_estimator]: RPE: trans 0.0012 | rot 0.00074 (0.030 deg)
+Matched 390 keypoints
+[INFO] [1790553484.312231965] [pose_estimator]: RANSAC: 335 inliers / 388, 5 iterations
+[INFO] [1790553484.312408299] [pose_estimator]: RPE: trans 0.0012 | rot 0.00041 (0.016 deg)
+Matched 428 keypoints
+[INFO] [1790553484.441329340] [pose_estimator]: RANSAC: 373 inliers / 427, 5 iterations
+[INFO] [1790553484.441517840] [pose_estimator]: RPE: trans 0.0031 | rot 0.00096 (0.039 deg)
+Matched 395 keypoints
+[INFO] [1790553484.593699632] [pose_estimator]: RANSAC: 329 inliers / 395, 6 iterations
+[INFO] [1790553484.594346590] [pose_estimator]: RPE: trans 0.0025 | rot 0.00101 (0.041 deg)
+Matched 381 keypoints
+[INFO] [1790553484.740542632] [pose_estimator]: RANSAC: 324 inliers / 381, 5 iterations
+[INFO] [1790553484.740726132] [pose_estimator]: RPE: trans 0.0059 | rot 0.00218 (0.088 deg)
+Matched 412 keypoints
+[INFO] [1790553484.866568965] [pose_estimator]: RANSAC: 348 inliers / 410, 5 iterations
+[INFO] [1790553484.866758257] [pose_estimator]: RPE: trans 0.0015 | rot 0.00075 (0.030 deg)
+Matched 341 keypoints
+[INFO] [1790553484.995551549] [pose_estimator]: RANSAC: 264 inliers / 340, 8 iterations
+[INFO] [1790553484.997085007] [pose_estimator]: RPE: trans 0.0007 | rot 0.00024 (0.010 deg)
+Matched 368 keypoints
+[INFO] [1790553485.252774716] [pose_estimator]: RANSAC: 314 inliers / 366, 5 iterations
+[INFO] [1790553485.252929091] [pose_estimator]: RPE: trans 0.0031 | rot 0.00109 (0.044 deg)
+Matched 337 keypoints
+[INFO] [1790553485.489991257] [pose_estimator]: RANSAC: 289 inliers / 337, 5 iterations
+[INFO] [1790553485.490172257] [pose_estimator]: RPE: trans 0.0049 | rot 0.00235 (0.095 deg)
+Matched 357 keypoints
+[INFO] [1790553485.641541507] [pose_estimator]: RANSAC: 295 inliers / 357, 6 iterations
+[INFO] [1790553485.641719007] [pose_estimator]: RPE: trans 0.0021 | rot 0.00101 (0.041 deg)
+Matched 332 keypoints
+[INFO] [1790553485.891934174] [pose_estimator]: RANSAC: 280 inliers / 328, 6 iterations
+[INFO] [1790553485.894933049] [pose_estimator]: RPE: trans 0.0044 | rot 0.00179 (0.072 deg)
+Matched 338 keypoints
+[INFO] [1790553486.296105383] [pose_estimator]: RANSAC: 287 inliers / 336, 5 iterations
+[INFO] [1790553486.300827549] [pose_estimator]: RPE: trans 0.0023 | rot 0.00126 (0.051 deg)
+Matched 265 keypoints
+[INFO] [1790553486.436185300] [pose_estimator]: RANSAC: 220 inliers / 265, 7 iterations
+[INFO] [1790553486.436334341] [pose_estimator]: RPE: trans 0.0035 | rot 0.00145 (0.059 deg)
+Matched 334 keypoints
+[INFO] [1790553486.854749675] [pose_estimator]: RANSAC: 282 inliers / 332, 5 iterations
+[INFO] [1790553486.854871841] [pose_estimator]: RPE: trans 0.0012 | rot 0.00049 (0.020 deg)
+Matched 245 keypoints
+[INFO] [1790553487.290302592] [pose_estimator]: RANSAC: 197 inliers / 242, 6 iterations
+[INFO] [1790553487.293964175] [pose_estimator]: RPE: trans 0.0025 | rot 0.00072 (0.029 deg)
+Matched 328 keypoints
+[INFO] [1790553487.429944175] [pose_estimator]: RANSAC: 272 inliers / 328, 6 iterations
+[INFO] [1790553487.430110008] [pose_estimator]: RPE: trans 0.0027 | rot 0.00111 (0.045 deg)
+Matched 391 keypoints
+[INFO] [1790553487.844534592] [pose_estimator]: RANSAC: 328 inliers / 391, 6 iterations
+[INFO] [1790553487.847293675] [pose_estimator]: RPE: trans 0.0007 | rot 0.00058 (0.023 deg)
+Matched 351 keypoints
+[INFO] [1790553488.377523634] [pose_estimator]: RANSAC: 296 inliers / 351, 6 iterations
+[INFO] [1790553488.379419759] [pose_estimator]: RPE: trans 0.0019 | rot 0.00075 (0.031 deg)
+Matched 303 keypoints
+[INFO] [1790553488.503869176] [pose_estimator]: RANSAC: 251 inliers / 303, 6 iterations
+[INFO] [1790553488.504039801] [pose_estimator]: RPE: trans 0.0070 | rot 0.00272 (0.110 deg)
+Matched 338 keypoints
+[INFO] [1790553488.656160926] [pose_estimator]: RANSAC: 298 inliers / 338, 4 iterations
+[INFO] [1790553488.656324051] [pose_estimator]: RPE: trans 0.0009 | rot 0.00021 (0.009 deg)
+Matched 304 keypoints
+[INFO] [1790553488.776836967] [pose_estimator]: RANSAC: 255 inliers / 304, 6 iterations
+[INFO] [1790553488.776982426] [pose_estimator]: RPE: trans 0.0015 | rot 0.00108 (0.044 deg)
+Matched 312 keypoints
+[INFO] [1790553488.902838217] [pose_estimator]: RANSAC: 267 inliers / 312, 5 iterations
+[INFO] [1790553488.902998384] [pose_estimator]: RPE: trans 0.0031 | rot 0.00105 (0.043 deg)
+Matched 296 keypoints
+[INFO] [1790553489.024766509] [pose_estimator]: RANSAC: 245 inliers / 296, 6 iterations
+[INFO] [1790553489.024931134] [pose_estimator]: RPE: trans 0.0014 | rot 0.00056 (0.023 deg)
+Matched 309 keypoints
+[INFO] [1790553489.145240967] [pose_estimator]: RANSAC: 264 inliers / 309, 5 iterations
+[INFO] [1790553489.145394884] [pose_estimator]: RPE: trans 0.0022 | rot 0.00072 (0.029 deg)
+Matched 323 keypoints
+[INFO] [1790553489.283420218] [pose_estimator]: RANSAC: 290 inliers / 323, 4 iterations
+[INFO] [1790553489.283549051] [pose_estimator]: RPE: trans 0.0022 | rot 0.00063 (0.025 deg)
+Matched 279 keypoints
+[INFO] [1790553489.403801593] [pose_estimator]: RANSAC: 234 inliers / 279, 6 iterations
+[INFO] [1790553489.403940259] [pose_estimator]: RPE: trans 0.0020 | rot 0.00097 (0.039 deg)
+Matched 286 keypoints
+[INFO] [1790553489.545900884] [pose_estimator]: RANSAC: 247 inliers / 286, 5 iterations
+[INFO] [1790553489.546049384] [pose_estimator]: RPE: trans 0.0041 | rot 0.00134 (0.054 deg)
+Matched 288 keypoints
+[INFO] [1790553489.713601176] [pose_estimator]: RANSAC: 254 inliers / 288, 4 iterations
+[INFO] [1790553489.713815134] [pose_estimator]: RPE: trans 0.0010 | rot 0.00018 (0.007 deg)
+Matched 248 keypoints
+[INFO] [1790553489.848540843] [pose_estimator]: RANSAC: 215 inliers / 248, 5 iterations
+[INFO] [1790553489.848730926] [pose_estimator]: RPE: trans 0.0028 | rot 0.00116 (0.047 deg)
+Matched 261 keypoints
+[INFO] [1790553489.980860135] [pose_estimator]: RANSAC: 231 inliers / 261, 4 iterations
+[INFO] [1790553489.981023843] [pose_estimator]: RPE: trans 0.0035 | rot 0.00143 (0.058 deg)
+Matched 277 keypoints
+[INFO] [1790553490.109611593] [pose_estimator]: RANSAC: 253 inliers / 277, 4 iterations
+[INFO] [1790553490.110809843] [pose_estimator]: RPE: trans 0.0014 | rot 0.00096 (0.039 deg)
+Matched 297 keypoints
+[INFO] [1790553490.259945593] [pose_estimator]: RANSAC: 254 inliers / 297, 5 iterations
+[INFO] [1790553490.260118843] [pose_estimator]: RPE: trans 0.0024 | rot 0.00108 (0.044 deg)
+Matched 285 keypoints
+[INFO] [1790553490.426134510] [pose_estimator]: RANSAC: 228 inliers / 285, 7 iterations
+[INFO] [1790553490.426319801] [pose_estimator]: RPE: trans 0.0008 | rot 0.00052 (0.021 deg)
+Matched 252 keypoints
+[INFO] [1790553490.553388801] [pose_estimator]: RANSAC: 221 inliers / 252, 5 iterations
+[INFO] [1790553490.554491801] [pose_estimator]: RPE: trans 0.0027 | rot 0.00118 (0.048 deg)
+Matched 271 keypoints
+[INFO] [1790553490.725449802] [pose_estimator]: RANSAC: 232 inliers / 271, 5 iterations
+[INFO] [1790553490.725621593] [pose_estimator]: RPE: trans 0.0028 | rot 0.00084 (0.034 deg)
+Matched 288 keypoints
+[INFO] [1790553490.851349010] [pose_estimator]: RANSAC: 245 inliers / 288, 5 iterations
+[INFO] [1790553490.851492677] [pose_estimator]: RPE: trans 0.0019 | rot 0.00098 (0.040 deg)
+Matched 248 keypoints
+[INFO] [1790553491.005403385] [pose_estimator]: RANSAC: 213 inliers / 248, 5 iterations
+[INFO] [1790553491.005552427] [pose_estimator]: RPE: trans 0.0030 | rot 0.00126 (0.051 deg)
+Matched 253 keypoints
+[INFO] [1790553491.126145385] [pose_estimator]: RANSAC: 216 inliers / 253, 5 iterations
+[INFO] [1790553491.126316260] [pose_estimator]: RPE: trans 0.0013 | rot 0.00094 (0.038 deg)
+Matched 269 keypoints
+[INFO] [1790553491.262047218] [pose_estimator]: RANSAC: 240 inliers / 269, 4 iterations
+[INFO] [1790553491.262255968] [pose_estimator]: RPE: trans 0.0010 | rot 0.00045 (0.018 deg)
+Matched 249 keypoints
+[INFO] [1790553491.388094135] [pose_estimator]: RANSAC: 210 inliers / 249, 6 iterations
+[INFO] [1790553491.388673760] [pose_estimator]: RPE: trans 0.0011 | rot 0.00036 (0.014 deg)
+Matched 254 keypoints
+[INFO] [1790553491.529786052] [pose_estimator]: RANSAC: 211 inliers / 254, 6 iterations
+[INFO] [1790553491.530004010] [pose_estimator]: RPE: trans 0.0012 | rot 0.00035 (0.014 deg)
+Matched 261 keypoints
+[INFO] [1790553491.656525135] [pose_estimator]: RANSAC: 212 inliers / 261, 6 iterations
+[INFO] [1790553491.656665594] [pose_estimator]: RPE: trans 0.0025 | rot 0.00076 (0.031 deg)
+Matched 280 keypoints
+[INFO] [1790553491.798683927] [pose_estimator]: RANSAC: 237 inliers / 280, 5 iterations
+[INFO] [1790553491.798864844] [pose_estimator]: RPE: trans 0.0015 | rot 0.00052 (0.021 deg)
+Matched 235 keypoints
+[INFO] [1790553491.925236760] [pose_estimator]: RANSAC: 201 inliers / 235, 5 iterations
+[INFO] [1790553491.925611969] [pose_estimator]: RPE: trans 0.0048 | rot 0.00133 (0.054 deg)
+Matched 262 keypoints
+[INFO] [1790553492.049921719] [pose_estimator]: RANSAC: 230 inliers / 262, 5 iterations
+[INFO] [1790553492.050099011] [pose_estimator]: RPE: trans 0.0012 | rot 0.00040 (0.016 deg)
+Matched 254 keypoints
+[INFO] [1790553492.213046761] [pose_estimator]: RANSAC: 217 inliers / 254, 5 iterations
+[INFO] [1790553492.213198677] [pose_estimator]: RPE: trans 0.0033 | rot 0.00177 (0.072 deg)
+Matched 233 keypoints
+[INFO] [1790553492.363263844] [pose_estimator]: RANSAC: 193 inliers / 233, 6 iterations
+[INFO] [1790553492.363452344] [pose_estimator]: RPE: trans 0.0044 | rot 0.00134 (0.054 deg)
+Matched 242 keypoints
+[INFO] [1790553492.486359844] [pose_estimator]: RANSAC: 196 inliers / 242, 7 iterations
+[INFO] [1790553492.486526886] [pose_estimator]: RPE: trans 0.0039 | rot 0.00144 (0.058 deg)
+Matched 232 keypoints
+[INFO] [1790553492.619393844] [pose_estimator]: RANSAC: 203 inliers / 232, 5 iterations
+[INFO] [1790553492.619592636] [pose_estimator]: RPE: trans 0.0026 | rot 0.00077 (0.031 deg)
+Matched 230 keypoints
+[INFO] [1790553492.744615136] [pose_estimator]: RANSAC: 187 inliers / 230, 6 iterations
+[INFO] [1790553492.745115469] [pose_estimator]: RPE: trans 0.0043 | rot 0.00168 (0.068 deg)
+Matched 227 keypoints
+[INFO] [1790553492.867264011] [pose_estimator]: RANSAC: 189 inliers / 227, 6 iterations
+[INFO] [1790553492.867428636] [pose_estimator]: RPE: trans 0.0014 | rot 0.00094 (0.038 deg)
+Matched 222 keypoints
+[INFO] [1790553492.984908261] [pose_estimator]: RANSAC: 177 inliers / 222, 7 iterations
+[INFO] [1790553492.985064719] [pose_estimator]: RPE: trans 0.0018 | rot 0.00038 (0.015 deg)
+Matched 192 keypoints
+[INFO] [1790553493.436176386] [pose_estimator]: RANSAC: 159 inliers / 192, 6 iterations
+[INFO] [1790553493.442970136] [pose_estimator]: RPE: trans 0.0017 | rot 0.00103 (0.042 deg)
+Matched 153 keypoints
+[INFO] [1790553493.581411636] [pose_estimator]: RANSAC: 117 inliers / 153, 8 iterations
+[INFO] [1790553493.590638845] [pose_estimator]: RPE: trans 0.0013 | rot 0.00070 (0.028 deg)
+Matched 172 keypoints
+[INFO] [1790553493.742098386] [pose_estimator]: RANSAC: 124 inliers / 172, 10 iterations
+[INFO] [1790553493.743458053] [pose_estimator]: RPE: trans 0.0026 | rot 0.00219 (0.089 deg)
+Matched 151 keypoints
+[INFO] [1790553493.890188678] [pose_estimator]: RANSAC: 109 inliers / 151, 10 iterations
+[INFO] [1790553493.890355595] [pose_estimator]: RPE: trans 0.0044 | rot 0.00211 (0.086 deg)
+Matched 210 keypoints
+[INFO] [1790553494.028066511] [pose_estimator]: RANSAC: 185 inliers / 210, 5 iterations
+[INFO] [1790553494.044651511] [pose_estimator]: RPE: trans 0.0029 | rot 0.00118 (0.048 deg)
+Matched 161 keypoints
+[INFO] [1790553494.193735678] [pose_estimator]: RANSAC: 103 inliers / 161, 16 iterations
+[INFO] [1790553494.203902220] [pose_estimator]: RPE: trans 0.0050 | rot 0.00217 (0.088 deg)
+Matched 165 keypoints
+[INFO] [1790553494.343515512] [pose_estimator]: RANSAC: 122 inliers / 165, 9 iterations
+[INFO] [1790553494.343685512] [pose_estimator]: RPE: trans 0.0031 | rot 0.00189 (0.076 deg)
+Matched 148 keypoints
+[INFO] [1790553494.490603637] [pose_estimator]: RANSAC: 93 inliers / 148, 17 iterations
+[INFO] [1790553494.495831012] [pose_estimator]: RPE: trans 0.0045 | rot 0.00246 (0.099 deg)
+Matched 139 keypoints
+[INFO] [1790553494.697434928] [pose_estimator]: RANSAC: 90 inliers / 139, 15 iterations
+[INFO] [1790553494.711687512] [pose_estimator]: RPE: trans 0.0060 | rot 0.00184 (0.075 deg)
+Matched 137 keypoints
+[INFO] [1790553494.922826262] [pose_estimator]: RANSAC: 86 inliers / 137, 17 iterations
+[INFO] [1790553494.935285929] [pose_estimator]: RPE: trans 0.0077 | rot 0.00362 (0.147 deg)
+Matched 133 keypoints
+[INFO] [1790553495.119714054] [pose_estimator]: RANSAC: 84 inliers / 133, 16 iterations
+[INFO] [1790553495.120798220] [pose_estimator]: RPE: trans 0.0037 | rot 0.00169 (0.069 deg)
+Matched 159 keypoints
+[INFO] [1790553495.422943054] [pose_estimator]: RANSAC: 106 inliers / 159, 14 iterations
+[INFO] [1790553495.445378054] [pose_estimator]: RPE: trans 0.0018 | rot 0.00122 (0.050 deg)
+Matched 117 keypoints
+[INFO] [1790553496.209955679] [pose_estimator]: RANSAC: 70 inliers / 117, 20 iterations
+[INFO] [1790553496.215253429] [pose_estimator]: RPE: trans 0.0129 | rot 0.00265 (0.107 deg)
+Matched 104 keypoints
+[INFO] [1790553496.379291721] [pose_estimator]: RANSAC: 46 inliers / 104, 53 iterations
+[INFO] [1790553496.381017638] [pose_estimator]: RPE: trans 0.0115 | rot 0.00261 (0.106 deg)
+Matched 190 keypoints
+[INFO] [1790553496.553179138] [pose_estimator]: RANSAC: 103 inliers / 190, 27 iterations
+[INFO] [1790553496.565767513] [pose_estimator]: RPE: trans 0.0041 | rot 0.00099 (0.040 deg)
+Matched 179 keypoints
+[INFO] [1790553496.966030888] [pose_estimator]: RANSAC: 111 inliers / 179, 17 iterations
+[INFO] [1790553496.972480888] [pose_estimator]: RPE: trans 0.0059 | rot 0.00148 (0.060 deg)
+Matched 166 keypoints
+[INFO] [1790553497.188166846] [pose_estimator]: RANSAC: 96 inliers / 166, 22 iterations
+[INFO] [1790553497.195079555] [pose_estimator]: RPE: trans 0.0038 | rot 0.00097 (0.039 deg)
+Matched 208 keypoints
+[INFO] [1790553497.335703096] [pose_estimator]: RANSAC: 123 inliers / 208, 20 iterations
+[INFO] [1790553497.336077763] [pose_estimator]: RPE: trans 0.0071 | rot 0.00115 (0.047 deg)
+Matched 227 keypoints
+[INFO] [1790553497.477614221] [pose_estimator]: RANSAC: 147 inliers / 227, 18 iterations
+[INFO] [1790553497.481302680] [pose_estimator]: RPE: trans 0.0061 | rot 0.00098 (0.040 deg)
+Matched 264 keypoints
+[INFO] [1790553497.635917888] [pose_estimator]: RANSAC: 179 inliers / 264, 13 iterations
+[INFO] [1790553497.636073138] [pose_estimator]: RPE: trans 0.0046 | rot 0.00093 (0.038 deg)
+Matched 265 keypoints
+[INFO] [1790553497.763234222] [pose_estimator]: RANSAC: 183 inliers / 265, 12 iterations
+[INFO] [1790553497.765716722] [pose_estimator]: RPE: trans 0.0029 | rot 0.00058 (0.024 deg)
+Matched 302 keypoints
+[INFO] [1790553497.934893597] [pose_estimator]: RANSAC: 197 inliers / 302, 15 iterations
+[INFO] [1790553497.950359680] [pose_estimator]: RPE: trans 0.0026 | rot 0.00046 (0.018 deg)
+Matched 304 keypoints
+[INFO] [1790553498.101212597] [pose_estimator]: RANSAC: 188 inliers / 304, 21 iterations
+[INFO] [1790553498.101371180] [pose_estimator]: RPE: trans 0.0060 | rot 0.00056 (0.023 deg)
+Matched 297 keypoints
+[INFO] [1790553498.248541138] [pose_estimator]: RANSAC: 212 inliers / 297, 11 iterations
+[INFO] [1790553498.257331305] [pose_estimator]: RPE: trans 0.0041 | rot 0.00101 (0.041 deg)
+Matched 300 keypoints
+[INFO] [1790553498.428906764] [pose_estimator]: RANSAC: 222 inliers / 300, 9 iterations
+[INFO] [1790553498.430665972] [pose_estimator]: RPE: trans 0.0138 | rot 0.00245 (0.099 deg)
+Matched 312 keypoints
+[INFO] [1790553498.932638000] [pose_estimator]: RANSAC: 209 inliers / 312, 13 iterations
+[INFO] [1790553498.932788958] [pose_estimator]: RPE: trans 0.0040 | rot 0.00071 (0.029 deg)
+Matched 229 keypoints
+[INFO] [1790553499.350079750] [pose_estimator]: RANSAC: 130 inliers / 229, 23 iterations
+[INFO] [1790553499.350235750] [pose_estimator]: RPE: trans 0.0046 | rot 0.00117 (0.047 deg)
+Matched 253 keypoints
+[INFO] [1790553499.486139333] [pose_estimator]: RANSAC: 151 inliers / 253, 20 iterations
+[INFO] [1790553499.487555583] [pose_estimator]: RPE: trans 0.0046 | rot 0.00154 (0.062 deg)
+Matched 313 keypoints
+[INFO] [1790553499.953258375] [pose_estimator]: RANSAC: 237 inliers / 313, 9 iterations
+[INFO] [1790553499.953434000] [pose_estimator]: RPE: trans 0.0027 | rot 0.00093 (0.038 deg)
+Matched 178 keypoints
+[INFO] [1790553500.358953375] [pose_estimator]: RANSAC: 97 inliers / 178, 27 iterations
+[INFO] [1790553500.359094167] [pose_estimator]: RPE: trans 0.0022 | rot 0.00038 (0.015 deg)
+Matched 245 keypoints
+[INFO] [1790553500.559495167] [pose_estimator]: RANSAC: 150 inliers / 245, 18 iterations
+[INFO] [1790553500.559666875] [pose_estimator]: RPE: trans 0.0023 | rot 0.00117 (0.048 deg)
+Matched 306 keypoints
+[INFO] [1790553500.689628667] [pose_estimator]: RANSAC: 221 inliers / 306, 10 iterations
+[INFO] [1790553500.689792292] [pose_estimator]: RPE: trans 0.0032 | rot 0.00120 (0.049 deg)
+Matched 319 keypoints
+[INFO] [1790553500.837782042] [pose_estimator]: RANSAC: 231 inliers / 319, 10 iterations
+[INFO] [1790553500.837942375] [pose_estimator]: RPE: trans 0.0028 | rot 0.00073 (0.030 deg)
+Matched 344 keypoints
+[INFO] [1790553500.971360292] [pose_estimator]: RANSAC: 240 inliers / 344, 12 iterations
+[INFO] [1790553500.971530834] [pose_estimator]: RPE: trans 0.0016 | rot 0.00057 (0.023 deg)
+Matched 331 keypoints
+[INFO] [1790553501.101013084] [pose_estimator]: RANSAC: 233 inliers / 331, 11 iterations
+[INFO] [1790553501.101177792] [pose_estimator]: RPE: trans 0.0021 | rot 0.00038 (0.016 deg)
+Matched 303 keypoints
+[INFO] [1790553501.238158001] [pose_estimator]: RANSAC: 192 inliers / 303, 17 iterations
+[INFO] [1790553501.238305042] [pose_estimator]: RPE: trans 0.0022 | rot 0.00069 (0.028 deg)
+Matched 346 keypoints
+[INFO] [1790553501.650333584] [pose_estimator]: RANSAC: 234 inliers / 346, 13 iterations
+[INFO] [1790553501.650471376] [pose_estimator]: RPE: trans 0.0021 | rot 0.00065 (0.026 deg)
+Matched 271 keypoints
+[INFO] [1790553501.786716751] [pose_estimator]: RANSAC: 168 inliers / 271, 17 iterations
+[INFO] [1790553501.786878001] [pose_estimator]: RPE: trans 0.0021 | rot 0.00049 (0.020 deg)
+Matched 385 keypoints
+[INFO] [1790553501.917995668] [pose_estimator]: RANSAC: 250 inliers / 385, 15 iterations
+[INFO] [1790553501.918165834] [pose_estimator]: RPE: trans 0.0030 | rot 0.00109 (0.044 deg)
+Matched 414 keypoints
+[INFO] [1790553502.057898209] [pose_estimator]: RANSAC: 267 inliers / 414, 15 iterations
+[INFO] [1790553502.060352334] [pose_estimator]: RPE: trans 0.0021 | rot 0.00059 (0.024 deg)
+Matched 403 keypoints
+[INFO] [1790553502.204605376] [pose_estimator]: RANSAC: 270 inliers / 403, 13 iterations
+[INFO] [1790553502.205000793] [pose_estimator]: RPE: trans 0.0041 | rot 0.00132 (0.054 deg)
+Matched 385 keypoints
+[INFO] [1790553502.341226084] [pose_estimator]: RANSAC: 250 inliers / 385, 15 iterations
+[INFO] [1790553502.341399668] [pose_estimator]: RPE: trans 0.0025 | rot 0.00090 (0.036 deg)
+Matched 380 keypoints
+[INFO] [1790553502.787912668] [pose_estimator]: RANSAC: 204 inliers / 380, 28 iterations
+[INFO] [1790553502.788081751] [pose_estimator]: RPE: trans 0.0049 | rot 0.00053 (0.022 deg)
+Matched 293 keypoints
+[INFO] [1790553503.165211502] [pose_estimator]: RANSAC: 163 inliers / 293, 25 iterations
+[INFO] [1790553503.165366377] [pose_estimator]: RPE: trans 0.0048 | rot 0.00059 (0.024 deg)
+Matched 286 keypoints
+[INFO] [1790553503.394168127] [pose_estimator]: RANSAC: 176 inliers / 286, 18 iterations
+[INFO] [1790553503.394329293] [pose_estimator]: RPE: trans 0.0043 | rot 0.00150 (0.061 deg)
+Matched 317 keypoints
+[INFO] [1790553503.520564752] [pose_estimator]: RANSAC: 196 inliers / 317, 18 iterations
+[INFO] [1790553503.520734918] [pose_estimator]: RPE: trans 0.0031 | rot 0.00050 (0.020 deg)
+Matched 287 keypoints
+[INFO] [1790553503.647124210] [pose_estimator]: RANSAC: 190 inliers / 287, 14 iterations
+[INFO] [1790553503.647301835] [pose_estimator]: RPE: trans 0.0011 | rot 0.00061 (0.025 deg)
+Matched 330 keypoints
+[INFO] [1790553503.781284793] [pose_estimator]: RANSAC: 241 inliers / 330, 10 iterations
+[INFO] [1790553503.786183168] [pose_estimator]: RPE: trans 0.0038 | rot 0.00034 (0.014 deg)
+Matched 306 keypoints
+[INFO] [1790553503.986218710] [pose_estimator]: RANSAC: 202 inliers / 306, 14 iterations
+[INFO] [1790553503.986366669] [pose_estimator]: RPE: trans 0.0032 | rot 0.00092 (0.037 deg)
+Matched 280 keypoints
+[INFO] [1790553504.121325877] [pose_estimator]: RANSAC: 180 inliers / 280, 15 iterations
+[INFO] [1790553504.124680794] [pose_estimator]: RPE: trans 0.0020 | rot 0.00063 (0.026 deg)
+Matched 292 keypoints
+[INFO] [1790553504.254534960] [pose_estimator]: RANSAC: 218 inliers / 292, 9 iterations
+[INFO] [1790553504.255455835] [pose_estimator]: RPE: trans 0.0026 | rot 0.00079 (0.032 deg)
+Matched 263 keypoints
+[INFO] [1790553504.427082460] [pose_estimator]: RANSAC: 171 inliers / 263, 15 iterations
+[INFO] [1790553504.427246460] [pose_estimator]: RPE: trans 0.0106 | rot 0.00023 (0.009 deg)
+Matched 258 keypoints
+[INFO] [1790553504.689620419] [pose_estimator]: RANSAC: 196 inliers / 258, 8 iterations
+[INFO] [1790553504.689769377] [pose_estimator]: RPE: trans 0.0070 | rot 0.00024 (0.010 deg)
+Matched 274 keypoints
+[INFO] [1790553505.095073169] [pose_estimator]: RANSAC: 159 inliers / 274, 22 iterations
+[INFO] [1790553505.095224544] [pose_estimator]: RPE: trans 0.0026 | rot 0.00061 (0.025 deg)
+Matched 251 keypoints
+[INFO] [1790553505.290996253] [pose_estimator]: RANSAC: 143 inliers / 251, 23 iterations
+[INFO] [1790553505.291158961] [pose_estimator]: RPE: trans 0.0028 | rot 0.00050 (0.020 deg)
+Matched 277 keypoints
+[INFO] [1790553505.604340794] [pose_estimator]: RANSAC: 168 inliers / 277, 19 iterations
+[INFO] [1790553505.604483794] [pose_estimator]: RPE: trans 0.0050 | rot 0.00120 (0.049 deg)
+Matched 216 keypoints
+[INFO] [1790553505.985316503] [pose_estimator]: RANSAC: 119 inliers / 216, 29 iterations
+[INFO] [1790553505.985617503] [pose_estimator]: RPE: trans 0.0063 | rot 0.00027 (0.011 deg)
+Matched 217 keypoints
+[INFO] [1790553506.393791961] [pose_estimator]: RANSAC: 120 inliers / 217, 25 iterations
+[INFO] [1790553506.393944128] [pose_estimator]: RPE: trans 0.0069 | rot 0.00105 (0.043 deg)
+Matched 213 keypoints
+[INFO] [1790553506.535105920] [pose_estimator]: RANSAC: 125 inliers / 213, 21 iterations
+[INFO] [1790553506.535276878] [pose_estimator]: RPE: trans 0.0014 | rot 0.00041 (0.016 deg)
+Matched 252 keypoints
+[INFO] [1790553506.833672753] [pose_estimator]: RANSAC: 157 inliers / 252, 17 iterations
+[INFO] [1790553506.833826337] [pose_estimator]: RPE: trans 0.0123 | rot 0.00041 (0.017 deg)
+Matched 238 keypoints
+[INFO] [1790553507.069089337] [pose_estimator]: RANSAC: 140 inliers / 238, 21 iterations
+[INFO] [1790553507.069248212] [pose_estimator]: RPE: trans 0.0046 | rot 0.00134 (0.054 deg)
+Matched 221 keypoints
+[INFO] [1790553507.225609962] [pose_estimator]: RANSAC: 122 inliers / 221, 26 iterations
+[INFO] [1790553507.225768128] [pose_estimator]: RPE: trans 0.0023 | rot 0.00053 (0.021 deg)
+Matched 207 keypoints
+[INFO] [1790553507.347148587] [pose_estimator]: RANSAC: 125 inliers / 207, 20 iterations
+[INFO] [1790553507.347290962] [pose_estimator]: RPE: trans 0.0040 | rot 0.00082 (0.033 deg)
+Matched 207 keypoints
+[INFO] [1790553507.467392545] [pose_estimator]: RANSAC: 127 inliers / 207, 18 iterations
+[INFO] [1790553507.467562962] [pose_estimator]: RPE: trans 0.0068 | rot 0.00084 (0.034 deg)
+Matched 212 keypoints
+[INFO] [1790553507.599569337] [pose_estimator]: RANSAC: 155 inliers / 212, 10 iterations
+[INFO] [1790553507.599752629] [pose_estimator]: RPE: trans 0.0156 | rot 0.00022 (0.009 deg)
+Matched 226 keypoints
+[INFO] [1790553507.721546837] [pose_estimator]: RANSAC: 129 inliers / 226, 23 iterations
+[INFO] [1790553507.721724170] [pose_estimator]: RPE: trans 0.0050 | rot 0.00084 (0.034 deg)
+Matched 216 keypoints
+[INFO] [1790553507.842982420] [pose_estimator]: RANSAC: 151 inliers / 216, 12 iterations
+[INFO] [1790553507.843138545] [pose_estimator]: RPE: trans 0.0144 | rot 0.00113 (0.046 deg)
+Matched 205 keypoints
+[INFO] [1790553507.972012295] [pose_estimator]: RANSAC: 135 inliers / 205, 14 iterations
+[INFO] [1790553507.974061254] [pose_estimator]: RPE: trans 0.0026 | rot 0.00088 (0.036 deg)
+Matched 212 keypoints
+[INFO] [1790553508.099472254] [pose_estimator]: RANSAC: 149 inliers / 212, 11 iterations
+[INFO] [1790553508.099653462] [pose_estimator]: RPE: trans 0.0008 | rot 0.00067 (0.027 deg)
+Matched 202 keypoints
+[INFO] [1790553508.217361796] [pose_estimator]: RANSAC: 117 inliers / 202, 22 iterations
+[INFO] [1790553508.217612796] [pose_estimator]: RPE: trans 0.0053 | rot 0.00115 (0.047 deg)
+Matched 223 keypoints
+[INFO] [1790553508.335063587] [pose_estimator]: RANSAC: 167 inliers / 223, 9 iterations
+[INFO] [1790553508.335194671] [pose_estimator]: RPE: trans 0.0164 | rot 0.00137 (0.056 deg)
+Matched 229 keypoints
+[INFO] [1790553508.456384379] [pose_estimator]: RANSAC: 145 inliers / 229, 16 iterations
+[INFO] [1790553508.456537046] [pose_estimator]: RPE: trans 0.0037 | rot 0.00025 (0.010 deg)
+Matched 209 keypoints
+[INFO] [1790553508.574538462] [pose_estimator]: RANSAC: 124 inliers / 209, 20 iterations
+[INFO] [1790553508.574711087] [pose_estimator]: RPE: trans 0.0042 | rot 0.00072 (0.029 deg)
+Matched 232 keypoints
+[INFO] [1790553508.693549963] [pose_estimator]: RANSAC: 169 inliers / 232, 17 iterations
+[INFO] [1790553508.693706171] [pose_estimator]: RPE: trans 0.0187 | rot 0.00090 (0.037 deg)
+Matched 222 keypoints
+[INFO] [1790553508.814652338] [pose_estimator]: RANSAC: 143 inliers / 222, 15 iterations
+[INFO] [1790553508.814984671] [pose_estimator]: RPE: trans 0.0182 | rot 0.00075 (0.030 deg)
+Matched 215 keypoints
+[INFO] [1790553508.933336379] [pose_estimator]: RANSAC: 126 inliers / 215, 21 iterations
+[INFO] [1790553508.933500463] [pose_estimator]: RPE: trans 0.0143 | rot 0.00081 (0.033 deg)
+Matched 206 keypoints
+[INFO] [1790553509.132844588] [pose_estimator]: RANSAC: 113 inliers / 206, 26 iterations
+[INFO] [1790553509.132998088] [pose_estimator]: RPE: trans 0.0220 | rot 0.00154 (0.063 deg)
+Matched 195 keypoints
+[INFO] [1790553509.266703088] [pose_estimator]: RANSAC: 113 inliers / 195, 22 iterations
+[INFO] [1790553509.267846171] [pose_estimator]: RPE: trans 0.0098 | rot 0.00098 (0.040 deg)
+Matched 202 keypoints
+[INFO] [1790553509.386434213] [pose_estimator]: RANSAC: 128 inliers / 202, 16 iterations
+[INFO] [1790553509.386596588] [pose_estimator]: RPE: trans 0.0180 | rot 0.00078 (0.032 deg)
+Matched 203 keypoints
+[INFO] [1790553509.674392463] [pose_estimator]: RANSAC: 121 inliers / 203, 20 iterations
+[INFO] [1790553509.675058546] [pose_estimator]: RPE: trans 0.0060 | rot 0.00050 (0.020 deg)
+Matched 192 keypoints
+[INFO] [1790553509.796239796] [pose_estimator]: RANSAC: 111 inliers / 192, 22 iterations
+[INFO] [1790553509.796413338] [pose_estimator]: RPE: trans 0.0057 | rot 0.00063 (0.025 deg)
+Matched 198 keypoints
+[INFO] [1790553510.225131838] [pose_estimator]: RANSAC: 111 inliers / 198, 24 iterations
+[INFO] [1790553510.225775255] [pose_estimator]: RPE: trans 0.0017 | rot 0.00060 (0.024 deg)
+Matched 213 keypoints
+[INFO] [1790553510.347568047] [pose_estimator]: RANSAC: 118 inliers / 213, 25 iterations
+[INFO] [1790553510.347738672] [pose_estimator]: RPE: trans 0.0121 | rot 0.00199 (0.080 deg)
+Matched 210 keypoints
+[INFO] [1790553510.553699797] [pose_estimator]: RANSAC: 124 inliers / 210, 20 iterations
+[INFO] [1790553510.554085672] [pose_estimator]: RPE: trans 0.0054 | rot 0.00061 (0.025 deg)
+Matched 208 keypoints
+[INFO] [1790553510.681816838] [pose_estimator]: RANSAC: 119 inliers / 208, 23 iterations
+[INFO] [1790553510.681984547] [pose_estimator]: RPE: trans 0.0050 | rot 0.00085 (0.034 deg)
+Matched 216 keypoints
+[INFO] [1790553511.343206922] [pose_estimator]: RANSAC: 122 inliers / 216, 24 iterations
+[INFO] [1790553511.343371880] [pose_estimator]: RPE: trans 0.0045 | rot 0.00051 (0.021 deg)
+Matched 226 keypoints
+[INFO] [1790553511.525651589] [pose_estimator]: RANSAC: 125 inliers / 226, 25 iterations
+[INFO] [1790553511.536144422] [pose_estimator]: RPE: trans 0.0068 | rot 0.00120 (0.049 deg)
+Matched 286 keypoints
+[INFO] [1790553511.778049672] [pose_estimator]: RANSAC: 163 inliers / 286, 23 iterations
+[INFO] [1790553511.778212297] [pose_estimator]: RPE: trans 0.0009 | rot 0.00075 (0.030 deg)
+Matched 303 keypoints
+[INFO] [1790553511.959338172] [pose_estimator]: RANSAC: 186 inliers / 303, 18 iterations
+[INFO] [1790553511.959508131] [pose_estimator]: RPE: trans 0.0070 | rot 0.00103 (0.042 deg)
+Matched 295 keypoints
+[INFO] [1790553512.305712298] [pose_estimator]: RANSAC: 169 inliers / 295, 23 iterations
+[INFO] [1790553512.308050714] [pose_estimator]: RPE: trans 0.0036 | rot 0.00038 (0.015 deg)
+Matched 267 keypoints
+[INFO] [1790553512.440684298] [pose_estimator]: RANSAC: 164 inliers / 267, 18 iterations
+[INFO] [1790553512.441265423] [pose_estimator]: RPE: trans 0.0011 | rot 0.00083 (0.033 deg)
+Matched 347 keypoints
+[INFO] [1790553512.569386464] [pose_estimator]: RANSAC: 263 inliers / 347, 9 iterations
+[INFO] [1790553512.569569756] [pose_estimator]: RPE: trans 0.0112 | rot 0.00034 (0.014 deg)
+Matched 345 keypoints
+[INFO] [1790553512.707095506] [pose_estimator]: RANSAC: 267 inliers / 345, 8 iterations
+[INFO] [1790553512.709056798] [pose_estimator]: RPE: trans 0.0120 | rot 0.00033 (0.013 deg)
+Matched 293 keypoints
+[INFO] [1790553513.224094506] [pose_estimator]: RANSAC: 164 inliers / 293, 24 iterations
+[INFO] [1790553513.239472340] [pose_estimator]: RPE: trans 0.0045 | rot 0.00069 (0.028 deg)
+Matched 300 keypoints
+[INFO] [1790553513.650424673] [pose_estimator]: RANSAC: 169 inliers / 300, 24 iterations
+[INFO] [1790553513.650829132] [pose_estimator]: RPE: trans 0.0098 | rot 0.00133 (0.054 deg)
+Matched 326 keypoints
+[INFO] [1790553513.795381048] [pose_estimator]: RANSAC: 191 inliers / 326, 21 iterations
+[INFO] [1790553513.795543215] [pose_estimator]: RPE: trans 0.0068 | rot 0.00132 (0.054 deg)
+Matched 417 keypoints
+[INFO] [1790553514.300224674] [pose_estimator]: RANSAC: 321 inliers / 417, 8 iterations
+[INFO] [1790553514.300382507] [pose_estimator]: RPE: trans 0.0122 | rot 0.00016 (0.006 deg)
+Matched 328 keypoints
+[INFO] [1790553514.428855299] [pose_estimator]: RANSAC: 167 inliers / 328, 33 iterations
+[INFO] [1790553514.429019340] [pose_estimator]: RPE: trans 0.0031 | rot 0.00060 (0.024 deg)
+Matched 391 keypoints
+[INFO] [1790553514.567291007] [pose_estimator]: RANSAC: 249 inliers / 391, 16 iterations
+[INFO] [1790553514.567428590] [pose_estimator]: RPE: trans 0.0204 | rot 0.00037 (0.015 deg)
+Matched 398 keypoints
+[INFO] [1790553514.695900882] [pose_estimator]: RANSAC: 254 inliers / 398, 16 iterations
+[INFO] [1790553514.696060215] [pose_estimator]: RPE: trans 0.0045 | rot 0.00015 (0.006 deg)
+Matched 448 keypoints
+[INFO] [1790553514.826160882] [pose_estimator]: RANSAC: 274 inliers / 448, 18 iterations
+[INFO] [1790553514.826504965] [pose_estimator]: RPE: trans 0.0029 | rot 0.00042 (0.017 deg)
+Matched 437 keypoints
+[INFO] [1790553514.956727840] [pose_estimator]: RANSAC: 261 inliers / 437, 20 iterations
+[INFO] [1790553514.956886382] [pose_estimator]: RPE: trans 0.0048 | rot 0.00055 (0.022 deg)
+Matched 409 keypoints
+[INFO] [1790553515.082535132] [pose_estimator]: RANSAC: 224 inliers / 409, 26 iterations
+[INFO] [1790553515.082700299] [pose_estimator]: RPE: trans 0.0039 | rot 0.00048 (0.019 deg)
+Matched 409 keypoints
+[INFO] [1790553515.257090466] [pose_estimator]: RANSAC: 252 inliers / 409, 18 iterations
+[INFO] [1790553515.259055007] [pose_estimator]: RPE: trans 0.0127 | rot 0.00070 (0.028 deg)
+Matched 402 keypoints
+[INFO] [1790553515.396859007] [pose_estimator]: RANSAC: 249 inliers / 402, 17 iterations
+[INFO] [1790553515.397001424] [pose_estimator]: RPE: trans 0.0062 | rot 0.00060 (0.024 deg)
+Matched 427 keypoints
+[INFO] [1790553515.525561716] [pose_estimator]: RANSAC: 312 inliers / 427, 10 iterations
+[INFO] [1790553515.525707757] [pose_estimator]: RPE: trans 0.0139 | rot 0.00046 (0.019 deg)
+Matched 373 keypoints
+[INFO] [1790553515.652453257] [pose_estimator]: RANSAC: 232 inliers / 373, 17 iterations
+[INFO] [1790553515.652607174] [pose_estimator]: RPE: trans 0.0038 | rot 0.00059 (0.024 deg)
+Matched 417 keypoints
+[INFO] [1790553515.808093758] [pose_estimator]: RANSAC: 316 inliers / 417, 9 iterations
+[INFO] [1790553515.808238966] [pose_estimator]: RPE: trans 0.0137 | rot 0.00047 (0.019 deg)
+Matched 392 keypoints
+[INFO] [1790553515.936891799] [pose_estimator]: RANSAC: 232 inliers / 392, 20 iterations
+[INFO] [1790553515.937039258] [pose_estimator]: RPE: trans 0.0022 | rot 0.00057 (0.023 deg)
+Matched 438 keypoints
+[INFO] [1790553516.065232008] [pose_estimator]: RANSAC: 270 inliers / 438, 18 iterations
+[INFO] [1790553516.065405549] [pose_estimator]: RPE: trans 0.0010 | rot 0.00039 (0.016 deg)
+Matched 425 keypoints
+[INFO] [1790553516.192330549] [pose_estimator]: RANSAC: 255 inliers / 425, 19 iterations
+[INFO] [1790553516.192497466] [pose_estimator]: RPE: trans 0.0095 | rot 0.00034 (0.014 deg)
+Matched 399 keypoints
+[INFO] [1790553516.326322758] [pose_estimator]: RANSAC: 256 inliers / 399, 16 iterations
+[INFO] [1790553516.326560174] [pose_estimator]: RPE: trans 0.0016 | rot 0.00038 (0.015 deg)
+Matched 448 keypoints
+[INFO] [1790553516.487324633] [pose_estimator]: RANSAC: 300 inliers / 448, 13 iterations
+[INFO] [1790553516.487597800] [pose_estimator]: RPE: trans 0.0050 | rot 0.00067 (0.027 deg)
+Matched 471 keypoints
+[INFO] [1790553516.642912675] [pose_estimator]: RANSAC: 278 inliers / 471, 21 iterations
+[INFO] [1790553516.643331258] [pose_estimator]: RPE: trans 0.0044 | rot 0.00020 (0.008 deg)
+Matched 469 keypoints
+[INFO] [1790553516.791506383] [pose_estimator]: RANSAC: 279 inliers / 469, 20 iterations
+[INFO] [1790553516.791694383] [pose_estimator]: RPE: trans 0.0073 | rot 0.00017 (0.007 deg)
+Matched 455 keypoints
+[INFO] [1790553516.929128675] [pose_estimator]: RANSAC: 263 inliers / 455, 22 iterations
+[INFO] [1790553516.929303966] [pose_estimator]: RPE: trans 0.0031 | rot 0.00044 (0.018 deg)
+Matched 450 keypoints
+[INFO] [1790553517.065275883] [pose_estimator]: RANSAC: 293 inliers / 450, 15 iterations
+[INFO] [1790553517.065453466] [pose_estimator]: RPE: trans 0.0016 | rot 0.00018 (0.007 deg)
+Matched 463 keypoints
+[INFO] [1790553517.200149675] [pose_estimator]: RANSAC: 287 inliers / 463, 17 iterations
+[INFO] [1790553517.200319217] [pose_estimator]: RPE: trans 0.0090 | rot 0.00052 (0.021 deg)
+Matched 433 keypoints
+[INFO] [1790553517.332401300] [pose_estimator]: RANSAC: 278 inliers / 433, 15 iterations
+[INFO] [1790553517.332551217] [pose_estimator]: RPE: trans 0.0061 | rot 0.00090 (0.037 deg)
+Matched 420 keypoints
+[INFO] [1790553517.460840050] [pose_estimator]: RANSAC: 280 inliers / 420, 14 iterations
+[INFO] [1790553517.461010717] [pose_estimator]: RPE: trans 0.0087 | rot 0.00067 (0.027 deg)
+Matched 452 keypoints
+[INFO] [1790553517.592077508] [pose_estimator]: RANSAC: 289 inliers / 452, 16 iterations
+[INFO] [1790553517.592231092] [pose_estimator]: RPE: trans 0.0154 | rot 0.00019 (0.008 deg)
+Matched 497 keypoints
+[INFO] [1790553517.720341175] [pose_estimator]: RANSAC: 379 inliers / 497, 8 iterations
+[INFO] [1790553517.720488008] [pose_estimator]: RPE: trans 0.0102 | rot 0.00024 (0.010 deg)
+Matched 437 keypoints
+[INFO] [1790553517.849054800] [pose_estimator]: RANSAC: 269 inliers / 437, 18 iterations
+[INFO] [1790553517.851036967] [pose_estimator]: RPE: trans 0.0023 | rot 0.00061 (0.025 deg)
+Matched 428 keypoints
+[INFO] [1790553518.048211925] [pose_estimator]: RANSAC: 266 inliers / 428, 17 iterations
+[INFO] [1790553518.048421925] [pose_estimator]: RPE: trans 0.0029 | rot 0.00016 (0.006 deg)
+Matched 440 keypoints
+[INFO] [1790553518.181518884] [pose_estimator]: RANSAC: 294 inliers / 440, 13 iterations
+[INFO] [1790553518.181684550] [pose_estimator]: RPE: trans 0.0049 | rot 0.00038 (0.015 deg)
+Matched 458 keypoints
+[INFO] [1790553518.319927509] [pose_estimator]: RANSAC: 304 inliers / 458, 16 iterations
+[INFO] [1790553518.320140092] [pose_estimator]: RPE: trans 0.0185 | rot 0.00141 (0.057 deg)
+Matched 452 keypoints
+[INFO] [1790553518.452558384] [pose_estimator]: RANSAC: 360 inliers / 452, 7 iterations
+[INFO] [1790553518.452717300] [pose_estimator]: RPE: trans 0.0093 | rot 0.00044 (0.018 deg)
+Matched 456 keypoints
+[INFO] [1790553518.590023551] [pose_estimator]: RANSAC: 338 inliers / 456, 9 iterations
+[INFO] [1790553518.590199134] [pose_estimator]: RPE: trans 0.0143 | rot 0.00027 (0.011 deg)
+Matched 467 keypoints
+[INFO] [1790553518.718943634] [pose_estimator]: RANSAC: 335 inliers / 467, 10 iterations
+[INFO] [1790553518.719086301] [pose_estimator]: RPE: trans 0.0125 | rot 0.00070 (0.029 deg)
+Matched 474 keypoints
+[INFO] [1790553518.849350342] [pose_estimator]: RANSAC: 282 inliers / 474, 20 iterations
+[INFO] [1790553518.849501926] [pose_estimator]: RPE: trans 0.0064 | rot 0.00025 (0.010 deg)
+Matched 464 keypoints
+[INFO] [1790553518.975457967] [pose_estimator]: RANSAC: 307 inliers / 464, 14 iterations
+[INFO] [1790553518.975587676] [pose_estimator]: RPE: trans 0.0072 | rot 0.00049 (0.020 deg)
+Matched 445 keypoints
+[INFO] [1790553519.385372051] [pose_estimator]: RANSAC: 288 inliers / 445, 15 iterations
+[INFO] [1790553519.385555259] [pose_estimator]: RPE: trans 0.0175 | rot 0.00115 (0.047 deg)
+Matched 413 keypoints
+[INFO] [1790553519.559082343] [pose_estimator]: RANSAC: 260 inliers / 413, 17 iterations
+[INFO] [1790553519.559267843] [pose_estimator]: RPE: trans 0.0104 | rot 0.00141 (0.057 deg)
+Matched 487 keypoints
+[INFO] [1790553519.690772551] [pose_estimator]: RANSAC: 309 inliers / 487, 16 iterations
+[INFO] [1790553519.690929259] [pose_estimator]: RPE: trans 0.0069 | rot 0.00032 (0.013 deg)
+Matched 518 keypoints
+[INFO] [1790553519.838748926] [pose_estimator]: RANSAC: 426 inliers / 518, 6 iterations
+[INFO] [1790553519.838905759] [pose_estimator]: RPE: trans 0.0072 | rot 0.00023 (0.009 deg)
+Matched 484 keypoints
+[INFO] [1790553519.989183885] [pose_estimator]: RANSAC: 312 inliers / 484, 15 iterations
+[INFO] [1790553519.989363926] [pose_estimator]: RPE: trans 0.0036 | rot 0.00034 (0.014 deg)
+Matched 542 keypoints
+[INFO] [1790553520.123645260] [pose_estimator]: RANSAC: 341 inliers / 542, 17 iterations
+[INFO] [1790553520.123823218] [pose_estimator]: RPE: trans 0.0045 | rot 0.00049 (0.020 deg)
+Matched 533 keypoints
+[INFO] [1790553520.396322468] [pose_estimator]: RANSAC: 340 inliers / 533, 18 iterations
+[INFO] [1790553520.396475593] [pose_estimator]: RPE: trans 0.0047 | rot 0.00072 (0.029 deg)
+Matched 501 keypoints
+[INFO] [1790553520.559572301] [pose_estimator]: RANSAC: 314 inliers / 501, 17 iterations
+[INFO] [1790553520.559740301] [pose_estimator]: RPE: trans 0.0122 | rot 0.00269 (0.109 deg)
+Matched 531 keypoints
+[INFO] [1790553520.726601177] [pose_estimator]: RANSAC: 361 inliers / 531, 13 iterations
+[INFO] [1790553520.726800052] [pose_estimator]: RPE: trans 0.0079 | rot 0.00096 (0.039 deg)
+Matched 552 keypoints
+[INFO] [1790553521.374808969] [pose_estimator]: RANSAC: 367 inliers / 552, 14 iterations
+[INFO] [1790553521.393963802] [pose_estimator]: RPE: trans 0.0049 | rot 0.00059 (0.024 deg)
+Matched 482 keypoints
+[INFO] [1790553521.627856219] [pose_estimator]: RANSAC: 301 inliers / 482, 17 iterations
+[INFO] [1790553521.629959844] [pose_estimator]: RPE: trans 0.0051 | rot 0.00112 (0.045 deg)
+Matched 571 keypoints
+[INFO] [1790553522.070691552] [pose_estimator]: RANSAC: 383 inliers / 571, 13 iterations
+[INFO] [1790553522.070862927] [pose_estimator]: RPE: trans 0.0073 | rot 0.00103 (0.042 deg)
+Matched 561 keypoints
+[INFO] [1790553522.439754427] [pose_estimator]: RANSAC: 365 inliers / 561, 16 iterations
+[INFO] [1790553522.439910427] [pose_estimator]: RPE: trans 0.0047 | rot 0.00088 (0.036 deg)
+Matched 529 keypoints
+[INFO] [1790553522.794396344] [pose_estimator]: RANSAC: 316 inliers / 529, 20 iterations
+[INFO] [1790553522.794541511] [pose_estimator]: RPE: trans 0.0070 | rot 0.00031 (0.013 deg)
+Matched 601 keypoints
+[INFO] [1790553522.943849011] [pose_estimator]: RANSAC: 401 inliers / 601, 14 iterations
+[INFO] [1790553522.944008011] [pose_estimator]: RPE: trans 0.0063 | rot 0.00060 (0.024 deg)
+Matched 721 keypoints
+[INFO] [1790553523.106054719] [pose_estimator]: RANSAC: 611 inliers / 721, 5 iterations
+[INFO] [1790553523.106213969] [pose_estimator]: RPE: trans 0.0047 | rot 0.00028 (0.011 deg)
+Matched 658 keypoints
+[INFO] [1790553523.513988720] [pose_estimator]: RANSAC: 471 inliers / 658, 11 iterations
+[INFO] [1790553523.514149553] [pose_estimator]: RPE: trans 0.0038 | rot 0.00039 (0.016 deg)
+Matched 528 keypoints
+[INFO] [1790553524.004180470] [pose_estimator]: RANSAC: 339 inliers / 528, 15 iterations
+[INFO] [1790553524.049921886] [pose_estimator]: RPE: trans 0.0035 | rot 0.00040 (0.016 deg)
+Matched 528 keypoints
+[INFO] [1790553524.317740970] [pose_estimator]: RANSAC: 322 inliers / 528, 18 iterations
+[INFO] [1790553524.320333428] [pose_estimator]: RPE: trans 0.0060 | rot 0.00072 (0.029 deg)
+Matched 615 keypoints
+[INFO] [1790553524.557495178] [pose_estimator]: RANSAC: 419 inliers / 615, 13 iterations
+[INFO] [1790553524.559030970] [pose_estimator]: RPE: trans 0.0036 | rot 0.00094 (0.038 deg)
+Matched 607 keypoints
+[INFO] [1790553525.186870387] [pose_estimator]: RANSAC: 391 inliers / 607, 15 iterations
+[INFO] [1790553525.207031929] [pose_estimator]: RPE: trans 0.0041 | rot 0.00072 (0.029 deg)
+Matched 493 keypoints
+[INFO] [1790553525.363973720] [pose_estimator]: RANSAC: 284 inliers / 493, 22 iterations
+[INFO] [1790553525.364521679] [pose_estimator]: RPE: trans 0.0064 | rot 0.00160 (0.065 deg)
+Matched 652 keypoints
+[INFO] [1790553525.544799221] [pose_estimator]: RANSAC: 439 inliers / 652, 13 iterations
+[INFO] [1790553525.551927804] [pose_estimator]: RPE: trans 0.0027 | rot 0.00037 (0.015 deg)
+Matched 609 keypoints
+[INFO] [1790553525.720480346] [pose_estimator]: RANSAC: 421 inliers / 609, 12 iterations
+[INFO] [1790553525.720983887] [pose_estimator]: RPE: trans 0.0051 | rot 0.00041 (0.017 deg)
+Matched 675 keypoints
+[INFO] [1790553525.884401596] [pose_estimator]: RANSAC: 439 inliers / 675, 15 iterations
+[INFO] [1790553525.888109971] [pose_estimator]: RPE: trans 0.0043 | rot 0.00025 (0.010 deg)
+Matched 661 keypoints
+[INFO] [1790553526.262814721] [pose_estimator]: RANSAC: 448 inliers / 661, 13 iterations
+[INFO] [1790553526.283985054] [pose_estimator]: RPE: trans 0.0102 | rot 0.00074 (0.030 deg)
+Matched 595 keypoints
+[INFO] [1790553526.457461596] [pose_estimator]: RANSAC: 376 inliers / 595, 16 iterations
+[INFO] [1790553526.460880554] [pose_estimator]: RPE: trans 0.0062 | rot 0.00040 (0.016 deg)
+Matched 677 keypoints
+[INFO] [1790553526.675000346] [pose_estimator]: RANSAC: 456 inliers / 677, 13 iterations
+[INFO] [1790553526.675174513] [pose_estimator]: RPE: trans 0.0028 | rot 0.00043 (0.017 deg)
+Matched 599 keypoints
+[INFO] [1790553526.896568388] [pose_estimator]: RANSAC: 414 inliers / 599, 12 iterations
+[INFO] [1790553526.897130763] [pose_estimator]: RPE: trans 0.0038 | rot 0.00020 (0.008 deg)
+Matched 643 keypoints
+[INFO] [1790553527.077176430] [pose_estimator]: RANSAC: 446 inliers / 643, 12 iterations
+[INFO] [1790553527.079709221] [pose_estimator]: RPE: trans 0.0018 | rot 0.00034 (0.014 deg)
+Matched 678 keypoints
+[INFO] [1790553527.245934721] [pose_estimator]: RANSAC: 473 inliers / 678, 12 iterations
+[INFO] [1790553527.258413888] [pose_estimator]: RPE: trans 0.0008 | rot 0.00027 (0.011 deg)
+Matched 697 keypoints
+[INFO] [1790553527.444634263] [pose_estimator]: RANSAC: 495 inliers / 697, 11 iterations
+[INFO] [1790553527.446314930] [pose_estimator]: RPE: trans 0.0030 | rot 0.00016 (0.006 deg)
+Matched 667 keypoints
+[INFO] [1790553527.677069597] [pose_estimator]: RANSAC: 483 inliers / 667, 11 iterations
+[INFO] [1790553527.684005138] [pose_estimator]: RPE: trans 0.0032 | rot 0.00029 (0.012 deg)
+Matched 675 keypoints
+[INFO] [1790553528.003343263] [pose_estimator]: RANSAC: 496 inliers / 675, 10 iterations
+[INFO] [1790553528.003526680] [pose_estimator]: RPE: trans 0.0027 | rot 0.00066 (0.027 deg)
+Matched 671 keypoints
+[INFO] [1790553528.236214930] [pose_estimator]: RANSAC: 482 inliers / 671, 10 iterations
+[INFO] [1790553528.239473013] [pose_estimator]: RPE: trans 0.0012 | rot 0.00026 (0.011 deg)
+Matched 620 keypoints
+[INFO] [1790553528.578723764] [pose_estimator]: RANSAC: 425 inliers / 620, 12 iterations
+[INFO] [1790553528.582441889] [pose_estimator]: RPE: trans 0.0047 | rot 0.00064 (0.026 deg)
+Matched 608 keypoints
+[INFO] [1790553528.754467514] [pose_estimator]: RANSAC: 419 inliers / 608, 13 iterations
+[INFO] [1790553528.754651389] [pose_estimator]: RPE: trans 0.0032 | rot 0.00070 (0.028 deg)
+Matched 742 keypoints
+[INFO] [1790553528.912549125] [pose_estimator]: RANSAC: 540 inliers / 742, 10 iterations
+[INFO] [1790553528.916181708] [pose_estimator]: RPE: trans 0.0012 | rot 0.00026 (0.010 deg)
+Matched 702 keypoints
+[INFO] [1790553529.067796958] [pose_estimator]: RANSAC: 478 inliers / 702, 13 iterations
+[INFO] [1790553529.067979416] [pose_estimator]: RPE: trans 0.0036 | rot 0.00073 (0.029 deg)
+Matched 709 keypoints
+[INFO] [1790553529.222390958] [pose_estimator]: RANSAC: 515 inliers / 709, 10 iterations
+[INFO] [1790553529.222634500] [pose_estimator]: RPE: trans 0.0016 | rot 0.00051 (0.021 deg)
+Matched 669 keypoints
+[INFO] [1790553529.586935500] [pose_estimator]: RANSAC: 476 inliers / 669, 12 iterations
+[INFO] [1790553529.588869333] [pose_estimator]: RPE: trans 0.0013 | rot 0.00034 (0.014 deg)
+Matched 628 keypoints
+[INFO] [1790553529.972728042] [pose_estimator]: RANSAC: 443 inliers / 628, 11 iterations
+[INFO] [1790553529.973276042] [pose_estimator]: RPE: trans 0.0024 | rot 0.00033 (0.013 deg)
+Matched 560 keypoints
+[INFO] [1790553530.271346292] [pose_estimator]: RANSAC: 381 inliers / 560, 13 iterations
+[INFO] [1790553530.275704083] [pose_estimator]: RPE: trans 0.0006 | rot 0.00033 (0.013 deg)
+Matched 622 keypoints
+[INFO] [1790553530.441663917] [pose_estimator]: RANSAC: 444 inliers / 622, 14 iterations
+[INFO] [1790553530.450360709] [pose_estimator]: RPE: trans 0.0048 | rot 0.00086 (0.035 deg)
+Matched 597 keypoints
+[INFO] [1790553531.003291751] [pose_estimator]: RANSAC: 425 inliers / 597, 12 iterations
+[INFO] [1790553531.003478792] [pose_estimator]: RPE: trans 0.0026 | rot 0.00040 (0.016 deg)
+Matched 475 keypoints
+[INFO] [1790553531.273037959] [pose_estimator]: RANSAC: 288 inliers / 475, 19 iterations
+[INFO] [1790553531.273829042] [pose_estimator]: RPE: trans 0.0017 | rot 0.00099 (0.040 deg)
+Matched 515 keypoints
+[INFO] [1790553531.418967417] [pose_estimator]: RANSAC: 339 inliers / 515, 14 iterations
+[INFO] [1790553531.419161584] [pose_estimator]: RPE: trans 0.0042 | rot 0.00050 (0.020 deg)
+Matched 509 keypoints
+[INFO] [1790553531.559246501] [pose_estimator]: RANSAC: 361 inliers / 509, 11 iterations
+[INFO] [1790553531.569240334] [pose_estimator]: RPE: trans 0.0016 | rot 0.00039 (0.016 deg)
+Matched 539 keypoints
+[INFO] [1790553532.094478626] [pose_estimator]: RANSAC: 359 inliers / 539, 14 iterations
+[INFO] [1790553532.112649876] [pose_estimator]: RPE: trans 0.0029 | rot 0.00018 (0.007 deg)
+Matched 476 keypoints
+[INFO] [1790553532.434583501] [pose_estimator]: RANSAC: 295 inliers / 476, 17 iterations
+[INFO] [1790553532.445628960] [pose_estimator]: RPE: trans 0.0014 | rot 0.00056 (0.023 deg)
+Matched 551 keypoints
+[INFO] [1790553532.611268460] [pose_estimator]: RANSAC: 371 inliers / 551, 13 iterations
+[INFO] [1790553532.617337668] [pose_estimator]: RPE: trans 0.0014 | rot 0.00053 (0.021 deg)
+Matched 558 keypoints
+[INFO] [1790553532.776737043] [pose_estimator]: RANSAC: 383 inliers / 558, 12 iterations
+[INFO] [1790553532.776916293] [pose_estimator]: RPE: trans 0.0029 | rot 0.00105 (0.043 deg)
+Matched 556 keypoints
+[INFO] [1790553533.085870168] [pose_estimator]: RANSAC: 406 inliers / 556, 10 iterations
+[INFO] [1790553533.087530543] [pose_estimator]: RPE: trans 0.0042 | rot 0.00026 (0.011 deg)
+Matched 474 keypoints
+[INFO] [1790553533.229985168] [pose_estimator]: RANSAC: 326 inliers / 474, 12 iterations
+[INFO] [1790553533.230231752] [pose_estimator]: RPE: trans 0.0028 | rot 0.00047 (0.019 deg)
+Matched 495 keypoints
+[INFO] [1790553533.386659627] [pose_estimator]: RANSAC: 346 inliers / 495, 12 iterations
+[INFO] [1790553533.401221210] [pose_estimator]: RPE: trans 0.0031 | rot 0.00069 (0.028 deg)
+Matched 504 keypoints
+[INFO] [1790553533.695176460] [pose_estimator]: RANSAC: 391 inliers / 504, 9 iterations
+[INFO] [1790553533.710948168] [pose_estimator]: RPE: trans 0.0016 | rot 0.00035 (0.014 deg)
+Matched 452 keypoints
+[INFO] [1790553534.139915877] [pose_estimator]: RANSAC: 331 inliers / 452, 10 iterations
+[INFO] [1790553534.150953210] [pose_estimator]: RPE: trans 0.0018 | rot 0.00048 (0.019 deg)
+Matched 374 keypoints
+[INFO] [1790553534.392982544] [pose_estimator]: RANSAC: 253 inliers / 374, 13 iterations
+[INFO] [1790553534.441647710] [pose_estimator]: RPE: trans 0.0035 | rot 0.00110 (0.045 deg)
+Matched 337 keypoints
+[INFO] [1790553535.400748794] [pose_estimator]: RANSAC: 228 inliers / 337, 13 iterations
+[INFO] [1790553535.435517044] [pose_estimator]: RPE: trans 0.0067 | rot 0.00323 (0.131 deg)
+Matched 210 keypoints
+[INFO] [1790553535.731092128] [pose_estimator]: RANSAC: 125 inliers / 210, 20 iterations
+[INFO] [1790553535.741195253] [pose_estimator]: RPE: trans 0.0062 | rot 0.00207 (0.084 deg)
+Matched 314 keypoints
+[INFO] [1790553535.908798503] [pose_estimator]: RANSAC: 236 inliers / 314, 9 iterations
+[INFO] [1790553535.950637461] [pose_estimator]: RPE: trans 0.0030 | rot 0.00095 (0.039 deg)
+Matched 291 keypoints
+[INFO] [1790553536.382046003] [pose_estimator]: RANSAC: 207 inliers / 291, 11 iterations
+[INFO] [1790553536.407939753] [pose_estimator]: RPE: trans 0.0020 | rot 0.00077 (0.031 deg)
+Matched 188 keypoints
+[INFO] [1790553536.964672587] [pose_estimator]: RANSAC: 97 inliers / 188, 32 iterations
+[INFO] [1790553536.967246212] [pose_estimator]: RPE: trans 0.0037 | rot 0.00184 (0.075 deg)
+Matched 143 keypoints
+[INFO] [1790553537.687124879] [pose_estimator]: RANSAC: 64 inliers / 143, 50 iterations
+[INFO] [1790553537.687470462] [pose_estimator]: RPE: trans 0.0047 | rot 0.00228 (0.092 deg)
+Matched 120 keypoints
+[INFO] [1790553537.809859254] [pose_estimator]: RANSAC: 49 inliers / 120, 66 iterations
+[INFO] [1790553537.810039670] [pose_estimator]: RPE: trans 0.0218 | rot 0.00968 (0.392 deg)
+Matched 193 keypoints
+[INFO] [1790553537.931107295] [pose_estimator]: RANSAC: 156 inliers / 193, 7 iterations
+[INFO] [1790553537.931278795] [pose_estimator]: RPE: trans 0.0028 | rot 0.00104 (0.042 deg)
+Matched 230 keypoints
+[INFO] [1790553538.066042129] [pose_estimator]: RANSAC: 168 inliers / 230, 10 iterations
+[INFO] [1790553538.066219837] [pose_estimator]: RPE: trans 0.0013 | rot 0.00105 (0.043 deg)
+Matched 206 keypoints
+[INFO] [1790553538.184865462] [pose_estimator]: RANSAC: 146 inliers / 206, 11 iterations
+[INFO] [1790553538.185008587] [pose_estimator]: RPE: trans 0.0041 | rot 0.00107 (0.044 deg)
+Matched 213 keypoints
+[INFO] [1790553538.308441337] [pose_estimator]: RANSAC: 139 inliers / 213, 20 iterations
+[INFO] [1790553538.309055962] [pose_estimator]: RPE: trans 0.0044 | rot 0.00161 (0.065 deg)
+Matched 188 keypoints
+[INFO] [1790553538.438594462] [pose_estimator]: RANSAC: 105 inliers / 188, 25 iterations
+[INFO] [1790553538.438760921] [pose_estimator]: RPE: trans 0.0032 | rot 0.00307 (0.125 deg)
+Matched 290 keypoints
+[INFO] [1790553538.570211712] [pose_estimator]: RANSAC: 219 inliers / 290, 9 iterations
+[INFO] [1790553538.570347337] [pose_estimator]: RPE: trans 0.0019 | rot 0.00156 (0.063 deg)
+Matched 273 keypoints
+[INFO] [1790553538.699052588] [pose_estimator]: RANSAC: 206 inliers / 273, 9 iterations
+[INFO] [1790553538.699230379] [pose_estimator]: RPE: trans 0.0044 | rot 0.00211 (0.085 deg)
+Matched 268 keypoints
+[INFO] [1790553538.828927421] [pose_estimator]: RANSAC: 193 inliers / 268, 10 iterations
+[INFO] [1790553538.829092254] [pose_estimator]: RPE: trans 0.0094 | rot 0.00253 (0.102 deg)
+Matched 325 keypoints
+[INFO] [1790553538.964374088] [pose_estimator]: RANSAC: 243 inliers / 325, 9 iterations
+[INFO] [1790553538.964507088] [pose_estimator]: RPE: trans 0.0004 | rot 0.00209 (0.085 deg)
+Matched 283 keypoints
+[INFO] [1790553539.098822713] [pose_estimator]: RANSAC: 201 inliers / 283, 11 iterations
+[INFO] [1790553539.098960754] [pose_estimator]: RPE: trans 0.0040 | rot 0.00147 (0.060 deg)
+Matched 271 keypoints
+[INFO] [1790553539.231104629] [pose_estimator]: RANSAC: 198 inliers / 271, 10 iterations
+[INFO] [1790553539.231273338] [pose_estimator]: RPE: trans 0.0039 | rot 0.00145 (0.059 deg)
+Matched 372 keypoints
+[INFO] [1790553539.370093213] [pose_estimator]: RANSAC: 281 inliers / 372, 9 iterations
+[INFO] [1790553539.370283629] [pose_estimator]: RPE: trans 0.0024 | rot 0.00055 (0.022 deg)
+Matched 257 keypoints
+[INFO] [1790553539.523167921] [pose_estimator]: RANSAC: 185 inliers / 257, 10 iterations
+[INFO] [1790553539.523339255] [pose_estimator]: RPE: trans 0.0042 | rot 0.00177 (0.072 deg)
+Matched 222 keypoints
+[INFO] [1790553539.663779046] [pose_estimator]: RANSAC: 163 inliers / 222, 10 iterations
+[INFO] [1790553539.663951088] [pose_estimator]: RPE: trans 0.0047 | rot 0.00088 (0.036 deg)
+Matched 192 keypoints
+[INFO] [1790553539.785181338] [pose_estimator]: RANSAC: 115 inliers / 192, 20 iterations
+[INFO] [1790553539.785354505] [pose_estimator]: RPE: trans 0.0072 | rot 0.00085 (0.034 deg)
+Matched 191 keypoints
+[INFO] [1790553539.904107255] [pose_estimator]: RANSAC: 116 inliers / 191, 19 iterations
+[INFO] [1790553539.904280713] [pose_estimator]: RPE: trans 0.0027 | rot 0.00052 (0.021 deg)
+Matched 151 keypoints
+[INFO] [1790553540.019368588] [pose_estimator]: RANSAC: 113 inliers / 151, 9 iterations
+[INFO] [1790553540.019575255] [pose_estimator]: RPE: trans 0.0028 | rot 0.00052 (0.021 deg)
+Matched 154 keypoints
+[INFO] [1790553540.146603672] [pose_estimator]: RANSAC: 125 inliers / 154, 7 iterations
+[INFO] [1790553540.146766297] [pose_estimator]: RPE: trans 0.0007 | rot 0.00049 (0.020 deg)
+Matched 139 keypoints
+[INFO] [1790553540.261620297] [pose_estimator]: RANSAC: 98 inliers / 139, 11 iterations
+[INFO] [1790553540.261796297] [pose_estimator]: RPE: trans 0.0026 | rot 0.00075 (0.031 deg)
+Matched 173 keypoints
+[INFO] [1790553540.377394880] [pose_estimator]: RANSAC: 134 inliers / 173, 8 iterations
+[INFO] [1790553540.377570588] [pose_estimator]: RPE: trans 0.0020 | rot 0.00043 (0.017 deg)
+Matched 144 keypoints
+[INFO] [1790553540.503205547] [pose_estimator]: RANSAC: 111 inliers / 144, 8 iterations
+[INFO] [1790553540.503372672] [pose_estimator]: RPE: trans 0.0028 | rot 0.00037 (0.015 deg)
+Matched 163 keypoints
+[INFO] [1790553540.620288213] [pose_estimator]: RANSAC: 112 inliers / 163, 12 iterations
+[INFO] [1790553540.620425255] [pose_estimator]: RPE: trans 0.0076 | rot 0.00190 (0.077 deg)
+Matched 164 keypoints
+[INFO] [1790553540.734874588] [pose_estimator]: RANSAC: 131 inliers / 164, 7 iterations
+[INFO] [1790553540.735027880] [pose_estimator]: RPE: trans 0.0049 | rot 0.00151 (0.061 deg)
+Matched 158 keypoints
+[INFO] [1790553540.847515089] [pose_estimator]: RANSAC: 123 inliers / 158, 9 iterations
+[INFO] [1790553540.847705714] [pose_estimator]: RPE: trans 0.0016 | rot 0.00085 (0.034 deg)
+Matched 159 keypoints
+[INFO] [1790553540.972897630] [pose_estimator]: RANSAC: 121 inliers / 159, 8 iterations
+[INFO] [1790553540.973092089] [pose_estimator]: RPE: trans 0.0031 | rot 0.00054 (0.022 deg)
+Matched 154 keypoints
+[INFO] [1790553541.103433547] [pose_estimator]: RANSAC: 110 inliers / 154, 11 iterations
+[INFO] [1790553541.103651630] [pose_estimator]: RPE: trans 0.0062 | rot 0.00131 (0.053 deg)
+Matched 164 keypoints
+[INFO] [1790553541.223513672] [pose_estimator]: RANSAC: 131 inliers / 164, 7 iterations
+[INFO] [1790553541.223675380] [pose_estimator]: RPE: trans 0.0061 | rot 0.00108 (0.044 deg)
+Matched 145 keypoints
+[INFO] [1790553541.343218214] [pose_estimator]: RANSAC: 111 inliers / 145, 8 iterations
+[INFO] [1790553541.343875714] [pose_estimator]: RPE: trans 0.0032 | rot 0.00082 (0.033 deg)
+Matched 144 keypoints
+[INFO] [1790553541.468490380] [pose_estimator]: RANSAC: 109 inliers / 144, 9 iterations
+[INFO] [1790553541.468685255] [pose_estimator]: RPE: trans 0.0053 | rot 0.00115 (0.046 deg)
+Matched 197 keypoints
+[INFO] [1790553541.597421922] [pose_estimator]: RANSAC: 157 inliers / 197, 7 iterations
+[INFO] [1790553541.597596506] [pose_estimator]: RPE: trans 0.0086 | rot 0.00138 (0.056 deg)
+Matched 234 keypoints
+[INFO] [1790553541.717914089] [pose_estimator]: RANSAC: 180 inliers / 234, 8 iterations
+[INFO] [1790553541.718076922] [pose_estimator]: RPE: trans 0.0040 | rot 0.00073 (0.029 deg)
+Matched 235 keypoints
+[INFO] [1790553541.843117256] [pose_estimator]: RANSAC: 194 inliers / 235, 6 iterations
+[INFO] [1790553541.843314756] [pose_estimator]: RPE: trans 0.0041 | rot 0.00125 (0.051 deg)
+Matched 244 keypoints
+[INFO] [1790553541.970015089] [pose_estimator]: RANSAC: 189 inliers / 244, 8 iterations
+[INFO] [1790553541.970194672] [pose_estimator]: RPE: trans 0.0050 | rot 0.00068 (0.028 deg)
+Matched 302 keypoints
+[INFO] [1790553542.093577339] [pose_estimator]: RANSAC: 253 inliers / 302, 6 iterations
+[INFO] [1790553542.093801964] [pose_estimator]: RPE: trans 0.0020 | rot 0.00045 (0.018 deg)
+Matched 272 keypoints
+[INFO] [1790553542.236946631] [pose_estimator]: RANSAC: 208 inliers / 272, 8 iterations
+[INFO] [1790553542.237656548] [pose_estimator]: RPE: trans 0.0040 | rot 0.00059 (0.024 deg)
+Matched 367 keypoints
+[INFO] [1790553542.378336548] [pose_estimator]: RANSAC: 299 inliers / 367, 7 iterations
+[INFO] [1790553542.378482256] [pose_estimator]: RPE: trans 0.0029 | rot 0.00063 (0.025 deg)
+Matched 397 keypoints
+[INFO] [1790553542.508614756] [pose_estimator]: RANSAC: 320 inliers / 397, 7 iterations
+[INFO] [1790553542.508772506] [pose_estimator]: RPE: trans 0.0016 | rot 0.00015 (0.006 deg)
+Matched 367 keypoints
+[INFO] [1790553542.648353214] [pose_estimator]: RANSAC: 291 inliers / 367, 7 iterations
+[INFO] [1790553542.649296214] [pose_estimator]: RPE: trans 0.0078 | rot 0.00188 (0.076 deg)
+Matched 390 keypoints
+[INFO] [1790553542.798628339] [pose_estimator]: RANSAC: 323 inliers / 390, 6 iterations
+[INFO] [1790553542.798801631] [pose_estimator]: RPE: trans 0.0028 | rot 0.00054 (0.022 deg)
+Matched 377 keypoints
+[INFO] [1790553542.927201840] [pose_estimator]: RANSAC: 323 inliers / 377, 5 iterations
+[INFO] [1790553542.927378715] [pose_estimator]: RPE: trans 0.0035 | rot 0.00113 (0.046 deg)
+Matched 376 keypoints
+[INFO] [1790553543.052461298] [pose_estimator]: RANSAC: 300 inliers / 376, 7 iterations
+[INFO] [1790553543.052599298] [pose_estimator]: RPE: trans 0.0039 | rot 0.00078 (0.032 deg)
+Matched 339 keypoints
+[INFO] [1790553543.181241548] [pose_estimator]: RANSAC: 260 inliers / 339, 8 iterations
+[INFO] [1790553543.181416631] [pose_estimator]: RPE: trans 0.0062 | rot 0.00157 (0.064 deg)
+Matched 308 keypoints
+[INFO] [1790553543.309142215] [pose_estimator]: RANSAC: 256 inliers / 308, 6 iterations
+[INFO] [1790553543.309290756] [pose_estimator]: RPE: trans 0.0027 | rot 0.00026 (0.010 deg)
+Matched 320 keypoints
+[INFO] [1790553543.436297548] [pose_estimator]: RANSAC: 256 inliers / 320, 7 iterations
+[INFO] [1790553543.436435465] [pose_estimator]: RPE: trans 0.0034 | rot 0.00117 (0.048 deg)
+Matched 345 keypoints
+[INFO] [1790553543.586309923] [pose_estimator]: RANSAC: 288 inliers / 345, 6 iterations
+[INFO] [1790553543.586442548] [pose_estimator]: RPE: trans 0.0065 | rot 0.00166 (0.067 deg)
+Matched 386 keypoints
+[INFO] [1790553543.716670340] [pose_estimator]: RANSAC: 315 inliers / 386, 6 iterations
+[INFO] [1790553543.716825757] [pose_estimator]: RPE: trans 0.0018 | rot 0.00063 (0.026 deg)
+Matched 390 keypoints
+[INFO] [1790553543.847923757] [pose_estimator]: RANSAC: 317 inliers / 390, 6 iterations
+[INFO] [1790553543.848064673] [pose_estimator]: RPE: trans 0.0022 | rot 0.00089 (0.036 deg)
+Matched 392 keypoints
+[INFO] [1790553543.977685923] [pose_estimator]: RANSAC: 341 inliers / 392, 5 iterations
+[INFO] [1790553543.977798007] [pose_estimator]: RPE: trans 0.0030 | rot 0.00081 (0.033 deg)
+Matched 360 keypoints
+[INFO] [1790553544.113730465] [pose_estimator]: RANSAC: 302 inliers / 360, 6 iterations
+[INFO] [1790553544.113900132] [pose_estimator]: RPE: trans 0.0010 | rot 0.00065 (0.027 deg)
+Matched 369 keypoints
+[INFO] [1790553544.243661132] [pose_estimator]: RANSAC: 294 inliers / 369, 7 iterations
+[INFO] [1790553544.243850132] [pose_estimator]: RPE: trans 0.0010 | rot 0.00013 (0.005 deg)
+Matched 358 keypoints
+[INFO] [1790553544.371868965] [pose_estimator]: RANSAC: 301 inliers / 358, 6 iterations
+[INFO] [1790553544.372022632] [pose_estimator]: RPE: trans 0.0025 | rot 0.00083 (0.034 deg)
+Matched 389 keypoints
+[INFO] [1790553544.497728132] [pose_estimator]: RANSAC: 330 inliers / 389, 5 iterations
+[INFO] [1790553544.497872590] [pose_estimator]: RPE: trans 0.0030 | rot 0.00095 (0.039 deg)
+Matched 352 keypoints
+[INFO] [1790553544.623682799] [pose_estimator]: RANSAC: 282 inliers / 352, 7 iterations
+[INFO] [1790553544.623841757] [pose_estimator]: RPE: trans 0.0025 | rot 0.00122 (0.050 deg)
+Matched 367 keypoints
+[INFO] [1790553544.759395549] [pose_estimator]: RANSAC: 319 inliers / 367, 5 iterations
+[INFO] [1790553544.759558424] [pose_estimator]: RPE: trans 0.0012 | rot 0.00033 (0.013 deg)
+Matched 373 keypoints
+[INFO] [1790553544.885565757] [pose_estimator]: RANSAC: 325 inliers / 373, 5 iterations
+[INFO] [1790553544.885726465] [pose_estimator]: RPE: trans 0.0021 | rot 0.00044 (0.018 deg)
+Matched 383 keypoints
+[INFO] [1790553545.010187257] [pose_estimator]: RANSAC: 334 inliers / 383, 5 iterations
+[INFO] [1790553545.010331632] [pose_estimator]: RPE: trans 0.0009 | rot 0.00049 (0.020 deg)
+Matched 359 keypoints
+[INFO] [1790553545.145864007] [pose_estimator]: RANSAC: 301 inliers / 359, 7 iterations
+[INFO] [1790553545.146030382] [pose_estimator]: RPE: trans 0.0023 | rot 0.00090 (0.036 deg)
+Matched 345 keypoints
+[INFO] [1790553545.270445049] [pose_estimator]: RANSAC: 299 inliers / 345, 5 iterations
+[INFO] [1790553545.270593466] [pose_estimator]: RPE: trans 0.0056 | rot 0.00205 (0.083 deg)
+Matched 408 keypoints
+[INFO] [1790553545.399890382] [pose_estimator]: RANSAC: 363 inliers / 408, 4 iterations
+[INFO] [1790553545.400029841] [pose_estimator]: RPE: trans 0.0023 | rot 0.00070 (0.028 deg)
+Matched 368 keypoints
+[INFO] [1790553545.525376257] [pose_estimator]: RANSAC: 295 inliers / 368, 7 iterations
+[INFO] [1790553545.525515132] [pose_estimator]: RPE: trans 0.0022 | rot 0.00100 (0.040 deg)
+Matched 395 keypoints
+[INFO] [1790553545.654680341] [pose_estimator]: RANSAC: 341 inliers / 395, 5 iterations
+[INFO] [1790553545.654838966] [pose_estimator]: RPE: trans 0.0025 | rot 0.00074 (0.030 deg)
+Matched 366 keypoints
+[INFO] [1790553545.783841383] [pose_estimator]: RANSAC: 314 inliers / 366, 5 iterations
+[INFO] [1790553545.783984424] [pose_estimator]: RPE: trans 0.0027 | rot 0.00100 (0.040 deg)
+Matched 356 keypoints
+[INFO] [1790553545.916022799] [pose_estimator]: RANSAC: 307 inliers / 356, 5 iterations
+[INFO] [1790553545.916198424] [pose_estimator]: RPE: trans 0.0027 | rot 0.00104 (0.042 deg)
+Matched 371 keypoints
+[INFO] [1790553546.044885716] [pose_estimator]: RANSAC: 318 inliers / 371, 5 iterations
+[INFO] [1790553546.045032341] [pose_estimator]: RPE: trans 0.0040 | rot 0.00165 (0.067 deg)
+Matched 365 keypoints
+[INFO] [1790553546.169603133] [pose_estimator]: RANSAC: 312 inliers / 365, 5 iterations
+[INFO] [1790553546.169750841] [pose_estimator]: RPE: trans 0.0011 | rot 0.00037 (0.015 deg)
+Matched 354 keypoints
+[INFO] [1790553546.295268883] [pose_estimator]: RANSAC: 309 inliers / 354, 5 iterations
+[INFO] [1790553546.295418924] [pose_estimator]: RPE: trans 0.0033 | rot 0.00119 (0.048 deg)
+Matched 359 keypoints
+[INFO] [1790553546.423288591] [pose_estimator]: RANSAC: 307 inliers / 359, 5 iterations
+[INFO] [1790553546.423441633] [pose_estimator]: RPE: trans 0.0014 | rot 0.00068 (0.028 deg)
+Matched 342 keypoints
+[INFO] [1790553546.545275008] [pose_estimator]: RANSAC: 293 inliers / 342, 5 iterations
+[INFO] [1790553546.545421300] [pose_estimator]: RPE: trans 0.0035 | rot 0.00092 (0.037 deg)
+Matched 318 keypoints
+[INFO] [1790553546.669283758] [pose_estimator]: RANSAC: 270 inliers / 318, 7 iterations
+[INFO] [1790553546.669424841] [pose_estimator]: RPE: trans 0.0057 | rot 0.00188 (0.076 deg)
+Matched 342 keypoints
+[INFO] [1790553546.791774258] [pose_estimator]: RANSAC: 294 inliers / 342, 7 iterations
+[INFO] [1790553546.791911091] [pose_estimator]: RPE: trans 0.0014 | rot 0.00086 (0.035 deg)
+Matched 373 keypoints
+[INFO] [1790553546.918218758] [pose_estimator]: RANSAC: 312 inliers / 373, 6 iterations
+[INFO] [1790553546.918371925] [pose_estimator]: RPE: trans 0.0055 | rot 0.00172 (0.069 deg)
+Matched 364 keypoints
+[INFO] [1790553547.042119591] [pose_estimator]: RANSAC: 314 inliers / 364, 5 iterations
+[INFO] [1790553547.042266758] [pose_estimator]: RPE: trans 0.0038 | rot 0.00130 (0.053 deg)
+Matched 346 keypoints
+[INFO] [1790553547.170936800] [pose_estimator]: RANSAC: 293 inliers / 346, 5 iterations
+[INFO] [1790553547.171085717] [pose_estimator]: RPE: trans 0.0025 | rot 0.00084 (0.034 deg)
+Matched 345 keypoints
+[INFO] [1790553547.303407508] [pose_estimator]: RANSAC: 304 inliers / 345, 4 iterations
+[INFO] [1790553547.303544425] [pose_estimator]: RPE: trans 0.0042 | rot 0.00146 (0.059 deg)
+Matched 328 keypoints
+[INFO] [1790553547.425954758] [pose_estimator]: RANSAC: 278 inliers / 328, 5 iterations
+[INFO] [1790553547.426091883] [pose_estimator]: RPE: trans 0.0075 | rot 0.00200 (0.081 deg)
+Matched 363 keypoints
+[INFO] [1790553547.553331258] [pose_estimator]: RANSAC: 312 inliers / 363, 5 iterations
+[INFO] [1790553547.553535550] [pose_estimator]: RPE: trans 0.0021 | rot 0.00075 (0.031 deg)
+Matched 349 keypoints
+[INFO] [1790553547.678090217] [pose_estimator]: RANSAC: 295 inliers / 349, 5 iterations
+[INFO] [1790553547.678242883] [pose_estimator]: RPE: trans 0.0036 | rot 0.00071 (0.029 deg)
+Matched 382 keypoints
+[INFO] [1790553547.810601134] [pose_estimator]: RANSAC: 303 inliers / 382, 7 iterations
+[INFO] [1790553547.810747717] [pose_estimator]: RPE: trans 0.0016 | rot 0.00068 (0.028 deg)
+Matched 357 keypoints
+[INFO] [1790553547.932642759] [pose_estimator]: RANSAC: 292 inliers / 357, 6 iterations
+[INFO] [1790553547.932788425] [pose_estimator]: RPE: trans 0.0022 | rot 0.00038 (0.015 deg)
+Matched 364 keypoints
+[INFO] [1790553548.061608384] [pose_estimator]: RANSAC: 310 inliers / 364, 5 iterations
+[INFO] [1790553548.061755884] [pose_estimator]: RPE: trans 0.0025 | rot 0.00077 (0.031 deg)
+Matched 364 keypoints
+[INFO] [1790553548.187322259] [pose_estimator]: RANSAC: 306 inliers / 364, 9 iterations
+[INFO] [1790553548.187485342] [pose_estimator]: RPE: trans 0.0024 | rot 0.00105 (0.042 deg)
+Matched 335 keypoints
+[INFO] [1790553548.312795634] [pose_estimator]: RANSAC: 296 inliers / 335, 4 iterations
+[INFO] [1790553548.312938467] [pose_estimator]: RPE: trans 0.0033 | rot 0.00060 (0.024 deg)
+Matched 354 keypoints
+[INFO] [1790553548.436491675] [pose_estimator]: RANSAC: 309 inliers / 354, 5 iterations
+[INFO] [1790553548.436663925] [pose_estimator]: RPE: trans 0.0018 | rot 0.00071 (0.029 deg)
+Matched 380 keypoints
+[INFO] [1790553548.565467467] [pose_estimator]: RANSAC: 320 inliers / 380, 6 iterations
+[INFO] [1790553548.565612884] [pose_estimator]: RPE: trans 0.0047 | rot 0.00114 (0.046 deg)
+Matched 375 keypoints
+[INFO] [1790553548.695414926] [pose_estimator]: RANSAC: 316 inliers / 375, 6 iterations
+[INFO] [1790553548.698200301] [pose_estimator]: RPE: trans 0.0015 | rot 0.00048 (0.019 deg)
+Matched 369 keypoints
+[INFO] [1790553548.826880467] [pose_estimator]: RANSAC: 305 inliers / 369, 6 iterations
+[INFO] [1790553548.827065009] [pose_estimator]: RPE: trans 0.0028 | rot 0.00083 (0.034 deg)
