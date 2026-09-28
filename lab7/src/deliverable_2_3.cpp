@@ -218,7 +218,7 @@ class MocapPose3Node : public rclcpp::Node {
   }
 
   void run() {
-    declare_parameter<long>("max_solver_iterations");
+    declare_parameter<int64_t>("max_solver_iterations");
     declare_parameter<bool>("use_mocap");
     get_parameter("max_solver_iterations", max_solver_iterations_);
     get_parameter("use_mocap", use_mocap_);
