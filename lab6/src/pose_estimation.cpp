@@ -15,6 +15,7 @@
 #include <Eigen/Eigen>
 #include <array>
 #include <cmath>
+#include <deque>
 #include <filesystem>
 #include <fstream>
 #include <iomanip>
@@ -26,6 +27,8 @@
 #include <image_transport/subscriber_filter.hpp>
 #include <iostream>
 #include <memory>
+#include <mutex>
+#include <thread>
 #include <nav_msgs/msg/detail/odometry__struct.hpp>
 #include <nav_msgs/msg/odometry.hpp>
 #include <opencv2/calib3d.hpp>
@@ -123,6 +126,39 @@ class PoseEstimator : public rclcpp::Node {
   std::ofstream rpe_log_;
   double current_stamp_ = 0.0;
 
+  // Recent ground-truth camera poses, so each image is paired with the pose at
+  // its own timestamp instead of the latest odometry (images wait in the sync
+  // queue while SIFT runs, so the latest odometry is ahead of the image).
+  std::deque<geometry_msgs::msg::PoseStamped> gt_buffer_;
+  std::mutex gt_mutex_;  // gt_buffer_ is filled from the odometry thread
+  rclcpp::CallbackGroup::SharedPtr gt_group_;
+  static constexpr size_t kGtBufferSize = 2000;  // ~10 s of odometry at 200 Hz
+
+  // Ground-truth camera pose closest in time to `stamp`; false if none buffered.
+  bool lookupGtPose(const rclcpp::Time& stamp, geometry_msgs::msg::PoseStamped& pose) {
+    std::lock_guard<std::mutex> lock(gt_mutex_);
+    if (gt_buffer_.empty()) return false;
+    auto best = gt_buffer_.begin();
+    double best_dt = std::abs((rclcpp::Time(best->header.stamp) - stamp).seconds());
+    for (auto it = gt_buffer_.begin(); it != gt_buffer_.end(); ++it) {
+      const double dt = std::abs((rclcpp::Time(it->header.stamp) - stamp).seconds());
+      if (dt < best_dt) {
+        best_dt = dt;
+        best = it;
+      }
+    }
+    if (best_dt > 0.05) {
+      RCLCPP_WARN(get_logger(),
+                  "Closest ground-truth pose is %.3f s from the image (image %.3f, "
+                  "buffer [%.3f, %.3f])",
+                  best_dt, stamp.seconds(),
+                  rclcpp::Time(gt_buffer_.front().header.stamp).seconds(),
+                  rclcpp::Time(gt_buffer_.back().header.stamp).seconds());
+    }
+    pose = *best;
+    return true;
+  }
+
   // Поріг OpenGV для 2D-2D: сума (1 - cos α) у двох кадрах при похибці px пікселів
   double bearingThreshold(double px) const {
     const double f = camera_params_.K.at<double>(0, 0);
@@ -131,7 +167,7 @@ class PoseEstimator : public rclcpp::Node {
 
   template <typename Problem>
   bool runRansac(const std::shared_ptr<Problem>& problem, double threshold,
-                 int max_iterations, opengv::transformation_t& T) {
+                 int max_iterations, opengv::transformation_t& T, bool refine = true) {
     opengv::sac::Ransac<Problem> ransac;
     ransac.sac_model_ = problem;
     ransac.threshold_ = threshold;
@@ -142,7 +178,11 @@ class PoseEstimator : public rclcpp::Node {
       return false;
     }
     // Нелінійне уточнення за всіма inliers (опціонально, але помітно покращує точність)
-    problem->optimizeModelCoefficients(ransac.inliers_, ransac.model_coefficients_, T);
+    if (refine) {
+      problem->optimizeModelCoefficients(ransac.inliers_, ransac.model_coefficients_, T);
+    } else {
+      T = ransac.model_coefficients_;
+    }
     RCLCPP_INFO(get_logger(), "RANSAC: %zu inliers / %zu, %d iterations",
                 ransac.inliers_.size(), problem->getIndices()->size(),
                 ransac.iterations_);
@@ -208,10 +248,16 @@ class PoseEstimator : public rclcpp::Node {
     feature_tracker_.reset(new SiftFeatureTracker());
 
     // Subscribe to drone pose estimation.
+    // Odometry gets its own callback group so a multi-threaded executor keeps
+    // consuming it (200 Hz) while SIFT blocks the camera callback for ~150 ms.
+    gt_group_ = create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
+    rclcpp::SubscriptionOptions gt_options;
+    gt_options.callback_group = gt_group_;
     pose_sub_ = create_subscription<nav_msgs::msg::Odometry>(
         "/ground_truth_pose",
-        10,
-        std::bind(&PoseEstimator::poseCallbackTesse, this, std::placeholders::_1));
+        1000,
+        std::bind(&PoseEstimator::poseCallbackTesse, this, std::placeholders::_1),
+        gt_options);
 
     // Advertise drone pose.
     pub_pose_gt_ =
@@ -253,20 +299,27 @@ class PoseEstimator : public rclcpp::Node {
     // so we should do T_{camera}^W = T_{body}^W * T_{camera}^{body} to get the
     // drone's camera pose.
 
-    // This is T_{body}^W
-    curr_pose_.pose = msg->pose.pose;
+    // This is T_{body}^W. Runs on the odometry thread, so it fills a local pose
+    // and the buffer instead of curr_pose_ (which belongs to cameraCallback).
+    geometry_msgs::msg::PoseStamped gt_pose;
+    gt_pose.pose = msg->pose.pose;
 
     // Convert pose message to tf::Transform
     tf2::Transform current_pose;
-    tf2::convert(curr_pose_.pose, current_pose);
+    tf2::convert(gt_pose.pose, current_pose);
 
     // Perform the coordinate transform T_{camera}^W = T_{body}^W *
     // T_{camera}^{body} and convert to pose message
-    tf2::toMsg(current_pose * transform_camera_body, curr_pose_.pose);
+    tf2::toMsg(current_pose * transform_camera_body, gt_pose.pose);
 
     // publish the converted pose message so we can visualize in rViz
-    curr_pose_.header.frame_id = "world";
-    pub_pose_gt_->publish(curr_pose_);
+    gt_pose.header.frame_id = "world";
+    gt_pose.header.stamp = msg->header.stamp;
+    pub_pose_gt_->publish(gt_pose);
+
+    std::lock_guard<std::mutex> lock(gt_mutex_);
+    gt_buffer_.push_back(gt_pose);
+    if (gt_buffer_.size() > kGtBufferSize) gt_buffer_.pop_front();
   }
 
   /**
@@ -462,6 +515,9 @@ class PoseEstimator : public rclcpp::Node {
 
     current_stamp_ = rclcpp::Time(rgb_msg->header.stamp).seconds();
 
+    // Ground truth at the image timestamp (see lookupGtPose)
+    if (!lookupGtPose(rclcpp::Time(rgb_msg->header.stamp), curr_pose_)) return;
+
     // Skip until we have a previous frame with ground truth (the first callback
     // would compare an image with itself, i.e. zero baseline).
     if (prev_pose_.header.frame_id.empty()) {
@@ -649,7 +705,8 @@ class PoseEstimator : public rclcpp::Node {
 
             auto problem = std::make_shared<RansacProblemGivenRot>(adapter_mono);
             opengv::transformation_t T;
-            if (runRansac(problem, bearingThreshold(1.0), 200, T)) {
+            // No nonlinear refinement: optimize_nonlinear would also change the known R.
+            if (runRansac(problem, bearingThreshold(1.0), 200, T, false)) {
               relative_pose_estimate = eigen2Pose(T);
             }
 
@@ -780,14 +837,16 @@ int main(int argc, char** argv) {
   auto node = std::make_shared<PoseEstimator>();
   node->run();
 
-  rclcpp::executors::SingleThreadedExecutor executor;
+  // Two threads: one for the camera pipeline, one for the odometry callback group.
+  rclcpp::executors::MultiThreadedExecutor executor(rclcpp::ExecutorOptions(), 2);
   executor.add_node(node);
-  rclcpp::Rate r(100);
+  std::thread spinner([&executor]() { executor.spin(); });
   while (rclcpp::ok()) {
-    executor.spin_once();
     cv::waitKey(1);
-    r.sleep();
+    std::this_thread::sleep_for(std::chrono::milliseconds(10));
   }
+  executor.cancel();
+  spinner.join();
   cv::destroyAllWindows();
 
   return EXIT_SUCCESS;

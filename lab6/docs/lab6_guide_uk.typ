@@ -1,5 +1,5 @@
 // Лабораторна 6 (MIT 16.485 VNAV): покроковий гайд українською.
-// Компіляція: typst compile lab6_guide_uk.typ
+// Компіляція (з каталогу docs): typst compile --root .. lab6_guide_uk.typ
 
 #import "@preview/cetz:0.4.2": canvas, draw
 
@@ -665,7 +665,7 @@ std::vector<int> inliers = ransac.inliers_;
 
   template <typename Problem>
   bool runRansac(const std::shared_ptr<Problem>& problem, double threshold,
-                 int max_iterations, opengv::transformation_t& T) {
+                 int max_iterations, opengv::transformation_t& T, bool refine = true) {
     opengv::sac::Ransac<Problem> ransac;
     ransac.sac_model_ = problem;
     ransac.threshold_ = threshold;
@@ -676,7 +676,11 @@ std::vector<int> inliers = ransac.inliers_;
       return false;
     }
     // Нелінійне уточнення за всіма inliers (опціонально, але помітно покращує точність)
-    problem->optimizeModelCoefficients(ransac.inliers_, ransac.model_coefficients_, T);
+    if (refine) {
+      problem->optimizeModelCoefficients(ransac.inliers_, ransac.model_coefficients_, T);
+    } else {
+      T = ransac.model_coefficients_;
+    }
     RCLCPP_INFO(get_logger(), "RANSAC: %zu inliers / %zu, %d iterations",
                 ransac.inliers_.size(), problem->getIndices()->size(), ransac.iterations_);
     return true;
@@ -779,7 +783,8 @@ $ hat(E) = U op("diag")(sigma_1, sigma_2, sigma_3) V^top quad arrow.r quad E = U
             // ************************* begin solution *************************
             auto problem = std::make_shared<RansacProblemGivenRot>(adapter_mono);
             opengv::transformation_t T;
-            if (runRansac(problem, bearingThreshold(1.0), 200, T)) {
+            // Без нелінійного уточнення: optimize_nonlinear змінив би і відоме R
+            if (runRansac(problem, bearingThreshold(1.0), 200, T, false)) {
               relative_pose_estimate = eigen2Pose(T);
             }
             // ************************* end solution *************************
@@ -823,7 +828,21 @@ $ hat(E) = U op("diag")(sigma_1, sigma_2, sigma_3) V^top quad arrow.r quad E = U
   [`votes`], [баланс голосів: +1 якщо точка перед обома камерами при поточному знаку `t`, −1 інакше],
 )
 
-#note[Ground truth `curr_pose_` — це останнє повідомлення одометрії, а не поза точно в момент кадру. Невелика розсинхронізація дає похибку і в "відомому" $R$, і в еталоні для RPE. Для 2-point це найпомітніше, бо помилка в $R$ повністю переходить у $bold(t)$.]
+#warn[Для 2-point передаємо `refine = false`. `TranslationOnlySacProblem::optimizeModelCoefficients` викликає `optimize_nonlinear`, який уточнює *і* $R$, і $bold(t)$ — відоме обертання "з'їжджає", і похибка обертання стає ненульовою (у нас було 0.08° замість 0).]
+
+== Синхронізація ground truth з кадрами
+
+У стенсилі `curr_pose_` — це *останнє* отримане повідомлення одометрії, а не поза в момент знімання кадру. На практиці це найбільше джерело похибок у цій лабі (важливіше за вибір алгоритму):
+
+- одометрія йде з частотою 200 Гц, кадри — 20 Гц; SIFT обробляє кадр ~150 мс, тож кадри чекають у черзі синхронізатора, і "остання" одометрія може бути на сотні мілісекунд новішою за кадр;
+- однопотоковий executor за один прохід бере по одному повідомленню з кожної підписки. Поки йде callback камери, одометрія або губиться (черга 10), або накопичує відставання на секунди (глибока черга).
+
+*Рішення* (реалізовано в `pose_estimation.cpp`):
++ одометрія — в окремій callback group; `main` використовує `MultiThreadedExecutor` з 2 потоками, тож одометрія обробляється паралельно з SIFT;
++ `poseCallbackTesse` кладе кожну позу камери (з `header.stamp`) у кільцевий буфер `gt_buffer_` (під `std::mutex`), а не в `curr_pose_`;
++ на початку `cameraCallback` `lookupGtPose` бере з буфера позу, найближчу за часом до `rgb_msg->header.stamp` (крок одометрії 5 мс).
+
+Ефект на нашому bag (медіана похибки обертання Аруна): 0.50° (остання одометрія) → 0.20° (пошук за міткою, але однопотоковий executor губить одометрію) → *0.03°* (окремий потік). Мораль: перш ніж звинувачувати алгоритм, перевірте, що еталон відповідає тому самому моменту часу.
 
 == Перший кадр
 
@@ -1192,6 +1211,31 @@ summary({**METHODS_2D, "arun": "Arun 3-point"})
 - *Арун найточніший*: глибина додає метричну інформацію, задача лінійна з замкненим розв'язком, немає масштабної невизначеності.
 - *Сплески похибки трансляції* припадають на кадри з малим `gt_trans_norm` (дрон майже нерухомий) — виродження $bold(t) approx 0$.
 - *Без RANSAC* — наочна демонстрація, що least squares не витримує outliers SIFT.
+
+== Фактичні результати на `vnav-lab6-office`
+
+Усі методи з RANSAC, поріг 1 px (2D–2D) та 5 см (3D–3D), нелінійне уточнення увімкнене (крім 2-point). Прогін у Docker на Apple Silicon (емуляція x86): вузол встигає обробити ~5–8 кадрів/с з 20, тож "сусідні" кадри в CSV віддалені в середньому на ~7 см. Статистику дає `plot_rpe.py`.
+
+#table(
+  columns: (auto, auto, auto, auto, auto, auto),
+  inset: 5pt, stroke: 0.4pt + luma(200), align: (left, center, center, center, center, center),
+  fill: (_, y) => if y == 0 { luma(235) },
+  [*Метод*], [*кадрів*], [*трансл., медіана*], [*трансл. < 0.5 / < 0.1*], [*оберт., медіана*], [*оберт. < 1° / < 0.1°*],
+  [5-point], [1800], [0.277], [65% / 22%], [0.33°], [92% / 15%],
+  [8-point], [1561], [0.184], [84% / 28%], [0.20°], [98% / 21%],
+  [2-point], [1844], [0.062], [97% / 70%], [0°], [100% / 100%],
+  [Арун], [961], [0.003 м], [100% / 100%], [0.03°], [100% / 97%],
+)
+
+*Висновки.*
+- Обертання для 5pt/8pt — у межах очікувань курсу ($< 1°$ для більшості кадрів); Арун — $< 0.1°$ для 97% кадрів; 2-point — трансляція $< 0.1$ для 70% кадрів.
+- Похибка напряму трансляції 2D–2D майже повністю визначається довжиною бази: для 5-point медіана 0.79 при кроці $< 4$ см і 0.11 при кроці $> 9$ см (8-point: 0.44 і 0.09). Це пряма ілюстрація виродження $bold(t) arrow.r 0$ з розділу 3.2.
+- На цьому прогоні 8-point дещо точніший за 5-point в усіх діапазонах бази — всупереч очікуванню курсу. Ймовірні причини: дуже мала база (5-point з мінімальної вибірки частіше обирає хибний з кількох розв'язків, а 8-point усереднює більше точок ще на етапі гіпотези), і однаковий для обох поріг 1 px. Це варто чесно зазначити у звіті.
+
+#figure(image("../results/rpe_trans_2d.png", width: 100%), caption: [Похибка напряму трансляції, 2D–2D.])
+#figure(image("../results/rpe_rot_2d.png", width: 100%), caption: [Похибка обертання, 2D–2D (лог. шкала; 2-point = 0 і не відображається).])
+#figure(image("../results/rpe_trans_3d.png", width: 100%), caption: [Арун: похибка трансляції, метри.])
+#figure(image("../results/rpe_rot_3d.png", width: 100%), caption: [Арун: похибка обертання.])
 
 == Налагодження: типові симптоми
 
